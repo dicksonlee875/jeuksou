@@ -40,7 +40,7 @@ UA = f"Mozilla/5.0 (compatible; {BOT}/1.0; promo code wallet, reads public pages
 # A code is 5-20 capital letters/digits (dashes allowed inside).
 CODE_RE = re.compile(r"(?<![A-Za-z0-9$¥£€-])([A-Z0-9](?:[A-Z0-9-]{3,18})[A-Z0-9])(?![A-Za-z0-9-])")
 # Words near a code that say "this is a promo code".
-CODE_WORDS = re.compile(r"code|coupon|promo|voucher|輸入|優惠碼|折扣碼|代碼|優惠代碼|促銷碼|序號|券", re.I)
+CODE_WORDS = re.compile(r"code|coupon|promo|voucher|claim|輸入|優惠碼|折扣碼|代碼|優惠代碼|促銷碼|序號|券|領取|複製", re.I)
 # Capitalised words that look like codes but are not.
 STOP = set("""
 HKD USD EUR GBP RMB CNY JPY TWD MOP AUD SGD HTTPS HTTP HTML WWW COM APP IOS ANDROID FAQ
@@ -50,12 +50,21 @@ WATSONS AIRALO TRAINLINE KEETA FOODPANDA PANDAMART PANDAPRO OPODO EDREAMS KIWI S
 GENIUS PRIME PREMIER CHEERS ESIM VIP SALE FLASH FREE NEW OFF GET SHOP DEAL DEALS BEST UPDATE UPDATED
 COPY CODE CODES PROMO COUPON VOUCHER TERMS EXPIRES EXPIRED VERIFIED MONDAY TUESDAY WEDNESDAY THURSDAY
 FRIDAY SATURDAY SUNDAY JANUARY FEBRUARY MARCH APRIL JUNE JULY AUGUST SEPTEMBER OCTOBER NOVEMBER DECEMBER
-COVID19 ISO9001 MP4 JPEG PNG WEBP UTF8 HK01 4K 5G 3D BLACK FRIDAY CYBER DOUBLE SINGLES
+COVID19 ISO9001 MP4 JPEG PNG WEBP UTF8 HK01 4K 5G 3D BLACK FRIDAY CYBER DOUBLE SINGLES 88VIP CASHBACK
 """.split())
+
+
+UNIT_RE = re.compile(r"(HKD|USD|NTD|TWD|RMB|CNY|JPY|KRW|SGD|MYR|THB|EUR|GBP|AUD|MOP)\d[\d,]*|\d+(MB|GB|TB|KM|KG|ML|MM|CM|HZ|MAH|W|K|P|G)")
+# All-letter words (HALLOWEEN, CASHBACK) only count when the page labels them, e.g. "code: X" or "優惠碼【X】".
+LABEL_BEFORE = re.compile(r"(code|coupon|promo|voucher|碼|代碼)\W{0,4}$", re.I)
+# Text about insurance or other side offers that blogs place next to their articles.
+OFF_TOPIC = re.compile(r"投保|保費|保險|保障|insur|policy holder|卓健|信用卡申請|開戶", re.I)
 
 
 def looks_like_code(tok):
     if tok in STOP or tok.replace("-", "") in STOP:
+        return False
+    if UNIT_RE.fullmatch(tok):
         return False
     core = tok.replace("-", "")
     if core.isdigit():                       # phone numbers, prices, years
@@ -127,13 +136,14 @@ def pick_expiry(text):
 
 
 # ---------- discount ----------
+MONEY = r"(?:HK\$|HKD|US\$|USD|NT\$|NTD|RMB|S\$|A\$|\$|¥|£|€)\s?\d[\d,]*(?:\.\d+)?"
 BIG_RE = [
     re.compile(r"(\d{1,2}(?:\.\d)?\s?%)"),
     re.compile(r"(\d{1,2}(?:\.\d)?\s?折)"),
-    re.compile(r"(?:減|off\s)\s*((?:HK|US|NT)?\$\s?\d[\d,]*|[¥£€]\s?\d[\d,]*)", re.I),
-    re.compile(r"((?:HK|US|NT)?\$\s?\d[\d,]*|[¥£€]\s?\d[\d,]*)\s*off", re.I),
+    re.compile(r"(?:減|off\s)\s*(" + MONEY + ")", re.I),
+    re.compile(r"(" + MONEY + r")\s*off", re.I),
     # Any amount that isn't a minimum spend ("滿 HK$500", "over $500", "min. $500").
-    re.compile(r"(?<!滿)(?<!滿 )(?<!over )(?<!min\. )(?<!minimum )((?:HK|US|NT)?\$\s?\d[\d,]*|[¥£€]\s?\d[\d,]*)", re.I),
+    re.compile(r"(?<!滿)(?<!滿 )(?<!over )(?<!min\. )(?<!minimum )(" + MONEY + ")", re.I),
 ]
 
 
@@ -141,15 +151,23 @@ def pick_big(text):
     for rx in BIG_RE:
         m = rx.search(text)
         if m:
-            return re.sub(r"\s+", "", m.group(1))
+            v = re.sub(r"\s+", "", m.group(1))
+            return v.replace("HKD", "HK$").replace("USD", "US$").replace("NTD", "NT$")
     return "New"
 
 
 # ---------- page parsing ----------
 def page_lines(html):
     soup = BeautifulSoup(html, "html.parser")
-    for t in soup(["script", "style", "noscript", "svg", "nav", "footer", "header", "form"]):
+    for t in soup(["script", "style", "noscript", "svg", "nav", "footer", "header", "form", "aside", "iframe"]):
         t.decompose()
+    junk = re.compile(r"sidebar|widget|related|popup|modal|banner|advert|\bads?\b|newsletter|subscribe|cookie|comment|share|recommend", re.I)
+    for t in soup.find_all(True):
+        if getattr(t, "decomposed", False) or t.attrs is None:   # inside something already removed
+            continue
+        attrs = " ".join([t.get("id") or ""] + (t.get("class") or []))
+        if junk.search(attrs) and t.name not in ("html", "body", "main", "article"):
+            t.decompose()
     # Codes hidden in copy-to-clipboard buttons or data attributes.
     attr_codes = set()
     for el in soup.find_all(True):
@@ -176,7 +194,7 @@ def extract(html, page):
                 if any(w.lower() in low for w in words):
                     current_site = key
                     break
-        window = " ".join(lines[max(0, i - 1):i + 1])     # this line and the one above
+        window = " ".join(lines[max(0, i - 1):i + 2])     # this line and its neighbours
         for m in CODE_RE.finditer(line):
             tok = m.group(1)
             if not looks_like_code(tok):
@@ -184,19 +202,32 @@ def extract(html, page):
             sure = tok in attr_codes or tok in strong
             if not sure and not CODE_WORDS.search(window):
                 continue
+            if tok.replace("-", "").isalpha() and tok not in attr_codes and not LABEL_BEFORE.search(line[:m.start()]):
+                continue
             if not current_site or tok in found:
                 continue
-            # Read the discount and end date from the code's own line first, then the next line.
-            rest = line.replace(tok, "")
+            rest = line.replace(tok, "").strip()
+            prev = lines[i - 1] if i else ""
             nxt = lines[i + 1] if i + 1 < len(lines) else ""
-            big = pick_big(rest)
-            if big == "New":
+            # A short line ("CODE 領取", "CODE use code") is a table row: its description is on the line above.
+            # Walk up past other code rows to find it.
+            if len(rest) < 15:
+                j = i - 1
+                while j >= 0 and i - j < 15 and len(lines[j]) < 40 and len(CODE_RE.sub("", lines[j]).strip()) < 15:
+                    j -= 1
+                context = lines[j] if j >= 0 else ""
+            else:
+                context = line
+            if OFF_TOPIC.search(context + " " + line):
+                continue
+            big = pick_big(context.replace(tok, ""))
+            if big == "New" and context is line:
                 big = pick_big(nxt)
             found[tok] = {
                 "site": current_site,
                 "big": big,
-                "expires": pick_expiry(line) or pick_expiry(nxt),
-                "snippet": line[:260] if len(line) > 25 else (line + " " + nxt)[:260],
+                "expires": pick_expiry(context) or pick_expiry(line) or (pick_expiry(nxt) if context is line else None),
+                "snippet": (context if context is not line else line)[:200],
             }
     for tok in attr_codes - set(found):           # attribute codes with no text around them
         if looks_like_code(tok) and current_site:
@@ -250,11 +281,18 @@ def merge(data, found_by_page):
         for c in d.get("codes") or []:
             known[(d["site"], c)] = d
     added, seen = [], set()
+    # The same code on pages about different shops is the blog's own promotion, not the shop's.
+    shops_per_code = {}
+    for page, found in found_by_page:
+        for code, f in found.items():
+            shops_per_code.setdefault(code, set()).add(f["site"])
+    shared = {c for c, shops in shops_per_code.items() if len(shops) > 1}
+    groups = {}
     for page, found in found_by_page:
         host = urlparse(page["url"]).netloc.replace("www.", "")
         for code, f in found.items():
             site = f["site"]
-            if site not in data["sites"]:
+            if site not in data["sites"] or code in shared:
                 continue
             key = (site, code)
             if key in known:
@@ -266,6 +304,12 @@ def merge(data, found_by_page):
                 continue
             exp = f["expires"].isoformat() if f["expires"] else None
             snippet = f["snippet"] or code
+            gkey = (site, page["url"], snippet)
+            if f["snippet"] and gkey in groups:          # same offer, another code (e.g. one per card)
+                g = groups[gkey]
+                g["codes"].append(code)
+                known[key] = g
+                continue
             d = {
                 "site": site, "cat": page.get("cat", "Shopping"), "big": f["big"],
                 "title": f"New code found on {host}", "title_zh": f"在 {host} 找到的新優惠碼",
@@ -280,6 +324,7 @@ def merge(data, found_by_page):
                 d["big_zh"] = "新"
             deals.append(d)
             known[key] = d
+            groups[gkey] = d
             added.append(d)
     # Expire by date, and retire auto codes nobody has listed for a while.
     expired = 0
