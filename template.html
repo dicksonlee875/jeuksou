@@ -70,6 +70,14 @@ button, input, select { font: inherit; color: inherit; }
 .chip .n { color: var(--muted); margin-left: 5px; font-variant-numeric: tabular-nums; }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); font-weight: 600; }
 .chip[aria-pressed="true"] .n { color: #55555f; }
+.regions .chip { background: transparent; box-shadow: inset 0 0 0 1px var(--line); font-size: 13.5px; padding: 6px 13px; }
+.regions .chip[aria-pressed="true"] { background: var(--accent); color: #fff; box-shadow: none; }
+.sec-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 26px 2px 10px; font-size: 17px; font-weight: 800; letter-spacing: -0.01em; }
+.sec-h:first-child { margin-top: 0; }
+.sec-h span { font-size: 12.5px; font-weight: 600; color: var(--muted); }
+.sec-h + .wcard { margin-top: 0; }
+.wcard:has(+ .sec-h) .wcard-h { padding-bottom: 18px; }
+.wcard-rank { font: 600 13px var(--mono); opacity: .75; margin-right: 8px; font-variant-numeric: tabular-nums; }
 .sub-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
 .toggle { display: inline-flex; align-items: center; gap: 7px; cursor: pointer; }
 .toggle input { accent-color: var(--accent); width: 16px; height: 16px; }
@@ -191,6 +199,7 @@ html[lang="zh-Hans"] body { font-family: var(--font), "Noto Sans SC", "PingFang 
         <input id="q" type="search" placeholder=" " autocomplete="off">
         <label for="q" data-t="search"></label>
       </div>
+      <div class="chips-wrap"><div class="chips regions" id="regions" role="group"></div></div>
       <div class="chips-wrap"><div class="chips" id="cats"></div></div>
       <div class="sub-row"><span id="site-line"></span><label class="toggle" for="showDead"><input type="checkbox" id="showDead"> <span data-t="showDead"></span></label></div>
     </div>
@@ -225,6 +234,8 @@ const T = {
     savedP: "Codes you marked as worked, and good deals ending soon.",
     all: "All", live: "live codes", sites: "sites", soon: "ending soon",
     siteLine: n => `${n} ${n === 1 ? "site" : "sites"} · tap a card to open`,
+    regions: { world: "Worldwide", hk: "Hong Kong", uk: "UK", us: "US", sg: "Singapore", all: "All sites" },
+    regionLine: (r, n) => `Top sites in ${r} · ${n} ${n === 1 ? "site" : "sites"}`, top: n => `Top ${n}`,
     nothing: q => `Nothing matches${q ? ` "${q}"` : ""}. Try another word or category.`,
     how: "How it works:", noLive: "No live codes right now.", deadH: "Expired or skip",
     code: n => `${n} ${n === 1 ? "code" : "codes"}`,
@@ -244,6 +255,8 @@ const T = {
     savedP: "你標記為有效的優惠碼，以及快將結束的優惠。",
     all: "全部", live: "個有效優惠碼", sites: "個網站", soon: "個快將結束",
     siteLine: n => `${n} 個網站 · 點擊卡片打開`,
+    regions: { world: "全球", hk: "香港", uk: "英國", us: "美國", sg: "新加坡", all: "所有網站" },
+    regionLine: (r, n) => `${r}熱門網站 · ${n} 個`, top: n => `首 ${n} 位`,
     nothing: q => `找不到${q ? `「${q}」` : "相符的結果"}。試試其他字詞或類別。`,
     how: "使用方法：", noLive: "現時沒有有效優惠碼。", noYet: "暫時未找到優惠碼，著數碼每 3 日會再檢查。", deadH: "已過期或不建議",
     code: n => `${n} 個優惠碼`,
@@ -288,7 +301,9 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
 };
 let marks = store.get("pcw-marks", {});
-const state = Object.assign({ cat: "all", dead: false, view: "wallet", open: null }, store.get("zsm-view", {}));
+const REGIONS = DATA.regions || {};
+const state = Object.assign({ cat: "all", region: "world", dead: false, view: "wallet", open: null }, store.get("zsm-view", {}));
+if (state.region !== "all" && !REGIONS[state.region]) state.region = "world";
 state.q = "";
 if (state.cat !== "all" && !CATS.includes(state.cat)) state.cat = "all";
 if (state.view !== "saved") state.view = "wallet";
@@ -305,7 +320,8 @@ const catName = c => L().cats[c] || c;
 const fmt = d => new Date(d + "T00:00:00").toLocaleDateString(L().locale, { day: "numeric", month: "short", year: "numeric" });
 
 function matches(d) {
-  if (state.cat !== "all" && d.cat !== state.cat) return false;
+  // In a region the site list decides what shows, so a site's codes aren't split by category.
+  if (state.region === "all" && state.cat !== "all" && d.cat !== state.cat) return false;
   if (state.q) {
     const hay = [SITES[d.site].name, d.cat, catName(d.cat), d.title, d.desc, d.cond, tx(d, "title"), tx(d, "desc"), tx(d, "cond"), d.big, ...(d.codes || [])].join(" ").toLowerCase();
     return state.q.toLowerCase().split(/\s+/).every(w => hay.includes(w));
@@ -331,10 +347,18 @@ function renderStats() {
   const badge = $("#saved-badge"); badge.hidden = !worked; badge.textContent = worked;
 }
 
+// Sites a region ranks in one category (or all its categories), best first.
+const regionSites = c => { const r = REGIONS[state.region]; return c === "all" ? [...new Set(Object.values(r).flat())] : r[c] || []; };
+const regionCats = () => Object.keys(REGIONS[state.region]);
+
 function renderCats() {
+  $("#regions").innerHTML = [...Object.keys(REGIONS), "all"].map(r =>
+    `<button class="chip" data-region="${r}" aria-pressed="${state.region === r}">${esc(L().regions[r] || r)}</button>`).join("");
   const live = DEALS.filter(d => !d.dead);
-  $("#cats").innerHTML = ["all", ...CATS].map(c => {
-    const n = c === "all" ? live.length : live.filter(d => d.cat === c).length;
+  const inRegion = state.region !== "all";
+  $("#cats").innerHTML = ["all", ...(inRegion ? regionCats() : CATS)].map(c => {
+    const n = inRegion ? regionSites(c).length     // in a region the chips count sites, not codes
+      : c === "all" ? live.length : live.filter(d => d.cat === c).length;
     return `<button class="chip" data-cat="${esc(c)}" aria-pressed="${state.cat === c}">${c === "all" ? L().all : esc(catName(c))}<span class="n">${n}</span></button>`;
   }).join("");
   $("#showDead").checked = state.dead;
@@ -366,6 +390,7 @@ function dealHtml(d, withSite) {
 }
 
 function renderStack() {
+  if (state.region !== "all") return renderRegion();
   const t = L();
   const groups = {};
   for (const d of DEALS) if (matches(d)) (groups[d.site] = groups[d.site] || []).push(d);
@@ -384,9 +409,36 @@ function renderStack() {
     .sort((a, b) => (b.ready > 0) - (a.ready > 0) || b.live.length - a.live.length || SITES[a.k].name.localeCompare(SITES[b.k].name));
   $("#site-line").textContent = t.siteLine(sites.length);
   if (!sites.length) { $("#stack").innerHTML = `<p class="empty">${esc(t.nothing(state.q))}</p>`; return; }
-  $("#stack").innerHTML = sites.map(s => {
-    const open = state.open === s.k || (sites.length === 1);
-    const cats = [...new Set((s.all.length ? s.all.map(d => d.cat) : SITES[s.k].cats || []).map(catName))].join(" · ");
+  $("#stack").innerHTML = sites.map(s => cardHtml(s, s.k, sites.length === 1)).join("");
+}
+
+// One region: each category's top sites in rank order. With "All" picked, one section per category.
+function renderRegion() {
+  const t = L();
+  const q = state.q.toLowerCase();
+  const cats = state.cat === "all" ? regionCats() : [state.cat];
+  let html = "", shown = new Set();
+  for (const c of cats) {
+    const cards = regionSites(c).map((k, i) => {
+      const all = DEALS.filter(d => d.site === k && (!q || matches(d)));
+      if (q && !all.length && !SITES[k].name.toLowerCase().includes(q)) return null;
+      const live = sortDeals(all.filter(d => !d.dead));
+      return { k, all, live, top: live[0] || null, rank: i + 1, cat: c };
+    }).filter(Boolean);
+    if (!cards.length) continue;
+    cards.forEach(s => shown.add(s.k));
+    const key = s => cats.length > 1 ? c + "|" + s.k : s.k;
+    if (cats.length > 1) html += `<h2 class="sec-h">${esc(catName(c))}<span>${t.top(cards.length)}</span></h2>`;
+    html += cards.map(s => cardHtml(s, key(s), false)).join("");
+  }
+  $("#site-line").textContent = t.regionLine(t.regions[state.region], shown.size);
+  $("#stack").innerHTML = html || `<p class="empty">${esc(t.nothing(state.q))}</p>`;
+}
+
+function cardHtml(s, key, forceOpen) {
+    const t = L();
+    const open = state.open === key || forceOpen;
+    const cats = s.cat ? catName(s.cat) : [...new Set((s.all.length ? s.all.map(d => d.cat) : SITES[s.k].cats || []).map(catName))].join(" · ");
     let body = "";
     if (open) {
       const dead = sortDeals(s.all.filter(d => d.dead));
@@ -398,12 +450,11 @@ function renderStack() {
       </div>`;
     }
     return `<div class="wcard ${open ? "open" : ""}" style="${cardStyle(s.k)}">
-      <button class="wcard-h" data-site="${s.k}" aria-expanded="${open}">
-        <span class="wcard-name">${esc(SITES[s.k].name)}</span>
+      <button class="wcard-h" data-site="${esc(key)}" aria-expanded="${open}">
+        <span class="wcard-name">${s.rank ? `<span class="wcard-rank">#${s.rank}</span>` : ""}${esc(SITES[s.k].name)}</span>
         <span class="wcard-right"><span class="wcard-best">${s.top ? esc(tx(s.top, "big")) : "—"}</span><br><span class="wcard-count">${t.code(s.live.length)}</span></span>
         <span class="wcard-cats">${esc(cats)}</span>
       </button>${body}</div>`;
-  }).join("");
 }
 
 /* ---------- Saved ---------- */
@@ -423,7 +474,7 @@ function render() {
   $("#view-wallet").hidden = state.view !== "wallet";
   $("#view-saved").hidden = state.view !== "saved";
   renderText(); renderStats(); renderCats(); renderStack(); renderSaved();
-  store.set("zsm-view", { cat: state.cat, dead: state.dead, view: state.view, open: state.open });
+  store.set("zsm-view", { cat: state.cat, region: state.region, dead: state.dead, view: state.view, open: state.open });
 }
 
 /* ---------- Toasts ---------- */
@@ -445,9 +496,14 @@ document.addEventListener("click", e => {
   if (b.dataset.lang) { lang = b.dataset.lang; store.set("zsm-lang", lang); render(); }
   else if (b.dataset.view) { state.view = b.dataset.view; render(); window.scrollTo({ top: 0 }); }
   else if (b.dataset.cat) { state.cat = b.dataset.cat; state.open = null; render(); }
+  else if (b.dataset.region) {
+    state.region = b.dataset.region; state.open = null;
+    if (state.cat !== "all" && !(state.region === "all" ? CATS : regionCats()).includes(state.cat)) state.cat = "all";
+    render();
+  }
   else if (b.dataset.site) {
     state.open = state.open === b.dataset.site ? null : b.dataset.site;
-    renderStack(); store.set("zsm-view", { cat: state.cat, dead: state.dead, view: state.view, open: state.open });
+    renderStack(); store.set("zsm-view", { cat: state.cat, region: state.region, dead: state.dead, view: state.view, open: state.open });
     if (state.open) { const el = document.querySelector(`[data-site="${state.open}"]`); el && el.scrollIntoView({ block: "nearest", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); }
   }
   else if (b.dataset.code) {

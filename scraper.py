@@ -137,6 +137,10 @@ def pick_expiry(text):
     return max(ends or [d for d, _ in dates])
 
 
+# Coupon hubs print stats beside each code ("31% of the cart", "$2,598.42" saved, "4 days ago").
+STATS = re.compile(r"of the cart|median discount|website showed|verification details|days? ago|in the last \d+ days|"
+                   r"across every cart|before this offer applies|^\d+ of \d+$|^" + r"(?:US\$|\$|£|€)\s?[\d,]+\.\d\d$", re.I)
+
 # ---------- discount ----------
 MONEY = r"(?:HK\$|HKD|US\$|USD|NT\$|NTD|RMB|S\$|A\$|\$|¥|£|€)\s?\d[\d,]*(?:\.\d+)?"
 BIG_RE = [
@@ -197,9 +201,9 @@ def extract(html, page):
         seen_count[l] = seen_count.get(l, 0) + 1
 
     def filler(l):
-        """Lines that can't describe an offer: repeated boilerplate, bare dates/times, short fragments."""
+        """Lines that can't describe an offer: repeated boilerplate, bare dates/times, short fragments, coupon-site stats."""
         bare = CODE_RE.sub("", l).strip()
-        return (seen_count.get(l, 0) >= 3 or len(bare) < 8
+        return (seen_count.get(l, 0) >= 3 or len(bare) < 8 or STATS.search(bare)
                 or re.fullmatch(r"[\d年月日:/\-\s.]*(開搶|開賣|開始)?", bare) is not None)
 
     for i, line in enumerate(lines):
@@ -315,11 +319,15 @@ def merge(data, found_by_page):
     # Coupon hubs list other brands' codes on a shop's page. Skip a code whose text names another
     # brand and not this shop.
     names = {k: v["name"].lower().split(" /")[0].split(".")[0] for k, v in data["sites"].items()}
-    others = set(names.values()) | {"kayak", "priceline", "cheapflights", "momondo", "hotwire", "orbitz", "travelocity", "farfetch", "tahiti"}
+    # Brand names that are also everyday words ("your next trip", "budget") don't count.
+    generic = {"trip", "next", "target", "national", "united", "american", "delta", "boots", "budget", "grab", "bolt", "chope", "scoot"}
+    others = (set(names.values()) | {"kayak", "priceline", "cheapflights", "momondo", "hotwire", "orbitz", "travelocity", "farfetch", "tahiti"}) - generic
+    named = lambda n, low: re.search(r"(?<![a-z])" + re.escape(n) + r"(?![a-z])", low) is not None
 
     def other_brand(site, text):
         low = text.lower()
-        return names.get(site, "") not in low and any(o in low for o in others - {names.get(site, "")})
+        own = names.get(site, "")
+        return not named(own, low) and any(named(o, low) for o in others - {own})
 
     groups = {}
     for page, found in found_by_page:

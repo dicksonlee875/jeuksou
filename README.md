@@ -81,6 +81,7 @@ Run `crontab -e` and add this line, changing the path to where you put this fold
 
 - correct an auto-found code: change `status` to `active`, `restricted` or `avoid`, and rewrite `title`, `desc`, `cond` (plus `title_zh`, `desc_zh`, `cond_zh` for Chinese)
 - delete a fake code: remove its `{ ... }` block
+- change a region's top 10: edit the lists under `regions` (`world`, `hk`, `uk`, `us`, `sg`). Each category lists site keys best first, at most 10. A new region also needs its name in `regions` in both language blocks of `template.html`
 - add a new shop: add it under `sites` with a `name`, `note`, `note_zh` and `color`, then add its page to `sources.json`
 
 Only fill in 繁體 (`_zh`) fields. `build.py` converts them to 简体 automatically. If a mainland word comes out wrong, add it to `PHRASES` in `build.py`.

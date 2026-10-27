@@ -72,11 +72,6 @@
       "cat": "Hotels"
     },
     {
-      "url": "https://dealhack.com/coupons/hotelscom",
-      "site": "hotelscom",
-      "cat": "Hotels"
-    },
-    {
       "url": "https://www.moneyhk101.com/hktvmall-promo-code/",
       "site": "hktvmall",
       "cat": "Shopping"
@@ -155,11 +150,6 @@
       "cat": "Hotels"
     },
     {
-      "url": "https://dealhack.com/coupons/ihg",
-      "site": "ihg",
-      "cat": "Hotels"
-    },
-    {
       "url": "https://dealhack.com/coupons/cathay-pacific",
       "site": "cathay",
       "cat": "Flights"
@@ -175,24 +165,9 @@
       "cat": "Flights"
     },
     {
-      "url": "https://dealhack.com/coupons/enterprise",
-      "site": "enterprise",
-      "cat": "Car rental"
-    },
-    {
-      "url": "https://dealhack.com/coupons/budget",
-      "site": "budget",
-      "cat": "Car rental"
-    },
-    {
       "url": "https://dealhack.com/coupons/alamo",
       "site": "alamo",
       "cat": "Car rental"
-    },
-    {
-      "url": "https://dealhack.com/coupons/holafly",
-      "site": "holafly",
-      "cat": "Travel extras"
     },
     {
       "url": "https://dealhack.com/coupons/omio",
@@ -200,28 +175,8 @@
       "cat": "Travel extras"
     },
     {
-      "url": "https://dealhack.com/coupons/rail-europe",
-      "site": "raileurope",
-      "cat": "Travel extras"
-    },
-    {
-      "url": "https://dealhack.com/coupons/12go",
-      "site": "twelvego",
-      "cat": "Travel extras"
-    },
-    {
       "url": "https://dealhack.com/coupons/priority-pass",
       "site": "prioritypass",
-      "cat": "Travel extras"
-    },
-    {
-      "url": "https://dealhack.com/coupons/welcome-pickups",
-      "site": "welcomepickups",
-      "cat": "Travel extras"
-    },
-    {
-      "url": "https://dealhack.com/coupons/safetywing",
-      "site": "safetywing",
       "cat": "Travel extras"
     },
     {
@@ -260,49 +215,14 @@
       "cat": "Shopping"
     },
     {
-      "url": "https://dealhack.com/coupons/harrods",
-      "site": "harrods",
-      "cat": "Shopping"
-    },
-    {
       "url": "https://dealhack.com/coupons/uber",
       "site": "uber",
-      "cat": "Food & rides"
-    },
-    {
-      "url": "https://dealhack.com/coupons/uber-eats",
-      "site": "ubereats",
-      "cat": "Food & rides"
-    },
-    {
-      "url": "https://dealhack.com/coupons/grab",
-      "site": "grab",
-      "cat": "Food & rides"
-    },
-    {
-      "url": "https://dealhack.com/coupons/didi",
-      "site": "didi",
-      "cat": "Food & rides"
-    },
-    {
-      "url": "https://dealhack.com/coupons/deliveroo",
-      "site": "deliveroo",
       "cat": "Food & rides"
     },
     {
       "url": "https://dealhack.com/coupons/doordash",
       "site": "doordash",
       "cat": "Food & rides"
-    },
-    {
-      "url": "https://dealhack.com/coupons/bolt",
-      "site": "bolt",
-      "cat": "Food & rides"
-    },
-    {
-      "url": "https://dealhack.com/coupons/kkday",
-      "site": "kkday",
-      "cat": "Activities"
     },
     {
       "url": "https://dealhack.com/coupons/getyourguide",
@@ -363,6 +283,176 @@
           "hotels.com"
         ]
       }
+    },
+    {
+      "url": "https://dealhack.com/coupons/accor",
+      "site": "accor",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://dealhack.com/coupons/travelodge",
+      "site": "travelodge",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://dealhack.com/coupons/priceline",
+      "site": "priceline",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://dealhack.com/coupons/hyatt",
+      "site": "hyatt",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://dealhack.com/coupons/vrbo",
+      "site": "vrbo",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://dealhack.com/coupons/emirates",
+      "site": "emirates",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/qatar-airways",
+      "site": "qatar",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/british-airways",
+      "site": "ba",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/easyjet",
+      "site": "easyjet",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/jet2",
+      "site": "jet2",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/scoot",
+      "site": "scoot",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/jetstar",
+      "site": "jetstar",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/turo",
+      "site": "turo",
+      "cat": "Car rental"
+    },
+    {
+      "url": "https://dealhack.com/coupons/national-express",
+      "site": "nationalexpress",
+      "cat": "Travel extras"
+    },
+    {
+      "url": "https://dealhack.com/coupons/amtrak",
+      "site": "amtrak",
+      "cat": "Travel extras"
+    },
+    {
+      "url": "https://dealhack.com/coupons/ebay",
+      "site": "ebay",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/argos",
+      "site": "argos",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/john-lewis",
+      "site": "johnlewis",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/next",
+      "site": "next",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/boots",
+      "site": "boots",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/walmart",
+      "site": "walmart",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/target",
+      "site": "target",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/best-buy",
+      "site": "bestbuy",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/macys",
+      "site": "macys",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/shopee",
+      "site": "shopee",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/lazada",
+      "site": "lazada",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/lyft",
+      "site": "lyft",
+      "cat": "Food & rides"
+    },
+    {
+      "url": "https://dealhack.com/coupons/just-eat",
+      "site": "justeat",
+      "cat": "Food & rides"
+    },
+    {
+      "url": "https://dealhack.com/coupons/grubhub",
+      "site": "grubhub",
+      "cat": "Food & rides"
+    },
+    {
+      "url": "https://dealhack.com/coupons/instacart",
+      "site": "instacart",
+      "cat": "Food & rides"
+    },
+    {
+      "url": "https://dealhack.com/coupons/stubhub",
+      "site": "stubhub",
+      "cat": "Activities"
+    },
+    {
+      "url": "https://dealhack.com/coupons/seatgeek",
+      "site": "seatgeek",
+      "cat": "Activities"
+    },
+    {
+      "url": "https://dealhack.com/coupons/pelago",
+      "site": "pelago",
+      "cat": "Activities"
+    },
+    {
+      "url": "https://dealhack.com/coupons/ca.hotels.com",
+      "site": "hotelscom",
+      "cat": "Hotels"
     }
   ]
 }

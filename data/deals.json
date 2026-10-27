@@ -22,7 +22,8 @@
    "cats": [
     "Car rental",
     "Flights",
-    "Hotels"
+    "Hotels",
+    "Activities"
    ]
   },
   "sbc": {
@@ -90,7 +91,9 @@
    ],
    "note_zh": "銀行優惠碼只適用於銀行專屬的 Expedia 香港頁面（例如 expedia.com.hk/amex），只限預付純酒店預訂。套票及到店付款不適用。在付款時「輸入優惠碼」一欄輸入。",
    "cats": [
-    "Hotels"
+    "Hotels",
+    "Flights",
+    "Activities"
    ]
   },
   "agoda": {
@@ -876,7 +879,8 @@
     "#1a96a0"
    ],
    "cats": [
-    "Activities"
+    "Activities",
+    "Travel extras"
    ]
   },
   "getyourguide": {
@@ -952,6 +956,675 @@
    "color": [
     "#8000ff",
     "#5c00b8"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "accor": {
+   "name": "Accor (ALL)",
+   "checked": "2026-10-27",
+   "note": "Accor runs Novotel, Ibis, Sofitel, Pullman and more. ALL Accor members (free) get member rates, and flash sales run a few times a year.",
+   "note_zh": "Accor 旗下有 Novotel、Ibis、Sofitel、Pullman 等酒店。免費加入 ALL Accor 會員可享會員價，每年亦有數次閃購。",
+   "color": [
+    "#1e1852",
+    "#120e33"
+   ],
+   "cats": [
+    "Hotels"
+   ]
+  },
+  "premierinn": {
+   "name": "Premier Inn",
+   "checked": "2026-10-27",
+   "note": "The UK's biggest budget hotel chain. Book early for Saver rates (non-refundable); public promo codes are rare.",
+   "note_zh": "英國最大的經濟型連鎖酒店。提早預訂可享 Saver 價（不可退款）；公開優惠碼很少。",
+   "color": [
+    "#4b1d6e",
+    "#331249"
+   ],
+   "cats": [
+    "Hotels"
+   ]
+  },
+  "travelodge": {
+   "name": "Travelodge",
+   "checked": "2026-10-27",
+   "note": "UK budget hotels with SuperSaver rates when you book ahead. Codes appear mostly in newsletter sales.",
+   "note_zh": "英國經濟型酒店，提早預訂有 SuperSaver 價。優惠碼多在電子報減價時出現。",
+   "color": [
+    "#0071ce",
+    "#00519a"
+   ],
+   "cats": [
+    "Hotels"
+   ]
+  },
+  "priceline": {
+   "name": "Priceline",
+   "checked": "2026-10-27",
+   "note": "US booking site for hotels, flights and cars. Express Deals hide the hotel name until you book for a lower price; codes are occasional.",
+   "note_zh": "美國的酒店、機票及租車預訂網站。Express Deals 預訂前不顯示酒店名稱但價格較低；優惠碼不常有。",
+   "color": [
+    "#0068ef",
+    "#004db3"
+   ],
+   "cats": [
+    "Hotels",
+    "Flights"
+   ]
+  },
+  "hyatt": {
+   "name": "Hyatt",
+   "checked": "2026-10-27",
+   "note": "World of Hyatt members (free) get member rates when booking direct. Promo and corporate codes go in the Special Rates box.",
+   "note_zh": "免費加入 World of Hyatt 會員，直接預訂可享會員價。推廣碼及公司碼在「特別房價」欄輸入。",
+   "color": [
+    "#2c2a29",
+    "#161514"
+   ],
+   "cats": [
+    "Hotels"
+   ]
+  },
+  "vrbo": {
+   "name": "Vrbo",
+   "checked": "2026-10-27",
+   "note": "Holiday homes, mostly in the US and Europe (part of Expedia). Discounts are set by owners for longer stays; codes are rare.",
+   "note_zh": "度假屋，主要在美國及歐洲（屬 Expedia 集團）。長住折扣由屋主設定；優惠碼很少。",
+   "color": [
+    "#245abc",
+    "#173d85"
+   ],
+   "cats": [
+    "Hotels"
+   ]
+  },
+  "emirates": {
+   "name": "Emirates",
+   "checked": "2026-10-27",
+   "note": "Emirates promo codes are mostly bank and card offers on one country's website. Skywards members get occasional member fares.",
+   "note_zh": "阿聯酋航空的優惠碼多是某國網站的銀行或信用卡優惠。Skywards 會員不時有會員票價。",
+   "color": [
+    "#d71a21",
+    "#a01318"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "qatar": {
+   "name": "Qatar Airways",
+   "checked": "2026-10-27",
+   "note": "Qatar Airways runs regular fare sales and student discounts (Student Club). Promo codes go in the booking box on the first page.",
+   "note_zh": "卡塔爾航空定期有機票優惠及學生折扣（Student Club）。優惠碼在首頁預訂欄輸入。",
+   "color": [
+    "#5c0632",
+    "#3d0421"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "ba": {
+   "name": "British Airways",
+   "checked": "2026-10-27",
+   "note": "BA codes are usually for holidays (flight + hotel) rather than flights alone. Executive Club members get occasional sale access.",
+   "note_zh": "英航優惠碼多用於套票（機票加酒店），單買機票較少。Executive Club 會員可搶先參與部分減價。",
+   "color": [
+    "#075aaa",
+    "#04396c"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "easyjet": {
+   "name": "easyJet",
+   "checked": "2026-10-27",
+   "note": "Budget airline across Europe. Flight codes are rare; easyJet holidays has codes more often. Bags and seats cost extra.",
+   "note_zh": "歐洲廉航。機票優惠碼很少，easyJet holidays 套票較常有。行李及選位另外收費。",
+   "color": [
+    "#ff6600",
+    "#cc5200"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "ryanair": {
+   "name": "Ryanair",
+   "checked": "2026-10-27",
+   "note": "Europe's biggest budget airline. No promo codes: it runs seat sales instead. Check-in online to avoid airport fees.",
+   "note_zh": "歐洲最大廉航。沒有優惠碼，改以機位減價取代。記得網上登機，避免機場收費。",
+   "color": [
+    "#073590",
+    "#04225e"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "jet2": {
+   "name": "Jet2",
+   "checked": "2026-10-27",
+   "note": "UK leisure airline and holiday company. Jet2holidays has occasional codes; flight prices include 22kg bags on holidays.",
+   "note_zh": "英國度假航空及旅行社。Jet2holidays 不時有優惠碼；套票已包 22 公斤行李。",
+   "color": [
+    "#e4002b",
+    "#b00021"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "delta": {
+   "name": "Delta",
+   "checked": "2026-10-27",
+   "note": "US airline. Codes (eCertificates) are personal, sent to SkyMiles members; public codes are rare.",
+   "note_zh": "美國航空公司。優惠碼（eCertificate）是個人專用，只寄給 SkyMiles 會員；公開碼很少。",
+   "color": [
+    "#003366",
+    "#001f40"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "united": {
+   "name": "United Airlines",
+   "checked": "2026-10-27",
+   "note": "US airline. Promo codes are mostly personal MileagePlus offers or card perks. Enter them under Promotion code at search.",
+   "note_zh": "美國航空公司。優惠碼多是個人的 MileagePlus 優惠或信用卡福利，搜尋時在 Promotion code 輸入。",
+   "color": [
+    "#005daa",
+    "#003f73"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "american": {
+   "name": "American Airlines",
+   "checked": "2026-10-27",
+   "note": "US airline. Public codes are rare; AAdvantage members and cardholders get targeted offers.",
+   "note_zh": "美國航空公司。公開優惠碼很少；AAdvantage 會員及信用卡持有人會收到專屬優惠。",
+   "color": [
+    "#0078d2",
+    "#00548f"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "southwest": {
+   "name": "Southwest",
+   "checked": "2026-10-27",
+   "note": "US airline with two free checked bags. Promo codes come by email to Rapid Rewards members during fare sales.",
+   "note_zh": "免費兩件寄艙行李的美國航空公司。減價期間會電郵優惠碼給 Rapid Rewards 會員。",
+   "color": [
+    "#304cb2",
+    "#1f3277"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "scoot": {
+   "name": "Scoot",
+   "checked": "2026-10-27",
+   "note": "Singapore Airlines' budget airline. Sales and promo codes come often, through its newsletter and app. Bags cost extra.",
+   "note_zh": "新加坡航空旗下廉航。經常透過電子報及 App 推出減價及優惠碼。行李另外收費。",
+   "color": [
+    "#ffd400",
+    "#e0ba00",
+    "#1a1600"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "jetstar": {
+   "name": "Jetstar",
+   "checked": "2026-10-27",
+   "note": "Budget airline in Asia and Australia. Friday Fare Frenzy sales beat most codes. Bags cost extra.",
+   "note_zh": "亞洲及澳洲廉航。Friday Fare Frenzy 減價通常比優惠碼更划算。行李另外收費。",
+   "color": [
+    "#ff5f1f",
+    "#d94a10"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "national": {
+   "name": "National",
+   "checked": "2026-10-27",
+   "note": "US car rental (Enterprise group). Emerald Club members (free) pick any car in the aisle. Discounts come from corporate codes.",
+   "note_zh": "美國租車公司（Enterprise 集團）。免費 Emerald Club 會員可在停車場自選車輛。折扣多來自公司碼。",
+   "color": [
+    "#00714a",
+    "#004d32"
+   ],
+   "cats": [
+    "Car rental"
+   ]
+  },
+  "turo": {
+   "name": "Turo",
+   "checked": "2026-10-27",
+   "note": "Rent cars from private owners in the US, UK and other countries. First-trip credits are referral-based; check the insurance level.",
+   "note_zh": "在美國、英國等地向私人車主租車。首程優惠多是推薦獎賞；留意保險級別。",
+   "color": [
+    "#593cfb",
+    "#3e25c7"
+   ],
+   "cats": [
+    "Car rental"
+   ]
+  },
+  "nationalexpress": {
+   "name": "National Express",
+   "checked": "2026-10-27",
+   "note": "UK coaches between cities and airports. Fun Fares from £5 and coachcards (young person, senior) save more than codes.",
+   "note_zh": "英國城市及機場之間的長途巴士。£5 起的 Fun Fares 及優惠卡（青年、長者）比優惠碼更省。",
+   "color": [
+    "#d6001c",
+    "#a30015"
+   ],
+   "cats": [
+    "Travel extras"
+   ]
+  },
+  "amtrak": {
+   "name": "Amtrak",
+   "checked": "2026-10-27",
+   "note": "US trains. Saver fares, Share Fares for groups and the USA Rail Pass are the main ways to save; codes appear in seasonal sales.",
+   "note_zh": "美國火車。Saver 票價、團體 Share Fares 及 USA Rail Pass 是主要省錢方法；季節性減價時會有優惠碼。",
+   "color": [
+    "#004b87",
+    "#003359"
+   ],
+   "cats": [
+    "Travel extras"
+   ]
+  },
+  "ebay": {
+   "name": "eBay",
+   "checked": "2026-10-27",
+   "note": "eBay runs sitewide codes a few times a month (often with a cap and minimum spend). Many sellers ship to HK; check import charges.",
+   "note_zh": "eBay 每月有數次全站優惠碼（通常有上限及最低消費）。很多賣家寄香港；留意進口費用。",
+   "color": [
+    "#e53238",
+    "#0064d2"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "argos": {
+   "name": "Argos",
+   "checked": "2026-10-27",
+   "note": "UK catalogue store. Codes are uncommon; deals come from price drops and multi-buy offers. Delivers in the UK only.",
+   "note_zh": "英國目錄店。優惠碼不常見，折扣多是減價及多買優惠。只送英國。",
+   "color": [
+    "#e40a2d",
+    "#b00822"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "johnlewis": {
+   "name": "John Lewis",
+   "checked": "2026-10-27",
+   "note": "UK department store with a price-match promise. Public codes are rare; My John Lewis members get member offers.",
+   "note_zh": "英國百貨公司，承諾價格匹配。公開優惠碼很少；My John Lewis 會員可享會員優惠。",
+   "color": [
+    "#1c1c1c",
+    "#000000"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "next": {
+   "name": "Next",
+   "checked": "2026-10-27",
+   "note": "UK fashion and homeware that ships to Hong Kong. Codes are rare outside the big seasonal sales.",
+   "note_zh": "可寄香港的英國時裝及家品店。除大型季節性減價外，很少有優惠碼。",
+   "color": [
+    "#1a1a1a",
+    "#000000"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "boots": {
+   "name": "Boots",
+   "checked": "2026-10-27",
+   "note": "UK pharmacy and beauty. Advantage Card points and 3-for-2 offers beat most codes. Some items ship internationally.",
+   "note_zh": "英國藥房及美容店。Advantage Card 積分及「買三付二」通常比優惠碼更划算。部分貨品可寄海外。",
+   "color": [
+    "#05054b",
+    "#03032e"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "walmart": {
+   "name": "Walmart",
+   "checked": "2026-10-27",
+   "note": "US retailer. Codes are rare; Walmart+ gives free delivery, and Rollbacks are its built-in price cuts. Ships within the US.",
+   "note_zh": "美國零售商。優惠碼很少；Walmart+ 可免運費，Rollback 是內置減價。只送美國。",
+   "color": [
+    "#0071dc",
+    "#004f9a",
+    "#ffc220"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "target": {
+   "name": "Target",
+   "checked": "2026-10-27",
+   "note": "US retailer. Target Circle (free) gives app coupons and a birthday reward. Ships within the US.",
+   "note_zh": "美國零售商。免費 Target Circle 有 App 優惠券及生日獎賞。只送美國。",
+   "color": [
+    "#cc0000",
+    "#990000"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "bestbuy": {
+   "name": "Best Buy",
+   "checked": "2026-10-27",
+   "note": "US electronics store. Codes are rare; open-box items and member deals (My Best Buy) save more.",
+   "note_zh": "美國電器店。優惠碼很少；開箱貨品及會員優惠（My Best Buy）更省。",
+   "color": [
+    "#0046be",
+    "#002f80",
+    "#ffe000"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "macys": {
+   "name": "Macy's",
+   "checked": "2026-10-27",
+   "note": "US department store with frequent sitewide codes during sales. Check the exclusions list; some brands never take codes.",
+   "note_zh": "經常在減價期推出全站優惠碼的美國百貨公司。留意不適用清單，部分品牌從不接受優惠碼。",
+   "color": [
+    "#e21a2c",
+    "#b01422"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "shopee": {
+   "name": "Shopee",
+   "checked": "2026-10-27",
+   "note": "Singapore's biggest marketplace. Vouchers are claimed in the app, and the biggest drops are on double-date sales (9.9, 11.11, 12.12).",
+   "note_zh": "新加坡最大的網購平台。優惠券在 App 內領取，雙數日子大減價（9.9、11.11、12.12）最多。",
+   "color": [
+    "#ee4d2d",
+    "#c23a1f"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "lazada": {
+   "name": "Lazada",
+   "checked": "2026-10-27",
+   "note": "Southeast Asian marketplace (Alibaba group). Collect vouchers in the app before checkout; stack store and platform vouchers.",
+   "note_zh": "東南亞網購平台（阿里巴巴集團）。結帳前在 App 領取優惠券，可疊加店舖及平台優惠券。",
+   "color": [
+    "#0f146d",
+    "#f57224"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "qoo10": {
+   "name": "Qoo10",
+   "checked": "2026-10-27",
+   "note": "Marketplace popular in Singapore for Korean and Japanese goods. Daily cart coupons are claimed in the app.",
+   "note_zh": "在新加坡流行的網購平台，主打韓日貨品。每日購物車優惠券在 App 內領取。",
+   "color": [
+    "#ff0d35",
+    "#c80a29"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "lyft": {
+   "name": "Lyft",
+   "checked": "2026-10-27",
+   "note": "Rides in the US and Canada. New-rider codes go under Promos in the app; they only work on a new account.",
+   "note_zh": "美國及加拿大的叫車平台。新乘客優惠碼在 App「Promos」輸入，只限新帳戶。",
+   "color": [
+    "#ff00bf",
+    "#c40093"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "justeat": {
+   "name": "Just Eat",
+   "checked": "2026-10-27",
+   "note": "Food delivery in the UK and Europe. Codes go in the basket; many are restaurant-specific.",
+   "note_zh": "英國及歐洲的外賣平台。在購物車輸入優惠碼，很多只限指定餐廳。",
+   "color": [
+    "#ff8000",
+    "#d96c00"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "openrice": {
+   "name": "OpenRice",
+   "checked": "2026-10-27",
+   "note": "Hong Kong restaurant guide with table booking. Deals are booking offers and vouchers shown on each restaurant page, not codes.",
+   "note_zh": "香港餐廳指南，可訂枱。優惠是各餐廳頁面上的訂座優惠及現金券，不是優惠碼。",
+   "color": [
+    "#ffc600",
+    "#e0ad00",
+    "#1a1400"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "chope": {
+   "name": "Chope",
+   "checked": "2026-10-27",
+   "note": "Restaurant booking in Hong Kong and Singapore. ChopeDeals sells discounted dining vouchers in the app.",
+   "note_zh": "香港及新加坡的餐廳訂座平台。ChopeDeals 在 App 內出售折扣餐飲券。",
+   "color": [
+    "#e12d39",
+    "#b0232c"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "lalamove": {
+   "name": "Lalamove",
+   "checked": "2026-10-27",
+   "note": "Same-day van and courier delivery in Hong Kong and Asia. First-order codes go in the app before you place the order.",
+   "note_zh": "香港及亞洲的即日貨車及速遞服務。首單優惠碼在落單前於 App 輸入。",
+   "color": [
+    "#f16622",
+    "#c4501a"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "freenow": {
+   "name": "FREENOW",
+   "checked": "2026-10-27",
+   "note": "Taxi and ride app in London and other European cities. First-ride codes need a new account.",
+   "note_zh": "倫敦及歐洲多個城市的的士及叫車 App。首程優惠碼需新帳戶。",
+   "color": [
+    "#c70036",
+    "#940028"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "grubhub": {
+   "name": "Grubhub",
+   "checked": "2026-10-27",
+   "note": "US food delivery. Codes go in checkout; Grubhub+ gives free delivery and is free for Amazon Prime members in the US.",
+   "note_zh": "美國外賣平台。在結帳時輸入優惠碼；Grubhub+ 可免運費，美國 Amazon Prime 會員免費使用。",
+   "color": [
+    "#ff8000",
+    "#d96c00"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "instacart": {
+   "name": "Instacart",
+   "checked": "2026-10-27",
+   "note": "US and Canada grocery delivery. First-order codes and Instacart+ trials are common.",
+   "note_zh": "美國及加拿大的雜貨送遞平台。常有首單優惠碼及 Instacart+ 試用。",
+   "color": [
+    "#43b02a",
+    "#2f7d1d"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "gojek": {
+   "name": "Gojek",
+   "checked": "2026-10-27",
+   "note": "Rides in Singapore and Indonesia. Promos are added under Vouchers in the app.",
+   "note_zh": "新加坡及印尼的叫車平台。優惠在 App「Vouchers」加入。",
+   "color": [
+    "#00aa13",
+    "#00800e"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "tada": {
+   "name": "TADA",
+   "checked": "2026-10-27",
+   "note": "Singapore ride app with no commission on drivers, often cheaper at peak times. Promo codes go in the app.",
+   "note_zh": "新加坡叫車 App，不向司機抽佣，繁忙時間通常較便宜。在 App 內輸入優惠碼。",
+   "color": [
+    "#0f0f0f",
+    "#000000",
+    "#ffcc00"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "stubhub": {
+   "name": "StubHub",
+   "checked": "2026-10-27",
+   "note": "Resale marketplace for concert, sports and theatre tickets. Codes are rare; compare the total price with fees.",
+   "note_zh": "演唱會、體育及劇場門票轉售平台。優惠碼很少；比較連手續費的總價。",
+   "color": [
+    "#3f1d74",
+    "#29124d"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "urbtix": {
+   "name": "URBTIX",
+   "checked": "2026-10-27",
+   "note": "Hong Kong's government ticketing for shows and events at public venues. Concessions (students, seniors) are the main discounts.",
+   "note_zh": "香港政府的公營場地表演及活動票務系統。主要折扣是優惠票（學生、長者）。",
+   "color": [
+    "#00609c",
+    "#00426b"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "hkticketing": {
+   "name": "HK Ticketing",
+   "checked": "2026-10-27",
+   "note": "Hong Kong ticketing for concerts, theatre and exhibitions. Bank cards get priority booking and occasional discounts.",
+   "note_zh": "香港演唱會、劇場及展覽票務網站。銀行卡持有人可優先訂票，不時有折扣。",
+   "color": [
+    "#e60012",
+    "#b0000e"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "seetickets": {
+   "name": "See Tickets",
+   "checked": "2026-10-27",
+   "note": "UK ticketing for gigs, festivals and theatre. No public codes; sign up for presale alerts.",
+   "note_zh": "英國音樂會、音樂節及劇場票務網站。沒有公開優惠碼；可登記預售通知。",
+   "color": [
+    "#00a7e1",
+    "#0078a3"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "seatgeek": {
+   "name": "SeatGeek",
+   "checked": "2026-10-27",
+   "note": "US ticket marketplace. First-purchase codes appear for new accounts; Deal Score shows good-value seats.",
+   "note_zh": "美國門票平台。新帳戶有首次購買優惠碼；Deal Score 顯示性價比高的座位。",
+   "color": [
+    "#ff5b49",
+    "#d13f2f"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "sistic": {
+   "name": "SISTIC",
+   "checked": "2026-10-27",
+   "note": "Singapore's main ticketing site for concerts and shows. Bank card presales and discounts are the usual deals.",
+   "note_zh": "新加坡主要的演唱會及表演票務網站。常見優惠是銀行卡預售及折扣。",
+   "color": [
+    "#e4007c",
+    "#b00060"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "pelago": {
+   "name": "Pelago",
+   "checked": "2026-10-27",
+   "note": "Singapore Airlines' tours and activities app. Codes are frequent for KrisFlyer members and new users.",
+   "note_zh": "新加坡航空旗下的旅遊活動 App。KrisFlyer 會員及新用戶經常有優惠碼。",
+   "color": [
+    "#7a2bf5",
+    "#5a1cc0"
    ],
    "cats": [
     "Activities"
@@ -6504,27 +7177,6 @@
   {
    "site": "kiwi",
    "cat": "Flights",
-   "big": "10%",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "2024KIWIFLY"
-   ],
-   "kind": "code",
-   "desc": "With this coupon code, you can get 10% off on eligible Kiwi.com purchases.",
-   "desc_zh": "With this coupon code, you can get 10% off on eligible Kiwi.com purchases.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/kiwicom",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "kiwi",
-   "cat": "Flights",
    "big": "$20",
    "title": "Use this promo code to get $20 off storewide at Kiwi.com.",
    "title_zh": "Use this promo code to get $20 off storewide at Kiwi.com.",
@@ -6534,70 +7186,6 @@
    "kind": "code",
    "desc": "Listed on dealhack.com.",
    "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/kiwicom",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "kiwi",
-   "cat": "Flights",
-   "big": "New",
-   "title": "before this offer applies.",
-   "title_zh": "before this offer applies.",
-   "codes": [
-    "KIWI15ADMITAD"
-   ],
-   "kind": "code",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/kiwicom",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "kiwi",
-   "cat": "Flights",
-   "big": "10%",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "SUMMER24KIWI"
-   ],
-   "kind": "code",
-   "desc": "Shop Kiwi.com and save 10% on eligible purchases with this coupon code.",
-   "desc_zh": "Shop Kiwi.com and save 10% on eligible purchases with this coupon code.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/kiwicom",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "kiwi",
-   "cat": "Flights",
-   "big": "15%",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "KIWI15GSG"
-   ],
-   "kind": "code",
-   "desc": "Save 15% on eligible purchases at Kiwi.com when you check out using this code.",
-   "desc_zh": "Save 15% on eligible purchases at Kiwi.com when you check out using this code.",
    "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
    "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
    "expires": null,
@@ -6650,71 +7238,6 @@
    "lastSeen": "2026-10-27"
   },
   {
-   "site": "europcar",
-   "cat": "Car rental",
-   "big": "New",
-   "title": "median discount",
-   "title_zh": "median discount",
-   "codes": [
-    "MISSYOU15US2026A",
-    "HAPPY10GB2026A"
-   ],
-   "kind": "code",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/europcar",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "europcar",
-   "cat": "Car rental",
-   "big": "1%",
-   "title": "1% of the cart",
-   "title_zh": "1% of the cart",
-   "codes": [
-    "PAYDAY30"
-   ],
-   "kind": "code",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/europcar",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "europcar",
-   "cat": "Car rental",
-   "big": "15%",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "MISSYOU15EUR"
-   ],
-   "kind": "code",
-   "desc": "Apply this coupon code to save up to 15% on eligible Europcar bookings.",
-   "desc_zh": "Apply this coupon code to save up to 15% on eligible Europcar bookings.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/europcar",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
    "site": "avis",
    "cat": "Car rental",
    "big": "New",
@@ -6739,27 +7262,6 @@
   {
    "site": "avis",
    "cat": "Car rental",
-   "big": "$15",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "MUWA010"
-   ],
-   "kind": "code",
-   "desc": "Use the code for $15 off base time and mileage charges on rentals of at least 3 days with a $175 minimum base spend. Cannot be combined with other coupons or offers.",
-   "desc_zh": "Use the code for $15 off base time and mileage charges on rentals of at least 3 days with a $175 minimum base spend. Cannot be combined with other coupons or offers.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/avis",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "avis",
-   "cat": "Car rental",
    "big": "New",
    "title": "Offer Evidence",
    "title_zh": "Offer Evidence",
@@ -6769,134 +7271,6 @@
    "kind": "code",
    "desc": "Listed on dealhack.com.",
    "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/avis",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "avis",
-   "cat": "Car rental",
-   "big": "30%",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "S169100"
-   ],
-   "kind": "code",
-   "desc": "Use the code to save up to 30% on already discounted rates, with savings applied to time and mileage charges. Rentals must begin by the offer end date. Not combinable with other AWD numbers, promotion",
-   "desc_zh": "Use the code to save up to 30% on already discounted rates, with savings applied to time and mileage charges. Rentals must begin by the offer end date. Not combinable with other AWD numbers, promotion",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/avis",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "avis",
-   "cat": "Car rental",
-   "big": "35%",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "A349300"
-   ],
-   "kind": "code",
-   "desc": "For eligible October rentals, use the code to save up to 35% on non-discounted rates, while Avis donates 10% of the rental base rate to Susan G. Komen. Weekly rentals require at least five days. Parti",
-   "desc_zh": "For eligible October rentals, use the code to save up to 35% on non-discounted rates, while Avis donates 10% of the rental base rate to Susan G. Komen. Weekly rentals require at least five days. Parti",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/avis",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "avis",
-   "cat": "Car rental",
-   "big": "5%",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "H749900"
-   ],
-   "kind": "code",
-   "desc": "Use the code on eligible Pay Now leisure weekly and weekend rates, and Avis donates 5% of the rental base rate to Make-A-Wish. Weekly rentals require a five-day minimum. Participating locations, vehic",
-   "desc_zh": "Use the code on eligible Pay Now leisure weekly and weekend rates, and Avis donates 5% of the rental base rate to Make-A-Wish. Weekly rentals require a five-day minimum. Participating locations, vehic",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/avis",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "avis",
-   "cat": "Car rental",
-   "big": "New",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "K348200"
-   ],
-   "kind": "code",
-   "desc": "Use the code to save on eligible time and mileage charges at participating local Avis locations in the U.S. and Canada. Cannot be combined with another AWD number, promotion, or offer.",
-   "desc_zh": "Use the code to save on eligible time and mileage charges at participating local Avis locations in the U.S. and Canada. Cannot be combined with another AWD number, promotion, or offer.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/avis",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "avis",
-   "cat": "Car rental",
-   "big": "35%",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "A359807"
-   ],
-   "kind": "code",
-   "desc": "Use the code for up to 35% off Pay Now rates or up to 30% off Pay Later rates at participating locations. AARP membership verification is required, and exclusions, blackout dates, and availability res",
-   "desc_zh": "Use the code for up to 35% off Pay Now rates or up to 30% off Pay Later rates at participating locations. AARP membership verification is required, and exclusions, blackout dates, and availability res",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/avis",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "avis",
-   "cat": "Car rental",
-   "big": "New",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "UUWA036"
-   ],
-   "kind": "code",
-   "desc": "Use the code for a one-time upgrade from an intermediate through full-size four-door car, up to premium, subject to availability. Reserve at least 24 hours in advance. Cannot be combined with another ",
-   "desc_zh": "Use the code for a one-time upgrade from an intermediate through full-size four-door car, up to premium, subject to availability. Reserve at least 24 hours in advance. Cannot be combined with another ",
    "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
    "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
    "expires": null,
@@ -6930,27 +7304,6 @@
    "big_zh": "新"
   },
   {
-   "site": "hertz",
-   "cat": "Car rental",
-   "big": "$50",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "BLACKFRIDAY50"
-   ],
-   "kind": "code",
-   "desc": "Use promo code BLACKFRIDAY50 to save up to $50 on eligible domestic and international flights from the USA for one economy traveler. Travel November 29December 13, 2026.",
-   "desc_zh": "Use promo code BLACKFRIDAY50 to save up to $50 on eligible domestic and international flights from the USA for one economy traveler. Travel November 29December 13, 2026.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": "2026-12-13",
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/hertz",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
    "site": "expedia",
    "cat": "Hotels",
    "big": "New",
@@ -6972,69 +7325,6 @@
    "firstSeen": "2026-10-27",
    "lastSeen": "2026-10-27",
    "big_zh": "新"
-  },
-  {
-   "site": "expedia",
-   "cat": "Hotels",
-   "big": "8%",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "CFJULY8"
-   ],
-   "kind": "code",
-   "desc": "Enjoy 8% off select hotel stays at Expedia with this exclusive promo code.",
-   "desc_zh": "Enjoy 8% off select hotel stays at Expedia with this exclusive promo code.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/expedia",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "expedia",
-   "cat": "Hotels",
-   "big": "8%",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "CFAUGUST8"
-   ],
-   "kind": "code",
-   "desc": "Take 8% off select hotels at Expedia when you check out using this code.",
-   "desc_zh": "Take 8% off select hotels at Expedia when you check out using this code.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/expedia",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "expedia",
-   "cat": "Hotels",
-   "big": "10%",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "codes": [
-    "CFVEGAS10"
-   ],
-   "kind": "code",
-   "desc": "Unlock 10% off your Las Vegas hotel booking at Expedia with this exclusive promo code.",
-   "desc_zh": "Unlock 10% off your Las Vegas hotel booking at Expedia with this exclusive promo code.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/expedia",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
   },
   {
    "site": "googleflights",
@@ -7225,159 +7515,6 @@
    "big_zh": "新"
   },
   {
-   "site": "marriott",
-   "cat": "Hotels",
-   "big": "New",
-   "codes": [
-    "E0030"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Marriott Bonvoy members can book the Continent US/CAN Promotion 1 Member rate with code E0030 to receive a discounted member-only rate on eligible stays at participating Marriott hotels in the United ",
-   "desc_zh": "Marriott Bonvoy members can book the Continent US/CAN Promotion 1 Member rate with code E0030 to receive a discounted member-only rate on eligible stays at participating Marriott hotels in the United ",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": "2027-06-30",
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/marriott",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "marriott",
-   "cat": "Hotels",
-   "big": "New",
-   "codes": [
-    "CARDMEMBER26"
-   ],
-   "kind": "code",
-   "title": "Marriott's website showed",
-   "title_zh": "Marriott's website showed",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/marriott",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "marriott",
-   "cat": "Hotels",
-   "big": "New",
-   "codes": [
-    "E6775"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Book the Waterpark Plus Package at JW Marriott Miami Turnberry Resort & Spa to receive your room plus two additional daily admissions to Tidal Cove Waterpark included in the rate.",
-   "desc_zh": "Book the Waterpark Plus Package at JW Marriott Miami Turnberry Resort & Spa to receive your room plus two additional daily admissions to Tidal Cove Waterpark included in the rate.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/marriott",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "hilton",
-   "cat": "Hotels",
-   "big": "New",
-   "codes": [
-    "HPDPT1",
-    "RPPSG1"
-   ],
-   "kind": "code",
-   "title": "Hilton's website showed",
-   "title_zh": "Hilton's website showed",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/hilton",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "hilton",
-   "cat": "Hotels",
-   "big": "10%",
-   "codes": [
-    "HILTON10"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Enjoy 10% off eligible Hilton purchases when you check out using this code.",
-   "desc_zh": "Enjoy 10% off eligible Hilton purchases when you check out using this code.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/hilton",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "cathay",
-   "cat": "Flights",
-   "big": "New",
-   "codes": [
-    "CXSYF15OFF"
-   ],
-   "kind": "code",
-   "title": "Cathay Pacific's website showed",
-   "title_zh": "Cathay Pacific's website showed",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/cathay-pacific",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "kayak",
-   "cat": "Flights",
-   "big": "15%",
-   "codes": [
-    "TRAVEL15"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Take 15% off qualifying hotel reservations at Kayak with this coupon code.",
-   "desc_zh": "Take 15% off qualifying hotel reservations at Kayak with this coupon code.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/kayak",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
    "site": "kayak",
    "cat": "Flights",
    "big": "25%",
@@ -7424,50 +7561,6 @@
    "cat": "Flights",
    "big": "New",
    "codes": [
-    "DBS50OFF"
-   ],
-   "kind": "code",
-   "title": "99 of 101",
-   "title_zh": "99 of 101",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/singapore-airlines",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "singapore",
-   "cat": "Flights",
-   "big": "New",
-   "codes": [
-    "CITIPRESTIGE60"
-   ],
-   "kind": "code",
-   "title": "18 of 18",
-   "title_zh": "18 of 18",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/singapore-airlines",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "singapore",
-   "cat": "Flights",
-   "big": "New",
-   "codes": [
     "VISASG25OFF",
     "WORTHMORE10"
    ],
@@ -7485,90 +7578,6 @@
    "firstSeen": "2026-10-27",
    "lastSeen": "2026-10-27",
    "big_zh": "新"
-  },
-  {
-   "site": "singapore",
-   "cat": "Flights",
-   "big": "15%",
-   "codes": [
-    "VISASG15"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Get 15% off activities in Singapore when paying with Visa and using this code.",
-   "desc_zh": "Get 15% off activities in Singapore when paying with Visa and using this code.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/singapore-airlines",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "singapore",
-   "cat": "Flights",
-   "big": "20%",
-   "codes": [
-    "TRAVEL20"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Take 20% off eligible Singapore Airlines purchases with this coupon code.",
-   "desc_zh": "Take 20% off eligible Singapore Airlines purchases with this coupon code.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/singapore-airlines",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "singapore",
-   "cat": "Flights",
-   "big": "US$50",
-   "codes": [
-    "SIAVIB50"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Apply this promo code at booking to enjoy USD 50 off the net fare per round-trip Economy Class ticket on Singapore Airlines flights from Vietnam to the USA, Europe, Australia, and New Zealand, valid f",
-   "desc_zh": "Apply this promo code at booking to enjoy USD 50 off the net fare per round-trip Economy Class ticket on Singapore Airlines flights from Vietnam to the USA, Europe, Australia, and New Zealand, valid f",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/singapore-airlines",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "alamo",
-   "cat": "Car rental",
-   "big": "35%",
-   "codes": [
-    "AD2823DJC"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Save Up to 35% on Car Rentals and More by Using This Alamo Coupon Code at Checkout",
-   "desc_zh": "Save Up to 35% on Car Rentals and More by Using This Alamo Coupon Code at Checkout",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/alamo",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
   },
   {
    "site": "alamo",
@@ -7590,117 +7599,6 @@
    "found": "auto",
    "firstSeen": "2026-10-27",
    "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "omio",
-   "cat": "Travel extras",
-   "big": "New",
-   "codes": [
-    "NEW10"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Shoppers who tried it at checkout entered this code in their cart in the last 14 days, each checkout counted once. Shoppers who got the discount are the ones whose cart total went down when the code w",
-   "desc_zh": "Shoppers who tried it at checkout entered this code in their cart in the last 14 days, each checkout counted once. Shoppers who got the discount are the ones whose cart total went down when the code w",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/omio",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "omio",
-   "cat": "Travel extras",
-   "big": "New",
-   "codes": [
-    "APPNEW10"
-   ],
-   "kind": "code",
-   "title": "Omio's website showed",
-   "title_zh": "Omio's website showed",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/omio",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "omio",
-   "cat": "Travel extras",
-   "big": "New",
-   "codes": [
-    "FERRY12",
-    "TRAVELAUS12"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "▸",
-   "desc_zh": "▸",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/omio",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "omio",
-   "cat": "Travel extras",
-   "big": "New",
-   "codes": [
-    "VAIDEOMIO25"
-   ],
-   "kind": "code",
-   "title": "10 of 10",
-   "title_zh": "10 of 10",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/omio",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "omio",
-   "cat": "Travel extras",
-   "big": "New",
-   "codes": [
-    "TRAVELJP12"
-   ],
-   "kind": "code",
-   "title": "across every cart we have seen",
-   "title_zh": "across every cart we have seen",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/omio",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
   },
   {
    "site": "omio",
@@ -7747,90 +7645,6 @@
    "big_zh": "新"
   },
   {
-   "site": "omio",
-   "cat": "Travel extras",
-   "big": "12%",
-   "codes": [
-    "OCTTRAVEL12"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Enjoy 12% off on eligible Omio October trips when you use this promo code.",
-   "desc_zh": "Enjoy 12% off on eligible Omio October trips when you use this promo code.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/omio",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "omio",
-   "cat": "Travel extras",
-   "big": "25%",
-   "codes": [
-    "VEMDEOMIO25"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "New Omio customers can get 25% off bus tickets with destinations in Brazil. Maximum discount of 10 EUR or equivalent currency per booking.",
-   "desc_zh": "New Omio customers can get 25% off bus tickets with destinations in Brazil. Maximum discount of 10 EUR or equivalent currency per booking.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/omio",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "prioritypass",
-   "cat": "Travel extras",
-   "big": "25%",
-   "codes": [
-    "HKTMVSCEMEA12"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Receive 25% off membership plans at Priority Pass when you use this promo code.",
-   "desc_zh": "Receive 25% off membership plans at Priority Pass when you use this promo code.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/priority-pass",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "prioritypass",
-   "cat": "Travel extras",
-   "big": "10%",
-   "codes": [
-    "MGM19PIN"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Apply this promo code to get 10% off on Priority Pass membership plans.",
-   "desc_zh": "Apply this promo code to get 10% off on Priority Pass membership plans.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/priority-pass",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
    "site": "prioritypass",
    "cat": "Travel extras",
    "big": "New",
@@ -7851,259 +7665,6 @@
    "firstSeen": "2026-10-27",
    "lastSeen": "2026-10-27",
    "big_zh": "新"
-  },
-  {
-   "site": "amazon",
-   "cat": "Shopping",
-   "big": "9%",
-   "codes": [
-    "502GQK6V"
-   ],
-   "kind": "code",
-   "title": "9% of the cart",
-   "title_zh": "9% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/amazon",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "amazon",
-   "cat": "Shopping",
-   "big": "31%",
-   "codes": [
-    "HQPRC8K8"
-   ],
-   "kind": "code",
-   "title": "31% of the cart",
-   "title_zh": "31% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/amazon",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "amazon",
-   "cat": "Shopping",
-   "big": "48%",
-   "codes": [
-    "F74UGCAF"
-   ],
-   "kind": "code",
-   "title": "48% of the cart",
-   "title_zh": "48% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/amazon",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "amazon",
-   "cat": "Shopping",
-   "big": "2%",
-   "codes": [
-    "303H3C3O"
-   ],
-   "kind": "code",
-   "title": "2% of the cart",
-   "title_zh": "2% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/amazon",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "amazon",
-   "cat": "Shopping",
-   "big": "New",
-   "codes": [
-    "9SOP9VJV"
-   ],
-   "kind": "code",
-   "title": "4 days ago",
-   "title_zh": "4 days ago",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/amazon",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "amazon",
-   "cat": "Shopping",
-   "big": "70%",
-   "codes": [
-    "EATNOW10"
-   ],
-   "kind": "code",
-   "title": "70% of the cart",
-   "title_zh": "70% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/amazon",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "amazon",
-   "cat": "Shopping",
-   "big": "15%",
-   "codes": [
-    "EXTRA15"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Use code EXTRA15 at checkout for an extra 15% off selected Main Sale Fashion and Beauty items. Brand and other exclusions apply. The official terms do not specify US-site eligibility.",
-   "desc_zh": "Use code EXTRA15 at checkout for an extra 15% off selected Main Sale Fashion and Beauty items. Brand and other exclusions apply. The official terms do not specify US-site eligibility.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/amazon",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "aliexpress",
-   "cat": "Shopping",
-   "big": "$14",
-   "codes": [
-    "SAVING14E"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Use this code to save $14 on eligible US orders of $99 or more. Limit one code per order.",
-   "desc_zh": "Use this code to save $14 on eligible US orders of $99 or more. Limit one code per order.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/aliexpress",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "aliexpress",
-   "cat": "Shopping",
-   "big": "$23",
-   "codes": [
-    "SAVING23E"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Use this code to save $23 on eligible US orders of $169 or more. Limit one code per order.",
-   "desc_zh": "Use this code to save $23 on eligible US orders of $169 or more. Limit one code per order.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/aliexpress",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "aliexpress",
-   "cat": "Shopping",
-   "big": "$40",
-   "codes": [
-    "SAVING40E"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Use this code to save $40 on eligible US orders of $279 or more. Limit one code per order.",
-   "desc_zh": "Use this code to save $40 on eligible US orders of $279 or more. Limit one code per order.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/aliexpress",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "aliexpress",
-   "cat": "Shopping",
-   "big": "$55",
-   "codes": [
-    "SAVING55E"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Use this code to save $55 on eligible US orders of $379 or more. Limit one code per order.",
-   "desc_zh": "Use this code to save $55 on eligible US orders of $379 or more. Limit one code per order.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/aliexpress",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "aliexpress",
-   "cat": "Shopping",
-   "big": "$80",
-   "codes": [
-    "SAVING80E"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Use this code to save $80 on eligible US orders of $559 or more. Limit one code per order.",
-   "desc_zh": "Use this code to save $80 on eligible US orders of $559 or more. Limit one code per order.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/aliexpress",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
   },
   {
    "site": "aliexpress",
@@ -8172,91 +7733,6 @@
    "big_zh": "新"
   },
   {
-   "site": "aliexpress",
-   "cat": "Shopping",
-   "big": "6%",
-   "codes": [
-    "FSPL02"
-   ],
-   "kind": "code",
-   "title": "6% of the cart",
-   "title_zh": "6% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/aliexpress",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "aliexpress",
-   "cat": "Shopping",
-   "big": "10%",
-   "codes": [
-    "ITSC06"
-   ],
-   "kind": "code",
-   "title": "10% of the cart",
-   "title_zh": "10% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/aliexpress",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "aliexpress",
-   "cat": "Shopping",
-   "big": "New",
-   "codes": [
-    "PLSC20"
-   ],
-   "kind": "code",
-   "title": "across every cart we have seen",
-   "title_zh": "across every cart we have seen",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/aliexpress",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "aliexpress",
-   "cat": "Shopping",
-   "big": "9%",
-   "codes": [
-    "PLSC11"
-   ],
-   "kind": "code",
-   "title": "9% of the cart",
-   "title_zh": "9% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/aliexpress",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
    "site": "temu",
    "cat": "Shopping",
    "big": "40%",
@@ -8276,397 +7752,6 @@
    "found": "auto",
    "firstSeen": "2026-10-27",
    "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "temu",
-   "cat": "Shopping",
-   "big": "New",
-   "codes": [
-    "CZNEW30"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Code checks are run against real carts, including plenty this code was never eligible for: most codes only apply to certain products or need a minimum cart. We count the carts it worked on, not the on",
-   "desc_zh": "Code checks are run against real carts, including plenty this code was never eligible for: most codes only apply to certain products or need a minimum cart. We count the carts it worked on, not the on",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/temu",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "temu",
-   "cat": "Shopping",
-   "big": "New",
-   "codes": [
-    "COVE30"
-   ],
-   "kind": "code",
-   "title": "before this offer applies.",
-   "title_zh": "before this offer applies.",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/temu",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "temu",
-   "cat": "Shopping",
-   "big": "95%",
-   "codes": [
-    "ACG822762"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Redeem This Temu Coupon for Up to 95% Off and a $200 Bundle for New Users Only",
-   "desc_zh": "Redeem This Temu Coupon for Up to 95% Off and a $200 Bundle for New Users Only",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/temu",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "temu",
-   "cat": "Shopping",
-   "big": "10%",
-   "codes": [
-    "USNEW10"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Score 10% off on your first order at Temu when you add this promo code to your cart.",
-   "desc_zh": "Score 10% off on your first order at Temu when you add this promo code to your cart.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/temu",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "temu",
-   "cat": "Shopping",
-   "big": "$100",
-   "codes": [
-    "ALG429581"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Use this coupon code to receive a $100 off coupon bundle on the Temu app.",
-   "desc_zh": "Use this coupon code to receive a $100 off coupon bundle on the Temu app.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/temu",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "shein",
-   "cat": "Shopping",
-   "big": "$2,598.42",
-   "codes": [
-    "INAS7"
-   ],
-   "kind": "code",
-   "title": "$2,598.42",
-   "title_zh": "$2,598.42",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/shein",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "shein",
-   "cat": "Shopping",
-   "big": "13%",
-   "codes": [
-    "USU090906SSVN"
-   ],
-   "kind": "code",
-   "title": "13% of the cart",
-   "title_zh": "13% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/shein",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "shein",
-   "cat": "Shopping",
-   "big": "New",
-   "codes": [
-    "USHT0916ZS09MCZQ"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "✕",
-   "desc_zh": "✕",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/shein",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "shein",
-   "cat": "Shopping",
-   "big": "New",
-   "codes": [
-    "CA2026",
-    "LNBOBO3859"
-   ],
-   "kind": "code",
-   "title": "in the last 14 days",
-   "title_zh": "in the last 14 days",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/shein",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "shein",
-   "cat": "Shopping",
-   "big": "$3,995.32",
-   "codes": [
-    "BARBIEVIITA1150"
-   ],
-   "kind": "code",
-   "title": "$3,995.32",
-   "title_zh": "$3,995.32",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/shein",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "shein",
-   "cat": "Shopping",
-   "big": "7%",
-   "codes": [
-    "USHT0914ZS13"
-   ],
-   "kind": "code",
-   "title": "7% of the cart",
-   "title_zh": "7% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/shein",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "shein",
-   "cat": "Shopping",
-   "big": "New",
-   "codes": [
-    "NEWONLY30",
-    "US24J2"
-   ],
-   "kind": "code",
-   "title": "before this offer applies.",
-   "title_zh": "before this offer applies.",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/shein",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "farfetch",
-   "cat": "Shopping",
-   "big": "New",
-   "codes": [
-    "NC15FF",
-    "NC10FF"
-   ],
-   "kind": "code",
-   "title": "Farfetch's website showed",
-   "title_zh": "Farfetch's website showed",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/farfetch",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "farfetch",
-   "cat": "Shopping",
-   "big": "55%",
-   "codes": [
-    "APP15"
-   ],
-   "kind": "code",
-   "title": "55% of the cart",
-   "title_zh": "55% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/farfetch",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "farfetch",
-   "cat": "Shopping",
-   "big": "15%",
-   "codes": [
-    "FORYOU15",
-    "GET15"
-   ],
-   "kind": "code",
-   "title": "15% of the cart",
-   "title_zh": "15% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/farfetch",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "farfetch",
-   "cat": "Shopping",
-   "big": "New",
-   "codes": [
-    "GET10"
-   ],
-   "kind": "code",
-   "title": "median discount",
-   "title_zh": "median discount",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/farfetch",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "farfetch",
-   "cat": "Shopping",
-   "big": "New",
-   "codes": [
-    "FORYOU10"
-   ],
-   "kind": "code",
-   "title": "13 of 13",
-   "title_zh": "13 of 13",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/farfetch",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "farfetch",
-   "cat": "Shopping",
-   "big": "New",
-   "codes": [
-    "APP10"
-   ],
-   "kind": "code",
-   "title": "verification details",
-   "title_zh": "verification details",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/farfetch",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
   },
   {
    "site": "selfridges",
@@ -8690,27 +7775,6 @@
    "firstSeen": "2026-10-27",
    "lastSeen": "2026-10-27",
    "big_zh": "新"
-  },
-  {
-   "site": "selfridges",
-   "cat": "Shopping",
-   "big": "20%",
-   "codes": [
-    "AUT44EVE"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Get 20% off Jaeger and Boutique by Jaeger at Selfridges with this promo code.",
-   "desc_zh": "Get 20% off Jaeger and Boutique by Jaeger at Selfridges with this promo code.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/selfridges",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
   },
   {
    "site": "uber",
@@ -8754,97 +7818,6 @@
    "found": "auto",
    "firstSeen": "2026-10-27",
    "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "doordash",
-   "cat": "Food & rides",
-   "big": "New",
-   "codes": [
-    "20OFF7E",
-    "BITE25",
-    "COSTCO20",
-    "40X2DASH"
-   ],
-   "kind": "code",
-   "title": "across every cart we have seen",
-   "title_zh": "across every cart we have seen",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/doordash",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "doordash",
-   "cat": "Food & rides",
-   "big": "New",
-   "codes": [
-    "ZQ4M3F",
-    "YOURDP40"
-   ],
-   "kind": "code",
-   "title": "DoorDash's website showed",
-   "title_zh": "DoorDash's website showed",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/doordash",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "doordash",
-   "cat": "Food & rides",
-   "big": "$3,588.31",
-   "codes": [
-    "YOUGOT40"
-   ],
-   "kind": "code",
-   "title": "$3,588.31",
-   "title_zh": "$3,588.31",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/doordash",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "doordash",
-   "cat": "Food & rides",
-   "big": "New",
-   "codes": [
-    "MORE30"
-   ],
-   "kind": "code",
-   "title": "5 days ago",
-   "title_zh": "5 days ago",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/doordash",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
   },
   {
    "site": "getyourguide",
@@ -8934,93 +7907,6 @@
    "lastSeen": "2026-10-27"
   },
   {
-   "site": "getyourguide",
-   "cat": "Activities",
-   "big": "10%",
-   "codes": [
-    "AMEX10SUMMER26",
-    "NKQQ-WN74-ZCQ4"
-   ],
-   "kind": "code",
-   "title": "10% of the cart",
-   "title_zh": "10% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/getyourguide",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "viator",
-   "cat": "Activities",
-   "big": "New",
-   "codes": [
-    "FORA4"
-   ],
-   "kind": "code",
-   "title": "median discount",
-   "title_zh": "median discount",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/viator",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "viator",
-   "cat": "Activities",
-   "big": "New",
-   "codes": [
-    "BFF15PERK"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Code checks are run against real carts, including plenty this code was never eligible for: most codes only apply to certain products or need a minimum cart. We count the carts it worked on, not the on",
-   "desc_zh": "Code checks are run against real carts, including plenty this code was never eligible for: most codes only apply to certain products or need a minimum cart. We count the carts it worked on, not the on",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/viator",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "viator",
-   "cat": "Activities",
-   "big": "$33,700.57",
-   "codes": [
-    "DEACVI2510"
-   ],
-   "kind": "code",
-   "title": "$33,700.57",
-   "title_zh": "$33,700.57",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/viator",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
    "site": "viator",
    "cat": "Activities",
    "big": "15%",
@@ -9065,69 +7951,6 @@
    "big_zh": "新"
   },
   {
-   "site": "ticketmaster",
-   "cat": "Activities",
-   "big": "$15",
-   "codes": [
-    "EARTH15"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Shop tickets and you can save $15 on your order when using this Ticketmaster promo code.",
-   "desc_zh": "Shop tickets and you can save $15 on your order when using this Ticketmaster promo code.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/ticketmaster",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "ticketmaster",
-   "cat": "Activities",
-   "big": "25%",
-   "codes": [
-    "RSAFF2"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Enjoy saving 25% off on your purchase when using this Ticketmaster discount code at checkout.",
-   "desc_zh": "Enjoy saving 25% off on your purchase when using this Ticketmaster discount code at checkout.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/ticketmaster",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "ticketmaster",
-   "cat": "Activities",
-   "big": "$10",
-   "codes": [
-    "SAFEOPT10"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Shop and take $10 off Ticketmaster order using this discount code on your cart.",
-   "desc_zh": "Shop and take $10 off Ticketmaster order using this discount code on your cart.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/ticketmaster",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
    "site": "tiqets",
    "cat": "Activities",
    "big": "New",
@@ -9137,73 +7960,6 @@
    "kind": "code",
    "title": "shoppers tried it at checkout",
    "title_zh": "shoppers tried it at checkout",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/tiqets",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "tiqets",
-   "cat": "Activities",
-   "big": "New",
-   "codes": [
-    "5OFFZOO"
-   ],
-   "kind": "code",
-   "title": "before this offer applies.",
-   "title_zh": "before this offer applies.",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/tiqets",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "tiqets",
-   "cat": "Activities",
-   "big": "New",
-   "codes": [
-    "WEWARD10",
-    "ADMITCITY10"
-   ],
-   "kind": "code",
-   "title": "Tiqets's website showed",
-   "title_zh": "Tiqets's website showed",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/tiqets",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "tiqets",
-   "cat": "Activities",
-   "big": "New",
-   "codes": [
-    "TRANSFERS5"
-   ],
-   "kind": "code",
-   "title": "347 of 353",
-   "title_zh": "347 of 353",
    "desc": "Listed on dealhack.com.",
    "desc_zh": "列於 dealhack.com。",
    "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
@@ -9243,28 +7999,6 @@
    "cat": "Activities",
    "big": "New",
    "codes": [
-    "TIQETSBLC8"
-   ],
-   "kind": "code",
-   "title": "in the last 14 days",
-   "title_zh": "in the last 14 days",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/tiqets",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "tiqets",
-   "cat": "Activities",
-   "big": "New",
-   "codes": [
     "CHECKOUT5"
    ],
    "kind": "code",
@@ -9281,69 +8015,6 @@
    "firstSeen": "2026-10-27",
    "lastSeen": "2026-10-27",
    "big_zh": "新"
-  },
-  {
-   "site": "tiqets",
-   "cat": "Activities",
-   "big": "8%",
-   "codes": [
-    "FULLI8"
-   ],
-   "kind": "code",
-   "title": "8% of the cart",
-   "title_zh": "8% of the cart",
-   "desc": "Listed on dealhack.com.",
-   "desc_zh": "列於 dealhack.com。",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/tiqets",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "tiqets",
-   "cat": "Activities",
-   "big": "10%",
-   "codes": [
-    "SWEATCOIN10"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Use code to save 10% on a curated selection of Tiqets attractions around the world, excluding city passes and bundles.",
-   "desc_zh": "Use code to save 10% on a curated selection of Tiqets attractions around the world, excluding city passes and bundles.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/tiqets",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
-  },
-  {
-   "site": "headout",
-   "cat": "Activities",
-   "big": "10%",
-   "codes": [
-    "GONIYO10OFF"
-   ],
-   "kind": "code",
-   "title": "New code found on dealhack.com",
-   "title_zh": "在 dealhack.com 找到的新優惠碼",
-   "desc": "Flat 10% discount on eligible Thailand attractions for verified Niyo customers. Apply the code at checkout.",
-   "desc_zh": "Flat 10% discount on eligible Thailand attractions for verified Niyo customers. Apply the code at checkout.",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://dealhack.com/coupons/headout",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27"
   },
   {
    "site": "cathay",
@@ -9369,28 +8040,6 @@
   {
    "site": "hkexpress",
    "cat": "Flights",
-   "big": "New",
-   "codes": [
-    "HSBCUO26"
-   ],
-   "kind": "code",
-   "title": "New code found on redhotoffers.hsbc.com.hk",
-   "title_zh": "在 redhotoffers.hsbc.com.hk 找到的新優惠碼",
-   "desc": ") or mobile app with the designated promo code 'HSBCUO26' to enjoy the following offer:",
-   "desc_zh": ") or mobile app with the designated promo code 'HSBCUO26' to enjoy the following offer:",
-   "cond": "Found automatically on 2026-10-27. Not tried at checkout yet, and the conditions may be in the source text.",
-   "cond_zh": "於 2026-10-27 自動找到，尚未在結帳測試，使用條件請看來源原文。",
-   "expires": null,
-   "status": "unconfirmed",
-   "src": "https://www.redhotoffers.hsbc.com.hk/en/latest-offers/red-hot-travel-special/travel-offers/",
-   "found": "auto",
-   "firstSeen": "2026-10-27",
-   "lastSeen": "2026-10-27",
-   "big_zh": "新"
-  },
-  {
-   "site": "hkexpress",
-   "cat": "Flights",
    "big": "5%",
    "codes": [
     "H5RCI"
@@ -9409,5 +8058,411 @@
    "firstSeen": "2026-10-27",
    "lastSeen": "2026-10-27"
   }
- ]
+ ],
+ "regions": {
+  "world": {
+   "Hotels": [
+    "booking",
+    "agoda",
+    "expedia",
+    "airbnb",
+    "hotelscom",
+    "trip",
+    "marriott",
+    "hilton",
+    "ihg",
+    "accor"
+   ],
+   "Flights": [
+    "skyscanner",
+    "googleflights",
+    "trip",
+    "expedia",
+    "kayak",
+    "kiwi",
+    "opodo",
+    "emirates",
+    "qatar",
+    "singapore"
+   ],
+   "Car rental": [
+    "hertz",
+    "avis",
+    "enterprise",
+    "europcar",
+    "sixt",
+    "budget",
+    "rentalcars",
+    "discovercars",
+    "alamo",
+    "trip"
+   ],
+   "Travel extras": [
+    "airalo",
+    "holafly",
+    "klook",
+    "trainline",
+    "omio",
+    "raileurope",
+    "twelvego",
+    "prioritypass",
+    "welcomepickups",
+    "safetywing"
+   ],
+   "Shopping": [
+    "amazon",
+    "aliexpress",
+    "temu",
+    "shein",
+    "taobao",
+    "ebay",
+    "iherb",
+    "farfetch",
+    "asos",
+    "selfridges"
+   ],
+   "Food & rides": [
+    "uber",
+    "ubereats",
+    "grab",
+    "didi",
+    "doordash",
+    "deliveroo",
+    "bolt",
+    "foodpanda",
+    "lyft",
+    "justeat"
+   ],
+   "Activities": [
+    "getyourguide",
+    "viator",
+    "klook",
+    "kkday",
+    "tiqets",
+    "headout",
+    "ticketmaster",
+    "stubhub",
+    "trip",
+    "expedia"
+   ]
+  },
+  "hk": {
+   "Hotels": [
+    "booking",
+    "agoda",
+    "trip",
+    "expedia",
+    "hotelscom",
+    "airbnb",
+    "klook",
+    "marriott",
+    "hilton",
+    "ihg"
+   ],
+   "Flights": [
+    "trip",
+    "skyscanner",
+    "cathay",
+    "hkexpress",
+    "googleflights",
+    "expedia",
+    "kiwi",
+    "opodo",
+    "kayak",
+    "singapore"
+   ],
+   "Car rental": [
+    "hertz",
+    "avis",
+    "europcar",
+    "sixt",
+    "rentalcars",
+    "discovercars",
+    "trip",
+    "enterprise",
+    "budget",
+    "klook"
+   ],
+   "Travel extras": [
+    "klook",
+    "airalo",
+    "kkday",
+    "holafly",
+    "prioritypass",
+    "trainline",
+    "twelvego",
+    "omio",
+    "raileurope",
+    "safetywing"
+   ],
+   "Shopping": [
+    "hktvmall",
+    "taobao",
+    "amazon",
+    "iherb",
+    "aliexpress",
+    "zalora",
+    "temu",
+    "shein",
+    "watsons",
+    "pns"
+   ],
+   "Food & rides": [
+    "foodpanda",
+    "keeta",
+    "uber",
+    "hktaxi",
+    "didi",
+    "openrice",
+    "chope",
+    "lalamove"
+   ],
+   "Activities": [
+    "klook",
+    "kkday",
+    "trip",
+    "cityline",
+    "urbtix",
+    "hkticketing",
+    "moretickets",
+    "getyourguide",
+    "viator",
+    "tiqets"
+   ]
+  },
+  "uk": {
+   "Hotels": [
+    "booking",
+    "expedia",
+    "hotelscom",
+    "airbnb",
+    "premierinn",
+    "travelodge",
+    "marriott",
+    "hilton",
+    "ihg",
+    "agoda"
+   ],
+   "Flights": [
+    "skyscanner",
+    "ba",
+    "easyjet",
+    "ryanair",
+    "jet2",
+    "googleflights",
+    "kayak",
+    "opodo",
+    "expedia",
+    "kiwi"
+   ],
+   "Car rental": [
+    "enterprise",
+    "hertz",
+    "avis",
+    "europcar",
+    "sixt",
+    "budget",
+    "rentalcars",
+    "discovercars",
+    "alamo",
+    "trip"
+   ],
+   "Travel extras": [
+    "trainline",
+    "airalo",
+    "holafly",
+    "raileurope",
+    "omio",
+    "prioritypass",
+    "safetywing",
+    "welcomepickups",
+    "nationalexpress",
+    "klook"
+   ],
+   "Shopping": [
+    "amazon",
+    "asos",
+    "selfridges",
+    "harrods",
+    "argos",
+    "johnlewis",
+    "next",
+    "boots",
+    "ebay",
+    "shein"
+   ],
+   "Food & rides": [
+    "deliveroo",
+    "justeat",
+    "ubereats",
+    "uber",
+    "bolt",
+    "freenow"
+   ],
+   "Activities": [
+    "ticketmaster",
+    "getyourguide",
+    "viator",
+    "tiqets",
+    "headout",
+    "klook",
+    "stubhub",
+    "seetickets"
+   ]
+  },
+  "us": {
+   "Hotels": [
+    "expedia",
+    "booking",
+    "hotelscom",
+    "airbnb",
+    "marriott",
+    "hilton",
+    "ihg",
+    "priceline",
+    "hyatt",
+    "vrbo"
+   ],
+   "Flights": [
+    "googleflights",
+    "expedia",
+    "kayak",
+    "skyscanner",
+    "delta",
+    "united",
+    "american",
+    "southwest",
+    "priceline",
+    "kiwi"
+   ],
+   "Car rental": [
+    "enterprise",
+    "hertz",
+    "avis",
+    "budget",
+    "alamo",
+    "national",
+    "sixt",
+    "discovercars",
+    "turo"
+   ],
+   "Travel extras": [
+    "airalo",
+    "holafly",
+    "prioritypass",
+    "safetywing",
+    "amtrak",
+    "welcomepickups"
+   ],
+   "Shopping": [
+    "amazon",
+    "walmart",
+    "target",
+    "ebay",
+    "bestbuy",
+    "temu",
+    "shein",
+    "macys",
+    "iherb"
+   ],
+   "Food & rides": [
+    "doordash",
+    "ubereats",
+    "uber",
+    "lyft",
+    "grubhub",
+    "instacart"
+   ],
+   "Activities": [
+    "ticketmaster",
+    "stubhub",
+    "viator",
+    "getyourguide",
+    "headout",
+    "tiqets",
+    "klook",
+    "seatgeek"
+   ]
+  },
+  "sg": {
+   "Hotels": [
+    "agoda",
+    "booking",
+    "trip",
+    "expedia",
+    "hotelscom",
+    "airbnb",
+    "klook",
+    "marriott",
+    "hilton",
+    "ihg"
+   ],
+   "Flights": [
+    "singapore",
+    "scoot",
+    "trip",
+    "skyscanner",
+    "googleflights",
+    "expedia",
+    "jetstar",
+    "kayak",
+    "kiwi",
+    "cathay"
+   ],
+   "Car rental": [
+    "hertz",
+    "avis",
+    "europcar",
+    "sixt",
+    "rentalcars",
+    "discovercars",
+    "trip",
+    "budget",
+    "enterprise",
+    "klook"
+   ],
+   "Travel extras": [
+    "klook",
+    "airalo",
+    "holafly",
+    "kkday",
+    "twelvego",
+    "prioritypass",
+    "safetywing",
+    "trainline",
+    "omio",
+    "raileurope"
+   ],
+   "Shopping": [
+    "shopee",
+    "lazada",
+    "amazon",
+    "taobao",
+    "zalora",
+    "iherb",
+    "temu",
+    "shein",
+    "aliexpress",
+    "qoo10"
+   ],
+   "Food & rides": [
+    "grab",
+    "foodpanda",
+    "deliveroo",
+    "gojek",
+    "tada"
+   ],
+   "Activities": [
+    "klook",
+    "kkday",
+    "sistic",
+    "pelago",
+    "trip",
+    "getyourguide",
+    "viator",
+    "headout",
+    "tiqets"
+   ]
+  }
+ }
 }
