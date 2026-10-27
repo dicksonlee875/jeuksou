@@ -19,7 +19,7 @@ from opencc import OpenCC
 ROOT = Path(__file__).resolve().parent
 _hk2s = OpenCC("hk2s").convert
 # Mainland wording OpenCC doesn't change on its own. Add more pairs here if you spot them.
-PHRASES = {"程式": "程序", "帐户": "账户", "结帐": "结账", "菲林相机": "胶片相机", "电邮": "电子邮件"}
+PHRASES = {"程式": "程序", "帐户": "账户", "结帐": "结账", "菲林相机": "胶片相机", "电邮": "电子邮件", "拣选": "挑选", "连系": "联系"}
 
 
 def t2s(text):
@@ -69,6 +69,11 @@ def add_simplified(data):
             for f in ("scope", "title", "what"):
                 if o.get(f + "_zh"):
                     o[f + "_sc"] = t2s(o[f + "_zh"])
+    for g in data.get("programs", {}).get("programs", []):
+        for o in [g, *g["tiers"], *g["links"]]:
+            for f in ("note", "need", "perks", "title", "what"):
+                if o.get(f + "_zh"):
+                    o[f + "_sc"] = t2s(o[f + "_zh"])
 
 
 def main():
@@ -88,6 +93,10 @@ def main():
     if perks.exists():
         data["perks"] = json.loads(perks.read_text(encoding="utf-8"))
         data["perks"].pop("_help", None)
+    progs = ROOT / "data" / "programs.json"
+    if progs.exists():
+        data["programs"] = json.loads(progs.read_text(encoding="utf-8"))
+        data["programs"].pop("_help", None)
     add_simplified(data)
     add_cats(data)
     html = (ROOT / "template.html").read_text(encoding="utf-8")

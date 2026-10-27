@@ -6,6 +6,7 @@ A Python script that reads public promo-code pages every few days, adds any new 
 sources.json        the pages to read (add or remove pages here)
 data/deals.json     every code: the 119 already in the wallet plus anything new the scraper finds
 data/perks.json     card perks for the Perks tab (Visa Infinite, World Elite, Amex Platinum…), edited by hand
+data/programs.json  hotel and airline programmes for the Perks tab: tiers, point transfers, status links (edited by hand)
 scraper.py          fetches the pages, finds codes and end dates, updates data/deals.json
 build.py            turns data/deals.json into public/index.html (the wallet page)
 template.html       the page design (style, layout, the three languages)
