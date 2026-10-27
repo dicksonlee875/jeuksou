@@ -18,7 +18,12 @@
     "#2f6bff",
     "#1c46d6"
    ],
-   "note_zh": "大部分優惠碼與付款卡或地區掛鈎，先到先得。香港金額以港幣計。在付款頁貼上優惠碼。"
+   "note_zh": "大部分優惠碼與付款卡或地區掛鈎，先到先得。香港金額以港幣計。在付款頁貼上優惠碼。",
+   "cats": [
+    "Car rental",
+    "Flights",
+    "Hotels"
+   ]
   },
   "sbc": {
    "name": "Sicily by Car",
@@ -28,7 +33,10 @@
     "#d97706",
     "#a85a03"
    ],
-   "note_zh": "現時沒有公開優惠。所有有效優惠碼都屬特定團體，取車時櫃枱會要求證明，否則會收原價或拒絕租車。須有主司機名下的信用卡。黑色星期五優惠碼通常在 11 月下旬推出。"
+   "note_zh": "現時沒有公開優惠。所有有效優惠碼都屬特定團體，取車時櫃枱會要求證明，否則會收原價或拒絕租車。須有主司機名下的信用卡。黑色星期五優惠碼通常在 11 月下旬推出。",
+   "cats": [
+    "Car rental"
+   ]
   },
   "europcar": {
    "name": "Europcar",
@@ -38,7 +46,10 @@
     "#16a34a",
     "#0f7a37"
    ],
-   "note_zh": "現時的折扣都是內置優惠：經優惠頁預訂，不用輸入優惠碼。兩個意大利優惠不能疊加，按你的日期比較兩者。須有主司機名下的信用卡。"
+   "note_zh": "現時的折扣都是內置優惠：經優惠頁預訂，不用輸入優惠碼。兩個意大利優惠不能疊加，按你的日期比較兩者。須有主司機名下的信用卡。",
+   "cats": [
+    "Car rental"
+   ]
   },
   "klook": {
    "name": "Klook",
@@ -48,7 +59,13 @@
     "#ff7a1a",
     "#e2540a"
    ],
-   "note_zh": "香港優惠碼以港幣列出，大多有最低消費及名額，熱門的很快用完。很多須用指定信用卡或電子錢包（Mastercard、銀聯、PayMe、AlipayHK、八達通）。在付款頁輸入優惠碼，每張訂單限用一個。"
+   "note_zh": "香港優惠碼以港幣列出，大多有最低消費及名額，熱門的很快用完。很多須用指定信用卡或電子錢包（Mastercard、銀聯、PayMe、AlipayHK、八達通）。在付款頁輸入優惠碼，每張訂單限用一個。",
+   "cats": [
+    "Activities",
+    "Car rental",
+    "Hotels",
+    "Travel extras"
+   ]
   },
   "hotelscom": {
    "name": "Hotels.com",
@@ -58,7 +75,10 @@
     "#e0314b",
     "#b01f37"
    ],
-   "note_zh": "92 折優惠碼適用於香港網站及香港發出的信用卡。每次預訂一間房，不適用於「到店付款」。部分優惠碼只能經銀行專屬的 Hotels.com 連結使用。"
+   "note_zh": "92 折優惠碼適用於香港網站及香港發出的信用卡。每次預訂一間房，不適用於「到店付款」。部分優惠碼只能經銀行專屬的 Hotels.com 連結使用。",
+   "cats": [
+    "Hotels"
+   ]
   },
   "expedia": {
    "name": "Expedia",
@@ -68,7 +88,10 @@
     "#1f3a8a",
     "#132559"
    ],
-   "note_zh": "銀行優惠碼只適用於銀行專屬的 Expedia 香港頁面（例如 expedia.com.hk/amex），只限預付純酒店預訂。套票及到店付款不適用。在付款時「輸入優惠碼」一欄輸入。"
+   "note_zh": "銀行優惠碼只適用於銀行專屬的 Expedia 香港頁面（例如 expedia.com.hk/amex），只限預付純酒店預訂。套票及到店付款不適用。在付款時「輸入優惠碼」一欄輸入。",
+   "cats": [
+    "Hotels"
+   ]
   },
   "agoda": {
    "name": "Agoda",
@@ -78,7 +101,10 @@
     "#7c3aed",
     "#5420b8"
    ],
-   "note_zh": "Agoda 的優惠大多是領取連結及信用卡專頁，而非優惠碼。優惠碼只減房價百分比（不包稅項），實際省下的通常比標題少。"
+   "note_zh": "Agoda 的優惠大多是領取連結及信用卡專頁，而非優惠碼。優惠碼只減房價百分比（不包稅項），實際省下的通常比標題少。",
+   "cats": [
+    "Hotels"
+   ]
   },
   "booking": {
    "name": "Booking.com",
@@ -88,7 +114,10 @@
     "#1556c9",
     "#0b3a8f"
    ],
-   "note_zh": "Booking.com 幾乎從不使用公開優惠碼。登入後可享 Genius 價（有藍色 Genius 標籤的住宿 8 至 9 折），並留意 Getaway 或 Late Escape 優惠。優惠網站上的優惠碼通常是假的或只限合作夥伴。"
+   "note_zh": "Booking.com 幾乎從不使用公開優惠碼。登入後可享 Genius 價（有藍色 Genius 標籤的住宿 8 至 9 折），並留意 Getaway 或 Late Escape 優惠。優惠網站上的優惠碼通常是假的或只限合作夥伴。",
+   "cats": [
+    "Hotels"
+   ]
   },
   "skyscanner": {
    "name": "Skyscanner",
@@ -98,7 +127,10 @@
     "#0b7ad1",
     "#075a9c"
    ],
-   "note_zh": "Skyscanner 是比價網站，不是賣家，所以沒有優惠碼。你會在它轉介的航空公司或代理網站預訂（Trip.com、Opodo、Kiwi.com、航空公司），改用該網站的優惠碼。Kayak 及 Google Flights 亦一樣。"
+   "note_zh": "Skyscanner 是比價網站，不是賣家，所以沒有優惠碼。你會在它轉介的航空公司或代理網站預訂（Trip.com、Opodo、Kiwi.com、航空公司），改用該網站的優惠碼。Kayak 及 Google Flights 亦一樣。",
+   "cats": [
+    "Flights"
+   ]
   },
   "kiwi": {
    "name": "Kiwi.com",
@@ -108,7 +140,10 @@
     "#00a69c",
     "#007a73"
    ],
-   "note_zh": "優惠網站上的 Kiwi.com 優惠碼大多已舊。每次預訂限用一個。付款前檢查價格有否下降。"
+   "note_zh": "優惠網站上的 Kiwi.com 優惠碼大多已舊。每次預訂限用一個。付款前檢查價格有否下降。",
+   "cats": [
+    "Flights"
+   ]
   },
   "opodo": {
    "name": "Opodo / eDreams",
@@ -118,7 +153,10 @@
     "#c2185b",
     "#8e0f41"
    ],
-   "note_zh": "Opodo 及 eDreams 主力推銷付費 Prime 會員折扣。優惠網站隱藏優惠碼文字，很多是舊的黑色星期五優惠碼。App 專屬優惠時有時無。"
+   "note_zh": "Opodo 及 eDreams 主力推銷付費 Prime 會員折扣。優惠網站隱藏優惠碼文字，很多是舊的黑色星期五優惠碼。App 專屬優惠時有時無。",
+   "cats": [
+    "Flights"
+   ]
   },
   "avis": {
    "name": "Avis",
@@ -128,7 +166,10 @@
     "#dc2626",
     "#a51b1b"
    ],
-   "note_zh": "Avis 使用 AWD 編號（公司或會所價）及優惠券碼。公開優惠來自免費的 Avis Preferred 計劃及 Avis 優惠頁。只使用你有資格的 AWD 編號，櫃枱可以查核。"
+   "note_zh": "Avis 使用 AWD 編號（公司或會所價）及優惠券碼。公開優惠來自免費的 Avis Preferred 計劃及 Avis 優惠頁。只使用你有資格的 AWD 編號，櫃枱可以查核。",
+   "cats": [
+    "Car rental"
+   ]
   },
   "hertz": {
    "name": "Hertz",
@@ -139,7 +180,10 @@
     "#d4a90b",
     "#1a1600"
    ],
-   "note_zh": "Hertz 折扣使用 CDP 碼（來自僱主、會所或信用卡）加可選的 PC 推廣碼。使用不合資格的 CDP，櫃枱可能重新計價。"
+   "note_zh": "Hertz 折扣使用 CDP 碼（來自僱主、會所或信用卡）加可選的 PC 推廣碼。使用不合資格的 CDP，櫃枱可能重新計價。",
+   "cats": [
+    "Car rental"
+   ]
   },
   "sixt": {
    "name": "Sixt",
@@ -149,7 +193,10 @@
     "#f97316",
     "#c75a0c"
    ],
-   "note_zh": "Sixt 公開租車優惠碼很少。大部分流傳的優惠碼是專車服務用的。查看你所在國家的 Sixt 優惠頁。"
+   "note_zh": "Sixt 公開租車優惠碼很少。大部分流傳的優惠碼是專車服務用的。查看你所在國家的 Sixt 優惠頁。",
+   "cats": [
+    "Car rental"
+   ]
   },
   "rentalcars": {
    "name": "Rentalcars.com",
@@ -159,7 +206,10 @@
     "#2563eb",
     "#1846b3"
    ],
-   "note_zh": "Rentalcars.com 很少接受優惠碼。優惠網站的優惠碼最後一次有效是 2022 年。信用卡及航空公司合作連結才是可靠的折扣途徑。"
+   "note_zh": "Rentalcars.com 很少接受優惠碼。優惠網站的優惠碼最後一次有效是 2022 年。信用卡及航空公司合作連結才是可靠的折扣途徑。",
+   "cats": [
+    "Car rental"
+   ]
   },
   "discovercars": {
    "name": "Discover Cars",
@@ -169,7 +219,10 @@
     "#0ea5e9",
     "#0a7fb4"
    ],
-   "note_zh": "每次預訂限用一個優惠碼，不可與其他推廣同用，通常不適用於 Hertz 或 Europcar 的預付套票。"
+   "note_zh": "每次預訂限用一個優惠碼，不可與其他推廣同用，通常不適用於 Hertz 或 Europcar 的預付套票。",
+   "cats": [
+    "Car rental"
+   ]
   },
   "iherb": {
    "name": "iHerb",
@@ -179,7 +232,10 @@
     "#4caf50",
     "#2f8a34"
    ],
-   "note_zh": "每張訂單限用一個優惠碼。香港優惠碼須用香港送貨地址，通常有帳戶限制。優惠碼只減貨品總額，不減運費。"
+   "note_zh": "每張訂單限用一個優惠碼。香港優惠碼須用香港送貨地址，通常有帳戶限制。優惠碼只減貨品總額，不減運費。",
+   "cats": [
+    "Shopping"
+   ]
   },
   "hktvmall": {
    "name": "HKTVmall",
@@ -189,7 +245,10 @@
     "#00a0e9",
     "#0077b0"
    ],
-   "note_zh": "大部分優惠碼只適用於指定類別（美容、嬰兒、電器），只計算該類貨品的消費。VIP 會員逢星期三 95 折，Citi HKTVmall 信用卡逢星期四 95 折，優惠碼在 App 內顯示。"
+   "note_zh": "大部分優惠碼只適用於指定類別（美容、嬰兒、電器），只計算該類貨品的消費。VIP 會員逢星期三 95 折，Citi HKTVmall 信用卡逢星期四 95 折，優惠碼在 App 內顯示。",
+   "cats": [
+    "Shopping"
+   ]
   },
   "taobao": {
    "name": "Taobao",
@@ -199,7 +258,10 @@
     "#ff5000",
     "#d13f00"
    ],
-   "note_zh": "優惠碼以人民幣（¥）計，先到先得，雙 11 期間（2026 年 10 月 20 日至 11 月 13 日）尤其如此。付款方式有影響：AlipayHK 及 PayMe 有各自的優惠碼，一般香港信用卡會多收約 5% 手續費。"
+   "note_zh": "優惠碼以人民幣（¥）計，先到先得，雙 11 期間（2026 年 10 月 20 日至 11 月 13 日）尤其如此。付款方式有影響：AlipayHK 及 PayMe 有各自的優惠碼，一般香港信用卡會多收約 5% 手續費。",
+   "cats": [
+    "Shopping"
+   ]
   },
   "zalora": {
    "name": "Zalora",
@@ -209,7 +271,10 @@
     "#2b2b33",
     "#16161b"
    ],
-   "note_zh": "每張訂單限用一個優惠碼。滿 HK$299 免運費。新會員訂閱電子報後可享首單折扣。"
+   "note_zh": "每張訂單限用一個優惠碼。滿 HK$299 免運費。新會員訂閱電子報後可享首單折扣。",
+   "cats": [
+    "Shopping"
+   ]
   },
   "dyson": {
    "name": "Dyson",
@@ -219,7 +284,10 @@
     "#6d28d9",
     "#4c1a9e"
    ],
-   "note_zh": "優惠碼只適用於 Dyson 香港網店的指定產品。"
+   "note_zh": "優惠碼只適用於 Dyson 香港網店的指定產品。",
+   "cats": [
+    "Shopping"
+   ]
   },
   "watsons": {
    "name": "Watsons",
@@ -229,7 +297,10 @@
     "#00a3a1",
     "#007775"
    ],
-   "note_zh": "屈臣氏網店優惠碼通常是滿額送禮品，不是減價。"
+   "note_zh": "屈臣氏網店優惠碼通常是滿額送禮品，不是減價。",
+   "cats": [
+    "Shopping"
+   ]
   },
   "pns": {
    "name": "PARKnSHOP",
@@ -239,7 +310,10 @@
     "#e11d48",
     "#a8122f"
    ],
-   "note_zh": "網店優惠碼。部分只適用於店舖自取。"
+   "note_zh": "網店優惠碼。部分只適用於店舖自取。",
+   "cats": [
+    "Shopping"
+   ]
   },
   "charleskeith": {
    "name": "Charles & Keith",
@@ -249,7 +323,10 @@
     "#a16207",
     "#713f04"
    ],
-   "note_zh": "香港網店首次購物優惠碼。"
+   "note_zh": "香港網店首次購物優惠碼。",
+   "cats": [
+    "Shopping"
+   ]
   },
   "crocs": {
    "name": "Crocs",
@@ -259,7 +336,10 @@
     "#65a30d",
     "#497a07"
    ],
-   "note_zh": "香港網店新會員優惠碼。"
+   "note_zh": "香港網店新會員優惠碼。",
+   "cats": [
+    "Shopping"
+   ]
   },
   "foodpanda": {
    "name": "foodpanda",
@@ -269,7 +349,10 @@
     "#ff2b85",
     "#d0156a"
    ],
-   "note_zh": "在 App 結帳時輸入優惠碼。新用戶優惠碼只適用於首單。信用卡及電子錢包優惠碼每月限量。pandapro 會員在很多餐廳滿 HK$120 免運費。"
+   "note_zh": "在 App 結帳時輸入優惠碼。新用戶優惠碼只適用於首單。信用卡及電子錢包優惠碼每月限量。pandapro 會員在很多餐廳滿 HK$120 免運費。",
+   "cats": [
+    "Food & rides"
+   ]
   },
   "keeta": {
    "name": "Keeta",
@@ -280,7 +363,10 @@
     "#e0b800",
     "#1a1600"
    ],
-   "note_zh": "優惠碼與付款方式掛鈎（AlipayHK、PayMe），額滿即止。新用戶在 App 內自動獲得更大的首單折扣。"
+   "note_zh": "優惠碼與付款方式掛鈎（AlipayHK、PayMe），額滿即止。新用戶在 App 內自動獲得更大的首單折扣。",
+   "cats": [
+    "Food & rides"
+   ]
   },
   "airalo": {
    "name": "Airalo",
@@ -290,7 +376,10 @@
     "#0f766e",
     "#0a5751"
    ],
-   "note_zh": "旅遊 eSIM。每次購買限用一個優惠碼；新帳戶優惠碼只適用於全新帳戶。"
+   "note_zh": "旅遊 eSIM。每次購買限用一個優惠碼；新帳戶優惠碼只適用於全新帳戶。",
+   "cats": [
+    "Travel extras"
+   ]
   },
   "trainline": {
    "name": "Trainline",
@@ -300,7 +389,10 @@
     "#01c3a7",
     "#009883"
    ],
-   "note_zh": "Trainline 很少有公開優惠碼。推薦折扣綁定你的電郵，不用輸入優惠碼。"
+   "note_zh": "Trainline 很少有公開優惠碼。推薦折扣綁定你的電郵，不用輸入優惠碼。",
+   "cats": [
+    "Travel extras"
+   ]
   },
   "moretickets": {
    "name": "MoreTickets",
@@ -310,7 +402,560 @@
     "#9333ea",
     "#6b21a8"
    ],
-   "note_zh": "香港及澳門演唱會及表演門票。"
+   "note_zh": "香港及澳門演唱會及表演門票。",
+   "cats": [
+    "Activities"
+   ]
+  },
+  "airbnb": {
+   "name": "Airbnb",
+   "checked": "2026-10-27",
+   "note": "Airbnb rarely has public promo codes. Savings come from weekly and monthly stay discounts set by hosts, and Airbnb gift cards sometimes sold below face value. Coupon-site codes are often referral credits for new accounts.",
+   "note_zh": "Airbnb 很少有公開優惠碼。省錢方法主要是房東設定的每週及每月長住折扣，以及偶爾低於面值出售的 Airbnb 禮品卡。優惠網站上的優惠碼多是新帳戶的推薦獎賞。",
+   "color": [
+    "#ff385c",
+    "#d90b3e"
+   ],
+   "cats": [
+    "Hotels"
+   ]
+  },
+  "marriott": {
+   "name": "Marriott Bonvoy",
+   "checked": "2026-10-27",
+   "note": "Book on marriott.com while signed in to the free Marriott Bonvoy programme to get member rates, usually a few percent below the public rate. Promo and corporate codes go in the \"Special rates\" box; only use a corporate code you're entitled to.",
+   "note_zh": "登入免費的 Marriott Bonvoy 會員後在 marriott.com 預訂，可享會員價，通常比公開價低幾個百分點。推廣碼及公司碼在「特別房價」一欄輸入；只使用你有資格的公司碼。",
+   "color": [
+    "#8a1538",
+    "#5e0e26"
+   ],
+   "cats": [
+    "Hotels"
+   ]
+  },
+  "hilton": {
+   "name": "Hilton",
+   "checked": "2026-10-27",
+   "note": "Hilton Honors is free to join and members get a discounted member rate when booking direct on hilton.com or the app. Promotion codes go in \"Special rates\" at search.",
+   "note_zh": "Hilton Honors 免費加入，會員在 hilton.com 或 App 直接預訂可享會員折扣價。推廣碼在搜尋時的「特別房價」輸入。",
+   "color": [
+    "#104c97",
+    "#0a3366"
+   ],
+   "cats": [
+    "Hotels"
+   ]
+  },
+  "ihg": {
+   "name": "IHG Hotels",
+   "checked": "2026-10-27",
+   "note": "IHG One Rewards members get a member rate at Holiday Inn, InterContinental, Crowne Plaza and other IHG hotels. Sign in before searching to see it.",
+   "note_zh": "IHG One Rewards 會員在 Holiday Inn、InterContinental、Crowne Plaza 等 IHG 酒店可享會員價。搜尋前先登入即可看到。",
+   "color": [
+    "#2d6a4f",
+    "#1b4332"
+   ],
+   "cats": [
+    "Hotels"
+   ]
+  },
+  "cathay": {
+   "name": "Cathay Pacific",
+   "checked": "2026-10-27",
+   "note": "Cathay promo codes are usually tied to a card (HSBC, Mastercard, PayPal) or a region's website, and go in the promo code box on the booking page. Check the Offers page for your country; Asia Miles members also get member-only fares.",
+   "note_zh": "國泰優惠碼通常與信用卡（滙豐、Mastercard、PayPal）或某地區網站掛鈎，在預訂頁的優惠碼欄輸入。查看你所在地區的優惠頁；亞洲萬里通會員亦有會員專享票價。",
+   "color": [
+    "#006564",
+    "#00403f"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "hkexpress": {
+   "name": "HK Express",
+   "checked": "2026-10-27",
+   "note": "HK Express runs flash fare sales and payment partner offers (AlipayHK, bank cards) more often than public codes. Promo codes go in the box on the first booking step. Bags and seats cost extra, so compare the total.",
+   "note_zh": "HK Express 較常推出閃購機票及付款夥伴優惠（AlipayHK、銀行卡），公開優惠碼較少。優惠碼在預訂第一步輸入。行李及選位另外收費，比較總價。",
+   "color": [
+    "#7b2d8e",
+    "#56206a"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "googleflights": {
+   "name": "Google Flights",
+   "checked": "2026-10-27",
+   "note": "Google Flights compares fares and sends you to the airline or agent to pay, so it has no promo codes. Turn on price tracking for your route and use the seller's codes when you book.",
+   "note_zh": "Google Flights 只比較票價，再轉你到航空公司或代理付款，所以沒有優惠碼。為你的航線開啟價格追蹤，預訂時改用賣家的優惠碼。",
+   "color": [
+    "#4285f4",
+    "#2a63c9"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "kayak": {
+   "name": "Kayak",
+   "checked": "2026-10-27",
+   "note": "Kayak is a price comparison site, so its codes are rare. Use its price alerts and then apply the seller's codes when you book.",
+   "note_zh": "Kayak 是比價網站，優惠碼很少。使用價格提示，預訂時改用賣家的優惠碼。",
+   "color": [
+    "#ff690f",
+    "#d4520a"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "singapore": {
+   "name": "Singapore Airlines",
+   "checked": "2026-10-27",
+   "note": "Singapore Airlines promo codes are mostly bank or card offers tied to one country's website. KrisFlyer members get occasional member fares.",
+   "note_zh": "新加坡航空的優惠碼多是綁定某國網站的銀行或信用卡優惠。KrisFlyer 會員不時有會員票價。",
+   "color": [
+    "#1d2b5c",
+    "#0f1838"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "enterprise": {
+   "name": "Enterprise",
+   "checked": "2026-10-27",
+   "note": "Enterprise discounts come from corporate accounts and Enterprise Plus membership. Use a corporate code only if you're entitled to it.",
+   "note_zh": "Enterprise 折扣來自公司帳戶及 Enterprise Plus 會員。只使用你有資格的公司碼。",
+   "color": [
+    "#169a5a",
+    "#0d6b3e"
+   ],
+   "cats": [
+    "Car rental"
+   ]
+  },
+  "budget": {
+   "name": "Budget",
+   "checked": "2026-10-27",
+   "note": "Budget is part of the Avis group and uses BCD numbers (company rates) and coupon codes. Pay Now rates are usually cheaper than Pay Later.",
+   "note_zh": "Budget 屬 Avis 集團，使用 BCD 編號（公司價）及優惠券碼。即付價通常比後付價便宜。",
+   "color": [
+    "#f26722",
+    "#c44f13"
+   ],
+   "cats": [
+    "Car rental"
+   ]
+  },
+  "alamo": {
+   "name": "Alamo",
+   "checked": "2026-10-27",
+   "note": "Alamo shows its discounts as built-in deals by country; coupon codes are uncommon. Alamo Insiders (free) gives a small discount in many countries.",
+   "note_zh": "Alamo 的折扣多以各國內置優惠顯示，優惠券碼不常見。免費的 Alamo Insiders 在多國可享少量折扣。",
+   "color": [
+    "#00447c",
+    "#002d52"
+   ],
+   "cats": [
+    "Car rental"
+   ]
+  },
+  "holafly": {
+   "name": "Holafly",
+   "checked": "2026-10-27",
+   "note": "Travel eSIM with unlimited data plans. One code per purchase, applied at checkout.",
+   "note_zh": "無限數據旅遊 eSIM。每次購買限用一個優惠碼，結帳時輸入。",
+   "color": [
+    "#e6007e",
+    "#b30062"
+   ],
+   "cats": [
+    "Travel extras"
+   ]
+  },
+  "omio": {
+   "name": "Omio",
+   "checked": "2026-10-27",
+   "note": "Omio sells trains, buses and flights in Europe. Codes are mostly for new users in the app.",
+   "note_zh": "Omio 售賣歐洲火車、巴士及機票。優惠碼多是 App 新用戶專用。",
+   "color": [
+    "#1f4fff",
+    "#1438c2"
+   ],
+   "cats": [
+    "Travel extras"
+   ]
+  },
+  "raileurope": {
+   "name": "Rail Europe",
+   "checked": "2026-10-27",
+   "note": "European train tickets and rail passes in one place. Sales are seasonal; codes go in the basket.",
+   "note_zh": "一站式購買歐洲火車票及鐵路通行證。折扣按季推出，優惠碼在購物車輸入。",
+   "color": [
+    "#00a19a",
+    "#00756f"
+   ],
+   "cats": [
+    "Travel extras"
+   ]
+  },
+  "twelvego": {
+   "name": "12Go",
+   "checked": "2026-10-27",
+   "note": "Trains, buses and ferries across Southeast Asia. Codes are uncommon; prices are already close to the operators'.",
+   "note_zh": "東南亞火車、巴士及渡輪票。優惠碼不常見，價格本身已接近營運商價。",
+   "color": [
+    "#0b7fab",
+    "#075a7a"
+   ],
+   "cats": [
+    "Travel extras"
+   ]
+  },
+  "prioritypass": {
+   "name": "Priority Pass",
+   "checked": "2026-10-27",
+   "note": "Airport lounge membership. Many HK credit cards include free Priority Pass visits, which usually beats any code.",
+   "note_zh": "機場貴賓室會籍。很多香港信用卡已包免費 Priority Pass 使用次數，通常比任何優惠碼更划算。",
+   "color": [
+    "#1c1c1c",
+    "#000000",
+    "#e8c37e"
+   ],
+   "cats": [
+    "Travel extras"
+   ]
+  },
+  "welcomepickups": {
+   "name": "Welcome Pickups",
+   "checked": "2026-10-27",
+   "note": "Pre-booked airport transfers with an English-speaking driver. First-ride codes are common for new accounts.",
+   "note_zh": "預約機場接送，司機會說英語。新帳戶常有首程優惠碼。",
+   "color": [
+    "#ff5a5f",
+    "#d9393e"
+   ],
+   "cats": [
+    "Travel extras"
+   ]
+  },
+  "safetywing": {
+   "name": "SafetyWing",
+   "checked": "2026-10-27",
+   "note": "Travel and nomad insurance billed every 4 weeks. Discounts are usually referral links rather than codes. Check what it covers before you buy.",
+   "note_zh": "按每 4 星期收費的旅遊及遊牧保險。折扣多是推薦連結而非優惠碼。購買前先看清保障範圍。",
+   "color": [
+    "#5b2bff",
+    "#3f17cc"
+   ],
+   "cats": [
+    "Travel extras"
+   ]
+  },
+  "amazon": {
+   "name": "Amazon",
+   "checked": "2026-10-27",
+   "note": "Amazon.com and Amazon.co.uk ship many items to Hong Kong. Codes are product-specific (clip the coupon on the product page). Prime free shipping to HK depends on the store and order size.",
+   "note_zh": "Amazon.com 及 Amazon.co.uk 很多貨品可寄香港。優惠碼多是個別產品專用（在產品頁點選優惠券）。Prime 免運費到香港視乎網站及訂單金額。",
+   "color": [
+    "#232f3e",
+    "#131921",
+    "#ff9900"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "aliexpress": {
+   "name": "AliExpress",
+   "checked": "2026-10-27",
+   "note": "Codes are store coupons or platform codes with a minimum spend, and they peak during 11.11 and other big sales. One platform code per order.",
+   "note_zh": "優惠碼分店舖優惠券及平台碼，都有最低消費，在 11.11 等大型購物節最多。每張訂單限用一個平台碼。",
+   "color": [
+    "#e62e04",
+    "#b32403"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "temu": {
+   "name": "Temu",
+   "checked": "2026-10-27",
+   "note": "New-user bundles and percentage codes are common. Check the final price after shipping and the return conditions.",
+   "note_zh": "常有新用戶優惠包及百分比折扣碼。留意運費後的最終價格及退貨條件。",
+   "color": [
+    "#fb7701",
+    "#d15f00"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "shein": {
+   "name": "Shein",
+   "checked": "2026-10-27",
+   "note": "Codes are tiered by spend (e.g. a bigger discount over a higher total). One code per order.",
+   "note_zh": "優惠碼按消費金額分級（消費越多折扣越大）。每張訂單限用一個。",
+   "color": [
+    "#111111",
+    "#000000"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "farfetch": {
+   "name": "Farfetch",
+   "checked": "2026-10-27",
+   "note": "Luxury fashion from boutiques worldwide, ships to HK. App first-order codes are the most common; sale items are often excluded.",
+   "note_zh": "來自全球精品店的奢侈時裝，可寄香港。最常見的是 App 首單優惠碼；減價貨品通常不適用。",
+   "color": [
+    "#222222",
+    "#000000"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "asos": {
+   "name": "ASOS",
+   "checked": "2026-10-27",
+   "note": "ASOS ships to Hong Kong. Codes appear around sales and student discounts (via UNiDAYS). One code per order.",
+   "note_zh": "ASOS 可寄香港。優惠碼多在減價期出現，學生可經 UNiDAYS 享折扣。每張訂單限用一個。",
+   "color": [
+    "#2d2d2d",
+    "#111111"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "selfridges": {
+   "name": "Selfridges",
+   "checked": "2026-10-27",
+   "note": "London department store with international delivery to Hong Kong. Public codes are rare; savings come from seasonal sales and Selfridges Plus delivery.",
+   "note_zh": "倫敦百貨公司，提供寄往香港的國際送貨。公開優惠碼很少，省錢主要靠季節性減價及 Selfridges Plus 送貨服務。",
+   "color": [
+    "#ffe500",
+    "#e0c800",
+    "#1a1600"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "harrods": {
+   "name": "Harrods",
+   "checked": "2026-10-27",
+   "note": "London department store that ships to Hong Kong. Harrods almost never issues public codes; Harrods Rewards members earn points and get sale previews.",
+   "note_zh": "寄往香港的倫敦百貨公司。Harrods 幾乎從不發出公開優惠碼；Harrods Rewards 會員可賺積分及搶先參與減價。",
+   "color": [
+    "#00472b",
+    "#002e1c",
+    "#d4b46a"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "uber": {
+   "name": "Uber",
+   "checked": "2026-10-27",
+   "note": "Uber works in Hong Kong and most countries. Promo codes go in Wallet → Promotions in the app before you ride. New-rider codes only work on a new account.",
+   "note_zh": "Uber 在香港及大部分國家都可使用。乘車前在 App「錢包 → 優惠」輸入優惠碼。新乘客優惠碼只適用於新帳戶。",
+   "color": [
+    "#000000",
+    "#1a1a1a"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "ubereats": {
+   "name": "Uber Eats",
+   "checked": "2026-10-27",
+   "note": "Food delivery in many countries (not Hong Kong). Codes go in the checkout screen; first-order codes need a new account.",
+   "note_zh": "多國可用的外賣平台（香港沒有）。在結帳頁輸入優惠碼；首單優惠碼需新帳戶。",
+   "color": [
+    "#06c167",
+    "#04964f"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "grab": {
+   "name": "Grab",
+   "checked": "2026-10-27",
+   "note": "Rides and food in Singapore, Malaysia, Thailand and other Southeast Asian countries. Codes are per country; add them under Offers in the app.",
+   "note_zh": "在新加坡、馬來西亞、泰國等東南亞國家提供乘車及外賣。優惠碼按國家分，在 App「優惠」加入。",
+   "color": [
+    "#00b14f",
+    "#008a3d"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "didi": {
+   "name": "DiDi",
+   "checked": "2026-10-27",
+   "note": "Ride hailing in Mainland China (DiDi also runs in Hong Kong). New-user coupons appear in the app; HK visitors can link AlipayHK or a card.",
+   "note_zh": "中國內地叫車平台（香港亦有 DiDi）。新用戶優惠券在 App 內顯示；香港旅客可綁定 AlipayHK 或信用卡。",
+   "color": [
+    "#ff7e33",
+    "#e0611a"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "hktaxi": {
+   "name": "HKTaxi",
+   "checked": "2026-10-27",
+   "note": "Hong Kong's taxi-hailing app. Discounts come from payment partners and app promotions rather than public codes.",
+   "note_zh": "香港召的士 App。折扣多來自付款夥伴及 App 推廣，而非公開優惠碼。",
+   "color": [
+    "#d71920",
+    "#a81218"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "deliveroo": {
+   "name": "Deliveroo",
+   "checked": "2026-10-27",
+   "note": "Food delivery in the UK and Europe (it left Hong Kong in 2025). First-order codes need a new account; Deliveroo Plus gives free delivery.",
+   "note_zh": "英國及歐洲的外賣平台（2025 年已退出香港）。首單優惠碼需新帳戶；Deliveroo Plus 可享免運費。",
+   "color": [
+    "#00ccbc",
+    "#00a396"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "doordash": {
+   "name": "DoorDash",
+   "checked": "2026-10-27",
+   "note": "Food delivery in the US, Canada and Australia. First-order codes and DashPass trials are common.",
+   "note_zh": "美國、加拿大及澳洲的外賣平台。常有首單優惠碼及 DashPass 試用。",
+   "color": [
+    "#ff3008",
+    "#d12200"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "bolt": {
+   "name": "Bolt",
+   "checked": "2026-10-27",
+   "note": "Rides across Europe and Africa, often cheaper than Uber. First-ride codes need a new account.",
+   "note_zh": "歐洲及非洲的叫車平台，通常比 Uber 便宜。首程優惠碼需新帳戶。",
+   "color": [
+    "#34d186",
+    "#22a866"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "kkday": {
+   "name": "KKday",
+   "checked": "2026-10-27",
+   "note": "Tours, tickets and transport across Asia. Codes are often tied to a card (HSBC, Citi) or a region's site and go in the payment step.",
+   "note_zh": "亞洲的旅遊團、門票及交通。優惠碼通常與信用卡（滙豐、Citi）或地區網站掛鈎，在付款步驟輸入。",
+   "color": [
+    "#26bec9",
+    "#1a96a0"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "getyourguide": {
+   "name": "GetYourGuide",
+   "checked": "2026-10-27",
+   "note": "Tours and attractions worldwide. App first-booking codes are the most common; free cancellation on most activities.",
+   "note_zh": "全球旅遊團及景點。最常見的是 App 首次預訂優惠碼；大部分活動可免費取消。",
+   "color": [
+    "#ff5533",
+    "#d13b1c"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "viator": {
+   "name": "Viator",
+   "checked": "2026-10-27",
+   "note": "Tripadvisor's tours and activities site. Codes are occasional and mostly for app bookings.",
+   "note_zh": "Tripadvisor 旗下的旅遊團及活動網站。優惠碼不常有，多是 App 預訂專用。",
+   "color": [
+    "#186b6d",
+    "#0f4a4c"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "cityline": {
+   "name": "Cityline",
+   "checked": "2026-10-27",
+   "note": "Hong Kong's main concert and show ticketing site. There are no discount codes; bank cards get priority booking periods instead.",
+   "note_zh": "香港主要的演唱會及表演門票網站。沒有折扣碼，但銀行卡持有人可享優先訂票。",
+   "color": [
+    "#e4002b",
+    "#b0001f"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "ticketmaster": {
+   "name": "Ticketmaster",
+   "checked": "2026-10-27",
+   "note": "Concert and event tickets worldwide. Presale codes come from artist sign-ups and card issuers, not public coupon sites.",
+   "note_zh": "全球演唱會及活動門票。預售碼來自歌手登記及信用卡發卡機構，而非優惠網站。",
+   "color": [
+    "#026cdf",
+    "#0151a8"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "tiqets": {
+   "name": "Tiqets",
+   "checked": "2026-10-27",
+   "note": "Museum and attraction tickets with instant mobile entry. App and newsletter codes are the usual source.",
+   "note_zh": "博物館及景點門票，手機即時入場。優惠碼多來自 App 及電子報。",
+   "color": [
+    "#0f4c81",
+    "#0a355a"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "headout": {
+   "name": "Headout",
+   "checked": "2026-10-27",
+   "note": "Shows, attractions and tours in major cities. First-booking codes are common in the app.",
+   "note_zh": "大城市的表演、景點及旅遊團。App 常有首次預訂優惠碼。",
+   "color": [
+    "#8000ff",
+    "#5c00b8"
+   ],
+   "cats": [
+    "Activities"
+   ]
   }
  },
  "deals": [
@@ -6390,6 +7035,108 @@
    "found": "auto",
    "firstSeen": "2026-10-27",
    "lastSeen": "2026-10-27"
+  },
+  {
+   "site": "googleflights",
+   "cat": "Flights",
+   "big": "Tips",
+   "title": "How to save on Google Flights",
+   "title_zh": "如何在 Google Flights 省錢",
+   "kind": "offer",
+   "desc": "Turn on price tracking for your route and dates; Google emails you when the fare drops. Then book with the airline or agent and use that site's codes.",
+   "desc_zh": "為你的航線及日期開啟價格追蹤，票價下降時 Google 會電郵通知你。之後在航空公司或代理預訂，並使用該網站的優惠碼。",
+   "cond": "No codes: Google Flights only compares prices.",
+   "cond_zh": "沒有優惠碼：Google Flights 只比較價格。",
+   "expires": null,
+   "status": "active",
+   "src": "https://www.google.com/travel/flights",
+   "found": "manual",
+   "big_zh": "貼士"
+  },
+  {
+   "site": "marriott",
+   "cat": "Hotels",
+   "big": "Member rate",
+   "title": "Marriott Bonvoy member rate",
+   "title_zh": "Marriott Bonvoy 會員價",
+   "kind": "offer",
+   "desc": "Free membership. Signed-in members see a member rate below the public price on marriott.com and the app.",
+   "desc_zh": "免費會籍。登入後在 marriott.com 及 App 可看到比公開價低的會員價。",
+   "cond": "Book direct with Marriott while signed in.",
+   "cond_zh": "登入後直接向萬豪預訂。",
+   "expires": null,
+   "status": "active",
+   "src": "https://www.marriott.com",
+   "found": "manual",
+   "big_zh": "會員價"
+  },
+  {
+   "site": "hilton",
+   "cat": "Hotels",
+   "big": "Member rate",
+   "title": "Hilton Honors member discount",
+   "title_zh": "Hilton Honors 會員折扣",
+   "kind": "offer",
+   "desc": "Free membership. Members get a discounted rate when booking direct.",
+   "desc_zh": "免費會籍。會員直接預訂可享折扣價。",
+   "cond": "Book on hilton.com or the Hilton app.",
+   "cond_zh": "在 hilton.com 或 Hilton App 預訂。",
+   "expires": null,
+   "status": "active",
+   "src": "https://www.hilton.com",
+   "found": "manual",
+   "big_zh": "會員價"
+  },
+  {
+   "site": "ihg",
+   "cat": "Hotels",
+   "big": "Member rate",
+   "title": "IHG One Rewards member rate",
+   "title_zh": "IHG One Rewards 會員價",
+   "kind": "offer",
+   "desc": "Free membership. Members see a lower member rate at IHG hotels.",
+   "desc_zh": "免費會籍。會員在 IHG 酒店可看到較低的會員價。",
+   "cond": "Sign in before you search on ihg.com.",
+   "cond_zh": "在 ihg.com 搜尋前先登入。",
+   "expires": null,
+   "status": "active",
+   "src": "https://www.ihg.com",
+   "found": "manual",
+   "big_zh": "會員價"
+  },
+  {
+   "site": "prioritypass",
+   "cat": "Travel extras",
+   "big": "Free",
+   "title": "Lounge visits on HK credit cards",
+   "title_zh": "香港信用卡的貴賓室使用次數",
+   "kind": "offer",
+   "desc": "Many Hong Kong credit cards include free Priority Pass lounge visits each year.",
+   "desc_zh": "很多香港信用卡每年包免費 Priority Pass 貴賓室使用次數。",
+   "cond": "Check your card's travel benefits before buying a membership.",
+   "cond_zh": "購買會籍前先查看你信用卡的旅遊禮遇。",
+   "expires": null,
+   "status": "active",
+   "src": "https://www.prioritypass.com",
+   "found": "manual",
+   "big_zh": "免費"
+  },
+  {
+   "site": "cityline",
+   "cat": "Activities",
+   "big": "Priority",
+   "title": "Bank card priority booking",
+   "title_zh": "銀行卡優先訂票",
+   "kind": "offer",
+   "desc": "Banks such as HSBC and Citi often get a priority booking period before public sales on Cityline.",
+   "desc_zh": "滙豐、Citi 等銀行常在 Cityline 公開發售前有優先訂票期。",
+   "cond": "Check the event page for which card gets priority.",
+   "cond_zh": "查看活動頁了解哪張信用卡可優先訂票。",
+   "expires": null,
+   "status": "active",
+   "src": "https://www.cityline.com",
+   "found": "manual",
+   "big_zh": "優先"
   }
  ]
 }

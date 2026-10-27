@@ -1,31 +1,368 @@
 {
   "_help": "Pages the scraper reads. 'site' = one site per page. 'sites' = a page that lists several shops: each key is a site, each value is words that name it on the page. 'cat' is the category new codes get. Add a page by copying a block. Site keys must exist in data/deals.json -> sites.",
   "pages": [
-    { "url": "https://hk.trip.com/guide/en/trip.com-promo-code-hk.html", "site": "trip", "cat": "Hotels" },
-    { "url": "https://www.travelclassroom.net/2016/12/klook.html", "site": "klook", "cat": "Activities" },
-    { "url": "https://www.travelclassroom.net/eng/hotelscom-coupon.html", "site": "hotelscom", "cat": "Hotels" },
-    { "url": "https://www.travelclassroom.net/eng/agoda-discount-code.html", "site": "agoda", "cat": "Hotels" },
-    { "url": "https://www.hk01.com/article/930574", "site": "agoda", "cat": "Hotels" },
-    { "url": "https://www.sicilybycar.it/en/promo/sbcpalermofc", "site": "sbc", "cat": "Car rental" },
-    { "url": "https://dealhack.com/coupons/kiwicom", "site": "kiwi", "cat": "Flights" },
-    { "url": "https://dealhack.com/coupons/sixt", "site": "sixt", "cat": "Car rental" },
-    { "url": "https://dealhack.com/coupons/rentalcarscom", "site": "rentalcars", "cat": "Car rental" },
-    { "url": "https://dealhack.com/coupons/discovercarscom", "site": "discovercars", "cat": "Car rental" },
-    { "url": "https://dealhack.com/coupons/europcar", "site": "europcar", "cat": "Car rental" },
-    { "url": "https://dealhack.com/coupons/avis", "site": "avis", "cat": "Car rental" },
-    { "url": "https://dealhack.com/coupons/hertz", "site": "hertz", "cat": "Car rental" },
-    { "url": "https://dealhack.com/coupons/expedia", "site": "expedia", "cat": "Hotels" },
-    { "url": "https://dealhack.com/coupons/hotelscom", "site": "hotelscom", "cat": "Hotels" },
-    { "url": "https://www.moneyhk101.com/hktvmall-promo-code/", "site": "hktvmall", "cat": "Shopping" },
-    { "url": "https://www.moneyhk101.com/foodpanda-promo-code/", "site": "foodpanda", "cat": "Food & rides" },
-    { "url": "https://www.bowtie.com.hk/blog/zh/熱門話題/雙11-淘寶優惠/", "site": "taobao", "cat": "Shopping" },
-    { "url": "https://www.picodi.com/hk/zalora", "site": "zalora", "cat": "Shopping" },
-    { "url": "https://www.vitepromo.com/en/hightech-numerique/code-promo-airalo", "site": "airalo", "cat": "Travel extras" },
-    { "url": "https://www.vitepromo.com/en/voyage-loisirs/code-promo-trainline", "site": "trainline", "cat": "Travel extras" },
-    { "url": "https://www.hk01.com/食玩買/921513/iherb-屈臣氏-dyson網店折扣2026-10月優惠-hk01獨家優惠碼", "cat": "Shopping",
+    {
+      "url": "https://hk.trip.com/guide/en/trip.com-promo-code-hk.html",
+      "site": "trip",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://www.travelclassroom.net/2016/12/klook.html",
+      "site": "klook",
+      "cat": "Activities"
+    },
+    {
+      "url": "https://www.travelclassroom.net/eng/hotelscom-coupon.html",
+      "site": "hotelscom",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://www.travelclassroom.net/eng/agoda-discount-code.html",
+      "site": "agoda",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://www.hk01.com/article/930574",
+      "site": "agoda",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://www.sicilybycar.it/en/promo/sbcpalermofc",
+      "site": "sbc",
+      "cat": "Car rental"
+    },
+    {
+      "url": "https://dealhack.com/coupons/kiwicom",
+      "site": "kiwi",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/sixt",
+      "site": "sixt",
+      "cat": "Car rental"
+    },
+    {
+      "url": "https://dealhack.com/coupons/rentalcarscom",
+      "site": "rentalcars",
+      "cat": "Car rental"
+    },
+    {
+      "url": "https://dealhack.com/coupons/discovercarscom",
+      "site": "discovercars",
+      "cat": "Car rental"
+    },
+    {
+      "url": "https://dealhack.com/coupons/europcar",
+      "site": "europcar",
+      "cat": "Car rental"
+    },
+    {
+      "url": "https://dealhack.com/coupons/avis",
+      "site": "avis",
+      "cat": "Car rental"
+    },
+    {
+      "url": "https://dealhack.com/coupons/hertz",
+      "site": "hertz",
+      "cat": "Car rental"
+    },
+    {
+      "url": "https://dealhack.com/coupons/expedia",
+      "site": "expedia",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://dealhack.com/coupons/hotelscom",
+      "site": "hotelscom",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://www.moneyhk101.com/hktvmall-promo-code/",
+      "site": "hktvmall",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://www.moneyhk101.com/foodpanda-promo-code/",
+      "site": "foodpanda",
+      "cat": "Food & rides"
+    },
+    {
+      "url": "https://www.bowtie.com.hk/blog/zh/熱門話題/雙11-淘寶優惠/",
+      "site": "taobao",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://www.picodi.com/hk/zalora",
+      "site": "zalora",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://www.vitepromo.com/en/hightech-numerique/code-promo-airalo",
+      "site": "airalo",
+      "cat": "Travel extras"
+    },
+    {
+      "url": "https://www.vitepromo.com/en/voyage-loisirs/code-promo-trainline",
+      "site": "trainline",
+      "cat": "Travel extras"
+    },
+    {
+      "url": "https://www.hk01.com/食玩買/921513/iherb-屈臣氏-dyson網店折扣2026-10月優惠-hk01獨家優惠碼",
+      "cat": "Shopping",
       "sites": {
-        "iherb": ["iherb"], "watsons": ["屈臣氏", "watsons"], "dyson": ["dyson"], "pns": ["百佳", "parknshop", "pns"],
-        "charleskeith": ["charles & keith", "charles&keith", "charles and keith"], "crocs": ["crocs"], "moretickets": ["moretickets", "摩天輪"]
-      } }
+        "iherb": [
+          "iherb"
+        ],
+        "watsons": [
+          "屈臣氏",
+          "watsons"
+        ],
+        "dyson": [
+          "dyson"
+        ],
+        "pns": [
+          "百佳",
+          "parknshop",
+          "pns"
+        ],
+        "charleskeith": [
+          "charles & keith",
+          "charles&keith",
+          "charles and keith"
+        ],
+        "crocs": [
+          "crocs"
+        ],
+        "moretickets": [
+          "moretickets",
+          "摩天輪"
+        ]
+      }
+    },
+    {
+      "url": "https://dealhack.com/coupons/airbnb",
+      "site": "airbnb",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://dealhack.com/coupons/marriott",
+      "site": "marriott",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://dealhack.com/coupons/hilton",
+      "site": "hilton",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://dealhack.com/coupons/ihg",
+      "site": "ihg",
+      "cat": "Hotels"
+    },
+    {
+      "url": "https://dealhack.com/coupons/cathay-pacific",
+      "site": "cathay",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/kayak",
+      "site": "kayak",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/singapore-airlines",
+      "site": "singapore",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/enterprise",
+      "site": "enterprise",
+      "cat": "Car rental"
+    },
+    {
+      "url": "https://dealhack.com/coupons/budget",
+      "site": "budget",
+      "cat": "Car rental"
+    },
+    {
+      "url": "https://dealhack.com/coupons/alamo",
+      "site": "alamo",
+      "cat": "Car rental"
+    },
+    {
+      "url": "https://dealhack.com/coupons/holafly",
+      "site": "holafly",
+      "cat": "Travel extras"
+    },
+    {
+      "url": "https://dealhack.com/coupons/omio",
+      "site": "omio",
+      "cat": "Travel extras"
+    },
+    {
+      "url": "https://dealhack.com/coupons/rail-europe",
+      "site": "raileurope",
+      "cat": "Travel extras"
+    },
+    {
+      "url": "https://dealhack.com/coupons/12go",
+      "site": "twelvego",
+      "cat": "Travel extras"
+    },
+    {
+      "url": "https://dealhack.com/coupons/priority-pass",
+      "site": "prioritypass",
+      "cat": "Travel extras"
+    },
+    {
+      "url": "https://dealhack.com/coupons/welcome-pickups",
+      "site": "welcomepickups",
+      "cat": "Travel extras"
+    },
+    {
+      "url": "https://dealhack.com/coupons/safetywing",
+      "site": "safetywing",
+      "cat": "Travel extras"
+    },
+    {
+      "url": "https://dealhack.com/coupons/amazon",
+      "site": "amazon",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/aliexpress",
+      "site": "aliexpress",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/temu",
+      "site": "temu",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/shein",
+      "site": "shein",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/farfetch",
+      "site": "farfetch",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/asos",
+      "site": "asos",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/selfridges",
+      "site": "selfridges",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/harrods",
+      "site": "harrods",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/uber",
+      "site": "uber",
+      "cat": "Food & rides"
+    },
+    {
+      "url": "https://dealhack.com/coupons/uber-eats",
+      "site": "ubereats",
+      "cat": "Food & rides"
+    },
+    {
+      "url": "https://dealhack.com/coupons/grab",
+      "site": "grab",
+      "cat": "Food & rides"
+    },
+    {
+      "url": "https://dealhack.com/coupons/didi",
+      "site": "didi",
+      "cat": "Food & rides"
+    },
+    {
+      "url": "https://dealhack.com/coupons/deliveroo",
+      "site": "deliveroo",
+      "cat": "Food & rides"
+    },
+    {
+      "url": "https://dealhack.com/coupons/doordash",
+      "site": "doordash",
+      "cat": "Food & rides"
+    },
+    {
+      "url": "https://dealhack.com/coupons/bolt",
+      "site": "bolt",
+      "cat": "Food & rides"
+    },
+    {
+      "url": "https://dealhack.com/coupons/kkday",
+      "site": "kkday",
+      "cat": "Activities"
+    },
+    {
+      "url": "https://dealhack.com/coupons/getyourguide",
+      "site": "getyourguide",
+      "cat": "Activities"
+    },
+    {
+      "url": "https://dealhack.com/coupons/viator",
+      "site": "viator",
+      "cat": "Activities"
+    },
+    {
+      "url": "https://dealhack.com/coupons/ticketmaster",
+      "site": "ticketmaster",
+      "cat": "Activities"
+    },
+    {
+      "url": "https://dealhack.com/coupons/tiqets",
+      "site": "tiqets",
+      "cat": "Activities"
+    },
+    {
+      "url": "https://dealhack.com/coupons/headout",
+      "site": "headout",
+      "cat": "Activities"
+    },
+    {
+      "url": "https://roo.cash/blog/travel-kkday-discount-code/",
+      "site": "kkday",
+      "cat": "Activities"
+    },
+    {
+      "url": "https://www.redhotoffers.hsbc.com.hk/en/latest-offers/red-hot-travel-special/travel-offers/",
+      "cat": "Flights",
+      "sites": {
+        "cathay": [
+          "cathay"
+        ],
+        "hkexpress": [
+          "hk express"
+        ],
+        "kkday": [
+          "kkday"
+        ],
+        "klook": [
+          "klook"
+        ],
+        "trip": [
+          "trip.com"
+        ],
+        "agoda": [
+          "agoda"
+        ],
+        "expedia": [
+          "expedia"
+        ],
+        "hotelscom": [
+          "hotels.com"
+        ]
+      }
+    }
   ]
 }

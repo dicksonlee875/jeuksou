@@ -236,7 +236,8 @@ const T = {
     workedH: "Worked for you", workedE: 'Tap "Worked" on a code after it works at checkout, and it shows up here.',
     weekH: "Ending within a week", weekE: "Nothing ending this week.",
     foot: d => `Updated ${d} by an automatic script that reads public promo pages every few days. None of these was tested at checkout unless you marked it, and "Auto-found" codes come straight from the page text. Paste the code at payment and check the price drops before you pay. Your Worked / Didn't work notes stay in this browser. Jeuksou isn't affiliated with any of the brands listed; names are used only to say which site a code is for.`,
-    cats: {}, locale: "en-GB",
+    noYet: "No codes found yet. Jeuksou checks again every 3 days.",
+    cats: { "Hotels": "Hotel booking", "Shopping": "Worldwide shopping" }, locale: "en-GB",
   },
   hant: /*HANT*/{
     search: "搜尋網站、優惠碼、銀行、信用卡", showDead: "顯示已過期", wallet: "錢包", saved: "已儲存",
@@ -244,7 +245,7 @@ const T = {
     all: "全部", live: "個有效優惠碼", sites: "個網站", soon: "個快將結束",
     siteLine: n => `${n} 個網站 · 點擊卡片打開`,
     nothing: q => `找不到${q ? `「${q}」` : "相符的結果"}。試試其他字詞或類別。`,
-    how: "使用方法：", noLive: "現時沒有有效優惠碼。", deadH: "已過期或不建議",
+    how: "使用方法：", noLive: "現時沒有有效優惠碼。", noYet: "暫時未找到優惠碼，著數碼每 3 日會再檢查。", deadH: "已過期或不建議",
     code: n => `${n} 個優惠碼`,
     status: { active: "即用", restricted: "限指定卡 / 會員", unconfirmed: "未確認", expired: "已過期", avoid: "不建議" },
     noCode: "毋須優惠碼", auto: "自動找到", endsToday: "今日結束", daysLeft: n => `尚餘 ${n} 日`,
@@ -254,7 +255,7 @@ const T = {
     workedH: "對你有效", workedE: "優惠碼在結帳成功後按「有效」，就會在這裡顯示。",
     weekH: "一星期內結束", weekE: "本星期沒有快將結束的優惠。",
     foot: d => `${d} 由自動程式更新，程式每隔幾日讀取公開的優惠頁面。除非你自己標記，這些優惠碼都未經結帳測試；「自動找到」的優惠碼直接取自網頁文字。付款時貼上優惠碼，確認價格下降後才付款。你的「有效 / 無效」標記只儲存在此瀏覽器。著數碼與所列品牌並無任何關係，品牌名稱只用作說明優惠碼適用的網站。`,
-    cats: { "Flights": "機票", "Hotels": "酒店", "Car rental": "租車", "Travel extras": "旅遊附加", "Activities": "活動", "Shopping": "購物", "Food & rides": "外賣及出行" },
+    cats: { "Flights": "機票", "Hotels": "酒店", "Car rental": "租車", "Travel extras": "旅遊附加", "Activities": "活動", "Shopping": "環球網購", "Food & rides": "外賣及出行" },
     locale: "zh-HK",
   }/*END_HANT*/,
 };
@@ -369,16 +370,23 @@ function renderStack() {
   const groups = {};
   for (const d of DEALS) if (matches(d)) (groups[d.site] = groups[d.site] || []).push(d);
   // Sites with ready-to-use codes first, then by how many live codes they have.
+  // Sites with no deals yet still get a card, so every site in the wallet can be found.
+  const q = state.q.toLowerCase();
+  for (const k of Object.keys(SITES)) {
+    if (groups[k]) continue;
+    const inCat = state.cat === "all" || (SITES[k].cats || []).includes(state.cat);
+    if (inCat && (!q || SITES[k].name.toLowerCase().includes(q))) groups[k] = [];
+  }
   const sites = Object.keys(groups).map(k => {
     const live = sortDeals(groups[k].filter(d => !d.dead));
     return { k, all: groups[k], live, top: live[0] || null, ready: live.filter(d => d.eff === "active").length };
-  }).filter(s => s.live.length || state.dead)
+  }).filter(s => s.live.length || state.dead || !s.all.length)
     .sort((a, b) => (b.ready > 0) - (a.ready > 0) || b.live.length - a.live.length || SITES[a.k].name.localeCompare(SITES[b.k].name));
   $("#site-line").textContent = t.siteLine(sites.length);
   if (!sites.length) { $("#stack").innerHTML = `<p class="empty">${esc(t.nothing(state.q))}</p>`; return; }
   $("#stack").innerHTML = sites.map(s => {
     const open = state.open === s.k || (sites.length === 1);
-    const cats = [...new Set(s.all.map(d => catName(d.cat)))].join(" · ");
+    const cats = [...new Set((s.all.length ? s.all.map(d => d.cat) : SITES[s.k].cats || []).map(catName))].join(" · ");
     let body = "";
     if (open) {
       const dead = sortDeals(s.all.filter(d => d.dead));
@@ -386,7 +394,7 @@ function renderStack() {
         <div class="site-tip"><b>${t.how}</b> ${esc(tx(SITES[s.k], "note"))}</div>
         ${s.live.map(d => dealHtml(d)).join("")}
         ${state.dead && dead.length ? `<div class="dead-h">${t.deadH}</div>${dead.map(d => dealHtml(d)).join("")}` : ""}
-        ${!s.live.length && !state.dead ? `<p class="empty">${t.noLive}</p>` : ""}
+        ${!s.all.length ? `<p class="empty">${t.noYet}</p>` : !s.live.length && !state.dead ? `<p class="empty">${t.noLive}</p>` : ""}
       </div>`;
     }
     return `<div class="wcard ${open ? "open" : ""}" style="${cardStyle(s.k)}">
