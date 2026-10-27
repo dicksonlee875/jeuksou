@@ -138,8 +138,9 @@ def pick_expiry(text):
 
 
 # Coupon hubs print stats beside each code ("31% of the cart", "$2,598.42" saved, "4 days ago").
-STATS = re.compile(r"of the cart|median discount|website showed|verification details|days? ago|in the last \d+ days|"
-                   r"across every cart|before this offer applies|^\d+ of \d+$|^" + r"(?:US\$|\$|£|€)\s?[\d,]+\.\d\d$", re.I)
+STATS = re.compile(r"of the cart|median discount|website showed|verification details|days? ago|yesterday|in the last \d+ days|"
+                   r"across every cart|before this offer applies|cart has to reach|same checks as|still worth a try|published this code|"
+                   r"code checks|saved in total|seen on the store|^\d+ of \d+$|^" + r"(?:US\$|\$|£|€)\s?[\d,]+\.\d\d$", re.I)
 
 # ---------- discount ----------
 MONEY = r"(?:HK\$|HKD|US\$|USD|NT\$|NTD|RMB|S\$|A\$|\$|¥|£|€)\s?\d[\d,]*(?:\.\d+)?"
@@ -201,9 +202,9 @@ def extract(html, page):
         seen_count[l] = seen_count.get(l, 0) + 1
 
     def filler(l):
-        """Lines that can't describe an offer: repeated boilerplate, bare dates/times, short fragments, coupon-site stats."""
+        """Lines that can't describe an offer: repeated boilerplate, bare dates/times, short fragments."""
         bare = CODE_RE.sub("", l).strip()
-        return (seen_count.get(l, 0) >= 3 or len(bare) < 8 or STATS.search(bare)
+        return (seen_count.get(l, 0) >= 3 or len(bare) < 8
                 or re.fullmatch(r"[\d年月日:/\-\s.]*(開搶|開賣|開始)?", bare) is not None)
 
     for i, line in enumerate(lines):
@@ -239,6 +240,10 @@ def extract(html, page):
                 context = line
             if OFF_TOPIC.search(context + " " + line):
                 continue
+            if STATS.search(CODE_RE.sub("", context).strip()):   # a coupon-site stat, not the offer
+                context = ""
+            if STATS.search(nxt):
+                nxt = ""
             big = pick_big(context.replace(tok, ""))
             if big == "New" and context is line:
                 big = pick_big(nxt)
