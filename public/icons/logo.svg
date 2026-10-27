@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7d97ff"/><stop offset=".55" stop-color="#3a5bf0"/><stop offset="1" stop-color="#2337b8"/></linearGradient></defs>
+  <rect width="100" height="100" fill="#121218"/>
+  <g transform="translate(5 5) scale(.9)">
+    <rect x="18" y="20" width="64" height="40" rx="8" fill="#ff7a1a"/>
+    <rect x="18" y="32" width="64" height="40" rx="8" fill="#e0314b"/>
+    <rect x="18" y="44" width="64" height="40" rx="8" fill="url(#g)"/>
+    <text x="32" y="74" font-family="Noto Sans HK, sans-serif" font-weight="900" font-size="22" fill="#fff">著</text>
+    <rect x="58" y="62" width="16" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
+  </g>
+</svg>
