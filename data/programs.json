@@ -18,7 +18,8 @@
      "need_zh": "免費加入",
      "perks": "Member rates, free Wi-Fi, points on stays.",
      "perks_zh": "會員價、免費 Wi-Fi、住宿賺積分。",
-     "short": "Member"
+     "short": "Member",
+     "color": "#e9e5df"
     },
     {
      "name": "Silver Elite",
@@ -26,7 +27,8 @@
      "need_zh": "每年 10 晚",
      "perks": "10% bonus points, late check-out when available.",
      "perks_zh": "額外 10% 積分，視乎情況延遲退房。",
-     "short": "Silver"
+     "short": "Silver",
+     "color": "#a9adb3"
     },
     {
      "name": "Gold Elite",
@@ -34,7 +36,8 @@
      "need_zh": "每年 25 晚",
      "perks": "25% bonus points, room upgrade when available, 2pm check-out, welcome points.",
      "perks_zh": "額外 25% 積分、視乎情況升級房間、下午 2 時退房、迎賓積分。",
-     "short": "Gold"
+     "short": "Gold",
+     "color": "#b8955a"
     },
     {
      "name": "Platinum Elite",
@@ -42,7 +45,8 @@
      "need_zh": "每年 50 晚",
      "perks": "50% bonus points, lounge access or breakfast, upgrades including some suites, 4pm check-out.",
      "perks_zh": "額外 50% 積分、酒廊或早餐、升級包括部分套房、下午 4 時退房。",
-     "short": "Platinum"
+     "short": "Platinum",
+     "color": "#7e8185"
     },
     {
      "name": "Titanium Elite",
@@ -50,7 +54,8 @@
      "need_zh": "每年 75 晚",
      "perks": "75% bonus points, upgrades including suites, 48-hour room guarantee.",
      "perks_zh": "額外 75% 積分、升級包括套房、48 小時保證有房。",
-     "short": "Titanium"
+     "short": "Titanium",
+     "color": "#4a4d52"
     },
     {
      "name": "Ambassador",
@@ -58,7 +63,8 @@
      "need_zh": "100 晚另加指定消費",
      "perks": "Personal Ambassador service and Your24 flexible check-in and check-out.",
      "perks_zh": "專屬 Ambassador 服務及 Your24 自選入住退房時間。",
-     "short": "Ambassador"
+     "short": "Ambassador",
+     "color": "#1b1b1d"
     }
    ],
    "links": [
@@ -253,7 +259,8 @@
      "need_zh": "免費加入",
      "perks": "Free Wi-Fi, points on stays, choose your room.",
      "perks_zh": "免費 Wi-Fi、住宿賺積分、自選房間。",
-     "short": "Member"
+     "short": "Member",
+     "color": "#104c97"
     },
     {
      "name": "Silver",
@@ -261,7 +268,8 @@
      "need_zh": "10 晚或 4 次住宿",
      "perks": "20% bonus points, 5th night free on reward stays.",
      "perks_zh": "額外 20% 積分，積分住宿第 5 晚免費。",
-     "short": "Silver"
+     "short": "Silver",
+     "color": "#a7a9ac"
     },
     {
      "name": "Gold",
@@ -269,7 +277,8 @@
      "need_zh": "25 晚或 15 次住宿",
      "perks": "80% bonus points, room upgrade when available, breakfast outside the US.",
      "perks_zh": "額外 80% 積分、視乎情況升級、美國以外免費早餐。",
-     "short": "Gold"
+     "short": "Gold",
+     "color": "#c19a49"
     },
     {
      "name": "Diamond",
@@ -277,7 +286,8 @@
      "need_zh": "50 晚或 25 次住宿",
      "perks": "100% bonus points, executive lounge access, 48-hour room guarantee.",
      "perks_zh": "額外 100% 積分、行政酒廊、48 小時保證有房。",
-     "short": "Diamond"
+     "short": "Diamond",
+     "color": "#2b2b2b"
     },
     {
      "name": "Diamond Reserve",
@@ -285,7 +295,8 @@
      "need_zh": "80 晚另加消費 18,000 美元",
      "perks": "120% bonus points, guaranteed 4pm check-out, confirmable upgrade.",
      "perks_zh": "額外 120% 積分、保證下午 4 時退房、可預先確認升級。",
-     "short": "D. Reserve"
+     "short": "D. Reserve",
+     "color": "#101820"
     }
    ],
    "links": [
@@ -455,7 +466,8 @@
      "need_zh": "免費加入",
      "perks": "Member rates, free Wi-Fi, 2pm late check-out.",
      "perks_zh": "會員價、免費 Wi-Fi、下午 2 時延遲退房。",
-     "short": "Club"
+     "short": "Club",
+     "color": "#e3e3e3"
     },
     {
      "name": "Silver Elite",
@@ -463,7 +475,8 @@
      "need_zh": "每年 10 晚",
      "perks": "20% bonus points, points don't expire.",
      "perks_zh": "額外 20% 積分，積分不會過期。",
-     "short": "Silver"
+     "short": "Silver",
+     "color": "#9ea2a8"
     },
     {
      "name": "Gold Elite",
@@ -471,7 +484,8 @@
      "need_zh": "每年 20 晚",
      "perks": "40% bonus points, Milestone Rewards start.",
      "perks_zh": "額外 40% 積分，開始享 Milestone Rewards。",
-     "short": "Gold"
+     "short": "Gold",
+     "color": "#b08d57"
     },
     {
      "name": "Platinum Elite",
@@ -479,7 +493,8 @@
      "need_zh": "每年 40 晚",
      "perks": "60% bonus points, room upgrade when available, 72-hour room guarantee, Hertz Five Star.",
      "perks_zh": "額外 60% 積分、視乎情況升級、72 小時保證有房、Hertz Five Star。",
-     "short": "Platinum"
+     "short": "Platinum",
+     "color": "#6d7278"
     },
     {
      "name": "Diamond Elite",
@@ -487,7 +502,8 @@
      "need_zh": "每年 70 晚",
      "perks": "100% bonus points, free breakfast for two, Hertz President's Circle.",
      "perks_zh": "額外 100% 積分、兩位免費早餐、Hertz President's Circle。",
-     "short": "Diamond"
+     "short": "Diamond",
+     "color": "#1d1d1d"
     }
    ],
    "links": [
@@ -643,7 +659,8 @@
      "need_zh": "免費加入",
      "perks": "Member rates, usually up to 10% off.",
      "perks_zh": "會員價，一般最多九折。",
-     "short": "Classic"
+     "short": "Classic",
+     "color": "#b8c4d6"
     },
     {
      "name": "Silver",
@@ -651,7 +668,8 @@
      "need_zh": "10 晚或 2,000 身份積分",
      "perks": "24% bonus points, welcome drink, late check-out when available.",
      "perks_zh": "額外 24% 積分、迎賓飲品、視乎情況延遲退房。",
-     "short": "Silver"
+     "short": "Silver",
+     "color": "#a8abb0"
     },
     {
      "name": "Gold",
@@ -659,7 +677,8 @@
      "need_zh": "30 晚或 7,000 身份積分",
      "perks": "48% bonus points, room upgrade when available, room guarantee.",
      "perks_zh": "額外 48% 積分、視乎情況升級、保證有房。",
-     "short": "Gold"
+     "short": "Gold",
+     "color": "#c5a467"
     },
     {
      "name": "Platinum",
@@ -667,7 +686,8 @@
      "need_zh": "60 晚或 14,000 身份積分",
      "perks": "76% bonus points, executive lounge, free breakfast in Asia Pacific.",
      "perks_zh": "額外 76% 積分、行政酒廊、亞太區免費早餐。",
-     "short": "Platinum"
+     "short": "Platinum",
+     "color": "#5d6068"
     },
     {
      "name": "Diamond",
@@ -675,7 +695,8 @@
      "need_zh": "26,000 身份積分",
      "perks": "100% bonus points, dining vouchers, gift Gold status to a friend.",
      "perks_zh": "額外 100% 積分、餐飲禮券、可送 Gold 會籍給朋友。",
-     "short": "Diamond"
+     "short": "Diamond",
+     "color": "#121a2b"
     }
    ],
    "links": [
@@ -837,7 +858,8 @@
      "need_zh": "免費加入",
      "perks": "Earn Asia Miles, check in 48 hours early, a lounge pass at 200 status points.",
      "perks_zh": "賺 Asia Miles、提早 48 小時登記、200 身份積分送貴賓室券。",
-     "short": "Green"
+     "short": "Green",
+     "color": "#00645a"
     },
     {
      "name": "Silver",
@@ -845,7 +867,8 @@
      "need_zh": "300 身份積分",
      "perks": "Business lounge, business check-in, priority bags, extra 10kg cabin allowance.",
      "perks_zh": "商務貴賓室、商務櫃位登記、行李優先、額外 10 公斤手提行李。",
-     "short": "Silver"
+     "short": "Silver",
+     "color": "#a7a9ac"
     },
     {
      "name": "Gold",
@@ -853,7 +876,8 @@
      "need_zh": "600 身份積分",
      "perks": "Bring a guest to lounges, preferred seats, free inflight Wi-Fi.",
      "perks_zh": "可攜一位賓客進貴賓室、優先選位、免費機上 Wi-Fi。",
-     "short": "Gold"
+     "short": "Gold",
+     "color": "#b8955a"
     },
     {
      "name": "Diamond",
@@ -861,7 +885,8 @@
      "need_zh": "1,200 身份積分",
      "perks": "First class lounges, priority boarding, extra baggage, upgrades.",
      "perks_zh": "頭等貴賓室、優先登機、額外行李、升級獎勵。",
-     "short": "Diamond"
+     "short": "Diamond",
+     "color": "#2b2f33"
     }
    ],
    "note": "Cathay is changing its membership tiers from 1 January 2027 and adding a new Diamond Exec tier.",
@@ -1036,7 +1061,8 @@
      "need_zh": "免費加入",
      "perks": "Earn and spend miles on Singapore Airlines and partners.",
      "perks_zh": "在新加坡航空及夥伴賺取及使用里數。",
-     "short": "KrisFlyer"
+     "short": "KrisFlyer",
+     "color": "#1d3c78"
     },
     {
      "name": "Elite Silver",
@@ -1044,7 +1070,8 @@
      "need_zh": "25,000 Elite 里數",
      "perks": "Star Alliance Silver: priority waitlist and reservations, bonus miles.",
      "perks_zh": "星空聯盟銀卡：優先候補及訂位、額外里數。",
-     "short": "Elite Silver"
+     "short": "Elite Silver",
+     "color": "#a7a9ac"
     },
     {
      "name": "Elite Gold",
@@ -1052,7 +1079,8 @@
      "need_zh": "50,000 Elite 里數",
      "perks": "Star Alliance Gold: lounge access, priority check-in and boarding, extra baggage.",
      "perks_zh": "星空聯盟金卡：貴賓室、優先登記及登機、額外行李。",
-     "short": "Elite Gold"
+     "short": "Elite Gold",
+     "color": "#b8955a"
     },
     {
      "name": "PPS Club",
@@ -1060,7 +1088,8 @@
      "need_zh": "乘搭套房、頭等或商務艙",
      "perks": "First and business lounges, priority everything, and Marriott Gold.",
      "perks_zh": "頭等及商務貴賓室、各項優先服務，另送 Marriott Gold。",
-     "short": "PPS Club"
+     "short": "PPS Club",
+     "color": "#1e1e2a"
     }
    ],
    "links": [
@@ -1209,7 +1238,8 @@
      "need_zh": "免費加入",
      "perks": "Collect Avios, reward flights, member offers.",
      "perks_zh": "賺取 Avios、獎勵機票、會員優惠。",
-     "short": "Blue"
+     "short": "Blue",
+     "color": "#1e4fa3"
     },
     {
      "name": "Bronze",
@@ -1217,7 +1247,8 @@
      "need_zh": "累積級別積分",
      "perks": "oneworld Ruby: priority check-in and boarding, seats 7 days ahead.",
      "perks_zh": "寰宇一家紅寶石：優先登記及登機、7 日前免費選位。",
-     "short": "Bronze"
+     "short": "Bronze",
+     "color": "#a0703f"
     },
     {
      "name": "Silver",
@@ -1225,7 +1256,8 @@
      "need_zh": "累積級別積分",
      "perks": "oneworld Sapphire: lounge access, free seats at booking.",
      "perks_zh": "寰宇一家藍寶石：貴賓室、訂票時免費選位。",
-     "short": "Silver"
+     "short": "Silver",
+     "color": "#a7a9ac"
     },
     {
      "name": "Gold",
@@ -1233,7 +1265,8 @@
      "need_zh": "70,000 級別積分",
      "perks": "oneworld Emerald: first class check-in, Concorde Room.",
      "perks_zh": "寰宇一家綠寶石：頭等櫃位登記、Concorde Room。",
-     "short": "Gold"
+     "short": "Gold",
+     "color": "#c19a49"
     }
    ],
    "links": [

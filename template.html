@@ -232,7 +232,7 @@ button.row { cursor: pointer; }
 .cmp table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
 .cmp th, .cmp td { padding: 11px 5px; text-align: center; font-size: 13px; font-weight: 800; min-width: 60px; border-top: 1px solid var(--line); }
 .cmp thead th { border-top: 0; font-size: 12.5px; color: var(--ink-2); padding-block: 14px 10px; vertical-align: bottom; }
-.cmp thead th .sw { display: block; width: 34px; height: 22px; margin: 0 auto 6px; border-radius: 5px; }
+.cmp thead th .sw { display: block; width: 38px; height: 24px; margin: 0 auto 6px; border-radius: 5px; box-shadow: inset 0 0 0 1px rgba(127,127,127,.25); }
 .cmp th[scope="row"], .cmp thead th:first-child { position: sticky; left: 0; z-index: 1; background: var(--panel); text-align: left; padding-left: 14px; min-width: 92px; max-width: 108px; font-size: 12.5px; line-height: 1.25; color: var(--ink); box-shadow: 1px 0 0 var(--line); }
 .cmp td.y { color: var(--ok); font-size: 15px; }
 .cmp td.n { color: var(--line); }
@@ -801,7 +801,7 @@ function renderProgram() {
   const shade = i => `color-mix(in srgb, ${g.color[0]} ${25 + Math.round(75 * i / Math.max(1, g.tiers.length - 1))}%, var(--well))`;
   const [need, ...rest] = g.rows;
   const table = `<div class="cmp"><div class="cmp-scroll"><table>
-    <thead><tr><th scope="col">${esc(t.tierCol)}</th>${g.tiers.map((x, i) => `<th scope="col"><span class="sw" style="background:${shade(i)}"></span>${esc(x.short)}</th>`).join("")}</tr></thead>
+    <thead><tr><th scope="col">${esc(t.tierCol)}</th>${g.tiers.map((x, i) => `<th scope="col"><span class="sw" style="background:${x.color || shade(i)}"></span>${esc(x.short)}</th>`).join("")}</tr></thead>
     <tbody>${[need, ...rest].map((r, k) => `<tr${k === 0 ? ` class="need"` : ""}><th scope="row">${esc(tx(r, "label"))}</th>${vals(r).map(cell).join("")}</tr>`).join("")}</tbody>
     </table></div><div class="cmp-foot">${goLink(g.url, t.visit(g.name))}</div></div>`;
   const moves = g.links.filter(l => l.kind === "move"), stat = g.links.filter(l => l.kind !== "move");
