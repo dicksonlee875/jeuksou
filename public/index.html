@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0a0a0c">
+<meta name="theme-color" content="#f2f3f6">
 <title>Jeuksou 著數碼</title>
 <link rel="icon" href="icons/icon-32.png" sizes="32x32">
 <link rel="icon" href="icons/icon-192.png" sizes="192x192">
@@ -13,151 +13,208 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="Jeuksou">
+<script>
+// Pick light or dark before the page paints: the Settings choice, else the phone's setting.
+(function () { var t = null; try { t = JSON.parse(localStorage.getItem("zsm-theme")); } catch (e) {}
+  if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  document.documentElement.dataset.theme = t;
+  if (t === "dark") document.querySelector('meta[name="theme-color"]').content = "#0b0d12"; })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500;700&family=Noto+Sans+HK:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@600&family=Noto+Sans+HK:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: phone-first wallet app. One centred column (wider on desktop), stacked site cards that open in place, fixed bottom tab bar for Wallet / Saved. Deliberately single-theme dark. */
+/* Layout: phone-first wallet app in one centred column. Region switch, category tabs, then the colourful stacked site cards that open in place. Floating tab bar for Wallet / Saved / Settings. Light by default, dark via Settings or the system setting. */
 :root {
-  color-scheme: dark;
-  --bg: #0a0a0c;
-  --panel: #141418;
-  --panel-2: #1d1d23;
-  --line: #2a2a32;
-  --ink: #f4f4f6;
-  --muted: #9a9aa6;
-  --accent: #5b7cff;
-  --ok: #3ddc97; --ok-bg: rgba(61,220,151,.12);
-  --warn: #ffc85c; --warn-bg: rgba(255,200,92,.12);
-  --bad: #ff7a70; --bad-bg: rgba(255,122,112,.12);
-  --info: #9fb0ff; --info-bg: rgba(91,124,255,.16);
-  --font: "Geist", "Segoe UI", system-ui, sans-serif;
-  --mono: "Geist Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+  --bg: #f2f3f6;
+  --panel: #ffffff;
+  --panel-2: #f2f3f6;
+  --well: #e3e5eb;
+  --line: #dadde4;
+  --ink: #0e1116;
+  --ink-2: #2a2f38;
+  --muted: #5b6270;
+  --accent: #2b59ff;
+  --accent-ink: #ffffff;
+  --code-bg: #ffffff;
+  --ok: #0a7d4f; --ok-bg: rgba(10,125,79,.1);
+  --warn: #9a5b00; --warn-bg: rgba(229,145,0,.14);
+  --bad: #c0282d; --bad-bg: rgba(192,40,45,.1);
+  --info: #2347d6; --info-bg: rgba(43,89,255,.1);
+  --soft: rgba(14,17,22,.06);
+  --card-shadow: 0 -6px 18px rgba(14,17,22,.18);
+  --bar: #0e1116; --bar-ink: #b9bfcc; --bar-on: #ffffff; --bar-on-ink: #0e1116;
+  --toast: #0e1116; --toast-ink: #ffffff;
+  --font: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
   --hk: "Noto Sans HK", "PingFang HK", "Microsoft JhengHei", sans-serif;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b0d12; --panel: #171a21; --panel-2: #20242d; --well: #20242d; --line: #2c313b;
+  --ink: #f1f3f7; --ink-2: #d6dae2; --muted: #9aa1ae; --accent: #6b8cff; --accent-ink: #0b0d12; --code-bg: #0b0d12;
+  --ok: #4fd69c; --ok-bg: rgba(79,214,156,.13); --warn: #ffc85c; --warn-bg: rgba(255,200,92,.13);
+  --bad: #ff8a80; --bad-bg: rgba(255,138,128,.13); --info: #a9bcff; --info-bg: rgba(107,140,255,.16);
+  --soft: rgba(255,255,255,.07); --card-shadow: 0 -8px 24px rgba(0,0,0,.45);
+  --bar: #f1f3f7; --bar-ink: #5b6270; --bar-on: #0b0d12; --bar-on-ink: #ffffff;
+  --toast: #f1f3f7; --toast-ink: #0e1116;
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html, body { background: var(--bg); }
-body { color: var(--ink); font-family: var(--font); font-size: 15px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
+body { margin: 0; color: var(--ink); font-family: var(--font); font-size: 15px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
 button, input, select { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .num { font-variant-numeric: tabular-nums; }
 
-.app { max-width: 680px; margin: 0 auto; padding-block: 20px calc(96px + env(safe-area-inset-bottom, 0px)); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.app { max-width: 680px; margin: 0 auto; padding-block: 18px calc(110px + env(safe-area-inset-bottom, 0px)); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 
 /* ---------- header ---------- */
-.hdr { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.logo { display: flex; align-items: center; gap: 12px; }
-.logo .mark { width: 52px; height: 52px; border-radius: 13px; flex: none; box-shadow: 0 0 0 1px var(--line); }
-.logo h1 { margin: 0; font: 900 clamp(34px, 8vw, 44px) var(--hk); letter-spacing: .02em; line-height: 1; }
-.logo .en { display: block; margin-top: 6px; font-size: 11px; font-weight: 600; letter-spacing: .28em; color: var(--muted); }
-.stats { display: flex; gap: 16px; font-size: 12.5px; color: var(--muted); }
-.stats b { display: block; color: var(--ink); font-size: 18px; font-weight: 700; }
+.hdr { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo .mark { width: 40px; height: 40px; border-radius: 11px; flex: none; }
+.logo b { display: block; font-size: 19px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+.logo span { display: block; font: 700 12px var(--hk); color: var(--muted); letter-spacing: .08em; }
+.hdr-stat { text-align: right; font-size: 12px; color: var(--muted); font-weight: 600; }
+.hdr-stat b { display: block; font-size: 18px; color: var(--ink); font-weight: 800; font-variant-numeric: tabular-nums; }
 
-/* ---------- search + chips ---------- */
-.tools { margin-top: 18px; display: grid; gap: 12px; }
+/* ---------- best right now ---------- */
+.hero { margin-top: 16px; background: #2b59ff; color: #fff; border-radius: 20px; padding: 16px 18px 18px; display: grid; gap: 10px; }
+.hero-top { display: flex; justify-content: space-between; gap: 10px; font-size: 13px; font-weight: 700; opacity: .92; }
+.hero-big { font-size: clamp(36px, 10vw, 44px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+.hero-row { display: flex; gap: 8px; }
+.hero-code { flex: 1; min-width: 0; height: 46px; border-radius: 12px; background: rgba(255,255,255,.18); display: flex; align-items: center; padding: 0 14px; font: 600 15px var(--mono); letter-spacing: .06em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hero-copy { height: 46px; padding: 0 20px; border: 0; border-radius: 12px; background: #fff; color: #2b59ff; font-weight: 800; font-size: 14.5px; cursor: pointer; }
+:root[data-theme="dark"] .seg button[aria-pressed="true"], :root[data-theme="dark"] .lang button[aria-pressed="true"] { background: #454c5c; }
+
+/* ---------- search, region, categories ---------- */
+.tools { margin-top: 16px; display: grid; gap: 12px; }
 .field { position: relative; min-width: 0; }
-.field input, .field select { width: 100%; height: 54px; padding: 21px 14px 6px 44px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); transition: border-color .15s, box-shadow .15s; }
-.field select { appearance: none; -webkit-appearance: none; }
-.field label { position: absolute; left: 44px; top: 17px; color: var(--muted); font-size: 14.5px; pointer-events: none; transition: top .15s, font-size .15s; }
-.field input:focus, .field select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(91,124,255,.25); }
-.field input:focus + label, .field input:not(:placeholder-shown) + label, .field select + label { top: 7px; font-size: 11.5px; letter-spacing: .02em; }
-.field .ico { position: absolute; left: 14px; top: 18px; width: 18px; height: 18px; stroke: var(--muted); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
-.chips-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px 2px; scrollbar-width: none; }
-.chips-wrap::-webkit-scrollbar { display: none; }
-.chips { display: flex; gap: 8px; width: max-content; }
-.chip { border: 0; background: var(--panel-2); color: #c8c8d2; font-size: 14px; font-weight: 500; padding: 8px 14px; border-radius: 999px; cursor: pointer; white-space: nowrap; }
-.chip .n { color: var(--muted); margin-left: 5px; font-variant-numeric: tabular-nums; }
-.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); font-weight: 600; }
-.chip[aria-pressed="true"] .n { color: #55555f; }
-.regions .chip { background: transparent; box-shadow: inset 0 0 0 1px var(--line); font-size: 13.5px; padding: 6px 13px; }
-.regions .chip[aria-pressed="true"] { background: var(--accent); color: #fff; box-shadow: none; }
-.sec-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 26px 2px 10px; font-size: 17px; font-weight: 800; letter-spacing: -0.01em; }
-.sec-h:first-child { margin-top: 0; }
-.sec-h span { font-size: 12.5px; font-weight: 600; color: var(--muted); }
-.sec-h + .wcard { margin-top: 0; }
-.wcard:has(+ .sec-h) .wcard-h { padding-bottom: 18px; }
-.wcard-rank { font: 600 13px var(--mono); opacity: .75; margin-right: 8px; font-variant-numeric: tabular-nums; }
-.sub-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+.field input { width: 100%; height: 50px; padding: 0 14px 0 44px; border: 1px solid transparent; border-radius: 14px; background: var(--panel); transition: border-color .15s, box-shadow .15s; }
+.field input::placeholder { color: var(--muted); }
+.field input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--info-bg); }
+.field .ico { position: absolute; left: 15px; top: 16px; width: 18px; height: 18px; stroke: var(--muted); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.seg { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); background: var(--well); border-radius: 12px; padding: 3px; }
+.seg button { border: 0; background: transparent; border-radius: 9px; height: 36px; font-size: 13px; font-weight: 600; color: var(--ink-2); cursor: pointer; white-space: nowrap; padding: 0 4px; }
+.seg button[aria-pressed="true"] { background: var(--panel); color: var(--ink); font-weight: 800; box-shadow: 0 1px 3px rgba(14,17,22,.14); }
+.tabs-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; scrollbar-width: none; border-bottom: 1px solid var(--line); }
+.tabs-wrap::-webkit-scrollbar { display: none; }
+.tabs { display: flex; gap: 20px; width: max-content; }
+.tab { border: 0; background: transparent; padding: 10px 0 12px; font-size: 14.5px; font-weight: 600; color: var(--muted); cursor: pointer; white-space: nowrap; }
+.tab .n { margin-left: 4px; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.tab[aria-pressed="true"] { color: var(--ink); font-weight: 800; box-shadow: inset 0 -2.5px 0 var(--accent); }
+.sub-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); font-weight: 600; }
 .toggle { display: inline-flex; align-items: center; gap: 7px; cursor: pointer; }
 .toggle input { accent-color: var(--accent); width: 16px; height: 16px; }
+.sec-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 26px 2px 10px; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
+.sec-h:first-child { margin-top: 0; }
+.sec-h span { font-size: 12.5px; font-weight: 700; color: var(--muted); letter-spacing: 0; }
+.sec-h + .wcard { margin-top: 0; }
+.wcard:has(+ .sec-h) .wcard-h { padding-bottom: 18px; }
 
-/* ---------- wallet stack ---------- */
-.stack { margin-top: 18px; display: flex; flex-direction: column; }
-.wcard { position: relative; border-radius: 20px; margin-top: -26px; box-shadow: 0 -8px 24px rgba(0,0,0,.45); overflow: hidden; transition: margin .25s ease; }
+/* ---------- wallet stack (the colourful cards) ---------- */
+.stack { margin-top: 16px; display: flex; flex-direction: column; }
+.wcard { position: relative; border-radius: 20px; margin-top: -26px; box-shadow: var(--card-shadow); overflow: hidden; transition: margin .25s ease; }
 .wcard:first-child { margin-top: 0; }
 .wcard.open { margin-top: 14px; margin-bottom: 14px; }
 .wcard:first-child.open { margin-top: 0; }
 .wcard-h { width: 100%; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; padding: 18px 18px 34px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; align-items: start; }
 .wcard.open .wcard-h, .wcard:last-child .wcard-h { padding-bottom: 18px; }
-.wcard-name { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+.wcard-name { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; }
+.wcard-rank { font: 600 13px var(--mono); opacity: .75; margin-right: 8px; font-variant-numeric: tabular-nums; }
 .wcard-cats { font-size: 13px; opacity: .85; grid-column: 1; }
 .wcard-right { grid-row: 1 / span 2; grid-column: 2; text-align: right; }
 .wcard-best { font-size: 24px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; font-variant-numeric: tabular-nums; }
-.wcard-count { font-size: 12.5px; font-weight: 600; opacity: .85; }
-.wcard-body { background: var(--panel); padding: 6px 12px 12px; display: grid; gap: 10px; }
-.site-tip { font-size: 13.5px; color: #c8c8d2; background: var(--panel-2); border-radius: 12px; padding: 11px 13px; }
+.wcard-count { font-size: 12.5px; font-weight: 700; opacity: .85; }
+.wcard-body { background: var(--panel); color: var(--ink); padding: 6px 12px 12px; display: grid; gap: 10px; }
+.site-tip { font-size: 13.5px; color: var(--ink-2); background: var(--panel-2); border-radius: 12px; padding: 11px 13px; }
 .site-tip b { color: var(--ink); }
 
 /* ---------- deal rows ---------- */
 .deal { background: var(--panel-2); border-radius: 14px; padding: 14px; display: grid; gap: 8px; }
 .deal-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: start; }
 .deal-big { font-size: 26px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; }
-.deal-title { font-weight: 600; font-size: 15px; grid-column: 1; }
+.deal-title { font-weight: 700; font-size: 15px; grid-column: 1; }
 .tags { grid-row: 1 / span 2; grid-column: 2; display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
-.tag { font-size: 11.5px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.tag { font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
 .t-active { background: var(--ok-bg); color: var(--ok); }
 .t-restricted { background: var(--info-bg); color: var(--info); }
 .t-unconfirmed, .t-soon { background: var(--warn-bg); color: var(--warn); }
 .t-expired, .t-avoid { background: var(--bad-bg); color: var(--bad); }
-.t-offer { background: rgba(255,255,255,.07); color: #c8c8d2; }
-.desc { margin: 0; color: #dedee6; font-size: 14.5px; }
+.t-offer, .t-auto { background: var(--soft); color: var(--ink-2); }
+.desc { margin: 0; color: var(--ink-2); font-size: 14.5px; }
 .cond { margin: 0; color: var(--muted); font-size: 13.5px; }
 .codes { display: flex; flex-wrap: wrap; gap: 8px; }
-.code { display: inline-flex; align-items: center; gap: 10px; font: 700 15px var(--mono); letter-spacing: .05em; padding: 7px 7px 7px 13px; border-radius: 10px; border: 1px solid var(--line); background: #0f0f13; color: var(--ink); cursor: pointer; transition: border-color .15s, transform .05s; }
+.code { display: inline-flex; align-items: center; gap: 10px; font: 600 15px var(--mono); letter-spacing: .05em; padding: 7px 7px 7px 13px; border-radius: 10px; border: 1px solid var(--line); background: var(--code-bg); color: var(--ink); cursor: pointer; transition: border-color .15s, transform .05s; }
 .code:hover { border-color: var(--accent); }
 .code:active { transform: scale(.98); }
-.code .cp { font: 600 11.5px var(--font); letter-spacing: 0; background: var(--ink); color: var(--bg); padding: 3px 9px; border-radius: 6px; }
-.code.done .cp { background: var(--ok); }
+.code .cp { font: 700 11.5px var(--font); letter-spacing: 0; background: var(--ink); color: var(--bg); padding: 3px 9px; border-radius: 6px; }
+.code.done .cp { background: var(--ok); color: #fff; }
 .dead .code { color: var(--muted); text-decoration: line-through; cursor: default; }
 .dead .code .cp { display: none; }
 .dead .deal-big { color: var(--muted); }
-.offer-link { display: inline-flex; align-items: center; gap: 6px; width: max-content; font-weight: 600; font-size: 14px; color: var(--ink); text-decoration: none; background: #0f0f13; border: 1px solid var(--line); padding: 8px 13px; border-radius: 10px; }
+.offer-link { display: inline-flex; align-items: center; gap: 6px; width: max-content; font-weight: 700; font-size: 14px; color: var(--ink); text-decoration: none; background: var(--code-bg); border: 1px solid var(--line); padding: 8px 13px; border-radius: 10px; }
 .offer-link:hover { border-color: var(--accent); }
 .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .meta a { color: var(--muted); }
 .mine { display: inline-flex; gap: 6px; margin-left: auto; }
-.mine button { font-size: 12.5px; font-weight: 500; border: 1px solid var(--line); background: transparent; color: var(--muted); padding: 4px 10px; border-radius: 8px; cursor: pointer; }
+.mine button { font-size: 12.5px; font-weight: 600; border: 1px solid var(--line); background: transparent; color: var(--muted); padding: 4px 10px; border-radius: 8px; cursor: pointer; }
 .mine button[aria-pressed="true"].yes { background: var(--ok-bg); color: var(--ok); border-color: transparent; }
 .mine button[aria-pressed="true"].no { background: var(--bad-bg); color: var(--bad); border-color: transparent; }
-.dead-h { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 4px 4px 0; }
-.empty { text-align: center; color: var(--muted); padding: 48px 12px; }
-.section-h { margin: 22px 0 10px; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.dead-h { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 4px 4px 0; }
+.empty { text-align: center; color: var(--muted); padding: 40px 12px; }
+.section-h { margin: 22px 0 10px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .saved-list { display: grid; gap: 10px; }
-.saved-list .deal { border-left: 4px solid var(--site, var(--accent)); }
-.saved-site { font-size: 12.5px; font-weight: 700; color: var(--site, var(--accent)); filter: brightness(1.35); }
+.saved-list .deal { background: var(--panel); }
+.saved-site { font-size: 12.5px; font-weight: 800; color: var(--site, var(--accent)); }
 
-.view-h { margin: 20px 0 6px; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+.view-h { margin: 8px 0 6px; font-size: 30px; font-weight: 800; letter-spacing: -0.03em; }
 .view-p { margin: 0 0 16px; color: var(--muted); }
-.foot { margin-top: 28px; color: var(--muted); font-size: 12.5px; }
 
-/* ---------- tab bar ---------- */
-.tabbar { position: fixed; z-index: 25; left: 0; right: 0; bottom: 0; background: rgba(10,10,12,.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom, 0px); padding-left: env(safe-area-inset-left, 0px); padding-right: env(safe-area-inset-right, 0px); }
-.tabbar-in { max-width: 680px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); }
-.tabbar button { border: 0; background: transparent; color: var(--muted); padding: 10px 0 12px; display: grid; justify-items: center; gap: 3px; font-size: 12px; font-weight: 600; cursor: pointer; }
+/* ---------- settings ---------- */
+.group { background: var(--panel); border-radius: 20px; margin-top: 16px; overflow: hidden; }
+.row { display: flex; align-items: center; gap: 12px; min-height: 60px; padding: 10px 14px; width: 100%; border: 0; background: transparent; color: var(--ink); text-align: left; font-size: 15.5px; font-weight: 700; }
+button.row { cursor: pointer; }
+.row + .row { box-shadow: inset 60px 1px 0 -59px transparent; border-top: 1px solid var(--line); }
+.row .ri { width: 34px; height: 34px; border-radius: 10px; flex: none; display: grid; place-items: center; color: #fff; }
+.row .ri svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.row .rl { flex: 1; min-width: 0; }
+.row .rv { color: var(--muted); font-weight: 600; font-size: 14px; text-align: right; }
+.row .chev { width: 16px; height: 16px; fill: none; stroke: var(--muted); stroke-width: 2.4; flex: none; }
+.lang { display: inline-flex; background: var(--well); border-radius: 10px; padding: 3px; }
+.lang button { border: 0; background: transparent; color: var(--ink-2); font-size: 13.5px; font-weight: 700; padding: 6px 12px; border-radius: 8px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--panel); color: var(--ink); box-shadow: 0 1px 3px rgba(14,17,22,.14); }
+.switch { position: relative; width: 51px; height: 31px; flex: none; }
+.switch input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.switch span { position: absolute; inset: 0; border-radius: 999px; background: var(--well); transition: background .2s; pointer-events: none; }
+.switch span::after { content: ""; position: absolute; left: 2px; top: 2px; width: 27px; height: 27px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: transform .2s; }
+.switch input:checked + span { background: #34c77b; }
+.switch input:checked + span::after { transform: translateX(20px); }
+.switch input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.set-note { margin: 14px 4px 0; font-size: 12.5px; color: var(--muted); }
+.back { display: inline-flex; align-items: center; gap: 4px; border: 0; background: transparent; color: var(--accent); font-weight: 700; font-size: 15px; padding: 8px 0; cursor: pointer; }
+.back svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.4; }
+.legal { background: var(--panel); border-radius: 20px; padding: 6px 18px 18px; margin-top: 12px; }
+.legal h3 { margin: 16px 0 4px; font-size: 15.5px; font-weight: 800; }
+.legal p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+
+/* ---------- floating tab bar ---------- */
+.tabbar { position: fixed; z-index: 25; left: 50%; transform: translateX(-50%); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); background: var(--bar); border-radius: 999px; padding: 7px; display: flex; gap: 4px; box-shadow: 0 10px 30px rgba(14,17,22,.28); }
+.tabbar button { position: relative; border: 0; background: transparent; color: var(--bar-ink); width: 68px; height: 46px; border-radius: 999px; display: grid; place-items: center; cursor: pointer; }
 .tabbar svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.tabbar button[aria-selected="true"] { color: var(--ink); }
-.tabbar .badge { font-size: 10px; background: var(--accent); color: #fff; border-radius: 999px; padding: 0 6px; margin-left: 2px; }
+.tabbar button[aria-selected="true"] { background: var(--bar-on); color: var(--bar-on-ink); }
+.tabbar .badge { position: absolute; top: 4px; right: 12px; min-width: 17px; height: 17px; font-size: 10.5px; font-weight: 800; line-height: 17px; background: #ff4d4f; color: #fff; border-radius: 999px; padding: 0 5px; }
 
 /* ---------- toasts ---------- */
 .toasts { position: fixed; z-index: 50; left: 50%; transform: translateX(-50%); bottom: calc(86px + env(safe-area-inset-bottom, 0px)); display: grid; gap: 8px; width: min(380px, calc(100vw - 32px)); }
-.toast { display: flex; gap: 10px; align-items: center; padding: 12px 14px; border-radius: 14px; background: #23232b; box-shadow: 0 10px 30px rgba(0,0,0,.5); font-size: 14px; font-weight: 500; animation: slide .25s ease-out; }
+.toast { display: flex; gap: 10px; align-items: center; padding: 12px 14px; border-radius: 14px; background: var(--toast); color: var(--toast-ink); box-shadow: 0 10px 30px rgba(0,0,0,.3); font-size: 14px; font-weight: 600; animation: slide .25s ease-out; }
 .toast svg { flex: none; width: 19px; height: 19px; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-.toast.ok svg { stroke: var(--ok); } .toast.warn svg { stroke: var(--warn); } .toast.bad svg { stroke: var(--bad); }
+.toast.ok svg { stroke: #34c77b; } .toast.warn svg { stroke: #e59100; } .toast.bad svg { stroke: #ff4d4f; }
 .toast.out { animation: fade .2s ease-in forwards; }
 @keyframes slide { from { opacity: 0; transform: translateY(10px); } }
 @keyframes fade { to { opacity: 0; transform: translateY(10px); } }
-@media (prefers-reduced-motion: reduce) { .toast, .toast.out, .ck-verdict { animation: none; } .wcard { transition: none; } .spin { animation-duration: 2s; } }
+@media (prefers-reduced-motion: reduce) { .toast, .toast.out { animation: none; } .wcard, .switch span, .switch span::after { transition: none; } }
 
 @media (min-width: 720px) {
   .app { padding-top: 32px; }
@@ -165,42 +222,27 @@ button, input, select { font: inherit; color: inherit; }
   .wcard-name { font-size: 21px; }
   .wcard-body { padding: 8px 16px 16px; }
 }
-
-/* ---------- language switch ---------- */
-.hdr-r { display: grid; gap: 10px; justify-items: end; }
-.lang { display: inline-flex; background: var(--panel-2); border-radius: 999px; padding: 3px; }
-.lang button { border: 0; background: transparent; color: var(--muted); font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 999px; cursor: pointer; }
-.lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
-.t-auto { background: rgba(255,255,255,.07); color: #c8c8d2; }
 html[lang^="zh"] body { font-family: var(--font), var(--hk); }
 html[lang="zh-Hans"] body { font-family: var(--font), "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; }
-@media (max-width: 719px) { .hdr { position: relative; } .lang { position: absolute; top: 2px; right: 0; } .hdr-r { justify-items: start; } }
 </style>
 </head>
 <body>
 <div class="app">
   <header class="hdr">
-    <div class="logo"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7d97ff"/><stop offset=".55" stop-color="#3a5bf0"/><stop offset="1" stop-color="#2337b8"/></linearGradient></defs><rect width="100" height="100" fill="#121218"/><g transform="translate(5 5) scale(.9)"><rect x="18" y="20" width="64" height="40" rx="8" fill="#ff7a1a"/><rect x="18" y="32" width="64" height="40" rx="8" fill="#e0314b"/><rect x="18" y="44" width="64" height="40" rx="8" fill="url(#lg)"/><text x="32" y="74" font-family="Noto Sans HK, sans-serif" font-weight="900" font-size="22" fill="#fff">著</text><rect x="58" y="62" width="16" height="6" rx="3" fill="#fff" fill-opacity=".85"/></g></svg><div><h1>著數碼</h1><span class="en">JEUKSOU · PROMO CODE WALLET</span></div></div>
-    <div class="hdr-r">
-      <div class="lang" role="group" aria-label="Language">
-        <button data-lang="en" aria-pressed="false">EN</button>
-        <button data-lang="hant" aria-pressed="false">繁</button>
-        <button data-lang="hans" aria-pressed="false">简</button>
-      </div>
-      <div class="stats" id="stats"></div>
-    </div>
+    <div class="logo"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7d97ff"/><stop offset=".55" stop-color="#3a5bf0"/><stop offset="1" stop-color="#2337b8"/></linearGradient></defs><rect width="100" height="100" fill="#121218"/><g transform="translate(5 5) scale(.9)"><rect x="18" y="20" width="64" height="40" rx="8" fill="#ff7a1a"/><rect x="18" y="32" width="64" height="40" rx="8" fill="#e0314b"/><rect x="18" y="44" width="64" height="40" rx="8" fill="url(#lg)"/><text x="32" y="74" font-family="Noto Sans HK, sans-serif" font-weight="900" font-size="22" fill="#fff">著</text><rect x="58" y="62" width="16" height="6" rx="3" fill="#fff" fill-opacity=".85"/></g></svg><div><b>Jeuksou</b><span>著數碼</span></div></div>
+    <div class="hdr-stat" id="stats"></div>
   </header>
 
   <!-- ===== WALLET ===== -->
   <section id="view-wallet">
+    <div class="hero" id="hero" hidden></div>
     <div class="tools">
       <div class="field">
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input id="q" type="search" placeholder=" " autocomplete="off">
-        <label for="q" data-t="search"></label>
+        <input id="q" type="search" autocomplete="off" data-ph="search">
       </div>
-      <div class="chips-wrap"><div class="chips regions" id="regions" role="group"></div></div>
-      <div class="chips-wrap"><div class="chips" id="cats"></div></div>
+      <div class="seg" id="regions" role="group" data-al="regionL"></div>
+      <div class="tabs-wrap"><div class="tabs" id="cats"></div></div>
       <div class="sub-row"><span id="site-line"></span><label class="toggle" for="showDead"><input type="checkbox" id="showDead"> <span data-t="showDead"></span></label></div>
     </div>
     <div class="stack" id="stack"></div>
@@ -213,13 +255,58 @@ html[lang="zh-Hans"] body { font-family: var(--font), "Noto Sans SC", "PingFang 
     <div id="saved"></div>
   </section>
 
-  <p class="foot" id="foot"></p>
+  <!-- ===== SETTINGS ===== -->
+  <section id="view-settings" hidden>
+    <div id="set-main">
+      <h2 class="view-h" data-t="settings"></h2>
+      <div class="group">
+        <div class="row">
+          <span class="ri" style="background:#2b59ff"><svg viewBox="0 0 24 24"><path d="M4 5h9M8.5 3v2M6 5c.5 3 2.5 6 6 8M11 5c-.5 3-3 7-7 9M13 21l4-10 4 10M14.5 17h5"/></svg></span>
+          <span class="rl" data-t="language"></span>
+          <span class="lang" role="group" data-al="language">
+            <button data-lang="en" aria-pressed="false">EN</button>
+            <button data-lang="hant" aria-pressed="false">繁</button>
+            <button data-lang="hans" aria-pressed="false">简</button>
+          </span>
+        </div>
+        <label class="row" for="darkMode">
+          <span class="ri" style="background:#3b3f4a"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></span>
+          <span class="rl" data-t="dark"></span>
+          <span class="switch"><input type="checkbox" id="darkMode" role="switch"><span></span></span>
+        </label>
+      </div>
+      <div class="group">
+        <button class="row" data-page="terms">
+          <span class="ri" style="background:#e5823a"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM9 12h7M9 16h7"/></svg></span>
+          <span class="rl" data-t="terms"></span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+        <button class="row" data-page="privacy">
+          <span class="ri" style="background:#2f9e8f"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.5 8-8 9-4.5-1-8-4.5-8-9V6z"/></svg></span>
+          <span class="rl" data-t="privacy"></span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+        <div class="row">
+          <span class="ri" style="background:#5b6270"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg></span>
+          <span class="rl" data-t="version"></span>
+          <span class="rv" id="version"></span>
+        </div>
+      </div>
+      <p class="set-note" id="set-note"></p>
+    </div>
+    <div id="set-page" hidden>
+      <button class="back" data-page="back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg><span data-t="settings"></span></button>
+      <h2 class="view-h" id="page-h"></h2>
+      <div class="legal" id="page-body"></div>
+    </div>
+  </section>
 </div>
 
-<nav class="tabbar" aria-label="Sections"><div class="tabbar-in" role="tablist">
-  <button role="tab" data-view="wallet" aria-selected="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18M7 6V4h10v2"/></svg><span data-t="wallet"></span></button>
-  <button role="tab" data-view="saved" aria-selected="false"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span><span data-t="saved"></span><span class="badge" id="saved-badge" hidden></span></span></button>
-</div></nav>
+<nav class="tabbar" aria-label="Sections" role="tablist">
+  <button role="tab" data-view="wallet" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18M7 6V4h10v2"/></svg></button>
+  <button role="tab" data-view="saved" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span class="badge" id="saved-badge" hidden></span></button>
+  <button role="tab" data-view="settings" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+</nav>
 <div class="toasts" id="toasts" aria-live="polite"></div>
 
 <script>
@@ -246,7 +333,25 @@ const T = {
     worked: "Worked", didnt: "Didn't work", wT: "Saved as worked", nT: "Marked as didn't work", cT: "Note cleared",
     workedH: "Worked for you", workedE: 'Tap "Worked" on a code after it works at checkout, and it shows up here.',
     weekH: "Ending within a week", weekE: "Nothing ending this week.",
-    foot: d => `Updated ${d} by an automatic script that reads public promo pages every few days. None of these was tested at checkout unless you marked it, and "Auto-found" codes come straight from the page text. Paste the code at payment and check the price drops before you pay. Your Worked / Didn't work notes stay in this browser. Jeuksou isn't affiliated with any of the brands listed; names are used only to say which site a code is for.`,
+    settings: "Settings", language: "Language", dark: "Dark mode", terms: "Terms & Conditions", privacy: "Privacy Statement", version: "Version",
+    setNote: d => `Codes last updated ${d}. Jeuksou checks public promo pages every 3 days.`,
+    regionL: "Region", regShort: { world: "World", hk: "HK", uk: "UK", us: "US", sg: "SG", all: "All" },
+    best: "Best right now", ends: d => `Ends ${d}`,
+    termsBody: [
+      ["What Jeuksou is", "Jeuksou is a free list of promo codes and deals found on public web pages. An automatic script reads those pages every 3 days, so a code can stop working before the next update."],
+      ["No guarantee", "Codes aren't tested at checkout unless you mark them yourself. \"Auto-found\" codes come straight from the page text. Paste the code at payment and check that the price drops before you pay. Card-only, member-only and region-only rules still apply."],
+      ["Not affiliated", "Jeuksou isn't affiliated with, endorsed by or sponsored by any brand listed. Brand names belong to their owners and are used only to say which site a code is for."],
+      ["Third-party sites", "Links open other companies' websites. Their prices, terms and privacy policies apply to anything you book or buy there."],
+      ["Use at your own risk", "Jeuksou is provided as is, without warranties. We aren't responsible for losses from a code that doesn't work, an offer that changed, or a purchase on another site."],
+      ["Changes", "These terms can change as the app changes. The current version is always in Settings."],
+    ],
+    privacyBody: [
+      ["No account, no tracking", "Jeuksou has no sign-up and doesn't collect your name, email or payment details. It has no ads and no analytics."],
+      ["What stays on your phone", "Your language, dark mode setting, region, and the codes you mark Worked or Didn't work are saved only in this browser's local storage. Clearing your browser data removes them."],
+      ["Hosting and fonts", "The app is hosted on Cloudflare Pages and loads fonts from Google Fonts. Like any website, these services receive your IP address and browser details when the page loads, under their own privacy policies."],
+      ["Links to other sites", "When you open an offer, that site's own privacy policy applies."],
+      ["Questions", "Questions about this statement can be raised on the project's GitHub page: github.com/dicksonlee875/jeuksou."],
+    ],
     noYet: "No codes found yet. Jeuksou checks again every 3 days.",
     cats: { "Hotels": "Hotel booking", "Shopping": "Worldwide shopping" }, locale: "en-GB",
   },
@@ -267,7 +372,25 @@ const T = {
     worked: "有效", didnt: "無效", wT: "已儲存為有效", nT: "已標記為無效", cT: "已清除標記",
     workedH: "對你有效", workedE: "優惠碼在結帳成功後按「有效」，就會在這裡顯示。",
     weekH: "一星期內結束", weekE: "本星期沒有快將結束的優惠。",
-    foot: d => `${d} 由自動程式更新，程式每隔幾日讀取公開的優惠頁面。除非你自己標記，這些優惠碼都未經結帳測試；「自動找到」的優惠碼直接取自網頁文字。付款時貼上優惠碼，確認價格下降後才付款。你的「有效 / 無效」標記只儲存在此瀏覽器。著數碼與所列品牌並無任何關係，品牌名稱只用作說明優惠碼適用的網站。`,
+    settings: "設定", language: "語言", dark: "深色模式", terms: "條款及細則", privacy: "私隱聲明", version: "版本",
+    setNote: d => `優惠碼最後更新於 ${d}。著數碼每 3 日檢查一次公開優惠頁面。`,
+    regionL: "地區", regShort: { world: "全球", hk: "香港", uk: "英國", us: "美國", sg: "新加坡", all: "全部" },
+    best: "現時最抵", ends: d => `${d} 結束`,
+    termsBody: [
+      ["著數碼是甚麼", "著數碼是一個免費的優惠碼及優惠列表，資料來自公開網頁。自動程式每 3 日讀取這些網頁一次，因此優惠碼可能在下次更新前已失效。"],
+      ["不作保證", "除非你自己標記，優惠碼都未經結帳測試；「自動找到」的優惠碼直接取自網頁文字。付款時貼上優惠碼，確認價格下降後才付款。限指定信用卡、會員或地區的條件仍然適用。"],
+      ["並無關係", "著數碼與所列品牌並無任何關係，亦未獲其認可或贊助。品牌名稱屬其擁有人所有，只用作說明優惠碼適用的網站。"],
+      ["第三方網站", "連結會打開其他公司的網站。你在那些網站預訂或購買，須受其價格、條款及私隱政策約束。"],
+      ["自行承擔風險", "著數碼按現狀提供，不作任何保證。對於優惠碼無效、優惠更改或在其他網站購物所引致的損失，我們概不負責。"],
+      ["條款更改", "條款可能隨應用程式更新而更改，最新版本一律載於「設定」。"],
+    ],
+    privacyBody: [
+      ["毋須帳戶，不作追蹤", "著數碼毋須登記，不會收集你的姓名、電郵或付款資料，亦沒有廣告及分析工具。"],
+      ["只儲存在你的手機", "你的語言、深色模式、地區設定，以及你標記為「有效」或「無效」的優惠碼，只儲存在此瀏覽器的本機儲存空間。清除瀏覽器資料即會刪除。"],
+      ["寄存及字型", "本應用程式寄存於 Cloudflare Pages，並從 Google Fonts 載入字型。與任何網站一樣，這些服務在載入頁面時會收到你的 IP 地址及瀏覽器資料，並受其私隱政策約束。"],
+      ["其他網站連結", "打開優惠後，該網站的私隱政策適用。"],
+      ["查詢", "如對本聲明有疑問，可在項目的 GitHub 頁面提出：github.com/dicksonlee875/jeuksou。"],
+    ],
     cats: { "Flights": "機票", "Hotels": "酒店", "Car rental": "租車", "Travel extras": "旅遊附加", "Activities": "活動", "Shopping": "環球網購", "Food & rides": "外賣及出行" },
     locale: "zh-HK",
   }/*END_HANT*/,
@@ -290,7 +413,25 @@ T.hans = Object.assign({
     worked: "有效", didnt: "无效", wT: "已储存为有效", nT: "已标记为无效", cT: "已清除标记",
     workedH: "对你有效", workedE: "优惠码在结账成功后按「有效」，就会在这里显示。",
     weekH: "一星期内结束", weekE: "本星期没有快将结束的优惠。",
-    foot: d => `${d} 由自动程序更新，程序每隔几日读取公开的优惠页面。除非你自己标记，这些优惠码都未经结账测试；「自动找到」的优惠码直接取自网页文字。付款时贴上优惠码，确认价格下降后才付款。你的「有效 / 无效」标记只储存在此浏览器。著数码与所列品牌并无任何关系，品牌名称只用作说明优惠码适用的网站。`,
+    settings: "设定", language: "语言", dark: "深色模式", terms: "条款及细则", privacy: "私隐声明", version: "版本",
+    setNote: d => `优惠码最后更新于 ${d}。著数码每 3 日检查一次公开优惠页面。`,
+    regionL: "地区", regShort: { world: "全球", hk: "香港", uk: "英国", us: "美国", sg: "新加坡", all: "全部" },
+    best: "现时最抵", ends: d => `${d} 结束`,
+    termsBody: [
+      ["著数码是甚么", "著数码是一个免费的优惠码及优惠列表，资料来自公开网页。自动程序每 3 日读取这些网页一次，因此优惠码可能在下次更新前已失效。"],
+      ["不作保证", "除非你自己标记，优惠码都未经结账测试；「自动找到」的优惠码直接取自网页文字。付款时贴上优惠码，确认价格下降后才付款。限指定信用卡、会员或地区的条件仍然适用。"],
+      ["并无关系", "著数码与所列品牌并无任何关系，亦未获其认可或赞助。品牌名称属其拥有人所有，只用作说明优惠码适用的网站。"],
+      ["第三方网站", "连结会打开其他公司的网站。你在那些网站预订或购买，须受其价格、条款及私隐政策约束。"],
+      ["自行承担风险", "著数码按现状提供，不作任何保证。对于优惠码无效、优惠更改或在其他网站购物所引致的损失，我们概不负责。"],
+      ["条款更改", "条款可能随应用程序更新而更改，最新版本一律载于「设定」。"],
+    ],
+    privacyBody: [
+      ["毋须账户，不作追踪", "著数码毋须登记，不会收集你的姓名、电子邮件或付款资料，亦没有广告及分析工具。"],
+      ["只储存在你的手机", "你的语言、深色模式、地区设定，以及你标记为「有效」或「无效」的优惠码，只储存在此浏览器的本机储存空间。清除浏览器资料即会删除。"],
+      ["寄存及字型", "本应用程序寄存于 Cloudflare Pages，并从 Google Fonts 载入字型。与任何网站一样，这些服务在载入页面时会收到你的 IP 地址及浏览器资料，并受其私隐政策约束。"],
+      ["其他网站连结", "打开优惠后，该网站的私隐政策适用。"],
+      ["查询", "如对本声明有疑问，可在项目的 GitHub 页面提出：github.com/dicksonlee875/jeuksou。"],
+    ],
     cats: { "Flights": "机票", "Hotels": "酒店", "Car rental": "租车", "Travel extras": "旅游附加", "Activities": "活动", "Shopping": "环球网购", "Food & rides": "外卖及出行" },
     locale: "zh-HK",
   }, { locale: "zh-CN" });
@@ -326,7 +467,9 @@ const state = Object.assign({ cat: "all", region: "world", dead: false, view: "w
 if (state.region !== "all" && !REGIONS[state.region]) state.region = "world";
 state.q = "";
 if (state.cat !== "all" && !CATS.includes(state.cat)) state.cat = "all";
-if (state.view !== "saved") state.view = "wallet";
+if (!["saved", "settings"].includes(state.view)) state.view = "wallet";
+state.page = null;
+const VERSION = "1.0.0";
 const guessLang = () => { const l = (navigator.language || "").toLowerCase(); return /^zh-(cn|sg)|hans/.test(l) ? "hans" : l.startsWith("zh") ? "hant" : "en"; };
 let lang = store.get("zsm-lang", null) || guessLang();
 if (!T[lang]) lang = "en";
@@ -354,17 +497,43 @@ const sortDeals = list => list.sort((a, b) => RANK[a.eff] - RANK[b.eff] || (mark
 function renderText() {
   document.documentElement.lang = lang === "en" ? "en" : lang === "hans" ? "zh-Hans" : "zh-Hant-HK";
   document.querySelectorAll("[data-t]").forEach(el => { el.textContent = L()[el.dataset.t]; });
+  document.querySelectorAll("[data-ph]").forEach(el => { el.placeholder = L()[el.dataset.ph]; });
+  document.querySelectorAll("[data-al]").forEach(el => el.setAttribute("aria-label", L()[el.dataset.al]));
+  document.querySelectorAll(".tabbar [data-view]").forEach(b => b.setAttribute("aria-label", L()[b.dataset.view]));
   document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
-  $("#foot").textContent = L().foot(fmt(DATA.updated));
+  $("#version").textContent = VERSION;
+  $("#set-note").textContent = L().setNote(fmt(DATA.updated));
+  $("#darkMode").checked = theme() === "dark";
+}
+
+/* ---------- Light / dark ---------- */
+const theme = () => document.documentElement.dataset.theme;
+function setTheme(t) {
+  document.documentElement.dataset.theme = t;
+  store.set("zsm-theme", t);
+  document.querySelector('meta[name="theme-color"]').content = t === "dark" ? "#0b0d12" : "#f2f3f6";
 }
 
 /* ---------- Wallet ---------- */
 function renderStats() {
   const usable = DEALS.filter(d => !d.dead);
-  const soon = usable.filter(d => d.daysLeft != null && d.daysLeft <= 14).length;
-  $("#stats").innerHTML = `<span><b class="num">${usable.length}</b>${L().live}</span><span><b class="num">${Object.keys(SITES).length}</b>${L().sites}</span><span><b class="num">${soon}</b>${L().soon}</span>`;
+  $("#stats").innerHTML = `<b>${usable.length}</b>${L().live}`;
   const worked = Object.values(marks).filter(v => v === "yes").length;
   const badge = $("#saved-badge"); badge.hidden = !worked; badge.textContent = worked;
+}
+
+// "Best right now": the top ready-to-use code among the sites on screen, by the region's ranking.
+function renderHero() {
+  const t = L();
+  const order = state.region === "all" ? null : regionSites(state.cat);
+  const pool = DEALS.filter(d => d.eff === "active" && d.codes && (order ? order.includes(d.site) : state.cat === "all" || d.cat === state.cat));
+  pool.sort((a, b) => (order ? order.indexOf(a.site) - order.indexOf(b.site) : 0) || a.order - b.order);
+  const d = pool[0], el = $("#hero");
+  el.hidden = !d || state.q !== "";
+  if (!d) return;
+  el.innerHTML = `<div class="hero-top"><span>${t.best} · ${esc(SITES[d.site].name)}</span><span>${d.expires ? t.ends(fmt(d.expires)) : ""}</span></div>
+    <div class="hero-big">${esc(tx(d, "big"))}</div>
+    <div class="hero-row"><span class="hero-code">${esc(d.codes[0])}</span><button class="hero-copy" data-code="${esc(d.codes[0])}"><span class="cp">${t.copy}</span></button></div>`;
 }
 
 // Sites a region ranks in one category (or all its categories), best first.
@@ -373,13 +542,13 @@ const regionCats = () => Object.keys(REGIONS[state.region]);
 
 function renderCats() {
   $("#regions").innerHTML = [...Object.keys(REGIONS), "all"].map(r =>
-    `<button class="chip" data-region="${r}" aria-pressed="${state.region === r}">${esc(L().regions[r] || r)}</button>`).join("");
+    `<button data-region="${r}" aria-pressed="${state.region === r}" aria-label="${esc(L().regions[r] || r)}">${esc(L().regShort[r] || r)}</button>`).join("");
   const live = DEALS.filter(d => !d.dead);
   const inRegion = state.region !== "all";
   $("#cats").innerHTML = ["all", ...(inRegion ? regionCats() : CATS)].map(c => {
-    const n = inRegion ? regionSites(c).length     // in a region the chips count sites, not codes
+    const n = inRegion ? regionSites(c).length     // in a region the tabs count sites, not codes
       : c === "all" ? live.length : live.filter(d => d.cat === c).length;
-    return `<button class="chip" data-cat="${esc(c)}" aria-pressed="${state.cat === c}">${c === "all" ? L().all : esc(catName(c))}<span class="n">${n}</span></button>`;
+    return `<button class="tab" data-cat="${esc(c)}" aria-pressed="${state.cat === c}">${c === "all" ? L().all : esc(catName(c))}<span class="n">${n}</span></button>`;
   }).join("");
   $("#showDead").checked = state.dead;
 }
@@ -493,8 +662,19 @@ function render() {
   document.querySelectorAll(".tabbar button").forEach(b => b.setAttribute("aria-selected", b.dataset.view === state.view));
   $("#view-wallet").hidden = state.view !== "wallet";
   $("#view-saved").hidden = state.view !== "saved";
-  renderText(); renderStats(); renderCats(); renderStack(); renderSaved();
+  $("#view-settings").hidden = state.view !== "settings";
+  renderText(); renderStats(); renderCats(); renderHero(); renderStack(); renderSaved(); renderPage();
   store.set("zsm-view", { cat: state.cat, region: state.region, dead: state.dead, view: state.view, open: state.open });
+}
+
+/* ---------- Settings pages (terms, privacy) ---------- */
+function renderPage() {
+  $("#set-main").hidden = !!state.page;
+  $("#set-page").hidden = !state.page;
+  if (!state.page) return;
+  const t = L();
+  $("#page-h").textContent = t[state.page];
+  $("#page-body").innerHTML = t[state.page + "Body"].map(([h, p]) => `<h3>${esc(h)}</h3><p>${esc(p)}</p>`).join("");
 }
 
 /* ---------- Toasts ---------- */
@@ -514,8 +694,9 @@ document.addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
   const t = L();
   if (b.dataset.lang) { lang = b.dataset.lang; store.set("zsm-lang", lang); render(); }
-  else if (b.dataset.view) { state.view = b.dataset.view; render(); window.scrollTo({ top: 0 }); }
-  else if (b.dataset.cat) { state.cat = b.dataset.cat; state.open = null; render(); }
+  else if (b.dataset.view) { state.view = b.dataset.view; state.page = null; render(); window.scrollTo({ top: 0 }); }
+  else if (b.dataset.page) { state.page = b.dataset.page === "back" ? null : b.dataset.page; renderPage(); window.scrollTo({ top: 0 }); }
+  else if (b.dataset.cat) { state.cat = b.dataset.cat; state.open = null; render(); b.scrollIntoView({ block: "nearest", inline: "nearest" }); }
   else if (b.dataset.region) {
     state.region = b.dataset.region; state.open = null;
     if (state.cat !== "all" && !(state.region === "all" ? CATS : regionCats()).includes(state.cat)) state.cat = "all";
@@ -540,7 +721,8 @@ document.addEventListener("click", e => {
     toast(marks[id] ? (v === "yes" ? t.wT : t.nT) : t.cT, marks[id] === "no" ? "warn" : "ok");
   }
 });
-$("#q").addEventListener("input", e => { state.q = e.target.value.trim(); renderStack(); });
+$("#q").addEventListener("input", e => { state.q = e.target.value.trim(); renderHero(); renderStack(); });
+$("#darkMode").addEventListener("change", e => setTheme(e.target.checked ? "dark" : "light"));
 $("#showDead").addEventListener("change", e => { state.dead = e.target.checked; render(); });
 
 render();
