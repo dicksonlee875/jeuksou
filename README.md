@@ -87,7 +87,7 @@ Run `crontab -e` and add this line, changing the path to where you put this fold
 
 Only fill in 繁體 (`_zh`) fields. `build.py` converts them to 简体 automatically. If a mainland word comes out wrong, add it to `PHRASES` in `build.py`.
 
-`data/perks.json` holds the card perks. The scraper never touches it, so check each perk against its `src` link now and then, update `checked`, and run `python build.py`.
+`data/perks.json` holds the card perks. The scraper never touches it, so check each perk's `url` still opens the right page now and then, update `checked`, and run `python build.py`.
 
 ## Limits worth knowing
 

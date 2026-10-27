@@ -1,125 +1,412 @@
 {
- "_help": "Card perks shown in the Perks tab. Each card has perks in categories: Hotels, Car rental, Lounges, Dining, Shopping, Other. Fill in English and 繁體 (_zh); build.py makes 简体. Check each perk against its source when you edit it.",
+ "_help": "Card perks shown in the Perks tab. Each perk has a category (Hotels, Car rental, Lounges, Dining, Shopping, Other), English and 繁體 (_zh) text, and url: the page where a cardholder signs up for or uses that perk. Optional links: [{name, url}] for a perk with several sign-up pages. build.py makes 简体. Check each url still works when you edit.",
  "checked": "2026-10-27",
  "cards": [
   {
-   "key": "visainfinite", "name": "Visa Infinite", "net": "VISA", "color": ["#2b3bb0", "#1a1f71"],
-   "scope": "Visa network perks in Asia Pacific. Your bank adds its own (lounges, insurance, rewards).",
-   "scope_zh": "Visa 在亞太區的網絡禮遇。發卡銀行另有自家禮遇（貴賓室、保險、獎賞）。",
+   "key": "visainfinite",
+   "name": "Visa Infinite",
+   "net": "VISA",
+   "color": [
+    "#2b3bb0",
+    "#1a1f71"
+   ],
+   "scope": "Visa's own Infinite perks in Asia Pacific. Links go to Visa's benefit pages; your bank adds its own perks (lounges, insurance, rewards).",
+   "scope_zh": "Visa 在亞太區的 Infinite 網絡禮遇。連結前往 Visa 禮遇頁面；發卡銀行另有自家禮遇（貴賓室、保險、獎賞）。",
    "perks": [
-    {"cat": "Hotels", "title": "Visa Luxury Hotel Collection", "title_zh": "Visa Luxury Hotel Collection",
-     "what": "1,000+ luxury hotels: daily breakfast for two, a food and drink credit, room upgrade and late check-out when available.",
-     "what_zh": "全球 1,000 多間豪華酒店：每日兩位早餐、餐飲消費額、視乎情況免費升級房間及延遲退房。",
-     "src": "https://www.aap.com.au/aapreleases/cision20250611ae08124/"},
-    {"cat": "Hotels", "title": "Agoda: up to 30% off", "title_zh": "Agoda：最高七折",
-     "what": "Up to 30% off hotel bookings on Agoda through the Visa Infinite offer page.",
-     "what_zh": "經 Visa Infinite 優惠頁預訂 Agoda 酒店，最高可享七折。",
-     "src": "https://www.aap.com.au/aapreleases/cision20250611ae08124/"},
-    {"cat": "Hotels", "title": "IHG and Accor: 20% off", "title_zh": "IHG 及 Accor：八折",
-     "what": "20% off IHG and Accor hotel bookings.",
-     "what_zh": "預訂 IHG 及 Accor 酒店可享八折。",
-     "src": "https://www.aap.com.au/aapreleases/cision20250611ae08124/"},
-    {"cat": "Hotels", "title": "GHA DISCOVERY Titanium", "title_zh": "GHA DISCOVERY Titanium 會籍",
-     "what": "Automatic Titanium status at GHA hotels (Kempinski, Anantara, Pan Pacific and more).",
-     "what_zh": "自動獲得 GHA 酒店（Kempinski、Anantara、Pan Pacific 等）Titanium 會籍。",
-     "src": "https://www.aap.com.au/aapreleases/cision20250611ae08124/"},
-    {"cat": "Lounges", "title": "Global Blue VIP Lounges", "title_zh": "Global Blue VIP 貴賓室",
-     "what": "Free VIP shopping lounges in Paris, Milan, Rome, Florence, Barcelona, Madrid and Marbella, plus Fast Lane at Milan Malpensa and Rome Fiumicino airports.",
-     "what_zh": "免費使用巴黎、米蘭、羅馬、佛羅倫斯、巴塞隆拿、馬德里及馬貝拉的 Global Blue VIP 購物貴賓室，以及米蘭馬爾彭薩和羅馬菲烏米奇諾機場快速通道。",
-     "src": "https://www.aap.com.au/aapreleases/cision20250611ae08124/"},
-    {"cat": "Dining", "title": "Airport dining: up to 20% off", "title_zh": "機場餐飲：最高八折",
-     "what": "Up to 20% off at selected food and drink outlets in seven Asia Pacific airports, and 10% off dining at Harrods.",
-     "what_zh": "亞太區七個機場的指定餐飲店最高八折，Harrods 餐廳九折。",
-     "src": "https://www.aap.com.au/aapreleases/cision20250611ae08124/"},
-    {"cat": "Shopping", "title": "Harrods Gold and Lotte Duty Free", "title_zh": "Harrods Gold 及樂天免稅店",
-     "what": "Free Harrods Rewards Gold tier, and 10% off at Lotte Duty Free downtown stores in Korea.",
-     "what_zh": "免費 Harrods Rewards Gold 會籍；韓國樂天免稅店市區分店九折。",
-     "src": "https://www.aap.com.au/aapreleases/cision20250611ae08124/"}
+    {
+     "cat": "Hotels",
+     "title": "Visa Luxury Hotel Collection",
+     "title_zh": "Visa Luxury Hotel Collection",
+     "what": "Luxury hotels with daily breakfast for two, a US$25 hotel credit, and room upgrade and late check-out when available.",
+     "what_zh": "豪華酒店每日兩位早餐、25 美元酒店消費額，並視乎情況免費升級及延遲退房。",
+     "url": "https://my.visa.com/sg_en/benefits/visa-luxury-hotel-collection-vlhc/1120"
+    },
+    {
+     "cat": "Hotels",
+     "title": "GHA DISCOVERY Titanium",
+     "title_zh": "GHA DISCOVERY Titanium 會籍",
+     "what": "Instant Titanium status at GHA hotels such as Kempinski, Anantara and Pan Pacific.",
+     "what_zh": "即時獲得 GHA 酒店（Kempinski、Anantara、Pan Pacific 等）Titanium 會籍。",
+     "url": "https://my.visa.com/sg_en/benefits/gha-discovery/1117"
+    },
+    {
+     "cat": "Hotels",
+     "title": "HoteLux Elite Plus",
+     "title_zh": "HoteLux Elite Plus 會籍",
+     "what": "A free year of HoteLux Elite Plus: luxury hotel rates that can include breakfast and hotel credits.",
+     "what_zh": "免費一年 HoteLux Elite Plus 會籍：豪華酒店優惠價，或包早餐及酒店消費額。",
+     "url": "https://www.visa.com.sg/en_sg/visa-offers-and-perks/hotelux/178872"
+    },
+    {
+     "cat": "Hotels",
+     "title": "IHG One Rewards fast track",
+     "title_zh": "IHG One Rewards 快速升級",
+     "what": "A fast track to IHG One Rewards elite status when you stay with your Visa card.",
+     "what_zh": "以 Visa 卡入住，可快速升級 IHG One Rewards 精英會籍。",
+     "url": "https://www.visa.com.sg/en_sg/visa-offers-and-perks/ihg-hotels-resorts/177720"
+    },
+    {
+     "cat": "Car rental",
+     "title": "Avis President's Club",
+     "title_zh": "Avis President's Club",
+     "what": "Avis President's Club status: priority service, a car upgrade and a free additional driver at participating locations.",
+     "what_zh": "Avis President's Club 會籍：優先服務、升級車款及免費加一位司機（參與分店適用）。",
+     "url": "https://my.visa.com/sg_en/benefits/exclusive-car-rental-benefits-at-avis/1681"
+    },
+    {
+     "cat": "Shopping",
+     "title": "Extended warranty",
+     "title_zh": "延長保養",
+     "what": "Extra warranty cover on eligible purchases, insured by AIG.",
+     "what_zh": "合資格購物可享額外保養保障，由 AIG 承保。",
+     "url": "https://my.visa.com/sg_en/benefits/extended-warranty-benefits-via-aig-insurance/1243"
+    },
+    {
+     "cat": "Other",
+     "title": "Trip.com Diamond",
+     "title_zh": "Trip.com Diamond 會籍",
+     "what": "A status match to Trip.com Diamond membership, plus money off selected flights.",
+     "what_zh": "配對 Trip.com Diamond 會籍，另享指定機票折扣。",
+     "url": "https://my.visa.com/sg_en/benefits/status-match-to-tripcom-diamond-tier-membership-and-10percent-off-flights/2032"
+    },
+    {
+     "cat": "Other",
+     "title": "Travel eSIM",
+     "title_zh": "旅遊 eSIM",
+     "what": "Free travel data on a Travelgoogoo eSIM.",
+     "what_zh": "免費 Travelgoogoo eSIM 旅遊數據。",
+     "url": "https://my.visa.com/sg_en/benefits/travelgoogoo/1119"
+    },
+    {
+     "cat": "Other",
+     "title": "The New York Times",
+     "title_zh": "《紐約時報》訂閱",
+     "what": "A free one-year subscription to The New York Times.",
+     "what_zh": "免費訂閱《紐約時報》一年。",
+     "url": "https://my.visa.com/sg_en/benefits/complimentary-annual-subscription-to-the-new-york-times/2157"
+    },
+    {
+     "cat": "Other",
+     "title": "Visa Infinite Golf",
+     "title_zh": "Visa Infinite 高爾夫球",
+     "what": "Free rounds at selected golf courses in Asia. Booking opens on the 2nd of each month.",
+     "what_zh": "亞洲指定高爾夫球場免費打球，每月 2 日開放預約。",
+     "url": "https://my.visa.com/sg_en/benefits/visa-golf-program-visa-infinite/1184"
+    }
    ]
   },
   {
-   "key": "worldelite", "name": "World Elite", "net": "MASTERCARD", "color": ["#2a2a2a", "#0b0b0b"],
-   "scope": "Mastercard network perks in Asia Pacific. Your bank adds its own (lounges, insurance, rewards).",
-   "scope_zh": "Mastercard 在亞太區的網絡禮遇。發卡銀行另有自家禮遇（貴賓室、保險、獎賞）。",
+   "key": "visaprivilege",
+   "name": "Visa Infinite Privilege",
+   "net": "VISA",
+   "color": [
+    "#3a3a3a",
+    "#121212",
+    "#e9d29a"
+   ],
+   "scope": "A new tier above Visa Infinite, now reaching Asia Pacific (in Singapore, cards like DBS Insignia and UOB Reserve). Ask your bank which tier your card is.",
+   "scope_zh": "比 Visa Infinite 更高的新級別，正逐步推出亞太區（新加坡如 DBS Insignia、UOB Reserve）。請向銀行查詢你的卡屬哪個級別。",
    "perks": [
-    {"cat": "Hotels", "title": "Mastercard Luxury Hotels & Resorts", "title_zh": "Mastercard Luxury Hotels & Resorts",
+    {
+     "cat": "Hotels",
+     "title": "Visa Luxury Hotel Collection",
+     "title_zh": "Visa Luxury Hotel Collection",
+     "what": "Breakfast for two, upgrade and late check-out when available, and a US$100 credit at about 200 top hotels.",
+     "what_zh": "兩位早餐、視乎情況免費升級及延遲退房，約 200 間頂級酒店更有 100 美元消費額。",
+     "url": "https://my.visa.com/sg_en/benefits/visa-luxury-hotel-collection-vlhc/1120"
+    },
+    {
+     "cat": "Hotels",
+     "title": "HoteLux Elite Plus",
+     "title_zh": "HoteLux Elite Plus 會籍",
+     "what": "A free year of HoteLux Elite Plus for luxury hotel rates with extras.",
+     "what_zh": "免費一年 HoteLux Elite Plus 會籍，豪華酒店優惠價另有禮遇。",
+     "url": "https://my.visa.com/sg_en/benefits/status-match-to-hotelux-elite-membership/2192"
+    },
+    {
+     "cat": "Hotels",
+     "title": "ALL Accor+ Explorer",
+     "title_zh": "ALL Accor+ Explorer 會籍",
+     "what": "A free 12-month ALL Accor+ Explorer membership: dining discounts at Accor hotels and a free night.",
+     "what_zh": "免費 12 個月 ALL Accor+ Explorer 會籍：Accor 酒店餐飲折扣及免費住宿一晚。",
+     "url": "https://my.visa.com/sg_en/benefits/complimentary-12-month-access-to-all-accor-explorer-with-your-visa-infinite-privilege-card/2146"
+    },
+    {
+     "cat": "Hotels",
+     "title": "withBanyan Voyager and a free night",
+     "title_zh": "withBanyan Voyager 會籍及免費一晚",
+     "what": "Voyager status at Banyan Group hotels and one complimentary night.",
+     "what_zh": "Banyan Group 酒店 Voyager 會籍，另送免費住宿一晚。",
+     "url": "https://my.visa.com/sg_en/benefits/withbanyan-voyager-status-match-and-a-complimentary-one-night-stay/2165"
+    },
+    {
+     "cat": "Car rental",
+     "title": "Avis President's Club",
+     "title_zh": "Avis President's Club",
+     "what": "Avis President's Club status: priority service, a car upgrade and a free additional driver at participating locations.",
+     "what_zh": "Avis President's Club 會籍：優先服務、升級車款及免費加一位司機（參與分店適用）。",
+     "url": "https://my.visa.com/sg_en/benefits/exclusive-car-rental-benefits-at-avis/1681"
+    },
+    {
+     "cat": "Lounges",
+     "title": "Airport fast track",
+     "title_zh": "機場快速通道",
+     "what": "Two airport fast-track passes a year through DragonPass.",
+     "what_zh": "每年兩次 DragonPass 機場快速通道。",
+     "url": "https://my.visa.com/sg_en/benefits/complimentary-airport-fast-track-lanes/2046"
+    },
+    {
+     "cat": "Shopping",
+     "title": "Harrods Rewards Gold",
+     "title_zh": "Harrods Rewards Gold 會籍",
+     "what": "Free Harrods Rewards Gold tier for more points and perks at Harrods in London.",
+     "what_zh": "免費 Harrods Rewards Gold 會籍，在倫敦 Harrods 賺更多積分及享更多禮遇。",
+     "url": "https://my.visa.com/sg_en/benefits/complimentary-harrods-rewards-gold-tier-with-your-visa-infinite-privilege-card/1494"
+    },
+    {
+     "cat": "Other",
+     "title": "Trip.com Diamond",
+     "title_zh": "Trip.com Diamond 會籍",
+     "what": "A status match to Trip.com Diamond membership.",
+     "what_zh": "配對 Trip.com Diamond 會籍。",
+     "url": "https://my.visa.com/sg_en/benefits/status-match-to-tripcom-diamond-tier-membership/2042"
+    },
+    {
+     "cat": "Other",
+     "title": "The New York Times",
+     "title_zh": "《紐約時報》訂閱",
+     "what": "A free one-year subscription to The New York Times.",
+     "what_zh": "免費訂閱《紐約時報》一年。",
+     "url": "https://my.visa.com/sg_en/benefits/complimentary-annual-subscription-to-the-new-york-times/2157"
+    },
+    {
+     "cat": "Other",
+     "title": "Visa Infinite Golf",
+     "title_zh": "Visa Infinite 高爾夫球",
+     "what": "Free rounds at selected golf courses in Asia. Booking opens on the 1st of each month.",
+     "what_zh": "亞洲指定高爾夫球場免費打球，每月 1 日開放預約。",
+     "url": "https://my.visa.com/sg_en/benefits/visa-golf-program-visa-infinite-private-and-visa-infinite-privilege/1482"
+    }
+   ]
+  },
+  {
+   "key": "worldelite",
+   "name": "World Elite",
+   "net": "MASTERCARD",
+   "color": [
+    "#2a2a2a",
+    "#0b0b0b"
+   ],
+   "scope": "Mastercard's own World Elite perks in Asia Pacific. Your bank adds its own (lounges, insurance, rewards).",
+   "scope_zh": "Mastercard 在亞太區的 World Elite 網絡禮遇。發卡銀行另有自家禮遇（貴賓室、保險、獎賞）。",
+   "perks": [
+    {
+     "cat": "Hotels",
+     "title": "Mastercard Luxury Hotels & Resorts",
+     "title_zh": "Mastercard Luxury Hotels & Resorts",
      "what": "3,800+ five-star hotels: daily breakfast for two, a hotel amenity worth up to US$100, upgrade and early check-in when available, check-out until 3pm.",
      "what_zh": "全球 3,800 多間五星級酒店：每日兩位早餐、價值最高 100 美元的酒店禮遇、視乎情況免費升級及提早入住、延遲至下午 3 時退房。",
-     "src": "https://www.utkarsh.bank.in/offers/2772"},
-    {"cat": "Hotels", "title": "HoteLux Elite Plus", "title_zh": "HoteLux Elite Plus 會籍",
-     "what": "Free membership for luxury hotel rates that can include daily breakfast and up to US$100 dining or spa credit per stay.",
-     "what_zh": "免費會籍，可預訂豪華酒店優惠價，或包每日早餐及每次入住最高 100 美元餐飲或水療消費額。",
-     "src": "https://milelion.com/2026/07/26/what-are-the-perks-of-a-world-elite-mastercard/"},
-    {"cat": "Hotels", "title": "Hotel status upgrades", "title_zh": "酒店會籍升級",
-     "what": "Status matches such as GHA DISCOVERY Titanium, Wyndham Diamond and I Prefer Titanium, each with its own sign-up rules.",
-     "what_zh": "可升級多個酒店會籍，例如 GHA DISCOVERY Titanium、Wyndham Diamond 及 I Prefer Titanium，各有登記條件。",
-     "src": "https://milelion.com/2026/07/26/what-are-the-perks-of-a-world-elite-mastercard/"},
-    {"cat": "Car rental", "title": "Avis President's Club", "title_zh": "Avis President's Club",
-     "what": "Priority service, a guaranteed one-car upgrade at airports and railway stations, double upgrade at weekends if available, and a free additional driver. Varies by location.",
-     "what_zh": "優先服務；機場及火車站保證升級一級，週末視乎情況升級兩級；免費加一位司機。視乎地點而定。",
-     "src": "https://milelion.com/2026/07/26/what-are-the-perks-of-a-world-elite-mastercard/"},
-    {"cat": "Other", "title": "Travel eSIM, once a year", "title_zh": "旅遊 eSIM，每年一次",
+     "url": "https://www.priceless.com/mastercard-travel-and-lifestyle-services"
+    },
+    {
+     "cat": "Hotels",
+     "title": "HoteLux Elite Plus",
+     "title_zh": "HoteLux Elite Plus 會籍",
+     "what": "A free year of HoteLux Elite Plus: luxury hotel rates that can include daily breakfast and up to US$100 dining or spa credit per stay.",
+     "what_zh": "免費一年 HoteLux Elite Plus 會籍：豪華酒店優惠價，或包每日早餐及每次入住最高 100 美元餐飲或水療消費額。",
+     "url": "https://specials.priceless.com/en-ap/offers/HoteLux_%28Benefits%29?Oid=202411201397"
+    },
+    {
+     "cat": "Hotels",
+     "title": "Hotel elite status",
+     "title_zh": "酒店精英會籍",
+     "what": "Instant or fast-track status with several hotel groups. Each has its own sign-up page.",
+     "what_zh": "多個酒店集團即時或快速升級會籍，各有登記頁面。",
+     "url": "https://specials.priceless.com/en-ap/offers/GHA_DISCOVERY?Oid=202111090004",
+     "links": [
+      {
+       "name": "GHA DISCOVERY",
+       "url": "https://specials.priceless.com/en-ap/offers/GHA_DISCOVERY?Oid=202111090004"
+      },
+      {
+       "name": "Wyndham Diamond",
+       "url": "https://specials.priceless.com/en-ap/offers/Wyndham_Hotels___Resorts?Oid=201912180093"
+      },
+      {
+       "name": "I Prefer Titanium",
+       "url": "https://specials.priceless.com/en-sg/offers/I_Prefer_Hotel_Rewards?Oid=202506250016"
+      },
+      {
+       "name": "Brilliant by Langham",
+       "url": "https://specials.priceless.com/en-ap/offers/Brilliant_by_Langham?Oid=202402200001"
+      }
+     ]
+    },
+    {
+     "cat": "Car rental",
+     "title": "Avis President's Club",
+     "title_zh": "Avis President's Club",
+     "what": "Priority service, a guaranteed one-car upgrade at airports and railway stations, and a free additional driver. Varies by location.",
+     "what_zh": "優先服務、機場及火車站保證升級一級、免費加一位司機。視乎地點而定。",
+     "url": "https://specials.priceless.com/en-ap/offers/Avis_Car_Rental?Oid=202504140001"
+    },
+    {
+     "cat": "Other",
+     "title": "Travel eSIM",
+     "title_zh": "旅遊 eSIM",
      "what": "A free FlexiRoam 3GB eSIM, valid 15 days in 150+ countries, once per calendar year.",
      "what_zh": "每年可免費領取一次 FlexiRoam 3GB eSIM，150 多個國家可用，有效 15 日。",
-     "src": "https://milelion.com/2026/07/26/what-are-the-perks-of-a-world-elite-mastercard/"}
+     "url": "https://mastercard.flexiroam.com/en"
+    }
    ]
   },
   {
-   "key": "worldmc", "name": "World", "net": "MASTERCARD", "color": ["#5a5f6a", "#33363d"],
-   "scope": "Mastercard World has fewer network perks than World Elite. Your bank adds its own.",
-   "scope_zh": "Mastercard World 的網絡禮遇比 World Elite 少。發卡銀行另有自家禮遇。",
+   "key": "worldmc",
+   "name": "World Mastercard",
+   "net": "MASTERCARD",
+   "color": [
+    "#5a5f6a",
+    "#33363d"
+   ],
+   "scope": "World Mastercard has fewer network perks than World Elite. Your bank adds its own.",
+   "scope_zh": "World Mastercard 的網絡禮遇比 World Elite 少。發卡銀行另有自家禮遇。",
    "perks": [
-    {"cat": "Hotels", "title": "Mastercard Luxury Hotels & Resorts", "title_zh": "Mastercard Luxury Hotels & Resorts",
-     "what": "Same programme as World Elite: daily breakfast for two, an amenity worth up to US$100, upgrade and early check-in when available, check-out until 3pm.",
-     "what_zh": "與 World Elite 相同：每日兩位早餐、價值最高 100 美元的禮遇、視乎情況免費升級及提早入住、延遲至下午 3 時退房。",
-     "src": "https://www.utkarsh.bank.in/offers/2772"},
-    {"cat": "Hotels", "title": "HoteLux membership", "title_zh": "HoteLux 會籍",
+    {
+     "cat": "Hotels",
+     "title": "Mastercard Luxury Hotels & Resorts",
+     "title_zh": "Mastercard Luxury Hotels & Resorts",
+     "what": "Daily breakfast for two, an amenity worth up to US$100, upgrade and early check-in when available, check-out until 3pm.",
+     "what_zh": "每日兩位早餐、價值最高 100 美元的禮遇、視乎情況免費升級及提早入住、延遲至下午 3 時退房。",
+     "url": "https://www.priceless.com/mastercard-travel-and-lifestyle-services"
+    },
+    {
+     "cat": "Hotels",
+     "title": "HoteLux membership",
+     "title_zh": "HoteLux 會籍",
      "what": "Free HoteLux membership for member rates at luxury hotels.",
      "what_zh": "免費 HoteLux 會籍，可享豪華酒店會員價。",
-     "src": "https://milelion.com/2021/07/21/free-hotelux-membership-for-world-and-world-elite-mastercard-cardholders/"}
+     "url": "https://specials.priceless.com/en-ap/offers/HoteLux_%28Benefits%29?Oid=202411201397"
+    }
    ]
   },
   {
-   "key": "amexplat", "name": "Platinum", "net": "AMERICAN EXPRESS", "color": ["#d9dde3", "#aeb4bd", "#0e1116"],
+   "key": "amexplat",
+   "name": "Platinum",
+   "net": "AMERICAN EXPRESS",
+   "color": [
+    "#d9dde3",
+    "#aeb4bd",
+    "#0e1116"
+   ],
    "scope": "The Hong Kong Platinum Card (charge card). Other countries' versions differ.",
    "scope_zh": "香港 Platinum Card（簽賬卡）。其他地區版本的禮遇不同。",
    "perks": [
-    {"cat": "Hotels", "title": "Fine Hotels + Resorts", "title_zh": "Fine Hotels + Resorts",
+    {
+     "cat": "Hotels",
+     "title": "Fine Hotels + Resorts",
+     "title_zh": "Fine Hotels + Resorts",
      "what": "Daily breakfast, guaranteed 4pm check-out, upgrade when available and an on-property credit at participating hotels.",
      "what_zh": "參與酒店每日早餐、保證下午 4 時退房、視乎情況免費升級及酒店消費額。",
-     "src": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/"},
-    {"cat": "Hotels", "title": "The Hotel Collection", "title_zh": "The Hotel Collection",
+     "url": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/fine-hotels-and-resorts.html"
+    },
+    {
+     "cat": "Hotels",
+     "title": "The Hotel Collection",
+     "title_zh": "The Hotel Collection",
      "what": "US$100 experience credit and upgrade when available, for stays of two nights or more.",
      "what_zh": "入住兩晚或以上可享 100 美元消費額，並視乎情況免費升級。",
-     "src": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/"},
-    {"cat": "Hotels", "title": "Hotel elite status", "title_zh": "酒店精英會籍",
-     "what": "Marriott Bonvoy Gold Elite, Hilton Gold, ALL Accor elite status and Radisson Rewards Premium.",
-     "what_zh": "Marriott Bonvoy Gold Elite、Hilton Gold、ALL Accor 精英會籍及 Radisson Rewards Premium。",
-     "src": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/"},
-    {"cat": "Hotels", "title": "Platinum Vacation Credit", "title_zh": "Platinum 度假簽賬回贈",
+     "url": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/the-hotel-collection.html"
+    },
+    {
+     "cat": "Hotels",
+     "title": "Hotel elite status",
+     "title_zh": "酒店精英會籍",
+     "what": "Gold or higher status with four hotel groups. Enrol for each one.",
+     "what_zh": "四個酒店集團的金卡或以上會籍，須逐一登記。",
+     "url": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/marriott-bonvoy-gold-elite-status.html",
+     "links": [
+      {
+       "name": "Marriott Gold",
+       "url": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/marriott-bonvoy-gold-elite-status.html"
+      },
+      {
+       "name": "Hilton Gold",
+       "url": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/hilton-honors-elite-gold-status.html"
+      },
+      {
+       "name": "ALL Accor",
+       "url": "https://www.americanexpress.com/en-hk/benefits/the-platinum-card/offers/club/all-accor/"
+      },
+      {
+       "name": "Radisson Premium",
+       "url": "https://www.americanexpress.com/en-hk/benefits/the-platinum-card/radisson-rewards/index.html"
+      }
+     ]
+    },
+    {
+     "cat": "Hotels",
+     "title": "Platinum Vacation Credit",
+     "title_zh": "Platinum 度假簽賬回贈",
      "what": "Up to HK$4,500 back a year at Mandarin Oriental, The Peninsula and Club Med. Register first; a spending requirement applies.",
      "what_zh": "每年在文華東方、半島酒店及 Club Med 簽賬可獲最高 HK$4,500 回贈。須預先登記，並有簽賬要求。",
-     "src": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/"},
-    {"cat": "Car rental", "title": "Hertz Gold Plus Rewards Five Star", "title_zh": "Hertz Gold Plus Rewards Five Star",
+     "url": "https://www.americanexpress.com/en-hk/benefits/the-platinum-card/travel/vacation-credits/"
+    },
+    {
+     "cat": "Car rental",
+     "title": "Hertz Gold Plus Rewards Five Star",
+     "title_zh": "Hertz Gold Plus Rewards Five Star",
      "what": "Discounts, upgrades and priority service at Hertz. Enrol first.",
      "what_zh": "Hertz 租車折扣、升級及優先服務。須先登記。",
-     "src": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/"},
-    {"cat": "Lounges", "title": "Global Lounge Collection", "title_zh": "Global Lounge Collection",
+     "url": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/hertz-gold-plus-rewards-five-star.html"
+    },
+    {
+     "cat": "Lounges",
+     "title": "Global Lounge Collection",
+     "title_zh": "Global Lounge Collection",
      "what": "1,550+ lounges in 500+ airports, including Centurion Lounges, Plaza Premium and Priority Pass.",
      "what_zh": "全球 500 多個機場、1,550 多間貴賓室，包括 Centurion Lounge、環亞機場貴賓室及 Priority Pass。",
-     "src": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/"},
-    {"cat": "Dining", "title": "Global Dining Credit", "title_zh": "環球餐飲簽賬額",
-     "what": "HK$1,000 a year in Hong Kong and HK$1,000 overseas, plus Two-for-One courses and up to 30% off at 100+ restaurants with Amex Gourmet Club.",
-     "what_zh": "每年香港 HK$1,000 及海外 HK$1,000 餐飲簽賬額；Amex Gourmet Club 另有「買一送一」菜式及 100 多間餐廳最高七折。",
-     "src": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/"},
-    {"cat": "Shopping", "title": "city'super and cinema offers", "title_zh": "city'super 及戲院優惠",
-     "what": "3% off selected items at city'super and LOG-ON, and Buy-1-Get-1-Free Friday tickets at Broadway Circuit cinemas.",
-     "what_zh": "city'super 及 LOG-ON 指定貨品 97 折；百老匯院線逢星期五買一送一。",
-     "src": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/"},
-    {"cat": "Other", "title": "Travel insurance", "title_zh": "旅遊保險",
+     "url": "https://www.americanexpress.com/en-hk/travel/lounges/the-platinum-card/"
+    },
+    {
+     "cat": "Dining",
+     "title": "Global Dining Credit",
+     "title_zh": "環球餐飲簽賬額",
+     "what": "HK$1,000 a year to spend on dining in Hong Kong, and HK$1,000 overseas.",
+     "what_zh": "每年香港 HK$1,000 及海外 HK$1,000 餐飲簽賬額。",
+     "url": "https://www.americanexpress.com/en-hk/benefits/offers/dining/global-dining-credit/index.html"
+    },
+    {
+     "cat": "Dining",
+     "title": "Amex Gourmet Club",
+     "title_zh": "Amex Gourmet Club",
+     "what": "Two-for-One courses and up to 30% off at 100+ restaurants.",
+     "what_zh": "「買一送一」菜式，100 多間餐廳最高七折。",
+     "url": "https://www.americanexpress.com/en-hk/benefits/offers/dining/gourmet-club/index.html"
+    },
+    {
+     "cat": "Shopping",
+     "title": "city'super",
+     "title_zh": "city'super",
+     "what": "3% off selected items at city'super and LOG-ON.",
+     "what_zh": "city'super 及 LOG-ON 指定貨品 97 折。",
+     "url": "https://www.americanexpress.com/hk/en/benefits/shopping/offers/shopping/city-super.html"
+    },
+    {
+     "cat": "Other",
+     "title": "Broadway Circuit cinemas",
+     "title_zh": "百老匯院線",
+     "what": "Buy-1-Get-1-Free tickets on Fridays at Broadway Circuit cinemas.",
+     "what_zh": "百老匯院線逢星期五買一送一。",
+     "url": "https://www.americanexpress.com/hk/en/benefits/shopping/offers/lifestyle/broadway-amc-pacific.html"
+    },
+    {
+     "cat": "Other",
+     "title": "Travel insurance",
+     "title_zh": "旅遊保險",
      "what": "Worldwide travel cover when the trip is booked with the Platinum Card, plus purchase protection.",
      "what_zh": "以 Platinum Card 預訂行程即享全球旅遊保障，另有購物保障。",
-     "src": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/"}
+     "url": "https://www.americanexpress.com/hk/en/benefits/the-platinum-card/platinum-insurance.html"
+    }
    ]
   }
  ]
