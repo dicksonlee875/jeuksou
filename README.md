@@ -5,6 +5,7 @@ A Python script that reads public promo-code pages every few days, adds any new 
 ```
 sources.json        the pages to read (add or remove pages here)
 data/deals.json     every code: the 119 already in the wallet plus anything new the scraper finds
+data/perks.json     card perks for the Perks tab (Visa Infinite, World Elite, Amex Platinum…), edited by hand
 scraper.py          fetches the pages, finds codes and end dates, updates data/deals.json
 build.py            turns data/deals.json into public/index.html (the wallet page)
 template.html       the page design (style, layout, the three languages)
@@ -85,6 +86,8 @@ Run `crontab -e` and add this line, changing the path to where you put this fold
 - add a new shop: add it under `sites` with a `name`, `note`, `note_zh` and `color`, then add its page to `sources.json`
 
 Only fill in 繁體 (`_zh`) fields. `build.py` converts them to 简体 automatically. If a mainland word comes out wrong, add it to `PHRASES` in `build.py`.
+
+`data/perks.json` holds the card perks. The scraper never touches it, so check each perk against its `src` link now and then, update `checked`, and run `python build.py`.
 
 ## Limits worth knowing
 

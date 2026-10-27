@@ -64,6 +64,11 @@ def add_simplified(data):
     for s in data["sites"].values():
         if s.get("note_zh"):
             s["note_sc"] = t2s(s["note_zh"])
+    for c in data.get("perks", {}).get("cards", []):
+        for o in [c, *c["perks"]]:
+            for f in ("scope", "title", "what"):
+                if o.get(f + "_zh"):
+                    o[f + "_sc"] = t2s(o[f + "_zh"])
 
 
 def main():
@@ -78,6 +83,11 @@ def main():
     # They stay in deals.json so the scraper won't re-add them, but the public page leaves them out.
     if not args.keep_avoid:
         data["deals"] = [d for d in data["deals"] if d["status"] != "avoid"]
+    # Card perks for the Perks tab, kept by hand in data/perks.json.
+    perks = ROOT / "data" / "perks.json"
+    if perks.exists():
+        data["perks"] = json.loads(perks.read_text(encoding="utf-8"))
+        data["perks"].pop("_help", None)
     add_simplified(data)
     add_cats(data)
     html = (ROOT / "template.html").read_text(encoding="utf-8")
