@@ -141,7 +141,8 @@ def pick_expiry(text):
 MONEY = r"(?:HK\$|HKD|US\$|USD|NT\$|NTD|RMB|S\$|A\$|\$|¥|£|€)\s?\d[\d,]*(?:\.\d+)?"
 BIG_RE = [
     re.compile(r"(\d{1,2}(?:\.\d)?\s?%)"),
-    re.compile(r"(\d{1,2}(?:\.\d)?\s?折)"),
+    re.compile(r"(?<![\d.,])(\d{1,2}(?:\.\d)?\s?折)(?!扣)"),
+    re.compile(r"(買一送一|buy one get one|1\s?\+\s?1)", re.I),
     re.compile(r"(?:減|off\s)\s*(" + MONEY + ")", re.I),
     re.compile(r"(" + MONEY + r")\s*off", re.I),
     # Any amount that isn't a minimum spend ("滿 HK$500", "over $500", "min. $500").
@@ -154,6 +155,8 @@ def pick_big(text):
         m = rx.search(text)
         if m:
             v = re.sub(r"\s+", "", m.group(1))
+            if v.lower() in ("買一送一", "buyonegetone"):
+                return "1+1"
             return v.replace("HKD", "HK$").replace("USD", "US$").replace("NTD", "NT$")
     return "New"
 
