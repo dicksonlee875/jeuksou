@@ -4,6 +4,7 @@
  "programs": [
   {
    "key": "marriott",
+   "seg": "Marriott",
    "type": "hotel",
    "name": "Marriott Bonvoy",
    "color": [
@@ -245,6 +246,7 @@
   },
   {
    "key": "hilton",
+   "seg": "Hilton",
    "type": "hotel",
    "name": "Hilton Honors",
    "color": [
@@ -452,6 +454,7 @@
   },
   {
    "key": "ihg",
+   "seg": "IHG",
    "type": "hotel",
    "name": "IHG One Rewards",
    "color": [
@@ -645,6 +648,7 @@
   },
   {
    "key": "accor",
+   "seg": "Accor",
    "type": "hotel",
    "name": "ALL Accor",
    "color": [
