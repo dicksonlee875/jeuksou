@@ -23,7 +23,8 @@
     "Car rental",
     "Flights",
     "Hotels",
-    "Activities"
+    "Activities",
+    "Travel extras"
    ]
   },
   "sbc": {
@@ -1625,6 +1626,587 @@
    "color": [
     "#7a2bf5",
     "#5a1cc0"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "lufthansa": {
+   "name": "Lufthansa",
+   "checked": "2026-10-27",
+   "note": "Germany's flag carrier, part of Star Alliance. Codes are rare; Miles & More members and student fares get the best prices. Light fares have no checked bag.",
+   "note_zh": "德國漢莎航空，星空聯盟成員。優惠碼很少；Miles & More 會員及學生票價最划算。Light 票價不包寄艙行李。",
+   "color": [
+    "#05164d",
+    "#020b2b",
+    "#f9ba00"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "airfrance": {
+   "name": "Air France",
+   "checked": "2026-10-27",
+   "note": "Air France runs regular fare sales and Flying Blue member Promo Rewards. Promo codes go in the booking box on the home page.",
+   "note_zh": "法國航空定期有機票優惠，Flying Blue 會員另有 Promo Rewards。優惠碼在首頁預訂欄輸入。",
+   "color": [
+    "#002157",
+    "#00133a"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "klm": {
+   "name": "KLM",
+   "checked": "2026-10-27",
+   "note": "Dutch airline (Air France–KLM group). Sales and Flying Blue offers are the usual savings; codes come with partner and card offers.",
+   "note_zh": "荷蘭皇家航空（法航荷航集團）。主要省錢方法是減價及 Flying Blue 優惠；優惠碼多來自合作夥伴及信用卡優惠。",
+   "color": [
+    "#00a1de",
+    "#0077a8"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "wizzair": {
+   "name": "Wizz Air",
+   "checked": "2026-10-27",
+   "note": "Budget airline across Central and Eastern Europe. Wizz Discount Club (paid) lowers fares; bags and seats cost extra.",
+   "note_zh": "中東歐廉航。付費 Wizz Discount Club 可減機票價；行李及選位另外收費。",
+   "color": [
+    "#c6007e",
+    "#8f005b"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "eurail": {
+   "name": "Eurail",
+   "checked": "2026-10-27",
+   "note": "Rail passes for non-European residents, covering trains in 33 countries. Seasonal sales take 10–25% off; youth and senior passes are cheaper.",
+   "note_zh": "供非歐洲居民使用的鐵路通行證，覆蓋 33 國火車。季節性減價可享 10–25% 折扣；青年及長者通行證較便宜。",
+   "color": [
+    "#1a2a6c",
+    "#0f1a47"
+   ],
+   "cats": [
+    "Travel extras"
+   ]
+  },
+  "flixbus": {
+   "name": "FlixBus",
+   "checked": "2026-10-27",
+   "note": "Low-cost coaches across Europe and the US. Vouchers come from newsletters and refunds; book early for the lowest fares.",
+   "note_zh": "歐洲及美國的低價長途巴士。優惠券多來自電子報及退款；提早預訂最便宜。",
+   "color": [
+    "#73d700",
+    "#57a300",
+    "#0d1a00"
+   ],
+   "cats": [
+    "Travel extras"
+   ]
+  },
+  "zalando": {
+   "name": "Zalando",
+   "checked": "2026-10-27",
+   "note": "Europe's biggest online fashion store, with free returns in most countries. Newsletter sign-up usually gives a first-order code; ships within Europe only.",
+   "note_zh": "歐洲最大的網上時裝店，大部分國家免費退貨。登記電子報通常有首單優惠碼；只送歐洲。",
+   "color": [
+    "#ff6900",
+    "#d45700"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "glovo": {
+   "name": "Glovo",
+   "checked": "2026-10-27",
+   "note": "Food and grocery delivery in Spain, Italy, Portugal and Eastern Europe. First-order codes go in the app's Promo section.",
+   "note_zh": "在西班牙、意大利、葡萄牙及東歐提供外賣及雜貨送遞。首單優惠碼在 App 的 Promo 一欄輸入。",
+   "color": [
+    "#ffc244",
+    "#e0a62b",
+    "#1a1400"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "wolt": {
+   "name": "Wolt",
+   "checked": "2026-10-27",
+   "note": "Food delivery in Northern and Eastern Europe, Germany and Japan (DoorDash group). Referral codes give credit on the first orders.",
+   "note_zh": "在北歐、東歐、德國及日本提供外賣（DoorDash 集團）。推薦碼可在首幾單獲贈額度。",
+   "color": [
+    "#009de0",
+    "#0079ad"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "civitatis": {
+   "name": "Civitatis",
+   "checked": "2026-10-27",
+   "note": "Tours and free walking tours in Europe and Latin America, often cheaper than the big sites. Free cancellation up to 24 hours before.",
+   "note_zh": "歐洲及拉丁美洲的旅遊團及免費步行團，價格通常比大型網站便宜。出發前 24 小時可免費取消。",
+   "color": [
+    "#e8423f",
+    "#b8302e"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "rakutentravel": {
+   "name": "Rakuten Travel",
+   "checked": "2026-10-27",
+   "note": "Japan's biggest hotel booking site, with ryokan and business hotels the global sites miss. Coupons are claimed on the coupon page before you book; the English site has fewer of them.",
+   "note_zh": "日本最大的酒店預訂網站，有很多國際網站沒有的旅館及商務酒店。預訂前在優惠券頁面領取優惠券；英文版的優惠券較少。",
+   "color": [
+    "#bf0000",
+    "#8c0000"
+   ],
+   "cats": [
+    "Hotels"
+   ]
+  },
+  "jalan": {
+   "name": "Jalan",
+   "checked": "2026-10-27",
+   "note": "Recruit's Japanese hotel and ryokan site. Coupons are claimed in advance and often stack with points; mostly in Japanese.",
+   "note_zh": "Recruit 旗下的日本酒店及旅館網站。優惠券需預先領取，常可與積分同用；以日文為主。",
+   "color": [
+    "#ff6c00",
+    "#cc5600"
+   ],
+   "cats": [
+    "Hotels"
+   ]
+  },
+  "jal": {
+   "name": "Japan Airlines",
+   "checked": "2026-10-27",
+   "note": "JAL runs regional fare sales on each country's site, plus the free Japan Explorer Pass for domestic flights when you fly in from abroad.",
+   "note_zh": "日本航空在各地網站推出機票優惠；海外旅客另可購買 Japan Explorer Pass 搭乘國內航班。",
+   "color": [
+    "#cc0000",
+    "#990000"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "ana": {
+   "name": "ANA",
+   "checked": "2026-10-27",
+   "note": "All Nippon Airways. Look for sales on your country's ANA site; foreign visitors can buy cheap domestic fares with the Experience Japan Fare.",
+   "note_zh": "全日空。留意你所在地區 ANA 網站的減價；外國旅客可用 Experience Japan Fare 以低價搭乘國內航班。",
+   "color": [
+    "#13448f",
+    "#0b2c60"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "peach": {
+   "name": "Peach",
+   "checked": "2026-10-27",
+   "note": "Japanese budget airline flying to Hong Kong, Taiwan and Korea. Flash sales beat codes; bags and seats cost extra.",
+   "note_zh": "日本廉航，航線包括香港、台灣及韓國。閃購通常比優惠碼更划算；行李及選位另外收費。",
+   "color": [
+    "#d7006c",
+    "#a30052"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "timescar": {
+   "name": "Times Car Rental",
+   "checked": "2026-10-27",
+   "note": "Japan's large car rental chain with English booking. Web discounts apply automatically; bring an International Driving Permit.",
+   "note_zh": "日本大型租車公司，可用英文預訂。網上折扣自動套用；記得攜帶國際駕駛執照。",
+   "color": [
+    "#ffcc00",
+    "#e0b300",
+    "#1a1600"
+   ],
+   "cats": [
+    "Car rental"
+   ]
+  },
+  "toyotarent": {
+   "name": "Toyota Rent a Car",
+   "checked": "2026-10-27",
+   "note": "Toyota's rental network covers almost every station and airport in Japan. Early-booking rates are cheapest; ETC cards for tolls cost extra.",
+   "note_zh": "Toyota 租車網絡幾乎覆蓋日本所有車站及機場。提早預訂價最便宜；收費道路用的 ETC 卡另外收費。",
+   "color": [
+    "#eb0a1e",
+    "#b30817"
+   ],
+   "cats": [
+    "Car rental"
+   ]
+  },
+  "jrpass": {
+   "name": "Japan Rail Pass",
+   "checked": "2026-10-27",
+   "note": "Unlimited JR trains for 7, 14 or 21 days. Since the 2023 price rise it only pays off for long trips; regional passes are often better value.",
+   "note_zh": "7、14 或 21 日任搭 JR 火車。2023 年加價後只適合長途行程；地區通行證通常更划算。",
+   "color": [
+    "#008c45",
+    "#006633"
+   ],
+   "cats": [
+    "Travel extras"
+   ]
+  },
+  "rakuten": {
+   "name": "Rakuten",
+   "checked": "2026-10-27",
+   "note": "Japan's biggest online mall. Coupons are per shop and platform; points campaigns (Super Sale, 5 and 0 days) give the most back. Some shops ship abroad.",
+   "note_zh": "日本最大的網上商場。優惠券分店舖及平台；積分活動（Super Sale、逢 5 及 0 日）回贈最多。部分店舖可寄海外。",
+   "color": [
+    "#bf0000",
+    "#8c0000"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "zozotown": {
+   "name": "ZOZOTOWN",
+   "checked": "2026-10-27",
+   "note": "Japan's biggest fashion site. Coupons appear in the app; ships within Japan, so use a forwarding service from abroad.",
+   "note_zh": "日本最大的時裝網站。優惠券在 App 內出現；只送日本，海外需用轉運服務。",
+   "color": [
+    "#1a1a1a",
+    "#000000"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "gotaxi": {
+   "name": "GO Taxi",
+   "checked": "2026-10-27",
+   "note": "Japan's main taxi app, works in Tokyo, Osaka and most cities with foreign cards. First-ride coupons are entered in the app.",
+   "note_zh": "日本主要的召的士 App，東京、大阪等多個城市可用外國信用卡。首程優惠券在 App 內輸入。",
+   "color": [
+    "#1a1a1a",
+    "#000000",
+    "#ffd400"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "tabelog": {
+   "name": "Tabelog",
+   "checked": "2026-10-27",
+   "note": "Japan's top restaurant guide, with online booking for many places. No codes; some restaurants offer booking-only course deals.",
+   "note_zh": "日本最權威的餐廳指南，很多餐廳可網上訂座。沒有優惠碼；部分餐廳有網上訂座專享套餐。",
+   "color": [
+    "#f5a600",
+    "#cc8a00",
+    "#1a1200"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "yanolja": {
+   "name": "Yanolja",
+   "checked": "2026-10-27",
+   "note": "Korea's big hotel and motel booking app. Coupons are claimed in the app before booking; the global site has fewer of them.",
+   "note_zh": "韓國大型酒店及汽車旅館預訂 App。預訂前在 App 內領取優惠券；國際版的優惠券較少。",
+   "color": [
+    "#ff3478",
+    "#cc2a60"
+   ],
+   "cats": [
+    "Hotels"
+   ]
+  },
+  "koreanair": {
+   "name": "Korean Air",
+   "checked": "2026-10-27",
+   "note": "Korea's flag carrier (now merging with Asiana). Promo codes go in the booking page; SKYPASS members get member fares.",
+   "note_zh": "大韓航空（正與韓亞航空合併）。在預訂頁輸入優惠碼；SKYPASS 會員有會員票價。",
+   "color": [
+    "#00256c",
+    "#001647"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "asiana": {
+   "name": "Asiana Airlines",
+   "checked": "2026-10-27",
+   "note": "Asiana runs country-specific fare sales and card offers. It is merging into Korean Air, so check where your miles go.",
+   "note_zh": "韓亞航空在各地推出機票優惠及信用卡優惠。正併入大韓航空，留意里數安排。",
+   "color": [
+    "#c4161c",
+    "#8f1015"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "jejuair": {
+   "name": "Jeju Air",
+   "checked": "2026-10-27",
+   "note": "Korea's largest budget airline, flying to Hong Kong, Japan and Taiwan. Big seat sales run a few times a year; bags cost extra.",
+   "note_zh": "韓國最大廉航，航線包括香港、日本及台灣。每年有數次大型機位減價；行李另外收費。",
+   "color": [
+    "#ff5000",
+    "#cc4000"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "lotterent": {
+   "name": "Lotte Rent-a-Car",
+   "checked": "2026-10-27",
+   "note": "Korea's largest rental company, with English booking at Incheon and Jeju. Bring an International Driving Permit.",
+   "note_zh": "韓國最大的租車公司，仁川及濟州可用英文預訂。記得攜帶國際駕駛執照。",
+   "color": [
+    "#e60012",
+    "#b0000e"
+   ],
+   "cats": [
+    "Car rental"
+   ]
+  },
+  "coupang": {
+   "name": "Coupang",
+   "checked": "2026-10-27",
+   "note": "Korea's biggest online store with next-day Rocket delivery. Ships within Korea only, except Rocket Direct to Taiwan.",
+   "note_zh": "韓國最大的網上商店，有翌日 Rocket 送貨。只送韓國，Rocket Direct 可寄台灣。",
+   "color": [
+    "#e52528",
+    "#b01c1f"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "oliveyoung": {
+   "name": "Olive Young",
+   "checked": "2026-10-27",
+   "note": "Korea's top beauty store. The Global site ships to Hong Kong and has first-order codes; stores in Seoul give tax refunds on the spot.",
+   "note_zh": "韓國最大的美容店。Global 網站可寄香港並有首單優惠碼；首爾門市可即場退稅。",
+   "color": [
+    "#9bcc1c",
+    "#78a012",
+    "#121a00"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "gmarket": {
+   "name": "Gmarket",
+   "checked": "2026-10-27",
+   "note": "Korean marketplace with a Global site that ships abroad. Coupons are claimed on the event page; watch overseas shipping costs.",
+   "note_zh": "韓國網購平台，Global 網站可寄海外。優惠券在活動頁領取；留意海外運費。",
+   "color": [
+    "#00b046",
+    "#008a37"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "musinsa": {
+   "name": "Musinsa",
+   "checked": "2026-10-27",
+   "note": "Korea's top streetwear site with a Global store. New members get a welcome coupon; sales run around big shopping days.",
+   "note_zh": "韓國最大的街頭服飾網站，設有 Global 店。新會員有迎新優惠券；大型購物節會減價。",
+   "color": [
+    "#000000",
+    "#1a1a1a"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "yesstyle": {
+   "name": "YesStyle",
+   "checked": "2026-10-27",
+   "note": "Hong Kong-based shop for Korean and Japanese beauty and fashion, shipping worldwide. Reward codes and tiered spend discounts are common.",
+   "note_zh": "香港公司經營的韓日美容及時裝網店，全球送貨。常有獎賞碼及分級消費折扣。",
+   "color": [
+    "#f05a28",
+    "#c4461d"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "kakaot": {
+   "name": "Kakao T",
+   "checked": "2026-10-27",
+   "note": "Korea's main taxi app. Visitors can now sign up with a foreign phone number and pay with a foreign card.",
+   "note_zh": "韓國主要的召的士 App。旅客現可用外國電話號碼登記並以外國信用卡付款。",
+   "color": [
+    "#ffe812",
+    "#e0cc00",
+    "#1a1700"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "baemin": {
+   "name": "Baemin",
+   "checked": "2026-10-27",
+   "note": "Korea's biggest food delivery app. Coupons are claimed in the app; you need a Korean phone number to order.",
+   "note_zh": "韓國最大的外賣 App。優惠券在 App 內領取；需韓國電話號碼才能落單。",
+   "color": [
+    "#2ac1bc",
+    "#1f9894"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "creatrip": {
+   "name": "Creatrip",
+   "checked": "2026-10-27",
+   "note": "Korea travel app for tickets, beauty bookings and currency exchange, made for visitors from Hong Kong, Taiwan and Japan.",
+   "note_zh": "為香港、台灣及日本旅客而設的韓國旅遊 App，可訂門票、美容及兌換外幣。",
+   "color": [
+    "#4f46e5",
+    "#3730b0"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "evaair": {
+   "name": "EVA Air",
+   "checked": "2026-10-27",
+   "note": "Taiwan's EVA Air runs online fare sales and card offers on each country's site. Infinity MileageLands members get member fares.",
+   "note_zh": "長榮航空在各地網站推出網上機票優惠及信用卡優惠。無限萬哩遊會員有會員票價。",
+   "color": [
+    "#00703c",
+    "#004d29"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "chinaairlines": {
+   "name": "China Airlines",
+   "checked": "2026-10-27",
+   "note": "Taiwan's flag carrier. Promo codes come with bank card offers; Dynasty Flyer members get occasional member sales.",
+   "note_zh": "中華航空。優惠碼多與銀行卡優惠一同推出；華夏會員不時有會員減價。",
+   "color": [
+    "#e60039",
+    "#b0002c"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "starlux": {
+   "name": "STARLUX",
+   "checked": "2026-10-27",
+   "note": "Taiwan's new premium airline, flying Hong Kong, Japan and beyond. Launch and seasonal sales are the main savings.",
+   "note_zh": "台灣新晉高端航空公司，航線包括香港、日本等。開航及季節性減價是主要省錢方法。",
+   "color": [
+    "#9d7b52",
+    "#6e5638"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "tigerair": {
+   "name": "Tigerair Taiwan",
+   "checked": "2026-10-27",
+   "note": "Taiwan's budget airline flying to Japan, Korea and Hong Kong. Flash sales and Tigerair Club deals beat codes; bags cost extra.",
+   "note_zh": "台灣廉航，航線包括日本、韓國及香港。閃購及 Tigerair Club 優惠通常比優惠碼更划算；行李另外收費。",
+   "color": [
+    "#ff7f00",
+    "#cc6600"
+   ],
+   "cats": [
+    "Flights"
+   ]
+  },
+  "momo": {
+   "name": "momo Shop",
+   "checked": "2026-10-27",
+   "note": "One of Taiwan's biggest online stores. Coupons and card cashback are claimed on the event page; ships within Taiwan.",
+   "note_zh": "台灣最大型網購平台之一。優惠券及信用卡回贈在活動頁領取；只送台灣。",
+   "color": [
+    "#d4007a",
+    "#a3005e"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "pchome": {
+   "name": "PChome 24h",
+   "checked": "2026-10-27",
+   "note": "Taiwan online store with 24-hour delivery. Coupons appear on the event page and with card partners.",
+   "note_zh": "台灣網購平台，24 小時到貨。優惠券在活動頁及信用卡合作優惠中提供。",
+   "color": [
+    "#e3001b",
+    "#b00015"
+   ],
+   "cats": [
+    "Shopping"
+   ]
+  },
+  "taiwantaxi": {
+   "name": "Taiwan Taxi 55688",
+   "checked": "2026-10-27",
+   "note": "Taiwan's biggest taxi fleet and app. Discounts come from payment partners rather than public codes.",
+   "note_zh": "台灣最大的的士車隊及 App。折扣多來自付款夥伴，而非公開優惠碼。",
+   "color": [
+    "#ffc20e",
+    "#e0a800",
+    "#1a1400"
+   ],
+   "cats": [
+    "Food & rides"
+   ]
+  },
+  "tixcraft": {
+   "name": "tixcraft",
+   "checked": "2026-10-27",
+   "note": "Taiwan's main concert ticketing site (also in Hong Kong and Singapore). No discount codes; card presales come first.",
+   "note_zh": "台灣主要的演唱會門票網站（香港及新加坡亦有）。沒有折扣碼，信用卡持有人可優先購票。",
+   "color": [
+    "#ff3366",
+    "#cc2952"
+   ],
+   "cats": [
+    "Activities"
+   ]
+  },
+  "kktix": {
+   "name": "KKTIX",
+   "checked": "2026-10-27",
+   "note": "Taiwan ticketing for gigs, talks and festivals. Organisers sometimes give discount codes for early tickets.",
+   "note_zh": "台灣的演出、講座及音樂節票務平台。主辦單位有時會提供早鳥優惠碼。",
+   "color": [
+    "#1a73e8",
+    "#1459b4"
    ],
    "cats": [
     "Activities"
@@ -12643,158 +13225,191 @@
     "tiqets"
    ]
   },
-  "uk": {
+  "jp": {
    "Hotels": [
     "booking",
+    "agoda",
+    "rakutentravel",
+    "trip",
+    "jalan",
     "expedia",
     "hotelscom",
     "airbnb",
-    "premierinn",
-    "travelodge",
     "marriott",
-    "hilton",
-    "ihg",
-    "agoda"
+    "ihg"
    ],
    "Flights": [
+    "trip",
     "skyscanner",
-    "ba",
-    "easyjet",
-    "ryanair",
-    "jet2",
+    "cathay",
+    "hkexpress",
+    "jal",
+    "ana",
+    "peach",
+    "jetstar",
     "googleflights",
-    "kayak",
-    "opodo",
-    "expedia",
-    "kiwi"
+    "expedia"
    ],
    "Car rental": [
-    "enterprise",
-    "hertz",
-    "avis",
-    "europcar",
-    "sixt",
-    "budget",
+    "timescar",
+    "toyotarent",
     "rentalcars",
     "discovercars",
-    "alamo",
+    "klook",
     "trip"
    ],
    "Travel extras": [
-    "trainline",
+    "klook",
+    "kkday",
+    "jrpass",
     "airalo",
     "holafly",
-    "raileurope",
-    "omio",
-    "prioritypass",
-    "safetywing",
-    "welcomepickups",
-    "nationalexpress",
-    "klook"
+    "trip",
+    "prioritypass"
    ],
    "Shopping": [
+    "rakuten",
     "amazon",
-    "asos",
-    "selfridges",
-    "harrods",
-    "argos",
-    "johnlewis",
-    "next",
-    "boots",
-    "ebay",
-    "shein"
+    "zozotown"
    ],
    "Food & rides": [
-    "deliveroo",
-    "justeat",
-    "ubereats",
+    "gotaxi",
     "uber",
-    "bolt",
-    "freenow"
+    "didi",
+    "ubereats",
+    "wolt",
+    "tabelog"
    ],
    "Activities": [
-    "ticketmaster",
+    "klook",
+    "kkday",
+    "trip",
     "getyourguide",
     "viator",
-    "tiqets",
-    "headout",
-    "klook",
-    "stubhub",
-    "seetickets"
+    "headout"
    ]
   },
-  "us": {
+  "kr": {
    "Hotels": [
-    "expedia",
+    "agoda",
     "booking",
+    "trip",
+    "yanolja",
+    "expedia",
     "hotelscom",
     "airbnb",
     "marriott",
-    "hilton",
     "ihg",
-    "priceline",
-    "hyatt",
-    "vrbo"
+    "hilton"
    ],
    "Flights": [
+    "trip",
+    "skyscanner",
+    "koreanair",
+    "asiana",
+    "jejuair",
+    "cathay",
+    "hkexpress",
     "googleflights",
     "expedia",
-    "kayak",
-    "skyscanner",
-    "delta",
-    "united",
-    "american",
-    "southwest",
-    "priceline",
     "kiwi"
    ],
    "Car rental": [
-    "enterprise",
-    "hertz",
-    "avis",
-    "budget",
-    "alamo",
-    "national",
-    "sixt",
+    "lotterent",
+    "rentalcars",
     "discovercars",
-    "turo"
+    "klook",
+    "trip"
    ],
    "Travel extras": [
+    "klook",
+    "kkday",
     "airalo",
     "holafly",
-    "prioritypass",
-    "safetywing",
-    "amtrak",
-    "welcomepickups"
+    "trip",
+    "prioritypass"
    ],
    "Shopping": [
-    "amazon",
-    "walmart",
-    "target",
-    "ebay",
-    "bestbuy",
-    "temu",
-    "shein",
-    "macys",
+    "oliveyoung",
+    "coupang",
+    "gmarket",
+    "musinsa",
+    "yesstyle"
+   ],
+   "Food & rides": [
+    "kakaot",
+    "uber",
+    "baemin"
+   ],
+   "Activities": [
+    "klook",
+    "kkday",
+    "creatrip",
+    "trip",
+    "getyourguide",
+    "viator"
+   ]
+  },
+  "tw": {
+   "Hotels": [
+    "agoda",
+    "booking",
+    "trip",
+    "expedia",
+    "hotelscom",
+    "airbnb",
+    "klook",
+    "marriott",
+    "hilton",
+    "ihg"
+   ],
+   "Flights": [
+    "trip",
+    "skyscanner",
+    "evaair",
+    "chinaairlines",
+    "starlux",
+    "tigerair",
+    "cathay",
+    "hkexpress",
+    "googleflights",
+    "expedia"
+   ],
+   "Car rental": [
+    "rentalcars",
+    "discovercars",
+    "klook",
+    "trip"
+   ],
+   "Travel extras": [
+    "klook",
+    "kkday",
+    "airalo",
+    "holafly",
+    "trip",
+    "prioritypass"
+   ],
+   "Shopping": [
+    "momo",
+    "pchome",
+    "shopee",
+    "taobao",
     "iherb"
    ],
    "Food & rides": [
-    "doordash",
-    "ubereats",
     "uber",
-    "lyft",
-    "grubhub",
-    "instacart"
+    "ubereats",
+    "foodpanda",
+    "taiwantaxi"
    ],
    "Activities": [
-    "ticketmaster",
-    "stubhub",
-    "viator",
-    "getyourguide",
-    "headout",
-    "tiqets",
+    "kkday",
     "klook",
-    "seatgeek"
+    "trip",
+    "tixcraft",
+    "kktix",
+    "getyourguide",
+    "viator"
    ]
   },
   "sg": {
@@ -12875,6 +13490,241 @@
     "viator",
     "headout",
     "tiqets"
+   ]
+  },
+  "uk": {
+   "Hotels": [
+    "booking",
+    "expedia",
+    "hotelscom",
+    "airbnb",
+    "premierinn",
+    "travelodge",
+    "marriott",
+    "hilton",
+    "ihg",
+    "agoda"
+   ],
+   "Flights": [
+    "skyscanner",
+    "ba",
+    "easyjet",
+    "ryanair",
+    "jet2",
+    "googleflights",
+    "kayak",
+    "opodo",
+    "expedia",
+    "kiwi"
+   ],
+   "Car rental": [
+    "enterprise",
+    "hertz",
+    "avis",
+    "europcar",
+    "sixt",
+    "budget",
+    "rentalcars",
+    "discovercars",
+    "alamo",
+    "trip"
+   ],
+   "Travel extras": [
+    "trainline",
+    "airalo",
+    "holafly",
+    "raileurope",
+    "omio",
+    "prioritypass",
+    "safetywing",
+    "welcomepickups",
+    "nationalexpress",
+    "klook"
+   ],
+   "Shopping": [
+    "amazon",
+    "asos",
+    "selfridges",
+    "harrods",
+    "argos",
+    "johnlewis",
+    "next",
+    "boots",
+    "ebay",
+    "shein"
+   ],
+   "Food & rides": [
+    "deliveroo",
+    "justeat",
+    "ubereats",
+    "uber",
+    "bolt",
+    "freenow"
+   ],
+   "Activities": [
+    "ticketmaster",
+    "getyourguide",
+    "viator",
+    "tiqets",
+    "headout",
+    "klook",
+    "stubhub",
+    "seetickets"
+   ]
+  },
+  "eu": {
+   "Hotels": [
+    "booking",
+    "expedia",
+    "hotelscom",
+    "airbnb",
+    "accor",
+    "marriott",
+    "hilton",
+    "ihg",
+    "agoda",
+    "trip"
+   ],
+   "Flights": [
+    "skyscanner",
+    "ryanair",
+    "easyjet",
+    "ba",
+    "lufthansa",
+    "airfrance",
+    "klm",
+    "wizzair",
+    "opodo",
+    "kiwi"
+   ],
+   "Car rental": [
+    "europcar",
+    "sixt",
+    "hertz",
+    "avis",
+    "enterprise",
+    "rentalcars",
+    "discovercars",
+    "budget",
+    "alamo",
+    "trip"
+   ],
+   "Travel extras": [
+    "trainline",
+    "omio",
+    "raileurope",
+    "eurail",
+    "flixbus",
+    "airalo",
+    "holafly",
+    "prioritypass",
+    "welcomepickups",
+    "safetywing"
+   ],
+   "Shopping": [
+    "amazon",
+    "zalando",
+    "asos",
+    "farfetch",
+    "ebay",
+    "selfridges",
+    "harrods",
+    "shein",
+    "aliexpress",
+    "temu"
+   ],
+   "Food & rides": [
+    "uber",
+    "bolt",
+    "freenow",
+    "ubereats",
+    "deliveroo",
+    "justeat",
+    "glovo",
+    "wolt"
+   ],
+   "Activities": [
+    "getyourguide",
+    "viator",
+    "tiqets",
+    "headout",
+    "civitatis",
+    "klook",
+    "ticketmaster"
+   ]
+  },
+  "us": {
+   "Hotels": [
+    "expedia",
+    "booking",
+    "hotelscom",
+    "airbnb",
+    "marriott",
+    "hilton",
+    "ihg",
+    "priceline",
+    "hyatt",
+    "vrbo"
+   ],
+   "Flights": [
+    "googleflights",
+    "expedia",
+    "kayak",
+    "skyscanner",
+    "delta",
+    "united",
+    "american",
+    "southwest",
+    "priceline",
+    "kiwi"
+   ],
+   "Car rental": [
+    "enterprise",
+    "hertz",
+    "avis",
+    "budget",
+    "alamo",
+    "national",
+    "sixt",
+    "discovercars",
+    "turo"
+   ],
+   "Travel extras": [
+    "airalo",
+    "holafly",
+    "prioritypass",
+    "safetywing",
+    "amtrak",
+    "welcomepickups"
+   ],
+   "Shopping": [
+    "amazon",
+    "walmart",
+    "target",
+    "ebay",
+    "bestbuy",
+    "temu",
+    "shein",
+    "macys",
+    "iherb"
+   ],
+   "Food & rides": [
+    "doordash",
+    "ubereats",
+    "uber",
+    "lyft",
+    "grubhub",
+    "instacart"
+   ],
+   "Activities": [
+    "ticketmaster",
+    "stubhub",
+    "viator",
+    "getyourguide",
+    "headout",
+    "tiqets",
+    "klook",
+    "seatgeek"
    ]
   }
  }

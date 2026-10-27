@@ -325,7 +325,7 @@ def merge(data, found_by_page):
     # brand and not this shop.
     names = {k: v["name"].lower().split(" /")[0].split(".")[0] for k, v in data["sites"].items()}
     # Brand names that are also everyday words ("your next trip", "budget") don't count.
-    generic = {"trip", "next", "target", "national", "united", "american", "delta", "boots", "budget", "grab", "bolt", "chope", "scoot"}
+    generic = {"trip", "next", "target", "national", "united", "american", "delta", "boots", "budget", "grab", "bolt", "chope", "scoot", "ana", "peach"}
     others = (set(names.values()) | {"kayak", "priceline", "cheapflights", "momondo", "hotwire", "orbitz", "travelocity", "farfetch", "tahiti"}) - generic
     named = lambda n, low: re.search(r"(?<![a-z])" + re.escape(n) + r"(?![a-z])", low) is not None
 

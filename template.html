@@ -95,8 +95,10 @@ button, input, select { font: inherit; color: inherit; }
 .field input::placeholder { color: var(--muted); }
 .field input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--info-bg); }
 .field .ico { position: absolute; left: 15px; top: 16px; width: 18px; height: 18px; stroke: var(--muted); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
-.seg { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); background: var(--well); border-radius: 12px; padding: 3px; }
-.seg button { border: 0; background: transparent; border-radius: 9px; height: 36px; font-size: 13px; font-weight: 600; color: var(--ink-2); cursor: pointer; white-space: nowrap; padding: 0 4px; }
+.seg-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; scrollbar-width: none; }
+.seg-wrap::-webkit-scrollbar { display: none; }
+.seg { display: flex; width: max-content; min-width: 100%; background: var(--well); border-radius: 12px; padding: 3px; }
+.seg button { flex: 1 0 auto; border: 0; background: transparent; border-radius: 9px; height: 36px; font-size: 13px; font-weight: 600; color: var(--ink-2); cursor: pointer; white-space: nowrap; padding: 0 13px; }
 .seg button[aria-pressed="true"] { background: var(--panel); color: var(--ink); font-weight: 800; box-shadow: 0 1px 3px rgba(14,17,22,.14); }
 .tabs-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; scrollbar-width: none; border-bottom: 1px solid var(--line); }
 .tabs-wrap::-webkit-scrollbar { display: none; }
@@ -241,7 +243,7 @@ html[lang="zh-Hans"] body { font-family: var(--font), "Noto Sans SC", "PingFang 
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         <input id="q" type="search" autocomplete="off" data-ph="search">
       </div>
-      <div class="seg" id="regions" role="group" data-al="regionL"></div>
+      <div class="seg-wrap"><div class="seg" id="regions" role="group" data-al="regionL"></div></div>
       <div class="tabs-wrap"><div class="tabs" id="cats"></div></div>
       <div class="sub-row"><span id="site-line"></span><label class="toggle" for="showDead"><input type="checkbox" id="showDead"> <span data-t="showDead"></span></label></div>
     </div>
@@ -321,7 +323,7 @@ const T = {
     savedP: "Codes you marked as worked, and good deals ending soon.",
     all: "All", live: "live codes", sites: "sites", soon: "ending soon",
     siteLine: n => `${n} ${n === 1 ? "site" : "sites"} · tap a card to open`,
-    regions: { world: "Worldwide", hk: "Hong Kong", uk: "UK", us: "US", sg: "Singapore", all: "All sites" },
+    regions: { world: "Worldwide", hk: "Hong Kong", jp: "Japan", kr: "Korea", tw: "Taiwan", sg: "Singapore", uk: "UK", eu: "Europe", us: "US", all: "All sites" },
     regionLine: (r, n) => `Top sites in ${r} · ${n} ${n === 1 ? "site" : "sites"}`, top: n => `Top ${n}`,
     nothing: q => `Nothing matches${q ? ` "${q}"` : ""}. Try another word or category.`,
     how: "How it works:", noLive: "No live codes right now.", deadH: "Expired or skip",
@@ -335,7 +337,7 @@ const T = {
     weekH: "Ending within a week", weekE: "Nothing ending this week.",
     settings: "Settings", language: "Language", dark: "Dark mode", terms: "Terms & Conditions", privacy: "Privacy Statement", version: "Version",
     setNote: d => `Codes last updated ${d}. Jeuksou checks public promo pages every 3 days.`,
-    regionL: "Region", regShort: { world: "World", hk: "HK", uk: "UK", us: "US", sg: "SG", all: "All" },
+    regionL: "Region", regShort: { world: "World", hk: "HK", jp: "Japan", kr: "Korea", tw: "Taiwan", sg: "SG", uk: "UK", eu: "Europe", us: "US", all: "All" },
     best: "Best right now", ends: d => `Ends ${d}`,
     termsBody: [
       ["What Jeuksou is", "Jeuksou is a free list of promo codes and deals found on public web pages. An automatic script reads those pages every 3 days, so a code can stop working before the next update."],
@@ -360,7 +362,7 @@ const T = {
     savedP: "你標記為有效的優惠碼，以及快將結束的優惠。",
     all: "全部", live: "個有效優惠碼", sites: "個網站", soon: "個快將結束",
     siteLine: n => `${n} 個網站 · 點擊卡片打開`,
-    regions: { world: "全球", hk: "香港", uk: "英國", us: "美國", sg: "新加坡", all: "所有網站" },
+    regions: { world: "全球", hk: "香港", jp: "日本", kr: "韓國", tw: "台灣", sg: "新加坡", uk: "英國", eu: "歐洲", us: "美國", all: "所有網站" },
     regionLine: (r, n) => `${r}熱門網站 · ${n} 個`, top: n => `首 ${n} 位`,
     nothing: q => `找不到${q ? `「${q}」` : "相符的結果"}。試試其他字詞或類別。`,
     how: "使用方法：", noLive: "現時沒有有效優惠碼。", noYet: "暫時未找到優惠碼，著數碼每 3 日會再檢查。", deadH: "已過期或不建議",
@@ -374,7 +376,7 @@ const T = {
     weekH: "一星期內結束", weekE: "本星期沒有快將結束的優惠。",
     settings: "設定", language: "語言", dark: "深色模式", terms: "條款及細則", privacy: "私隱聲明", version: "版本",
     setNote: d => `優惠碼最後更新於 ${d}。著數碼每 3 日檢查一次公開優惠頁面。`,
-    regionL: "地區", regShort: { world: "全球", hk: "香港", uk: "英國", us: "美國", sg: "新加坡", all: "全部" },
+    regionL: "地區", regShort: { world: "全球", hk: "香港", jp: "日本", kr: "韓國", tw: "台灣", sg: "新加坡", uk: "英國", eu: "歐洲", us: "美國", all: "全部" },
     best: "現時最抵", ends: d => `${d} 結束`,
     termsBody: [
       ["著數碼是甚麼", "著數碼是一個免費的優惠碼及優惠列表，資料來自公開網頁。自動程式每 3 日讀取這些網頁一次，因此優惠碼可能在下次更新前已失效。"],
@@ -661,6 +663,7 @@ document.addEventListener("click", e => {
   else if (b.dataset.cat) { state.cat = b.dataset.cat; state.open = null; render(); b.scrollIntoView({ block: "nearest", inline: "nearest" }); }
   else if (b.dataset.region) {
     state.region = b.dataset.region; state.open = null;
+    b.scrollIntoView({ block: "nearest", inline: "nearest" });
     if (state.cat !== "all" && !(state.region === "all" ? CATS : regionCats()).includes(state.cat)) state.cat = "all";
     render();
   }

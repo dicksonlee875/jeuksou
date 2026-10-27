@@ -453,6 +453,61 @@
       "url": "https://dealhack.com/coupons/ca.hotels.com",
       "site": "hotelscom",
       "cat": "Hotels"
+    },
+    {
+      "url": "https://dealhack.com/coupons/lufthansa",
+      "site": "lufthansa",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/air-france",
+      "site": "airfrance",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/klm",
+      "site": "klm",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/eurail",
+      "site": "eurail",
+      "cat": "Travel extras"
+    },
+    {
+      "url": "https://dealhack.com/coupons/flixbus",
+      "site": "flixbus",
+      "cat": "Travel extras"
+    },
+    {
+      "url": "https://dealhack.com/coupons/zalando",
+      "site": "zalando",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/glovo",
+      "site": "glovo",
+      "cat": "Food & rides"
+    },
+    {
+      "url": "https://dealhack.com/coupons/rakuten",
+      "site": "rakuten",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/korean-air",
+      "site": "koreanair",
+      "cat": "Flights"
+    },
+    {
+      "url": "https://dealhack.com/coupons/olive-young",
+      "site": "oliveyoung",
+      "cat": "Shopping"
+    },
+    {
+      "url": "https://dealhack.com/coupons/yesstyle",
+      "site": "yesstyle",
+      "cat": "Shopping"
     }
   ]
 }
