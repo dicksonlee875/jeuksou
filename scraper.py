@@ -121,6 +121,8 @@ def find_dates(text):
             if not d or not (TODAY - dt.timedelta(days=400) <= d <= TODAY + dt.timedelta(days=900)):
                 continue
             taken.append((m.start(), m.end()))
+            if re.match(r"\s*(\d{1,2}:\d\d)?\s*(開搶|開賣|開始|起|starts?)", text[m.end():m.end() + 12], re.I):
+                continue                          # when a sale opens, not when it ends
             before = text[max(0, m.start() - 25):m.start()]
             after = text[m.end():m.end() + 4]
             out.append((d, bool(END_WORDS.search(before) or re.match(r"\s*(前|為止|止)", after))))
@@ -187,6 +189,16 @@ def extract(html, page):
     multi = page.get("sites")
     found = {}
     current_site = page.get("site")
+    seen_count = {}
+    for l in lines:
+        seen_count[l] = seen_count.get(l, 0) + 1
+
+    def filler(l):
+        """Lines that can't describe an offer: repeated boilerplate, bare dates/times, short fragments."""
+        bare = CODE_RE.sub("", l).strip()
+        return (seen_count.get(l, 0) >= 3 or len(bare) < 8
+                or re.fullmatch(r"[\d年月日:/\-\s.]*(開搶|開賣|開始)?", bare) is not None)
+
     for i, line in enumerate(lines):
         if multi:                                 # track which shop this part of the page is about
             low = line.lower()
@@ -211,9 +223,9 @@ def extract(html, page):
             nxt = lines[i + 1] if i + 1 < len(lines) else ""
             # A short line ("CODE 領取", "CODE use code") is a table row: its description is on the line above.
             # Walk up past other code rows to find it.
-            if len(rest) < 15:
+            if len(rest) < 15 or seen_count.get(line, 0) >= 3:
                 j = i - 1
-                while j >= 0 and i - j < 15 and len(lines[j]) < 40 and len(CODE_RE.sub("", lines[j]).strip()) < 15:
+                while j >= 0 and i - j < 15 and filler(lines[j]):
                     j -= 1
                 context = lines[j] if j >= 0 else ""
             else:
@@ -287,12 +299,21 @@ def merge(data, found_by_page):
         for code, f in found.items():
             shops_per_code.setdefault(code, set()).add(f["site"])
     shared = {c for c, shops in shops_per_code.items() if len(shops) > 1}
+    # Coupon hubs list other brands' codes on a shop's page. Skip a code whose text names another
+    # brand and not this shop.
+    names = {k: v["name"].lower().split(" /")[0].split(".")[0] for k, v in data["sites"].items()}
+    others = set(names.values()) | {"kayak", "priceline", "cheapflights", "momondo", "hotwire", "orbitz", "travelocity", "farfetch", "tahiti"}
+
+    def other_brand(site, text):
+        low = text.lower()
+        return names.get(site, "") not in low and any(o in low for o in others - {names.get(site, "")})
+
     groups = {}
     for page, found in found_by_page:
         host = urlparse(page["url"]).netloc.replace("www.", "")
         for code, f in found.items():
             site = f["site"]
-            if site not in data["sites"] or code in shared:
+            if site not in data["sites"] or code in shared or other_brand(site, f["snippet"]):
                 continue
             key = (site, code)
             if key in known:
