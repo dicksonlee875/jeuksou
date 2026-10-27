@@ -29,6 +29,33 @@ def t2s(text):
     return text
 
 
+# Words that say what a code is for. A site in several categories (Trip.com, Klook) only shows a code
+# under the categories its text names; a code that names none keeps the category it was saved with.
+CAT_WORDS = {
+    "Hotels": r"hotel|酒店|住宿|旅館|民宿|resort|ryokan|accommodation|\bstays?\b",
+    "Flights": r"flight|機票|航班|機位|airfare|\bfly\b",
+    "Car rental": r"car (?:rental|hire)|rental car|租車|自駕",
+    "Travel extras": r"esim|\bsim\b|wi-?fi|上網|rail|train|火車|鐵路|高鐵|transfer|接送|機場快綫|lounge|貴賓室|insurance|保險|巴士|\bbus\b|ferry|船票",
+    "Activities": r"ticket|門票|\btours?\b|activit|attraction|景點|theme park|樂園|體驗|演出",
+    "Shopping": r"shopping|購物|網購",
+    "Food & rides": r"food|外賣|delivery|送餐|\brides?\b|taxi|的士|叫車",
+}
+
+
+def add_cats(data):
+    for d in data["deals"]:
+        site_cats = data["sites"].get(d["site"], {}).get("cats") or [d["cat"]]
+        if len(site_cats) < 2:
+            continue
+        text = " ".join(str(d.get(f) or "") for f in ("title", "title_zh", "desc", "desc_zh", "big", "big_zh")).lower()
+        if re.search(r"everything|sitewide|site-wide|全站|全單|all products|any booking", text):
+            hits = site_cats                      # good on the whole site: show it everywhere
+        else:
+            hits = [c for c in site_cats if re.search(CAT_WORDS.get(c, r"$^"), text)]
+        if hits:
+            d["_cats"] = hits
+
+
 def add_simplified(data):
     for d in data["deals"]:
         for f in ("title", "desc", "cond", "big"):
@@ -52,6 +79,7 @@ def main():
     if not args.keep_avoid:
         data["deals"] = [d for d in data["deals"] if d["status"] != "avoid"]
     add_simplified(data)
+    add_cats(data)
     html = (ROOT / "template.html").read_text(encoding="utf-8")
 
     # Interface words: copy the 繁體 block and convert it to 简体.

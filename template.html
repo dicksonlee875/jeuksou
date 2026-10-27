@@ -464,9 +464,11 @@ const tx = (o, f) => lang === "en" ? o[f] : (o[f + "_" + (lang === "hans" ? "sc"
 const catName = c => L().cats[c] || c;
 const fmt = d => new Date(d + "T00:00:00").toLocaleDateString(L().locale, { day: "numeric", month: "short", year: "numeric" });
 
+// A code's categories: the ones its text names (worked out at build time), else the one it was saved with.
+const inCat = (d, c) => (d._cats || [d.cat]).includes(c);
+
 function matches(d) {
-  // In a region the site list decides what shows, so a site's codes aren't split by category.
-  if (state.region === "all" && state.cat !== "all" && d.cat !== state.cat) return false;
+    if (state.region === "all" && state.cat !== "all" && !inCat(d, state.cat)) return false;
   if (state.q) {
     const hay = [SITES[d.site].name, d.cat, catName(d.cat), d.title, d.desc, d.cond, tx(d, "title"), tx(d, "desc"), tx(d, "cond"), d.big, ...(d.codes || [])].join(" ").toLowerCase();
     return state.q.toLowerCase().split(/\s+/).every(w => hay.includes(w));
@@ -506,7 +508,7 @@ function renderStats() {
 function renderHero() {
   const t = L();
   const order = state.region === "all" ? null : regionSites(state.cat);
-  const pool = DEALS.filter(d => d.eff === "active" && d.codes && (order ? order.includes(d.site) : state.cat === "all" || d.cat === state.cat));
+  const pool = DEALS.filter(d => d.eff === "active" && d.codes && (order ? order.includes(d.site) : true) && (state.cat === "all" || inCat(d, state.cat)));
   pool.sort((a, b) => (order ? order.indexOf(a.site) - order.indexOf(b.site) : 0) || a.order - b.order);
   const d = pool[0], el = $("#hero");
   el.hidden = !d || state.q !== "";
@@ -537,7 +539,7 @@ function renderCats() {
   const inRegion = state.region !== "all";
   $("#cats").innerHTML = ["all", ...(inRegion ? regionCats() : CATS)].map(c => {
     const n = inRegion ? regionSites(c).length     // in a region the tabs count sites, not codes
-      : c === "all" ? live.length : live.filter(d => d.cat === c).length;
+      : c === "all" ? live.length : live.filter(d => inCat(d, c)).length;
     return `<button class="tab" data-cat="${esc(c)}" aria-pressed="${state.cat === c}">${c === "all" ? L().all : esc(catName(c))}<span class="n">${n}</span></button>`;
   }).join("");
   $("#showDead").checked = state.dead;
@@ -599,7 +601,7 @@ function renderRegion() {
   let html = "", shown = new Set();
   for (const c of cats) {
     const cards = regionSites(c).map((k, i) => {
-      const all = DEALS.filter(d => d.site === k && (!q || matches(d)));
+      const all = DEALS.filter(d => d.site === k && inCat(d, c) && (!q || matches(d)));
       if (q && !all.length && !SITES[k].name.toLowerCase().includes(q)) return null;
       const live = sortDeals(all.filter(d => !d.dead));
       return { k, all, live, top: live[0] || null, rank: i + 1, cat: c };
