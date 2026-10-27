@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0c">
+<title>Jeuksou 著數碼</title>
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Jeuksou">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500;700&family=Noto+Sans+HK:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: phone-first wallet app. One centred column (wider on desktop), stacked site cards that open in place, fixed bottom tab bar for Wallet / Saved. Deliberately single-theme dark. */
+:root {
+  color-scheme: dark;
+  --bg: #0a0a0c;
+  --panel: #141418;
+  --panel-2: #1d1d23;
+  --line: #2a2a32;
+  --ink: #f4f4f6;
+  --muted: #9a9aa6;
+  --accent: #5b7cff;
+  --ok: #3ddc97; --ok-bg: rgba(61,220,151,.12);
+  --warn: #ffc85c; --warn-bg: rgba(255,200,92,.12);
+  --bad: #ff7a70; --bad-bg: rgba(255,122,112,.12);
+  --info: #9fb0ff; --info-bg: rgba(91,124,255,.16);
+  --font: "Geist", "Segoe UI", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, Menlo, Consolas, monospace;
+  --hk: "Noto Sans HK", "PingFang HK", "Microsoft JhengHei", sans-serif;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { background: var(--bg); }
+body { color: var(--ink); font-family: var(--font); font-size: 15px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.num { font-variant-numeric: tabular-nums; }
+
+.app { max-width: 680px; margin: 0 auto; padding-block: 20px calc(96px + env(safe-area-inset-bottom, 0px)); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* ---------- header ---------- */
+.hdr { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.logo h1 { margin: 0; font: 900 clamp(34px, 8vw, 44px) var(--hk); letter-spacing: .02em; line-height: 1; }
+.logo .en { display: block; margin-top: 6px; font-size: 11px; font-weight: 600; letter-spacing: .28em; color: var(--muted); }
+.stats { display: flex; gap: 16px; font-size: 12.5px; color: var(--muted); }
+.stats b { display: block; color: var(--ink); font-size: 18px; font-weight: 700; }
+
+/* ---------- search + chips ---------- */
+.tools { margin-top: 18px; display: grid; gap: 12px; }
+.field { position: relative; min-width: 0; }
+.field input, .field select { width: 100%; height: 54px; padding: 21px 14px 6px 44px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); transition: border-color .15s, box-shadow .15s; }
+.field select { appearance: none; -webkit-appearance: none; }
+.field label { position: absolute; left: 44px; top: 17px; color: var(--muted); font-size: 14.5px; pointer-events: none; transition: top .15s, font-size .15s; }
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(91,124,255,.25); }
+.field input:focus + label, .field input:not(:placeholder-shown) + label, .field select + label { top: 7px; font-size: 11.5px; letter-spacing: .02em; }
+.field .ico { position: absolute; left: 14px; top: 18px; width: 18px; height: 18px; stroke: var(--muted); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.chips-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px 2px; scrollbar-width: none; }
+.chips-wrap::-webkit-scrollbar { display: none; }
+.chips { display: flex; gap: 8px; width: max-content; }
+.chip { border: 0; background: var(--panel-2); color: #c8c8d2; font-size: 14px; font-weight: 500; padding: 8px 14px; border-radius: 999px; cursor: pointer; white-space: nowrap; }
+.chip .n { color: var(--muted); margin-left: 5px; font-variant-numeric: tabular-nums; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); font-weight: 600; }
+.chip[aria-pressed="true"] .n { color: #55555f; }
+.sub-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+.toggle { display: inline-flex; align-items: center; gap: 7px; cursor: pointer; }
+.toggle input { accent-color: var(--accent); width: 16px; height: 16px; }
+
+/* ---------- wallet stack ---------- */
+.stack { margin-top: 18px; display: flex; flex-direction: column; }
+.wcard { position: relative; border-radius: 20px; margin-top: -26px; box-shadow: 0 -8px 24px rgba(0,0,0,.45); overflow: hidden; transition: margin .25s ease; }
+.wcard:first-child { margin-top: 0; }
+.wcard.open { margin-top: 14px; margin-bottom: 14px; }
+.wcard:first-child.open { margin-top: 0; }
+.wcard-h { width: 100%; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; padding: 18px 18px 34px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; align-items: start; }
+.wcard.open .wcard-h, .wcard:last-child .wcard-h { padding-bottom: 18px; }
+.wcard-name { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+.wcard-cats { font-size: 13px; opacity: .85; grid-column: 1; }
+.wcard-right { grid-row: 1 / span 2; grid-column: 2; text-align: right; }
+.wcard-best { font-size: 24px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.wcard-count { font-size: 12.5px; font-weight: 600; opacity: .85; }
+.wcard-body { background: var(--panel); padding: 6px 12px 12px; display: grid; gap: 10px; }
+.site-tip { font-size: 13.5px; color: #c8c8d2; background: var(--panel-2); border-radius: 12px; padding: 11px 13px; }
+.site-tip b { color: var(--ink); }
+
+/* ---------- deal rows ---------- */
+.deal { background: var(--panel-2); border-radius: 14px; padding: 14px; display: grid; gap: 8px; }
+.deal-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: start; }
+.deal-big { font-size: 26px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; }
+.deal-title { font-weight: 600; font-size: 15px; grid-column: 1; }
+.tags { grid-row: 1 / span 2; grid-column: 2; display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
+.tag { font-size: 11.5px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.t-active { background: var(--ok-bg); color: var(--ok); }
+.t-restricted { background: var(--info-bg); color: var(--info); }
+.t-unconfirmed, .t-soon { background: var(--warn-bg); color: var(--warn); }
+.t-expired, .t-avoid { background: var(--bad-bg); color: var(--bad); }
+.t-offer { background: rgba(255,255,255,.07); color: #c8c8d2; }
+.desc { margin: 0; color: #dedee6; font-size: 14.5px; }
+.cond { margin: 0; color: var(--muted); font-size: 13.5px; }
+.codes { display: flex; flex-wrap: wrap; gap: 8px; }
+.code { display: inline-flex; align-items: center; gap: 10px; font: 700 15px var(--mono); letter-spacing: .05em; padding: 7px 7px 7px 13px; border-radius: 10px; border: 1px solid var(--line); background: #0f0f13; color: var(--ink); cursor: pointer; transition: border-color .15s, transform .05s; }
+.code:hover { border-color: var(--accent); }
+.code:active { transform: scale(.98); }
+.code .cp { font: 600 11.5px var(--font); letter-spacing: 0; background: var(--ink); color: var(--bg); padding: 3px 9px; border-radius: 6px; }
+.code.done .cp { background: var(--ok); }
+.dead .code { color: var(--muted); text-decoration: line-through; cursor: default; }
+.dead .code .cp { display: none; }
+.dead .deal-big { color: var(--muted); }
+.offer-link { display: inline-flex; align-items: center; gap: 6px; width: max-content; font-weight: 600; font-size: 14px; color: var(--ink); text-decoration: none; background: #0f0f13; border: 1px solid var(--line); padding: 8px 13px; border-radius: 10px; }
+.offer-link:hover { border-color: var(--accent); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.meta a { color: var(--muted); }
+.mine { display: inline-flex; gap: 6px; margin-left: auto; }
+.mine button { font-size: 12.5px; font-weight: 500; border: 1px solid var(--line); background: transparent; color: var(--muted); padding: 4px 10px; border-radius: 8px; cursor: pointer; }
+.mine button[aria-pressed="true"].yes { background: var(--ok-bg); color: var(--ok); border-color: transparent; }
+.mine button[aria-pressed="true"].no { background: var(--bad-bg); color: var(--bad); border-color: transparent; }
+.dead-h { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 4px 4px 0; }
+.empty { text-align: center; color: var(--muted); padding: 48px 12px; }
+.section-h { margin: 22px 0 10px; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.saved-list { display: grid; gap: 10px; }
+.saved-list .deal { border-left: 4px solid var(--site, var(--accent)); }
+.saved-site { font-size: 12.5px; font-weight: 700; color: var(--site, var(--accent)); filter: brightness(1.35); }
+
+.view-h { margin: 20px 0 6px; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+.view-p { margin: 0 0 16px; color: var(--muted); }
+.foot { margin-top: 28px; color: var(--muted); font-size: 12.5px; }
+
+/* ---------- tab bar ---------- */
+.tabbar { position: fixed; z-index: 25; left: 0; right: 0; bottom: 0; background: rgba(10,10,12,.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom, 0px); padding-left: env(safe-area-inset-left, 0px); padding-right: env(safe-area-inset-right, 0px); }
+.tabbar-in { max-width: 680px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); }
+.tabbar button { border: 0; background: transparent; color: var(--muted); padding: 10px 0 12px; display: grid; justify-items: center; gap: 3px; font-size: 12px; font-weight: 600; cursor: pointer; }
+.tabbar svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tabbar button[aria-selected="true"] { color: var(--ink); }
+.tabbar .badge { font-size: 10px; background: var(--accent); color: #fff; border-radius: 999px; padding: 0 6px; margin-left: 2px; }
+
+/* ---------- toasts ---------- */
+.toasts { position: fixed; z-index: 50; left: 50%; transform: translateX(-50%); bottom: calc(86px + env(safe-area-inset-bottom, 0px)); display: grid; gap: 8px; width: min(380px, calc(100vw - 32px)); }
+.toast { display: flex; gap: 10px; align-items: center; padding: 12px 14px; border-radius: 14px; background: #23232b; box-shadow: 0 10px 30px rgba(0,0,0,.5); font-size: 14px; font-weight: 500; animation: slide .25s ease-out; }
+.toast svg { flex: none; width: 19px; height: 19px; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.toast.ok svg { stroke: var(--ok); } .toast.warn svg { stroke: var(--warn); } .toast.bad svg { stroke: var(--bad); }
+.toast.out { animation: fade .2s ease-in forwards; }
+@keyframes slide { from { opacity: 0; transform: translateY(10px); } }
+@keyframes fade { to { opacity: 0; transform: translateY(10px); } }
+@media (prefers-reduced-motion: reduce) { .toast, .toast.out, .ck-verdict { animation: none; } .wcard { transition: none; } .spin { animation-duration: 2s; } }
+
+@media (min-width: 720px) {
+  .app { padding-top: 32px; }
+  .wcard-h { padding: 20px 22px 36px; }
+  .wcard-name { font-size: 21px; }
+  .wcard-body { padding: 8px 16px 16px; }
+}
+
+/* ---------- language switch ---------- */
+.hdr-r { display: grid; gap: 10px; justify-items: end; }
+.lang { display: inline-flex; background: var(--panel-2); border-radius: 999px; padding: 3px; }
+.lang button { border: 0; background: transparent; color: var(--muted); font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 999px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.t-auto { background: rgba(255,255,255,.07); color: #c8c8d2; }
+html[lang^="zh"] body { font-family: var(--font), var(--hk); }
+html[lang="zh-Hans"] body { font-family: var(--font), "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; }
+@media (max-width: 719px) { .hdr { position: relative; } .lang { position: absolute; top: 2px; right: 0; } .hdr-r { justify-items: start; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="hdr">
+    <div class="logo"><h1>著數碼</h1><span class="en">JEUKSOU · PROMO CODE WALLET</span></div>
+    <div class="hdr-r">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="en" aria-pressed="false">EN</button>
+        <button data-lang="hant" aria-pressed="false">繁</button>
+        <button data-lang="hans" aria-pressed="false">简</button>
+      </div>
+      <div class="stats" id="stats"></div>
+    </div>
+  </header>
+
+  <!-- ===== WALLET ===== -->
+  <section id="view-wallet">
+    <div class="tools">
+      <div class="field">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder=" " autocomplete="off">
+        <label for="q" data-t="search"></label>
+      </div>
+      <div class="chips-wrap"><div class="chips" id="cats"></div></div>
+      <div class="sub-row"><span id="site-line"></span><label class="toggle" for="showDead"><input type="checkbox" id="showDead"> <span data-t="showDead"></span></label></div>
+    </div>
+    <div class="stack" id="stack"></div>
+  </section>
+
+  <!-- ===== SAVED ===== -->
+  <section id="view-saved" hidden>
+    <h2 class="view-h" data-t="saved"></h2>
+    <p class="view-p" data-t="savedP"></p>
+    <div id="saved"></div>
+  </section>
+
+  <p class="foot" id="foot"></p>
+</div>
+
+<nav class="tabbar" aria-label="Sections"><div class="tabbar-in" role="tablist">
+  <button role="tab" data-view="wallet" aria-selected="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18M7 6V4h10v2"/></svg><span data-t="wallet"></span></button>
+  <button role="tab" data-view="saved" aria-selected="false"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span><span data-t="saved"></span><span class="badge" id="saved-badge" hidden></span></span></button>
+</div></nav>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script>
+// Filled in by build.py from data/deals.json.
+const DATA = /*__DATA__*/null;
+const SITES = DATA.sites, CATS = DATA.categories, DEALS = DATA.deals;
+
+/* ---------- Words in three languages ---------- */
+const T = {
+  en: {
+    search: "Search sites, codes, banks, cards", showDead: "Show expired", wallet: "Wallet", saved: "Saved",
+    savedP: "Codes you marked as worked, and good deals ending soon.",
+    all: "All", live: "live codes", sites: "sites", soon: "ending soon",
+    siteLine: n => `${n} ${n === 1 ? "site" : "sites"} · tap a card to open`,
+    nothing: q => `Nothing matches${q ? ` "${q}"` : ""}. Try another word or category.`,
+    how: "How it works:", noLive: "No live codes right now.", deadH: "Expired or skip",
+    code: n => `${n} ${n === 1 ? "code" : "codes"}`,
+    status: { active: "Ready to use", restricted: "Card / members only", unconfirmed: "Unconfirmed", expired: "Expired", avoid: "Skip" },
+    noCode: "No code needed", auto: "Auto-found", endsToday: "Ends today", daysLeft: n => `${n} ${n === 1 ? "day" : "days"} left`,
+    copy: "Copy", copied: "Copied", copiedT: c => `Copied ${c}`, selectT: "Code selected. Press Ctrl+C or Cmd+C to copy.",
+    open: "Open offer ↗", until: d => `Until ${d}`, ended: d => `Ended ${d}`, noEnd: "No end date", source: "Source",
+    worked: "Worked", didnt: "Didn't work", wT: "Saved as worked", nT: "Marked as didn't work", cT: "Note cleared",
+    workedH: "Worked for you", workedE: 'Tap "Worked" on a code after it works at checkout, and it shows up here.',
+    weekH: "Ending within a week", weekE: "Nothing ending this week.",
+    foot: d => `Updated ${d} by an automatic script that reads public promo pages every few days. None of these was tested at checkout unless you marked it, and "Auto-found" codes come straight from the page text. Paste the code at payment and check the price drops before you pay. Your Worked / Didn't work notes stay in this browser. Jeuksou isn't affiliated with any of the brands listed; names are used only to say which site a code is for.`,
+    cats: {}, locale: "en-GB",
+  },
+  hant: /*HANT*/{
+    search: "搜尋網站、優惠碼、銀行、信用卡", showDead: "顯示已過期", wallet: "錢包", saved: "已儲存",
+    savedP: "你標記為有效的優惠碼，以及快將結束的優惠。",
+    all: "全部", live: "個有效優惠碼", sites: "個網站", soon: "個快將結束",
+    siteLine: n => `${n} 個網站 · 點擊卡片打開`,
+    nothing: q => `找不到${q ? `「${q}」` : "相符的結果"}。試試其他字詞或類別。`,
+    how: "使用方法：", noLive: "現時沒有有效優惠碼。", deadH: "已過期或不建議",
+    code: n => `${n} 個優惠碼`,
+    status: { active: "即用", restricted: "限指定卡 / 會員", unconfirmed: "未確認", expired: "已過期", avoid: "不建議" },
+    noCode: "毋須優惠碼", auto: "自動找到", endsToday: "今日結束", daysLeft: n => `尚餘 ${n} 日`,
+    copy: "複製", copied: "已複製", copiedT: c => `已複製 ${c}`, selectT: "已選取優惠碼，按 Ctrl+C 或 Cmd+C 複製。",
+    open: "打開優惠 ↗", until: d => `至 ${d}`, ended: d => `已於 ${d} 結束`, noEnd: "沒有結束日期", source: "來源",
+    worked: "有效", didnt: "無效", wT: "已儲存為有效", nT: "已標記為無效", cT: "已清除標記",
+    workedH: "對你有效", workedE: "優惠碼在結帳成功後按「有效」，就會在這裡顯示。",
+    weekH: "一星期內結束", weekE: "本星期沒有快將結束的優惠。",
+    foot: d => `${d} 由自動程式更新，程式每隔幾日讀取公開的優惠頁面。除非你自己標記，這些優惠碼都未經結帳測試；「自動找到」的優惠碼直接取自網頁文字。付款時貼上優惠碼，確認價格下降後才付款。你的「有效 / 無效」標記只儲存在此瀏覽器。著數碼與所列品牌並無任何關係，品牌名稱只用作說明優惠碼適用的網站。`,
+    cats: { "Flights": "機票", "Hotels": "酒店", "Car rental": "租車", "Travel extras": "旅遊附加", "Activities": "活動", "Shopping": "購物", "Food & rides": "外賣及出行" },
+    locale: "zh-HK",
+  }/*END_HANT*/,
+};
+// 简体 = 繁體 strings run through OpenCC at build time (see build.py).
+T.hans = Object.assign(/*__HANS__*/{}, { locale: "zh-CN" });
+
+/* ---------- Card colours ---------- */
+const cardStyle = k => { const c = (SITES[k] && SITES[k].color) || ["#3a3a46", "#24242c"]; return `background:linear-gradient(135deg, ${c[0]}, ${c[1]});color:${c[2] || "#fff"}`; };
+const siteColor = k => ((SITES[k] && SITES[k].color) || ["#5b7cff"])[0];
+
+const RANK = { active: 0, restricted: 1, unconfirmed: 2, expired: 3, avoid: 4 };
+const today = new Date(); today.setHours(0, 0, 0, 0);
+
+// Work out each deal's live status from today's date, once at load.
+DEALS.forEach((d, i) => {
+  d.id = d.site + ":" + (d.codes ? d.codes.join("|") : d.title);
+  d.kind = d.kind || "code";
+  d.eff = d.status;
+  d.daysLeft = null;
+  if (d.expires) {
+    d.daysLeft = Math.round((new Date(d.expires + "T00:00:00") - today) / 86400000);
+    if (d.daysLeft < 0 && d.status !== "avoid") d.eff = "expired";
+  }
+  d.dead = d.eff === "expired" || d.eff === "avoid";
+  d.order = i;
+});
+
+const store = {
+  get(k, f) { try { const v = localStorage.getItem(k); return v == null ? f : JSON.parse(v); } catch { return f; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+let marks = store.get("pcw-marks", {});
+const state = Object.assign({ cat: "all", dead: false, view: "wallet", open: null }, store.get("zsm-view", {}));
+state.q = "";
+if (state.cat !== "all" && !CATS.includes(state.cat)) state.cat = "all";
+if (state.view !== "saved") state.view = "wallet";
+const guessLang = () => { const l = (navigator.language || "").toLowerCase(); return /^zh-(cn|sg)|hans/.test(l) ? "hans" : l.startsWith("zh") ? "hant" : "en"; };
+let lang = store.get("zsm-lang", null) || guessLang();
+if (!T[lang]) lang = "en";
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const L = () => T[lang];
+// Pick the field in the current language, falling back to English.
+const tx = (o, f) => lang === "en" ? o[f] : (o[f + "_" + (lang === "hans" ? "sc" : "zh")] || o[f + "_zh"] || o[f]);
+const catName = c => L().cats[c] || c;
+const fmt = d => new Date(d + "T00:00:00").toLocaleDateString(L().locale, { day: "numeric", month: "short", year: "numeric" });
+
+function matches(d) {
+  if (state.cat !== "all" && d.cat !== state.cat) return false;
+  if (state.q) {
+    const hay = [SITES[d.site].name, d.cat, catName(d.cat), d.title, d.desc, d.cond, tx(d, "title"), tx(d, "desc"), tx(d, "cond"), d.big, ...(d.codes || [])].join(" ").toLowerCase();
+    return state.q.toLowerCase().split(/\s+/).every(w => hay.includes(w));
+  }
+  return true;
+}
+const sortDeals = list => list.sort((a, b) => RANK[a.eff] - RANK[b.eff] || (marks[a.id] === "no") - (marks[b.id] === "no") || a.order - b.order);
+
+/* ---------- Static text ---------- */
+function renderText() {
+  document.documentElement.lang = lang === "en" ? "en" : lang === "hans" ? "zh-Hans" : "zh-Hant-HK";
+  document.querySelectorAll("[data-t]").forEach(el => { el.textContent = L()[el.dataset.t]; });
+  document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  $("#foot").textContent = L().foot(fmt(DATA.updated));
+}
+
+/* ---------- Wallet ---------- */
+function renderStats() {
+  const usable = DEALS.filter(d => !d.dead);
+  const soon = usable.filter(d => d.daysLeft != null && d.daysLeft <= 14).length;
+  $("#stats").innerHTML = `<span><b class="num">${usable.length}</b>${L().live}</span><span><b class="num">${Object.keys(SITES).length}</b>${L().sites}</span><span><b class="num">${soon}</b>${L().soon}</span>`;
+  const worked = Object.values(marks).filter(v => v === "yes").length;
+  const badge = $("#saved-badge"); badge.hidden = !worked; badge.textContent = worked;
+}
+
+function renderCats() {
+  const live = DEALS.filter(d => !d.dead);
+  $("#cats").innerHTML = ["all", ...CATS].map(c => {
+    const n = c === "all" ? live.length : live.filter(d => d.cat === c).length;
+    return `<button class="chip" data-cat="${esc(c)}" aria-pressed="${state.cat === c}">${c === "all" ? L().all : esc(catName(c))}<span class="n">${n}</span></button>`;
+  }).join("");
+  $("#showDead").checked = state.dead;
+}
+
+function dealHtml(d, withSite) {
+  const t = L();
+  const tags = [`<span class="tag t-${d.eff}">${t.status[d.eff]}</span>`];
+  if (d.found === "auto" && !d.dead) tags.push(`<span class="tag t-auto">${t.auto}</span>`);
+  if (d.kind === "offer" && !d.dead) tags.push(`<span class="tag t-offer">${t.noCode}</span>`);
+  if (!d.dead && d.daysLeft != null && d.daysLeft <= 14) tags.push(`<span class="tag t-soon">${d.daysLeft === 0 ? t.endsToday : t.daysLeft(d.daysLeft)}</span>`);
+  let action = "";
+  if (d.codes) action = `<div class="codes">${d.codes.map(c => `<button class="code" data-code="${esc(c)}" ${d.dead ? "disabled" : ""} aria-label="${t.copy} ${esc(c)}">${esc(c)}<span class="cp">${t.copy}</span></button>`).join("")}</div>`;
+  else if (d.src && !d.dead) action = `<a class="offer-link" href="${esc(d.src)}" target="_blank" rel="noopener">${t.open}</a>`;
+  const exp = d.expires ? (d.daysLeft < 0 ? t.ended(fmt(d.expires)) : t.until(fmt(d.expires))) : t.noEnd;
+  const m = marks[d.id];
+  const src = d.src && (d.codes || d.dead) ? `<a href="${esc(d.src)}" target="_blank" rel="noopener">${t.source}</a>` : "";
+  return `<article class="deal ${d.dead ? "dead" : ""}" style="--site:${siteColor(d.site)}">
+    ${withSite ? `<span class="saved-site">${esc(SITES[d.site].name)}</span>` : ""}
+    <div class="deal-top"><span class="deal-big">${esc(tx(d, "big"))}</span><div class="tags">${tags.join("")}</div><span class="deal-title">${esc(tx(d, "title"))}</span></div>
+    <p class="desc">${esc(tx(d, "desc"))}</p>
+    <p class="cond">${esc(tx(d, "cond"))}</p>
+    ${action}
+    <div class="meta"><span>${exp}</span>${src}
+      ${d.dead ? "" : `<span class="mine" role="group">
+        <button class="yes" data-mark="${esc(d.id)}" data-v="yes" aria-pressed="${m === "yes"}">${t.worked}</button>
+        <button class="no" data-mark="${esc(d.id)}" data-v="no" aria-pressed="${m === "no"}">${t.didnt}</button></span>`}</div>
+  </article>`;
+}
+
+function renderStack() {
+  const t = L();
+  const groups = {};
+  for (const d of DEALS) if (matches(d)) (groups[d.site] = groups[d.site] || []).push(d);
+  // Sites with ready-to-use codes first, then by how many live codes they have.
+  const sites = Object.keys(groups).map(k => {
+    const live = sortDeals(groups[k].filter(d => !d.dead));
+    return { k, all: groups[k], live, top: live[0] || null, ready: live.filter(d => d.eff === "active").length };
+  }).filter(s => s.live.length || state.dead)
+    .sort((a, b) => (b.ready > 0) - (a.ready > 0) || b.live.length - a.live.length || SITES[a.k].name.localeCompare(SITES[b.k].name));
+  $("#site-line").textContent = t.siteLine(sites.length);
+  if (!sites.length) { $("#stack").innerHTML = `<p class="empty">${esc(t.nothing(state.q))}</p>`; return; }
+  $("#stack").innerHTML = sites.map(s => {
+    const open = state.open === s.k || (sites.length === 1);
+    const cats = [...new Set(s.all.map(d => catName(d.cat)))].join(" · ");
+    let body = "";
+    if (open) {
+      const dead = sortDeals(s.all.filter(d => d.dead));
+      body = `<div class="wcard-body">
+        <div class="site-tip"><b>${t.how}</b> ${esc(tx(SITES[s.k], "note"))}</div>
+        ${s.live.map(d => dealHtml(d)).join("")}
+        ${state.dead && dead.length ? `<div class="dead-h">${t.deadH}</div>${dead.map(d => dealHtml(d)).join("")}` : ""}
+        ${!s.live.length && !state.dead ? `<p class="empty">${t.noLive}</p>` : ""}
+      </div>`;
+    }
+    return `<div class="wcard ${open ? "open" : ""}" style="${cardStyle(s.k)}">
+      <button class="wcard-h" data-site="${s.k}" aria-expanded="${open}">
+        <span class="wcard-name">${esc(SITES[s.k].name)}</span>
+        <span class="wcard-right"><span class="wcard-best">${s.top ? esc(tx(s.top, "big")) : "—"}</span><br><span class="wcard-count">${t.code(s.live.length)}</span></span>
+        <span class="wcard-cats">${esc(cats)}</span>
+      </button>${body}</div>`;
+  }).join("");
+}
+
+/* ---------- Saved ---------- */
+function renderSaved() {
+  const t = L();
+  const worked = sortDeals(DEALS.filter(d => marks[d.id] === "yes" && !d.dead));
+  const soon = sortDeals(DEALS.filter(d => !d.dead && d.daysLeft != null && d.daysLeft <= 7 && d.eff === "active" && marks[d.id] !== "yes"));
+  $("#saved").innerHTML =
+    `<div class="section-h">${t.workedH}</div>` +
+    (worked.length ? `<div class="saved-list">${worked.map(d => dealHtml(d, true)).join("")}</div>` : `<p class="empty" style="padding:20px 0">${esc(t.workedE)}</p>`) +
+    `<div class="section-h">${t.weekH}</div>` +
+    (soon.length ? `<div class="saved-list">${soon.map(d => dealHtml(d, true)).join("")}</div>` : `<p class="empty" style="padding:20px 0">${t.weekE}</p>`);
+}
+
+function render() {
+  document.querySelectorAll(".tabbar button").forEach(b => b.setAttribute("aria-selected", b.dataset.view === state.view));
+  $("#view-wallet").hidden = state.view !== "wallet";
+  $("#view-saved").hidden = state.view !== "saved";
+  renderText(); renderStats(); renderCats(); renderStack(); renderSaved();
+  store.set("zsm-view", { cat: state.cat, dead: state.dead, view: state.view, open: state.open });
+}
+
+/* ---------- Toasts ---------- */
+const TOAST_ICONS = { ok: '<path d="M20 6 9 17l-5-5"/>', warn: '<path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/>' };
+function toast(msg, level = "ok") {
+  const el = document.createElement("div");
+  el.className = "toast " + level;
+  el.innerHTML = `<svg viewBox="0 0 24 24">${TOAST_ICONS[level]}</svg><div>${esc(msg)}</div>`;
+  const box = $("#toasts"); box.appendChild(el);
+  while (box.children.length > 3) box.firstElementChild.remove();
+  setTimeout(() => { el.classList.add("out"); setTimeout(() => el.remove(), 220); }, 2600);
+}
+function selectText(el) { const r = document.createRange(); r.selectNodeContents(el.firstChild); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+
+/* ---------- Events ---------- */
+document.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  const t = L();
+  if (b.dataset.lang) { lang = b.dataset.lang; store.set("zsm-lang", lang); render(); }
+  else if (b.dataset.view) { state.view = b.dataset.view; render(); window.scrollTo({ top: 0 }); }
+  else if (b.dataset.cat) { state.cat = b.dataset.cat; state.open = null; render(); }
+  else if (b.dataset.site) {
+    state.open = state.open === b.dataset.site ? null : b.dataset.site;
+    renderStack(); store.set("zsm-view", { cat: state.cat, dead: state.dead, view: state.view, open: state.open });
+    if (state.open) { const el = document.querySelector(`[data-site="${state.open}"]`); el && el.scrollIntoView({ block: "nearest", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); }
+  }
+  else if (b.dataset.code) {
+    const code = b.dataset.code;
+    const done = () => { b.classList.add("done"); b.querySelector(".cp").textContent = t.copied; toast(t.copiedT(code)); setTimeout(() => { b.classList.remove("done"); b.querySelector(".cp").textContent = L().copy; }, 1600); };
+    try { navigator.clipboard.writeText(code).then(done, () => { selectText(b); toast(t.selectT, "warn"); }); }
+    catch { selectText(b); toast(t.selectT, "warn"); }
+  }
+  else if (b.dataset.mark) {
+    const id = b.dataset.mark, v = b.dataset.v;
+    if (marks[id] === v) delete marks[id]; else marks[id] = v;
+    store.set("pcw-marks", marks);
+    renderStats(); renderStack(); renderSaved();
+    toast(marks[id] ? (v === "yes" ? t.wT : t.nT) : t.cT, marks[id] === "no" ? "warn" : "ok");
+  }
+});
+$("#q").addEventListener("input", e => { state.q = e.target.value.trim(); renderStack(); });
+$("#showDead").addEventListener("change", e => { state.dead = e.target.checked; render(); });
+
+render();
+</script>
+</body>
+</html>

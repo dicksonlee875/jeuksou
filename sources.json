@@ -1,0 +1,31 @@
+{
+  "_help": "Pages the scraper reads. 'site' = one site per page. 'sites' = a page that lists several shops: each key is a site, each value is words that name it on the page. 'cat' is the category new codes get. Add a page by copying a block. Site keys must exist in data/deals.json -> sites.",
+  "pages": [
+    { "url": "https://hk.trip.com/guide/en/trip.com-promo-code-hk.html", "site": "trip", "cat": "Hotels" },
+    { "url": "https://www.travelclassroom.net/2016/12/klook.html", "site": "klook", "cat": "Activities" },
+    { "url": "https://www.travelclassroom.net/eng/hotelscom-coupon.html", "site": "hotelscom", "cat": "Hotels" },
+    { "url": "https://www.travelclassroom.net/eng/agoda-discount-code.html", "site": "agoda", "cat": "Hotels" },
+    { "url": "https://www.hk01.com/article/930574", "site": "agoda", "cat": "Hotels" },
+    { "url": "https://www.sicilybycar.it/en/promo/sbcpalermofc", "site": "sbc", "cat": "Car rental" },
+    { "url": "https://dealhack.com/coupons/kiwicom", "site": "kiwi", "cat": "Flights" },
+    { "url": "https://dealhack.com/coupons/sixt", "site": "sixt", "cat": "Car rental" },
+    { "url": "https://dealhack.com/coupons/rentalcarscom", "site": "rentalcars", "cat": "Car rental" },
+    { "url": "https://dealhack.com/coupons/discovercarscom", "site": "discovercars", "cat": "Car rental" },
+    { "url": "https://dealhack.com/coupons/europcar", "site": "europcar", "cat": "Car rental" },
+    { "url": "https://dealhack.com/coupons/avis", "site": "avis", "cat": "Car rental" },
+    { "url": "https://dealhack.com/coupons/hertz", "site": "hertz", "cat": "Car rental" },
+    { "url": "https://dealhack.com/coupons/expedia", "site": "expedia", "cat": "Hotels" },
+    { "url": "https://dealhack.com/coupons/hotelscom", "site": "hotelscom", "cat": "Hotels" },
+    { "url": "https://www.moneyhk101.com/hktvmall-promo-code/", "site": "hktvmall", "cat": "Shopping" },
+    { "url": "https://www.moneyhk101.com/foodpanda-promo-code/", "site": "foodpanda", "cat": "Food & rides" },
+    { "url": "https://www.bowtie.com.hk/blog/zh/熱門話題/雙11-淘寶優惠/", "site": "taobao", "cat": "Shopping" },
+    { "url": "https://www.picodi.com/hk/zalora", "site": "zalora", "cat": "Shopping" },
+    { "url": "https://www.vitepromo.com/en/hightech-numerique/code-promo-airalo", "site": "airalo", "cat": "Travel extras" },
+    { "url": "https://www.vitepromo.com/en/voyage-loisirs/code-promo-trainline", "site": "trainline", "cat": "Travel extras" },
+    { "url": "https://www.hk01.com/食玩買/921513/iherb-屈臣氏-dyson網店折扣2026-10月優惠-hk01獨家優惠碼", "cat": "Shopping",
+      "sites": {
+        "iherb": ["iherb"], "watsons": ["屈臣氏", "watsons"], "dyson": ["dyson"], "pns": ["百佳", "parknshop", "pns"],
+        "charleskeith": ["charles & keith", "charles&keith", "charles and keith"], "crocs": ["crocs"], "moretickets": ["moretickets", "摩天輪"]
+      } }
+  ]
+}
