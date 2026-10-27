@@ -1,5 +1,5 @@
 {
- "_help": "Hotel and airline programmes for the Perks tab. Each has tiers (name, what it takes, perks) and links: kind status (something gives you status), match (status match) or move (move points), with the url where you do it. Fill English and 繁體 (_zh); build.py makes 简体.",
+ "_help": "Hotel and airline programmes for the Perks tab. Each has tiers (name, what it takes, perks) and links: kind status (something gives you status), match (status match) or move (move points), with the url where you do it. Fill English and 繁體 (_zh); build.py makes 简体. rows: the tier comparison table, one value per tier ('y' = yes, '-' = no, else text; vals_zh for 繁體 text). Move links carry rate [points, miles] and bonus (extra miles per 60,000 points).",
  "checked": "2026-10-27",
  "programs": [
   {
@@ -17,42 +17,48 @@
      "need": "Free to join",
      "need_zh": "免費加入",
      "perks": "Member rates, free Wi-Fi, points on stays.",
-     "perks_zh": "會員價、免費 Wi-Fi、住宿賺積分。"
+     "perks_zh": "會員價、免費 Wi-Fi、住宿賺積分。",
+     "short": "Member"
     },
     {
      "name": "Silver Elite",
      "need": "10 nights a year",
      "need_zh": "每年 10 晚",
      "perks": "10% bonus points, late check-out when available.",
-     "perks_zh": "額外 10% 積分，視乎情況延遲退房。"
+     "perks_zh": "額外 10% 積分，視乎情況延遲退房。",
+     "short": "Silver"
     },
     {
      "name": "Gold Elite",
      "need": "25 nights a year",
      "need_zh": "每年 25 晚",
      "perks": "25% bonus points, room upgrade when available, 2pm check-out, welcome points.",
-     "perks_zh": "額外 25% 積分、視乎情況升級房間、下午 2 時退房、迎賓積分。"
+     "perks_zh": "額外 25% 積分、視乎情況升級房間、下午 2 時退房、迎賓積分。",
+     "short": "Gold"
     },
     {
      "name": "Platinum Elite",
      "need": "50 nights a year",
      "need_zh": "每年 50 晚",
      "perks": "50% bonus points, lounge access or breakfast, upgrades including some suites, 4pm check-out.",
-     "perks_zh": "額外 50% 積分、酒廊或早餐、升級包括部分套房、下午 4 時退房。"
+     "perks_zh": "額外 50% 積分、酒廊或早餐、升級包括部分套房、下午 4 時退房。",
+     "short": "Platinum"
     },
     {
      "name": "Titanium Elite",
      "need": "75 nights a year",
      "need_zh": "每年 75 晚",
      "perks": "75% bonus points, upgrades including suites, 48-hour room guarantee.",
-     "perks_zh": "額外 75% 積分、升級包括套房、48 小時保證有房。"
+     "perks_zh": "額外 75% 積分、升級包括套房、48 小時保證有房。",
+     "short": "Titanium"
     },
     {
      "name": "Ambassador",
      "need": "100 nights plus qualifying spend",
      "need_zh": "100 晚另加指定消費",
      "perks": "Personal Ambassador service and Your24 flexible check-in and check-out.",
-     "perks_zh": "專屬 Ambassador 服務及 Your24 自選入住退房時間。"
+     "perks_zh": "專屬 Ambassador 服務及 Your24 自選入住退房時間。",
+     "short": "Ambassador"
     }
    ],
    "links": [
@@ -81,7 +87,14 @@
      "title_zh": "積分轉 Asia Miles：3 換 1",
      "what": "3 Bonvoy points = 1 Asia Mile, plus 5,000 bonus miles for every 60,000 points.",
      "what_zh": "3 Bonvoy 積分 = 1 Asia Mile，每轉 60,000 積分另送 5,000 里數。",
-     "url": "https://www.marriott.com/loyalty/redeem/travel/points-to-miles.mi"
+     "url": "https://www.marriott.com/loyalty/redeem/travel/points-to-miles.mi",
+     "rate": [
+      3,
+      1
+     ],
+     "bonus": 5000,
+     "from": "marriott",
+     "to": "asiamiles"
     },
     {
      "kind": "move",
@@ -90,7 +103,15 @@
      "title_zh": "積分轉 KrisFlyer：3 換 1",
      "what": "3 Bonvoy points = 1 KrisFlyer mile, plus 5,000 bonus miles per 60,000. KrisFlyer miles also move back at 4 miles to 3 points.",
      "what_zh": "3 Bonvoy 積分 = 1 KrisFlyer 里數，每 60,000 另送 5,000；KrisFlyer 里數亦可 4 換 3 轉回 Bonvoy。",
-     "url": "https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/marriottbonvoy/"
+     "url": "https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/marriottbonvoy/",
+     "rate": [
+      3,
+      1
+     ],
+     "bonus": 5000,
+     "from": "marriott",
+     "to": "krisflyer",
+     "both": true
     },
     {
      "kind": "move",
@@ -99,7 +120,120 @@
      "title_zh": "積分轉 Avios：3 換 1",
      "what": "3 Bonvoy points = 1 British Airways Avios, plus 5,000 bonus Avios per 60,000.",
      "what_zh": "3 Bonvoy 積分 = 1 英航 Avios，每 60,000 另送 5,000。",
-     "url": "https://www.marriott.com/loyalty/redeem/travel/points-to-miles.mi"
+     "url": "https://www.marriott.com/loyalty/redeem/travel/points-to-miles.mi",
+     "rate": [
+      3,
+      1
+     ],
+     "bonus": 5000,
+     "from": "marriott",
+     "to": "baclub"
+    }
+   ],
+   "rows": [
+    {
+     "label": "Earn it",
+     "label_zh": "如何取得",
+     "vals": [
+      "Free",
+      "10 nights",
+      "25 nights",
+      "50 nights",
+      "75 nights",
+      "100 nights + spend"
+     ],
+     "vals_zh": [
+      "免費",
+      "10 晚",
+      "25 晚",
+      "50 晚",
+      "75 晚",
+      "100 晚 + 消費"
+     ]
+    },
+    {
+     "label": "Bonus points",
+     "label_zh": "額外積分",
+     "vals": [
+      "-",
+      "+10%",
+      "+25%",
+      "+50%",
+      "+75%",
+      "+75%"
+     ]
+    },
+    {
+     "label": "Late check-out",
+     "label_zh": "延遲退房",
+     "vals": [
+      "-",
+      "If free",
+      "2pm",
+      "4pm",
+      "4pm",
+      "You pick"
+     ],
+     "vals_zh": [
+      "-",
+      "視乎情況",
+      "下午 2 時",
+      "下午 4 時",
+      "下午 4 時",
+      "自選時間"
+     ]
+    },
+    {
+     "label": "Room upgrade",
+     "label_zh": "升級房間",
+     "vals": [
+      "-",
+      "-",
+      "y",
+      "Suites",
+      "Suites",
+      "Suites"
+     ],
+     "vals_zh": [
+      "-",
+      "-",
+      "y",
+      "套房",
+      "套房",
+      "套房"
+     ]
+    },
+    {
+     "label": "Breakfast or lounge",
+     "label_zh": "早餐或酒廊",
+     "vals": [
+      "-",
+      "-",
+      "-",
+      "y",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Room guarantee",
+     "label_zh": "保證有房",
+     "vals": [
+      "-",
+      "-",
+      "-",
+      "-",
+      "48 h",
+      "48 h"
+     ],
+     "vals_zh": [
+      "-",
+      "-",
+      "-",
+      "-",
+      "48 小時",
+      "48 小時"
+     ]
     }
    ]
   },
@@ -118,35 +252,40 @@
      "need": "Free to join",
      "need_zh": "免費加入",
      "perks": "Free Wi-Fi, points on stays, choose your room.",
-     "perks_zh": "免費 Wi-Fi、住宿賺積分、自選房間。"
+     "perks_zh": "免費 Wi-Fi、住宿賺積分、自選房間。",
+     "short": "Member"
     },
     {
      "name": "Silver",
      "need": "10 nights or 4 stays",
      "need_zh": "10 晚或 4 次住宿",
      "perks": "20% bonus points, 5th night free on reward stays.",
-     "perks_zh": "額外 20% 積分，積分住宿第 5 晚免費。"
+     "perks_zh": "額外 20% 積分，積分住宿第 5 晚免費。",
+     "short": "Silver"
     },
     {
      "name": "Gold",
      "need": "25 nights or 15 stays",
      "need_zh": "25 晚或 15 次住宿",
      "perks": "80% bonus points, room upgrade when available, breakfast outside the US.",
-     "perks_zh": "額外 80% 積分、視乎情況升級、美國以外免費早餐。"
+     "perks_zh": "額外 80% 積分、視乎情況升級、美國以外免費早餐。",
+     "short": "Gold"
     },
     {
      "name": "Diamond",
      "need": "50 nights or 25 stays",
      "need_zh": "50 晚或 25 次住宿",
      "perks": "100% bonus points, executive lounge access, 48-hour room guarantee.",
-     "perks_zh": "額外 100% 積分、行政酒廊、48 小時保證有房。"
+     "perks_zh": "額外 100% 積分、行政酒廊、48 小時保證有房。",
+     "short": "Diamond"
     },
     {
      "name": "Diamond Reserve",
      "need": "80 nights plus US$18,000 spend",
      "need_zh": "80 晚另加消費 18,000 美元",
      "perks": "120% bonus points, guaranteed 4pm check-out, confirmable upgrade.",
-     "perks_zh": "額外 120% 積分、保證下午 4 時退房、可預先確認升級。"
+     "perks_zh": "額外 120% 積分、保證下午 4 時退房、可預先確認升級。",
+     "short": "D. Reserve"
     }
    ],
    "links": [
@@ -166,7 +305,14 @@
      "title_zh": "積分轉 Asia Miles：10 換 1",
      "what": "10,000 Hilton points = 1,000 Asia Miles. Usually better used on hotel nights.",
      "what_zh": "10,000 Hilton 積分 = 1,000 Asia Miles，一般用來換住宿較抵。",
-     "url": "https://www.cathaypacific.com/cx/en_HK/our-partners/hilton-hotels.html"
+     "url": "https://www.cathaypacific.com/cx/en_HK/our-partners/hilton-hotels.html",
+     "rate": [
+      10,
+      1
+     ],
+     "bonus": 0,
+     "from": "hilton",
+     "to": "asiamiles"
     },
     {
      "kind": "move",
@@ -175,7 +321,121 @@
      "title_zh": "積分轉 Avios：10 換 1",
      "what": "10,000 Hilton points = 1,000 British Airways Avios.",
      "what_zh": "10,000 Hilton 積分 = 1,000 英航 Avios。",
-     "url": "https://www.britishairways.com/en-gb/executive-club/collecting-avios/hotels/convert-your-points"
+     "url": "https://www.britishairways.com/en-gb/executive-club/collecting-avios/hotels/convert-your-points",
+     "rate": [
+      10,
+      1
+     ],
+     "bonus": 0,
+     "from": "hilton",
+     "to": "baclub"
+    }
+   ],
+   "rows": [
+    {
+     "label": "Earn it",
+     "label_zh": "如何取得",
+     "vals": [
+      "Free",
+      "10 nights",
+      "25 nights",
+      "50 nights",
+      "80 nights + spend"
+     ],
+     "vals_zh": [
+      "免費",
+      "10 晚",
+      "25 晚",
+      "50 晚",
+      "80 晚 + 消費"
+     ]
+    },
+    {
+     "label": "Bonus points",
+     "label_zh": "額外積分",
+     "vals": [
+      "-",
+      "+20%",
+      "+80%",
+      "+100%",
+      "+120%"
+     ]
+    },
+    {
+     "label": "Room upgrade",
+     "label_zh": "升級房間",
+     "vals": [
+      "-",
+      "-",
+      "y",
+      "y",
+      "Confirmed"
+     ],
+     "vals_zh": [
+      "-",
+      "-",
+      "y",
+      "y",
+      "預先確認"
+     ]
+    },
+    {
+     "label": "Breakfast",
+     "label_zh": "早餐",
+     "vals": [
+      "-",
+      "-",
+      "y",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Executive lounge",
+     "label_zh": "行政酒廊",
+     "vals": [
+      "-",
+      "-",
+      "-",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Late check-out",
+     "label_zh": "延遲退房",
+     "vals": [
+      "-",
+      "-",
+      "-",
+      "-",
+      "4pm"
+     ],
+     "vals_zh": [
+      "-",
+      "-",
+      "-",
+      "-",
+      "下午 4 時"
+     ]
+    },
+    {
+     "label": "Room guarantee",
+     "label_zh": "保證有房",
+     "vals": [
+      "-",
+      "-",
+      "-",
+      "48 h",
+      "48 h"
+     ],
+     "vals_zh": [
+      "-",
+      "-",
+      "-",
+      "48 小時",
+      "48 小時"
+     ]
     }
    ]
   },
@@ -194,35 +454,40 @@
      "need": "Free to join",
      "need_zh": "免費加入",
      "perks": "Member rates, free Wi-Fi, 2pm late check-out.",
-     "perks_zh": "會員價、免費 Wi-Fi、下午 2 時延遲退房。"
+     "perks_zh": "會員價、免費 Wi-Fi、下午 2 時延遲退房。",
+     "short": "Club"
     },
     {
      "name": "Silver Elite",
      "need": "10 nights a year",
      "need_zh": "每年 10 晚",
      "perks": "20% bonus points, points don't expire.",
-     "perks_zh": "額外 20% 積分，積分不會過期。"
+     "perks_zh": "額外 20% 積分，積分不會過期。",
+     "short": "Silver"
     },
     {
      "name": "Gold Elite",
      "need": "20 nights a year",
      "need_zh": "每年 20 晚",
      "perks": "40% bonus points, Milestone Rewards start.",
-     "perks_zh": "額外 40% 積分，開始享 Milestone Rewards。"
+     "perks_zh": "額外 40% 積分，開始享 Milestone Rewards。",
+     "short": "Gold"
     },
     {
      "name": "Platinum Elite",
      "need": "40 nights a year",
      "need_zh": "每年 40 晚",
      "perks": "60% bonus points, room upgrade when available, 72-hour room guarantee, Hertz Five Star.",
-     "perks_zh": "額外 60% 積分、視乎情況升級、72 小時保證有房、Hertz Five Star。"
+     "perks_zh": "額外 60% 積分、視乎情況升級、72 小時保證有房、Hertz Five Star。",
+     "short": "Platinum"
     },
     {
      "name": "Diamond Elite",
      "need": "70 nights a year",
      "need_zh": "每年 70 晚",
      "perks": "100% bonus points, free breakfast for two, Hertz President's Circle.",
-     "perks_zh": "額外 100% 積分、兩位免費早餐、Hertz President's Circle。"
+     "perks_zh": "額外 100% 積分、兩位免費早餐、Hertz President's Circle。",
+     "short": "Diamond"
     }
    ],
    "links": [
@@ -242,7 +507,14 @@
      "title_zh": "積分轉 Asia Miles：5 換 1",
      "what": "5 IHG points = 1 Asia Mile.",
      "what_zh": "5 IHG 積分 = 1 Asia Mile。",
-     "url": "https://www.cathaypacific.com/cx/en_HK/our-partners/intercontinental.html"
+     "url": "https://www.cathaypacific.com/cx/en_HK/our-partners/intercontinental.html",
+     "rate": [
+      5,
+      1
+     ],
+     "bonus": 0,
+     "from": "ihg",
+     "to": "asiamiles"
     },
     {
      "kind": "move",
@@ -251,7 +523,107 @@
      "title_zh": "積分轉 Avios：5 換 1",
      "what": "10,000 IHG points = 2,000 British Airways Avios.",
      "what_zh": "10,000 IHG 積分 = 2,000 英航 Avios。",
-     "url": "https://www.britishairways.com/en-gb/executive-club/collecting-avios/hotels/convert-your-points"
+     "url": "https://www.britishairways.com/en-gb/executive-club/collecting-avios/hotels/convert-your-points",
+     "rate": [
+      5,
+      1
+     ],
+     "bonus": 0,
+     "from": "ihg",
+     "to": "baclub"
+    }
+   ],
+   "rows": [
+    {
+     "label": "Earn it",
+     "label_zh": "如何取得",
+     "vals": [
+      "Free",
+      "10 nights",
+      "20 nights",
+      "40 nights",
+      "70 nights"
+     ],
+     "vals_zh": [
+      "免費",
+      "10 晚",
+      "20 晚",
+      "40 晚",
+      "70 晚"
+     ]
+    },
+    {
+     "label": "Bonus points",
+     "label_zh": "額外積分",
+     "vals": [
+      "-",
+      "+20%",
+      "+40%",
+      "+60%",
+      "+100%"
+     ]
+    },
+    {
+     "label": "2pm check-out",
+     "label_zh": "下午 2 時退房",
+     "vals": [
+      "y",
+      "y",
+      "y",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Room upgrade",
+     "label_zh": "升級房間",
+     "vals": [
+      "-",
+      "-",
+      "-",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Breakfast",
+     "label_zh": "早餐",
+     "vals": [
+      "-",
+      "-",
+      "-",
+      "-",
+      "y"
+     ]
+    },
+    {
+     "label": "Room guarantee",
+     "label_zh": "保證有房",
+     "vals": [
+      "-",
+      "-",
+      "-",
+      "72 h",
+      "72 h"
+     ],
+     "vals_zh": [
+      "-",
+      "-",
+      "-",
+      "72 小時",
+      "72 小時"
+     ]
+    },
+    {
+     "label": "Hertz status",
+     "label_zh": "Hertz 會籍",
+     "vals": [
+      "-",
+      "-",
+      "-",
+      "Five Star",
+      "President's Circle"
+     ]
     }
    ]
   },
@@ -270,35 +642,40 @@
      "need": "Free to join",
      "need_zh": "免費加入",
      "perks": "Member rates, usually up to 10% off.",
-     "perks_zh": "會員價，一般最多九折。"
+     "perks_zh": "會員價，一般最多九折。",
+     "short": "Classic"
     },
     {
      "name": "Silver",
      "need": "10 nights or 2,000 status points",
      "need_zh": "10 晚或 2,000 身份積分",
      "perks": "24% bonus points, welcome drink, late check-out when available.",
-     "perks_zh": "額外 24% 積分、迎賓飲品、視乎情況延遲退房。"
+     "perks_zh": "額外 24% 積分、迎賓飲品、視乎情況延遲退房。",
+     "short": "Silver"
     },
     {
      "name": "Gold",
      "need": "30 nights or 7,000 status points",
      "need_zh": "30 晚或 7,000 身份積分",
      "perks": "48% bonus points, room upgrade when available, room guarantee.",
-     "perks_zh": "額外 48% 積分、視乎情況升級、保證有房。"
+     "perks_zh": "額外 48% 積分、視乎情況升級、保證有房。",
+     "short": "Gold"
     },
     {
      "name": "Platinum",
      "need": "60 nights or 14,000 status points",
      "need_zh": "60 晚或 14,000 身份積分",
      "perks": "76% bonus points, executive lounge, free breakfast in Asia Pacific.",
-     "perks_zh": "額外 76% 積分、行政酒廊、亞太區免費早餐。"
+     "perks_zh": "額外 76% 積分、行政酒廊、亞太區免費早餐。",
+     "short": "Platinum"
     },
     {
      "name": "Diamond",
      "need": "26,000 status points",
      "need_zh": "26,000 身份積分",
      "perks": "100% bonus points, dining vouchers, gift Gold status to a friend.",
-     "perks_zh": "額外 100% 積分、餐飲禮券、可送 Gold 會籍給朋友。"
+     "perks_zh": "額外 100% 積分、餐飲禮券、可送 Gold 會籍給朋友。",
+     "short": "Diamond"
     }
    ],
    "links": [
@@ -318,7 +695,15 @@
      "title_zh": "積分轉 KrisFlyer：2 換 1，可雙向",
      "what": "2,000 Accor points = 1,000 KrisFlyer miles, and KrisFlyer miles can move back to Accor.",
      "what_zh": "2,000 Accor 積分 = 1,000 KrisFlyer 里數，KrisFlyer 里數亦可轉回 Accor。",
-     "url": "https://all.accor.com/a/en/loyalty-program/partners/conditions/airlines.html"
+     "url": "https://all.accor.com/a/en/loyalty-program/partners/conditions/airlines.html",
+     "rate": [
+      2,
+      1
+     ],
+     "bonus": 0,
+     "from": "accor",
+     "to": "krisflyer",
+     "both": true
     },
     {
      "kind": "move",
@@ -327,7 +712,14 @@
      "title_zh": "積分轉 Asia Miles：2 換 1",
      "what": "4,000 Accor points = 2,000 Asia Miles.",
      "what_zh": "4,000 Accor 積分 = 2,000 Asia Miles。",
-     "url": "https://all.accor.com/a/en/loyalty-program/partners/conditions/airlines.html"
+     "url": "https://all.accor.com/a/en/loyalty-program/partners/conditions/airlines.html",
+     "rate": [
+      2,
+      1
+     ],
+     "bonus": 0,
+     "from": "accor",
+     "to": "asiamiles"
     },
     {
      "kind": "move",
@@ -336,7 +728,96 @@
      "title_zh": "積分轉 Avios：2 換 1",
      "what": "4,000 Accor points = 2,000 British Airways Avios.",
      "what_zh": "4,000 Accor 積分 = 2,000 英航 Avios。",
-     "url": "https://all.accor.com/a/en/loyalty-program/partners/conditions/airlines.html"
+     "url": "https://all.accor.com/a/en/loyalty-program/partners/conditions/airlines.html",
+     "rate": [
+      2,
+      1
+     ],
+     "bonus": 0,
+     "from": "accor",
+     "to": "baclub"
+    }
+   ],
+   "rows": [
+    {
+     "label": "Earn it",
+     "label_zh": "如何取得",
+     "vals": [
+      "Free",
+      "10 nights",
+      "30 nights",
+      "60 nights",
+      "26,000 pts"
+     ],
+     "vals_zh": [
+      "免費",
+      "10 晚",
+      "30 晚",
+      "60 晚",
+      "26,000 分"
+     ]
+    },
+    {
+     "label": "Bonus points",
+     "label_zh": "額外積分",
+     "vals": [
+      "-",
+      "+24%",
+      "+48%",
+      "+76%",
+      "+100%"
+     ]
+    },
+    {
+     "label": "Welcome drink",
+     "label_zh": "迎賓飲品",
+     "vals": [
+      "-",
+      "y",
+      "y",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Room upgrade",
+     "label_zh": "升級房間",
+     "vals": [
+      "-",
+      "-",
+      "y",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Executive lounge",
+     "label_zh": "行政酒廊",
+     "vals": [
+      "-",
+      "-",
+      "-",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Breakfast",
+     "label_zh": "早餐",
+     "vals": [
+      "-",
+      "-",
+      "-",
+      "Asia Pacific",
+      "Asia Pacific"
+     ],
+     "vals_zh": [
+      "-",
+      "-",
+      "-",
+      "亞太區",
+      "亞太區"
+     ]
     }
    ]
   },
@@ -355,28 +836,32 @@
      "need": "Free to join",
      "need_zh": "免費加入",
      "perks": "Earn Asia Miles, check in 48 hours early, a lounge pass at 200 status points.",
-     "perks_zh": "賺 Asia Miles、提早 48 小時登記、200 身份積分送貴賓室券。"
+     "perks_zh": "賺 Asia Miles、提早 48 小時登記、200 身份積分送貴賓室券。",
+     "short": "Green"
     },
     {
      "name": "Silver",
      "need": "300 status points",
      "need_zh": "300 身份積分",
      "perks": "Business lounge, business check-in, priority bags, extra 10kg cabin allowance.",
-     "perks_zh": "商務貴賓室、商務櫃位登記、行李優先、額外 10 公斤手提行李。"
+     "perks_zh": "商務貴賓室、商務櫃位登記、行李優先、額外 10 公斤手提行李。",
+     "short": "Silver"
     },
     {
      "name": "Gold",
      "need": "600 status points",
      "need_zh": "600 身份積分",
      "perks": "Bring a guest to lounges, preferred seats, free inflight Wi-Fi.",
-     "perks_zh": "可攜一位賓客進貴賓室、優先選位、免費機上 Wi-Fi。"
+     "perks_zh": "可攜一位賓客進貴賓室、優先選位、免費機上 Wi-Fi。",
+     "short": "Gold"
     },
     {
      "name": "Diamond",
      "need": "1,200 status points",
      "need_zh": "1,200 身份積分",
      "perks": "First class lounges, priority boarding, extra baggage, upgrades.",
-     "perks_zh": "頭等貴賓室、優先登機、額外行李、升級獎勵。"
+     "perks_zh": "頭等貴賓室、優先登機、額外行李、升級獎勵。",
+     "short": "Diamond"
     }
    ],
    "note": "Cathay is changing its membership tiers from 1 January 2027 and adding a new Diamond Exec tier.",
@@ -389,7 +874,14 @@
      "title_zh": "由 Marriott Bonvoy 轉入：3 換 1",
      "what": "3 Bonvoy points = 1 Asia Mile, plus 5,000 bonus miles for every 60,000 points.",
      "what_zh": "3 Bonvoy 積分 = 1 Asia Mile，每 60,000 積分另送 5,000 里數。",
-     "url": "https://www.marriott.com/loyalty/redeem/travel/points-to-miles.mi"
+     "url": "https://www.marriott.com/loyalty/redeem/travel/points-to-miles.mi",
+     "rate": [
+      3,
+      1
+     ],
+     "bonus": 5000,
+     "from": "marriott",
+     "to": "asiamiles"
     },
     {
      "kind": "move",
@@ -398,7 +890,14 @@
      "title_zh": "由 ALL Accor 轉入：2 換 1",
      "what": "4,000 Accor points = 2,000 Asia Miles.",
      "what_zh": "4,000 Accor 積分 = 2,000 Asia Miles。",
-     "url": "https://all.accor.com/a/en/loyalty-program/partners/conditions/airlines.html"
+     "url": "https://all.accor.com/a/en/loyalty-program/partners/conditions/airlines.html",
+     "rate": [
+      2,
+      1
+     ],
+     "bonus": 0,
+     "from": "accor",
+     "to": "asiamiles"
     },
     {
      "kind": "move",
@@ -407,7 +906,14 @@
      "title_zh": "由 IHG 轉入：5 換 1",
      "what": "5 IHG points = 1 Asia Mile.",
      "what_zh": "5 IHG 積分 = 1 Asia Mile。",
-     "url": "https://www.cathaypacific.com/cx/en_HK/our-partners/intercontinental.html"
+     "url": "https://www.cathaypacific.com/cx/en_HK/our-partners/intercontinental.html",
+     "rate": [
+      5,
+      1
+     ],
+     "bonus": 0,
+     "from": "ihg",
+     "to": "asiamiles"
     },
     {
      "kind": "move",
@@ -416,9 +922,103 @@
      "title_zh": "由 Hilton 轉入：10 換 1",
      "what": "10,000 Hilton points = 1,000 Asia Miles.",
      "what_zh": "10,000 Hilton 積分 = 1,000 Asia Miles。",
-     "url": "https://www.cathaypacific.com/cx/en_HK/our-partners/hilton-hotels.html"
+     "url": "https://www.cathaypacific.com/cx/en_HK/our-partners/hilton-hotels.html",
+     "rate": [
+      10,
+      1
+     ],
+     "bonus": 0,
+     "from": "hilton",
+     "to": "asiamiles"
     }
-   ]
+   ],
+   "rows": [
+    {
+     "label": "Earn it",
+     "label_zh": "如何取得",
+     "vals": [
+      "Free",
+      "300 status pts",
+      "600 status pts",
+      "1,200 status pts"
+     ],
+     "vals_zh": [
+      "免費",
+      "300 身份積分",
+      "600 身份積分",
+      "1,200 身份積分"
+     ]
+    },
+    {
+     "label": "oneworld tier",
+     "label_zh": "寰宇一家級別",
+     "vals": [
+      "-",
+      "Ruby",
+      "Sapphire",
+      "Emerald"
+     ],
+     "vals_zh": [
+      "-",
+      "紅寶石",
+      "藍寶石",
+      "綠寶石"
+     ]
+    },
+    {
+     "label": "Lounge",
+     "label_zh": "貴賓室",
+     "vals": [
+      "1 pass",
+      "Business",
+      "Business + guest",
+      "First"
+     ],
+     "vals_zh": [
+      "1 張券",
+      "商務",
+      "商務 + 賓客",
+      "頭等"
+     ]
+    },
+    {
+     "label": "Priority check-in",
+     "label_zh": "優先登記",
+     "vals": [
+      "-",
+      "y",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Extra cabin bag",
+     "label_zh": "額外手提行李",
+     "vals": [
+      "-",
+      "+10 kg",
+      "+10 kg",
+      "+10 kg"
+     ],
+     "vals_zh": [
+      "-",
+      "+10 公斤",
+      "+10 公斤",
+      "+10 公斤"
+     ]
+    },
+    {
+     "label": "Free inflight Wi-Fi",
+     "label_zh": "免費機上 Wi-Fi",
+     "vals": [
+      "-",
+      "-",
+      "y",
+      "y"
+     ]
+    }
+   ],
+   "tile": "Asia Miles"
   },
   {
    "key": "krisflyer",
@@ -435,28 +1035,32 @@
      "need": "Free to join",
      "need_zh": "免費加入",
      "perks": "Earn and spend miles on Singapore Airlines and partners.",
-     "perks_zh": "在新加坡航空及夥伴賺取及使用里數。"
+     "perks_zh": "在新加坡航空及夥伴賺取及使用里數。",
+     "short": "KrisFlyer"
     },
     {
      "name": "Elite Silver",
      "need": "25,000 Elite miles",
      "need_zh": "25,000 Elite 里數",
      "perks": "Star Alliance Silver: priority waitlist and reservations, bonus miles.",
-     "perks_zh": "星空聯盟銀卡：優先候補及訂位、額外里數。"
+     "perks_zh": "星空聯盟銀卡：優先候補及訂位、額外里數。",
+     "short": "Elite Silver"
     },
     {
      "name": "Elite Gold",
      "need": "50,000 Elite miles",
      "need_zh": "50,000 Elite 里數",
      "perks": "Star Alliance Gold: lounge access, priority check-in and boarding, extra baggage.",
-     "perks_zh": "星空聯盟金卡：貴賓室、優先登記及登機、額外行李。"
+     "perks_zh": "星空聯盟金卡：貴賓室、優先登記及登機、額外行李。",
+     "short": "Elite Gold"
     },
     {
      "name": "PPS Club",
      "need": "Fly Suites, First or Business",
      "need_zh": "乘搭套房、頭等或商務艙",
      "perks": "First and business lounges, priority everything, and Marriott Gold.",
-     "perks_zh": "頭等及商務貴賓室、各項優先服務，另送 Marriott Gold。"
+     "perks_zh": "頭等及商務貴賓室、各項優先服務，另送 Marriott Gold。",
+     "short": "PPS Club"
     }
    ],
    "links": [
@@ -476,7 +1080,15 @@
      "title_zh": "與 Marriott Bonvoy 雙向轉換",
      "what": "3 Bonvoy points = 1 mile; 4 miles = 3 Bonvoy points.",
      "what_zh": "3 Bonvoy 積分 = 1 里數；4 里數 = 3 Bonvoy 積分。",
-     "url": "https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/marriottbonvoy/"
+     "url": "https://www.singaporeair.com/en_UK/sg/plan-travel/promotions/global/kf/kf-promo/marriottbonvoy/",
+     "rate": [
+      3,
+      1
+     ],
+     "bonus": 5000,
+     "from": "marriott",
+     "to": "krisflyer",
+     "both": true
     },
     {
      "kind": "move",
@@ -485,7 +1097,99 @@
      "title_zh": "與 ALL Accor 雙向轉換",
      "what": "2,000 Accor points = 1,000 KrisFlyer miles, and miles can move back to Accor.",
      "what_zh": "2,000 Accor 積分 = 1,000 KrisFlyer 里數，里數亦可轉回 Accor。",
-     "url": "https://all.accor.com/a/en/loyalty-program/partners/conditions/airlines.html"
+     "url": "https://all.accor.com/a/en/loyalty-program/partners/conditions/airlines.html",
+     "rate": [
+      2,
+      1
+     ],
+     "bonus": 0,
+     "from": "accor",
+     "to": "krisflyer",
+     "both": true
+    }
+   ],
+   "rows": [
+    {
+     "label": "Earn it",
+     "label_zh": "如何取得",
+     "vals": [
+      "Free",
+      "25,000 Elite miles",
+      "50,000 Elite miles",
+      "Fly premium cabins"
+     ],
+     "vals_zh": [
+      "免費",
+      "25,000 Elite 里數",
+      "50,000 Elite 里數",
+      "乘搭高級客艙"
+     ]
+    },
+    {
+     "label": "Star Alliance tier",
+     "label_zh": "星空聯盟級別",
+     "vals": [
+      "-",
+      "Silver",
+      "Gold",
+      "Gold"
+     ],
+     "vals_zh": [
+      "-",
+      "銀卡",
+      "金卡",
+      "金卡"
+     ]
+    },
+    {
+     "label": "Priority waitlist",
+     "label_zh": "優先候補",
+     "vals": [
+      "-",
+      "y",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Lounge",
+     "label_zh": "貴賓室",
+     "vals": [
+      "-",
+      "-",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Priority check-in",
+     "label_zh": "優先登記",
+     "vals": [
+      "-",
+      "-",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Extra baggage",
+     "label_zh": "額外行李",
+     "vals": [
+      "-",
+      "-",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Marriott Gold match",
+     "label_zh": "配對 Marriott Gold",
+     "vals": [
+      "-",
+      "-",
+      "y",
+      "y"
+     ]
     }
    ]
   },
@@ -504,28 +1208,32 @@
      "need": "Free to join",
      "need_zh": "免費加入",
      "perks": "Collect Avios, reward flights, member offers.",
-     "perks_zh": "賺取 Avios、獎勵機票、會員優惠。"
+     "perks_zh": "賺取 Avios、獎勵機票、會員優惠。",
+     "short": "Blue"
     },
     {
      "name": "Bronze",
      "need": "Earn tier points",
      "need_zh": "累積級別積分",
      "perks": "oneworld Ruby: priority check-in and boarding, seats 7 days ahead.",
-     "perks_zh": "寰宇一家紅寶石：優先登記及登機、7 日前免費選位。"
+     "perks_zh": "寰宇一家紅寶石：優先登記及登機、7 日前免費選位。",
+     "short": "Bronze"
     },
     {
      "name": "Silver",
      "need": "Earn tier points",
      "need_zh": "累積級別積分",
      "perks": "oneworld Sapphire: lounge access, free seats at booking.",
-     "perks_zh": "寰宇一家藍寶石：貴賓室、訂票時免費選位。"
+     "perks_zh": "寰宇一家藍寶石：貴賓室、訂票時免費選位。",
+     "short": "Silver"
     },
     {
      "name": "Gold",
      "need": "70,000 tier points",
      "need_zh": "70,000 級別積分",
      "perks": "oneworld Emerald: first class check-in, Concorde Room.",
-     "perks_zh": "寰宇一家綠寶石：頭等櫃位登記、Concorde Room。"
+     "perks_zh": "寰宇一家綠寶石：頭等櫃位登記、Concorde Room。",
+     "short": "Gold"
     }
    ],
    "links": [
@@ -536,7 +1244,14 @@
      "title_zh": "由 Marriott Bonvoy 轉入：3 換 1",
      "what": "3 Bonvoy points = 1 Avios, plus 5,000 bonus Avios per 60,000.",
      "what_zh": "3 Bonvoy 積分 = 1 Avios，每 60,000 另送 5,000。",
-     "url": "https://www.britishairways.com/en-gb/executive-club/collecting-avios/hotels/convert-your-points"
+     "url": "https://www.britishairways.com/en-gb/executive-club/collecting-avios/hotels/convert-your-points",
+     "rate": [
+      3,
+      1
+     ],
+     "bonus": 5000,
+     "from": "marriott",
+     "to": "baclub"
     },
     {
      "kind": "move",
@@ -545,7 +1260,14 @@
      "title_zh": "由 ALL Accor 轉入：2 換 1",
      "what": "4,000 Accor points = 2,000 Avios.",
      "what_zh": "4,000 Accor 積分 = 2,000 Avios。",
-     "url": "https://www.britishairways.com/en-gb/executive-club/collecting-avios/hotels/convert-your-points"
+     "url": "https://www.britishairways.com/en-gb/executive-club/collecting-avios/hotels/convert-your-points",
+     "rate": [
+      2,
+      1
+     ],
+     "bonus": 0,
+     "from": "accor",
+     "to": "baclub"
     },
     {
      "kind": "move",
@@ -554,7 +1276,14 @@
      "title_zh": "由 IHG 轉入：5 換 1",
      "what": "10,000 IHG points = 2,000 Avios.",
      "what_zh": "10,000 IHG 積分 = 2,000 Avios。",
-     "url": "https://www.britishairways.com/en-gb/executive-club/collecting-avios/hotels/convert-your-points"
+     "url": "https://www.britishairways.com/en-gb/executive-club/collecting-avios/hotels/convert-your-points",
+     "rate": [
+      5,
+      1
+     ],
+     "bonus": 0,
+     "from": "ihg",
+     "to": "baclub"
     },
     {
      "kind": "move",
@@ -563,9 +1292,93 @@
      "title_zh": "由 Hilton 轉入：10 換 1",
      "what": "10,000 Hilton points = 1,000 Avios.",
      "what_zh": "10,000 Hilton 積分 = 1,000 Avios。",
-     "url": "https://www.britishairways.com/en-gb/executive-club/collecting-avios/hotels/convert-your-points"
+     "url": "https://www.britishairways.com/en-gb/executive-club/collecting-avios/hotels/convert-your-points",
+     "rate": [
+      10,
+      1
+     ],
+     "bonus": 0,
+     "from": "hilton",
+     "to": "baclub"
     }
-   ]
+   ],
+   "rows": [
+    {
+     "label": "Earn it",
+     "label_zh": "如何取得",
+     "vals": [
+      "Free",
+      "Tier points",
+      "Tier points",
+      "70,000 tier pts"
+     ],
+     "vals_zh": [
+      "免費",
+      "級別積分",
+      "級別積分",
+      "70,000 級別積分"
+     ]
+    },
+    {
+     "label": "oneworld tier",
+     "label_zh": "寰宇一家級別",
+     "vals": [
+      "-",
+      "Ruby",
+      "Sapphire",
+      "Emerald"
+     ],
+     "vals_zh": [
+      "-",
+      "紅寶石",
+      "藍寶石",
+      "綠寶石"
+     ]
+    },
+    {
+     "label": "Free seat choice",
+     "label_zh": "免費選位",
+     "vals": [
+      "-",
+      "7 days out",
+      "At booking",
+      "At booking"
+     ],
+     "vals_zh": [
+      "-",
+      "出發前 7 日",
+      "訂票時",
+      "訂票時"
+     ]
+    },
+    {
+     "label": "Priority boarding",
+     "label_zh": "優先登機",
+     "vals": [
+      "-",
+      "y",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Lounge",
+     "label_zh": "貴賓室",
+     "vals": [
+      "-",
+      "-",
+      "y",
+      "First"
+     ],
+     "vals_zh": [
+      "-",
+      "-",
+      "y",
+      "頭等"
+     ]
+    }
+   ],
+   "tile": "BA Club"
   }
  ]
 }

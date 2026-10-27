@@ -70,6 +70,11 @@ def add_simplified(data):
                 if o.get(f + "_zh"):
                     o[f + "_sc"] = t2s(o[f + "_zh"])
     for g in data.get("programs", {}).get("programs", []):
+        for r in g.get("rows", []):
+            if r.get("label_zh"):
+                r["label_sc"] = t2s(r["label_zh"])
+            if r.get("vals_zh"):
+                r["vals_sc"] = [t2s(v) for v in r["vals_zh"]]
         for o in [g, *g["tiers"], *g["links"]]:
             for f in ("note", "need", "perks", "title", "what"):
                 if o.get(f + "_zh"):
