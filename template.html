@@ -76,8 +76,25 @@ button, input, select { font: inherit; color: inherit; }
 .logo .mark { width: 40px; height: 40px; border-radius: 11px; flex: none; }
 .logo b { display: block; font-size: 19px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
 .logo span { display: block; font: 700 12px var(--hk); color: var(--muted); letter-spacing: .08em; }
-.hdr-stat { text-align: right; font-size: 12px; color: var(--muted); font-weight: 600; }
-.hdr-stat b { display: block; font-size: 18px; color: var(--ink); font-weight: 800; font-variant-numeric: tabular-nums; }
+.region-btn { display: inline-flex; align-items: center; gap: 7px; height: 42px; padding: 0 12px 0 13px; border: 0; border-radius: 999px; background: var(--panel); color: var(--ink); font-size: 14.5px; font-weight: 700; cursor: pointer; box-shadow: 0 1px 2px rgba(14,17,22,.08); }
+.region-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.region-btn .chev-d { width: 15px; height: 15px; stroke-width: 2.6; color: var(--muted); }
+
+/* ---------- region picker sheet ---------- */
+.sheet-bg { position: fixed; inset: 0; z-index: 40; background: rgba(14,17,22,.45); animation: fadein .2s ease-out; }
+.sheet { position: fixed; z-index: 41; left: 50%; bottom: 0; transform: translateX(-50%); width: min(680px, 100%); max-height: 86vh; overflow-y: auto; background: var(--panel); border-radius: 24px 24px 0 0; padding: 8px 16px calc(20px + env(safe-area-inset-bottom, 0px)); animation: up .25s ease-out; }
+.grab { width: 40px; height: 5px; border-radius: 999px; background: var(--line); margin: 4px auto 12px; }
+.sheet h2 { margin: 0 4px 10px; font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+.reg-h { margin: 14px 4px 6px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.reg { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 52px; padding: 8px 12px; border: 0; border-radius: 14px; background: transparent; color: var(--ink); text-align: left; cursor: pointer; }
+.reg:hover { background: var(--panel-2); }
+.reg .rn { flex: 1; font-size: 16px; font-weight: 700; }
+.reg small { color: var(--muted); font-size: 13px; font-weight: 600; }
+.reg svg { width: 20px; height: 20px; fill: none; stroke: var(--accent); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; visibility: hidden; }
+.reg[aria-pressed="true"] { background: var(--info-bg); }
+.reg[aria-pressed="true"] svg { visibility: visible; }
+@keyframes up { from { transform: translate(-50%, 100%); } }
+@keyframes fadein { from { opacity: 0; } }
 
 /* ---------- best right now ---------- */
 .hero { margin-top: 16px; background: #2b59ff; color: #fff; border-radius: 20px; padding: 16px 18px 18px; display: grid; gap: 10px; }
@@ -86,7 +103,8 @@ button, input, select { font: inherit; color: inherit; }
 .hero-row { display: flex; gap: 8px; }
 .hero-code { flex: 1; min-width: 0; height: 46px; border-radius: 12px; background: rgba(255,255,255,.18); display: flex; align-items: center; padding: 0 14px; font: 600 15px var(--mono); letter-spacing: .06em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .hero-copy { height: 46px; padding: 0 20px; border: 0; border-radius: 12px; background: #fff; color: #2b59ff; font-weight: 800; font-size: 14.5px; cursor: pointer; }
-:root[data-theme="dark"] .seg button[aria-pressed="true"], :root[data-theme="dark"] .lang button[aria-pressed="true"] { background: #454c5c; }
+
+:root[data-theme="dark"] .lang button[aria-pressed="true"] { background: #454c5c; }
 
 /* ---------- search, region, categories ---------- */
 .tools { margin-top: 16px; display: grid; gap: 12px; }
@@ -95,11 +113,6 @@ button, input, select { font: inherit; color: inherit; }
 .field input::placeholder { color: var(--muted); }
 .field input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--info-bg); }
 .field .ico { position: absolute; left: 15px; top: 16px; width: 18px; height: 18px; stroke: var(--muted); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
-.seg-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; scrollbar-width: none; }
-.seg-wrap::-webkit-scrollbar { display: none; }
-.seg { display: flex; width: max-content; min-width: 100%; background: var(--well); border-radius: 12px; padding: 3px; }
-.seg button { flex: 1 0 auto; border: 0; background: transparent; border-radius: 9px; height: 36px; font-size: 13px; font-weight: 600; color: var(--ink-2); cursor: pointer; white-space: nowrap; padding: 0 13px; }
-.seg button[aria-pressed="true"] { background: var(--panel); color: var(--ink); font-weight: 800; box-shadow: 0 1px 3px rgba(14,17,22,.14); }
 .tabs-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; scrollbar-width: none; border-bottom: 1px solid var(--line); }
 .tabs-wrap::-webkit-scrollbar { display: none; }
 .tabs { display: flex; gap: 20px; width: max-content; }
@@ -216,7 +229,7 @@ button.row { cursor: pointer; }
 .toast.out { animation: fade .2s ease-in forwards; }
 @keyframes slide { from { opacity: 0; transform: translateY(10px); } }
 @keyframes fade { to { opacity: 0; transform: translateY(10px); } }
-@media (prefers-reduced-motion: reduce) { .toast, .toast.out { animation: none; } .wcard, .switch span, .switch span::after { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .toast, .toast.out, .sheet, .sheet-bg { animation: none; } .wcard, .switch span, .switch span::after { transition: none; } }
 
 @media (min-width: 720px) {
   .app { padding-top: 32px; }
@@ -232,7 +245,7 @@ html[lang="zh-Hans"] body { font-family: var(--font), "Noto Sans SC", "PingFang 
 <div class="app">
   <header class="hdr">
     <div class="logo"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7d97ff"/><stop offset=".55" stop-color="#3a5bf0"/><stop offset="1" stop-color="#2337b8"/></linearGradient></defs><rect width="100" height="100" fill="#121218"/><g transform="translate(5 5) scale(.9)"><rect x="18" y="20" width="64" height="40" rx="8" fill="#ff7a1a"/><rect x="18" y="32" width="64" height="40" rx="8" fill="#e0314b"/><rect x="18" y="44" width="64" height="40" rx="8" fill="url(#lg)"/><text x="32" y="74" font-family="Noto Sans HK, sans-serif" font-weight="900" font-size="22" fill="#fff">著</text><rect x="58" y="62" width="16" height="6" rx="3" fill="#fff" fill-opacity=".85"/></g></svg><div><b>Jeuksou</b><span>著數碼</span></div></div>
-    <div class="hdr-stat" id="stats"></div>
+    <button class="region-btn" id="regionBtn" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span id="regionName"></span><svg class="chev-d" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
   </header>
 
   <!-- ===== WALLET ===== -->
@@ -243,7 +256,6 @@ html[lang="zh-Hans"] body { font-family: var(--font), "Noto Sans SC", "PingFang 
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         <input id="q" type="search" autocomplete="off" data-ph="search">
       </div>
-      <div class="seg-wrap"><div class="seg" id="regions" role="group" data-al="regionL"></div></div>
       <div class="tabs-wrap"><div class="tabs" id="cats"></div></div>
       <div class="sub-row"><span id="site-line"></span><label class="toggle" for="showDead"><input type="checkbox" id="showDead"> <span data-t="showDead"></span></label></div>
     </div>
@@ -309,6 +321,12 @@ html[lang="zh-Hans"] body { font-family: var(--font), "Noto Sans SC", "PingFang 
   <button role="tab" data-view="saved" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span class="badge" id="saved-badge" hidden></span></button>
   <button role="tab" data-view="settings" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
 </nav>
+<div class="sheet-bg" id="sheetBg" hidden></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetH" hidden>
+  <div class="grab"></div>
+  <h2 id="sheetH" data-t="regionPick"></h2>
+  <div id="regions"></div>
+</div>
 <div class="toasts" id="toasts" aria-live="polite"></div>
 
 <script>
@@ -337,7 +355,7 @@ const T = {
     weekH: "Ending within a week", weekE: "Nothing ending this week.",
     settings: "Settings", language: "Language", dark: "Dark mode", terms: "Terms & Conditions", privacy: "Privacy Statement", version: "Version",
     setNote: d => `Codes last updated ${d}. Jeuksou checks public promo pages every 3 days.`,
-    regionL: "Region", regShort: { world: "World", hk: "HK", jp: "Japan", kr: "Korea", tw: "Taiwan", sg: "SG", uk: "UK", eu: "Europe", us: "US", all: "All" },
+    regionL: "Region", regionPick: "Choose a region", regGroups: ["Asia", "Europe & Americas"], nSites: n => `${n} sites`,
     best: "Best right now", ends: d => `Ends ${d}`,
     termsBody: [
       ["What Jeuksou is", "Jeuksou is a free list of promo codes and deals found on public web pages. An automatic script reads those pages every 3 days, so a code can stop working before the next update."],
@@ -376,7 +394,7 @@ const T = {
     weekH: "一星期內結束", weekE: "本星期沒有快將結束的優惠。",
     settings: "設定", language: "語言", dark: "深色模式", terms: "條款及細則", privacy: "私隱聲明", version: "版本",
     setNote: d => `優惠碼最後更新於 ${d}。著數碼每 3 日檢查一次公開優惠頁面。`,
-    regionL: "地區", regShort: { world: "全球", hk: "香港", jp: "日本", kr: "韓國", tw: "台灣", sg: "新加坡", uk: "英國", eu: "歐洲", us: "美國", all: "全部" },
+    regionL: "地區", regionPick: "選擇地區", regGroups: ["亞洲", "歐美"], nSites: n => `${n} 個網站`,
     best: "現時最抵", ends: d => `${d} 結束`,
     termsBody: [
       ["著數碼是甚麼", "著數碼是一個免費的優惠碼及優惠列表，資料來自公開網頁。自動程式每 3 日讀取這些網頁一次，因此優惠碼可能在下次更新前已失效。"],
@@ -480,8 +498,6 @@ function setTheme(t) {
 
 /* ---------- Wallet ---------- */
 function renderStats() {
-  const usable = DEALS.filter(d => !d.dead);
-  $("#stats").innerHTML = `<b>${usable.length}</b>${L().live}`;
   const worked = Object.values(marks).filter(v => v === "yes").length;
   const badge = $("#saved-badge"); badge.hidden = !worked; badge.textContent = worked;
 }
@@ -505,8 +521,18 @@ const regionSites = c => { const r = REGIONS[state.region]; return c === "all" ?
 const regionCats = () => Object.keys(REGIONS[state.region]);
 
 function renderCats() {
-  $("#regions").innerHTML = [...Object.keys(REGIONS), "all"].map(r =>
-    `<button data-region="${r}" aria-pressed="${state.region === r}" aria-label="${esc(L().regions[r] || r)}">${esc(L().regShort[r] || r)}</button>`).join("");
+  const t = L();
+  const regBtn = r => {
+    const n = r === "all" ? Object.keys(SITES).length : new Set(Object.values(REGIONS[r]).flat()).size;
+    return `<button class="reg" data-region="${r}" aria-pressed="${state.region === r}"><span class="rn">${esc(t.regions[r] || r)}</span><small>${t.nSites(n)}</small><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></button>`;
+  };
+  const has = rs => rs.filter(r => REGIONS[r]);
+  $("#regions").innerHTML = regBtn("world")
+    + `<div class="reg-h">${t.regGroups[0]}</div>` + has(["hk", "jp", "kr", "tw", "sg"]).map(regBtn).join("")
+    + `<div class="reg-h">${t.regGroups[1]}</div>` + has(["uk", "eu", "us"]).map(regBtn).join("")
+    + `<div class="reg-h"></div>` + regBtn("all");
+  $("#regionName").textContent = t.regions[state.region];
+  $("#regionBtn").setAttribute("aria-label", `${t.regionL}: ${t.regions[state.region]}`);
   const live = DEALS.filter(d => !d.dead);
   const inRegion = state.region !== "all";
   $("#cats").innerHTML = ["all", ...(inRegion ? regionCats() : CATS)].map(c => {
@@ -653,17 +679,31 @@ function toast(msg, level = "ok") {
 }
 function selectText(el) { const r = document.createRange(); r.selectNodeContents(el.firstChild); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
 
+/* ---------- Region picker ---------- */
+function openSheet() {
+  $("#sheet").hidden = $("#sheetBg").hidden = false;
+  ($("#regions [aria-pressed=true]") || $("#regions .reg")).focus();
+}
+function closeSheet() {
+  if ($("#sheet").hidden) return;
+  $("#sheet").hidden = $("#sheetBg").hidden = true;
+  $("#regionBtn").focus();
+}
+$("#sheetBg").addEventListener("click", closeSheet);
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheet(); });
+
 /* ---------- Events ---------- */
 document.addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
   const t = L();
-  if (b.dataset.lang) { lang = b.dataset.lang; store.set("zsm-lang", lang); render(); }
+  if (b.id === "regionBtn") openSheet();
+  else if (b.dataset.lang) { lang = b.dataset.lang; store.set("zsm-lang", lang); render(); }
   else if (b.dataset.view) { state.view = b.dataset.view; state.page = null; render(); window.scrollTo({ top: 0 }); }
   else if (b.dataset.page) { state.page = b.dataset.page === "back" ? null : b.dataset.page; renderPage(); window.scrollTo({ top: 0 }); }
   else if (b.dataset.cat) { state.cat = b.dataset.cat; state.open = null; render(); b.scrollIntoView({ block: "nearest", inline: "nearest" }); }
   else if (b.dataset.region) {
     state.region = b.dataset.region; state.open = null;
-    b.scrollIntoView({ block: "nearest", inline: "nearest" });
+    closeSheet();
     if (state.cat !== "all" && !(state.region === "all" ? CATS : regionCats()).includes(state.cat)) state.cat = "all";
     render();
   }
