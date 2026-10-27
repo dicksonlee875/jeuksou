@@ -288,6 +288,16 @@ def fetch(url, tries=3):
 
 
 # ---------- merge ----------
+def auto_text(snippet, host):
+    """Title and description for an auto-found code. A short offer line makes the best title."""
+    clean = snippet.strip(" :：-")
+    if 8 <= len(clean) <= 70:
+        return {"title": clean, "title_zh": clean,
+                "desc": f"Listed on {host}.", "desc_zh": f"列於 {host}。"}
+    return {"title": f"New code found on {host}", "title_zh": f"在 {host} 找到的新優惠碼",
+            "desc": snippet, "desc_zh": snippet}
+
+
 def merge(data, found_by_page):
     today = TODAY.isoformat()
     deals = data["deals"]
@@ -336,9 +346,8 @@ def merge(data, found_by_page):
                 continue
             d = {
                 "site": site, "cat": page.get("cat", "Shopping"), "big": f["big"],
-                "title": f"New code found on {host}", "title_zh": f"在 {host} 找到的新優惠碼",
                 "codes": [code], "kind": "code",
-                "desc": snippet, "desc_zh": snippet,
+                **auto_text(snippet, host),
                 "cond": f"Found automatically on {today}. Not tried at checkout yet, and the conditions may be in the source text.",
                 "cond_zh": f"於 {today} 自動找到，尚未在結帳測試，使用條件請看來源原文。",
                 "expires": exp, "status": "unconfirmed", "src": page["url"],
