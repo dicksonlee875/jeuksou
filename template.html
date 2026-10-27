@@ -347,7 +347,7 @@ const T = {
     how: "How it works:", noLive: "No live codes right now.", deadH: "Expired or skip",
     code: n => `${n} ${n === 1 ? "code" : "codes"}`,
     status: { active: "Ready to use", restricted: "Card / members only", unconfirmed: "Unconfirmed", expired: "Expired", avoid: "Skip" },
-    noCode: "No code needed", auto: "Auto-found", endsToday: "Ends today", daysLeft: n => `${n} ${n === 1 ? "day" : "days"} left`,
+    noCode: "No code needed", auto: "Auto-found", foundOn: d => `Found ${d}`, endsToday: "Ends today", daysLeft: n => `${n} ${n === 1 ? "day" : "days"} left`,
     copy: "Copy", copied: "Copied", copiedT: c => `Copied ${c}`, selectT: "Code selected. Press Ctrl+C or Cmd+C to copy.",
     open: "Open offer ↗", until: d => `Until ${d}`, ended: d => `Ended ${d}`, noEnd: "No end date", source: "Source",
     worked: "Worked", didnt: "Didn't work", wT: "Saved as worked", nT: "Marked as didn't work", cT: "Note cleared",
@@ -386,7 +386,7 @@ const T = {
     how: "使用方法：", noLive: "現時沒有有效優惠碼。", noYet: "暫時未找到優惠碼，著數碼每 3 日會再檢查。", deadH: "已過期或不建議",
     code: n => `${n} 個優惠碼`,
     status: { active: "即用", restricted: "限指定卡 / 會員", unconfirmed: "未確認", expired: "已過期", avoid: "不建議" },
-    noCode: "毋須優惠碼", auto: "自動找到", endsToday: "今日結束", daysLeft: n => `尚餘 ${n} 日`,
+    noCode: "毋須優惠碼", auto: "自動找到", foundOn: d => `${d} 找到`, endsToday: "今日結束", daysLeft: n => `尚餘 ${n} 日`,
     copy: "複製", copied: "已複製", copiedT: c => `已複製 ${c}`, selectT: "已選取優惠碼，按 Ctrl+C 或 Cmd+C 複製。",
     open: "打開優惠 ↗", until: d => `至 ${d}`, ended: d => `已於 ${d} 結束`, noEnd: "沒有結束日期", source: "來源",
     worked: "有效", didnt: "無效", wT: "已儲存為有效", nT: "已標記為無效", cT: "已清除標記",
@@ -475,7 +475,8 @@ function matches(d) {
   }
   return true;
 }
-const sortDeals = list => list.sort((a, b) => RANK[a.eff] - RANK[b.eff] || (marks[a.id] === "no") - (marks[b.id] === "no") || a.order - b.order);
+// Ready codes first, then ones with a known discount over plain "New", then saved order.
+const sortDeals = list => list.sort((a, b) => RANK[a.eff] - RANK[b.eff] || (marks[a.id] === "no") - (marks[b.id] === "no") || (a.big === "New") - (b.big === "New") || a.order - b.order);
 
 /* ---------- Static text ---------- */
 function renderText() {
@@ -554,14 +555,16 @@ function dealHtml(d, withSite) {
   let action = "";
   if (d.codes) action = `<div class="codes">${d.codes.map(c => `<button class="code" data-code="${esc(c)}" ${d.dead ? "disabled" : ""} aria-label="${t.copy} ${esc(c)}">${esc(c)}<span class="cp">${t.copy}</span></button>`).join("")}</div>`;
   else if (d.src && !d.dead) action = `<a class="offer-link" href="${esc(d.src)}" target="_blank" rel="noopener">${t.open}</a>`;
+  // Auto-found codes just say when they were found; the source link has the details.
+  const cond = d.found === "auto" && d.firstSeen && !d.dead ? t.foundOn(fmt(d.firstSeen)) : tx(d, "cond");
   const exp = d.expires ? (d.daysLeft < 0 ? t.ended(fmt(d.expires)) : t.until(fmt(d.expires))) : t.noEnd;
   const m = marks[d.id];
   const src = d.src && (d.codes || d.dead) ? `<a href="${esc(d.src)}" target="_blank" rel="noopener">${t.source}</a>` : "";
   return `<article class="deal ${d.dead ? "dead" : ""}" style="--site:${siteColor(d.site)}">
     ${withSite ? `<span class="saved-site">${esc(SITES[d.site].name)}</span>` : ""}
-    <div class="deal-top"><span class="deal-big">${esc(tx(d, "big"))}</span><div class="tags">${tags.join("")}</div><span class="deal-title">${esc(tx(d, "title"))}</span></div>
-    <p class="desc">${esc(tx(d, "desc"))}</p>
-    <p class="cond">${esc(tx(d, "cond"))}</p>
+    <div class="deal-top"><span class="deal-big">${esc(tx(d, "big"))}</span><div class="tags">${tags.join("")}</div>${tx(d, "title") ? `<span class="deal-title">${esc(tx(d, "title"))}</span>` : ""}</div>
+    ${tx(d, "desc") ? `<p class="desc">${esc(tx(d, "desc"))}</p>` : ""}
+    ${cond ? `<p class="cond">${esc(cond)}</p>` : ""}
     ${action}
     <div class="meta"><span>${exp}</span>${src}
       ${d.dead ? "" : `<span class="mine" role="group">

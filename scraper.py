@@ -140,7 +140,7 @@ def pick_expiry(text):
 # Coupon hubs print stats beside each code ("31% of the cart", "$2,598.42" saved, "4 days ago").
 STATS = re.compile(r"of the cart|median discount|website showed|verification details|days? ago|yesterday|in the last \d+ days|"
                    r"across every cart|before this offer applies|cart has to reach|same checks as|still worth a try|published this code|"
-                   r"code checks|saved in total|seen on the store|^\d+ of \d+$|^" + r"(?:US\$|\$|£|€)\s?[\d,]+\.\d\d$", re.I)
+                   r"code checks|saved in total|recalculated|seen on the store|^\d+ of \d+$|^" + r"(?:US\$|\$|£|€)\s?[\d,]+\.\d\d$", re.I)
 
 # ---------- discount ----------
 MONEY = r"(?:HK\$|HKD|US\$|USD|NT\$|NTD|RMB|S\$|A\$|\$|¥|£|€)\s?\d[\d,]*(?:\.\d+)?"
@@ -298,13 +298,12 @@ def fetch(url, tries=3):
 
 # ---------- merge ----------
 def auto_text(snippet, host):
-    """Title and description for an auto-found code. A short offer line makes the best title."""
+    """Title and description for an auto-found code: a short offer line is the title, a long one the
+    description, and nothing at all when the page gave no usable text (the card then shows just the code)."""
     clean = snippet.strip(" :：-")
     if 8 <= len(clean) <= 70:
-        return {"title": clean, "title_zh": clean,
-                "desc": f"Listed on {host}.", "desc_zh": f"列於 {host}。"}
-    return {"title": f"New code found on {host}", "title_zh": f"在 {host} 找到的新優惠碼",
-            "desc": snippet, "desc_zh": snippet}
+        return {"title": clean, "title_zh": clean, "desc": "", "desc_zh": ""}
+    return {"title": "", "title_zh": "", "desc": clean, "desc_zh": clean}
 
 
 def merge(data, found_by_page):
@@ -361,8 +360,7 @@ def merge(data, found_by_page):
                 "site": site, "cat": page.get("cat", "Shopping"), "big": f["big"],
                 "codes": [code], "kind": "code",
                 **auto_text(snippet, host),
-                "cond": f"Found automatically on {today}. Not tried at checkout yet, and the conditions may be in the source text.",
-                "cond_zh": f"於 {today} 自動找到，尚未在結帳測試，使用條件請看來源原文。",
+                "cond": "", "cond_zh": "",                # the page shows "Found <firstSeen>" instead
                 "expires": exp, "status": "unconfirmed", "src": page["url"],
                 "found": "auto", "firstSeen": today, "lastSeen": today,
             }
