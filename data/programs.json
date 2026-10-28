@@ -8,8 +8,8 @@
    "type": "hotel",
    "name": "Marriott Bonvoy",
    "color": [
-    "#a3473a",
-    "#6e2a22"
+    "#b41f3a",
+    "#6e1224"
    ],
    "url": "https://www.marriott.com/loyalty.mi",
    "tiers": [
@@ -250,8 +250,8 @@
    "type": "hotel",
    "name": "Hilton Honors",
    "color": [
-    "#1f4e8c",
-    "#0f2e57"
+    "#104c97",
+    "#002c51"
    ],
    "url": "https://www.hilton.com/en/help-center/hilton-honors-benefits/tiers-and-benefits",
    "tiers": [
@@ -458,8 +458,8 @@
    "type": "hotel",
    "name": "IHG One Rewards",
    "color": [
-    "#2c2c2c",
-    "#111111"
+    "#2a2a2a",
+    "#000000"
    ],
    "url": "https://www.ihg.com/onerewards/content/us/en/home",
    "tiers": [
@@ -652,8 +652,9 @@
    "type": "hotel",
    "name": "ALL Accor",
    "color": [
-    "#1e3a5f",
-    "#0b1d33"
+    "#1b3a55",
+    "#12283b",
+    "#e29c16"
    ],
    "url": "https://all.accor.com/",
    "tiers": [
