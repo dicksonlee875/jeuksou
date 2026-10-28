@@ -1,5 +1,5 @@
 {
- "_help": "Hotel and airline programmes for the Perks tab. Each has tiers (name, what it takes, perks) and links: kind status (something gives you status), match (status match) or move (move points), with the url where you do it. Fill English and 繁體 (_zh); build.py makes 简体. rows: the tier comparison table, one value per tier ('y' = yes, '-' = no, else text; vals_zh for 繁體 text). Move links carry rate [points, miles] and bonus (extra miles per 60,000 points). Alliances (alliance: true) have no need/perks text; map lists each airline's tier for each alliance tier ('+' = that tier and above).",
+ "_help": "Hotel and airline programmes for the Perks tab. Each has tiers (name, what it takes, perks) and links: kind status (something gives you status), match (status match) or move (move points), with the url where you do it. Fill English and 繁體 (_zh); build.py makes 简体. rows: the tier comparison table, one value per tier ('y' = yes, '-' = no, else text; vals_zh for 繁體 text). Move links carry rate [points, miles] and bonus (extra miles per 60,000 points). Alliances (alliance: true) have no need/perks text; map lists each airline's tier for each alliance tier (the lowest tier that earns it).",
  "checked": "2026-10-27",
  "programs": [
   {
@@ -1138,18 +1138,18 @@
    "map": [
     {
      "label": "KrisFlyer",
-     "label_zh": "新加坡航空 KrisFlyer",
+     "label_zh": "新加坡航空",
      "vals": [
-      "Elite Silver",
-      "Elite Gold"
+      "Silver",
+      "Gold"
      ]
     },
     {
      "label": "United",
      "label_zh": "聯合航空",
      "vals": [
-      "Premier Silver",
-      "Premier Gold+"
+      "Silver",
+      "Gold"
      ]
     },
     {
@@ -1157,7 +1157,7 @@
      "label_zh": "全日空",
      "vals": [
       "Bronze",
-      "Platinum+"
+      "Platinum"
      ]
     },
     {
@@ -1165,7 +1165,7 @@
      "label_zh": "長榮航空",
      "vals": [
       "Silver",
-      "Gold+"
+      "Gold"
      ]
     },
     {
@@ -1173,15 +1173,7 @@
      "label_zh": "中國國航",
      "vals": [
       "Silver",
-      "Gold+"
-     ]
-    },
-    {
-     "label": "Miles & More",
-     "label_zh": "漢莎 Miles & More",
-     "vals": [
-      "Frequent Traveller",
-      "Senator+"
+      "Gold"
      ]
     }
    ],
@@ -1306,7 +1298,7 @@
      ]
     },
     {
-     "label": "British Airways",
+     "label": "BA",
      "label_zh": "英國航空",
      "vals": [
       "Bronze",
@@ -1333,21 +1325,12 @@
      ]
     },
     {
-     "label": "Qatar Airways",
+     "label": "Qatar",
      "label_zh": "卡塔爾航空",
      "vals": [
       "Silver",
       "Gold",
       "Platinum"
-     ]
-    },
-    {
-     "label": "American",
-     "label_zh": "美國航空",
-     "vals": [
-      "Gold",
-      "Platinum",
-      "Plat Pro+"
      ]
     }
    ],
@@ -1437,10 +1420,10 @@
    "map": [
     {
      "label": "Flying Blue",
-     "label_zh": "法荷航 Flying Blue",
+     "label_zh": "法荷航",
      "vals": [
       "Silver",
-      "Gold+"
+      "Gold"
      ]
     },
     {
@@ -1448,7 +1431,7 @@
      "label_zh": "達美航空",
      "vals": [
       "Silver",
-      "Gold+"
+      "Gold"
      ]
     },
     {
@@ -1456,7 +1439,7 @@
      "label_zh": "大韓航空",
      "vals": [
       "Morning Calm",
-      "Premium+"
+      "Premium"
      ]
     },
     {
@@ -1464,23 +1447,15 @@
      "label_zh": "中華航空",
      "vals": [
       "Gold",
-      "Emerald+"
+      "Emerald"
      ]
     },
     {
-     "label": "Virgin Atlantic",
+     "label": "Virgin",
      "label_zh": "維珍航空",
      "vals": [
       "Silver",
       "Gold"
-     ]
-    },
-    {
-     "label": "Vietnam Airlines",
-     "label_zh": "越南航空",
-     "vals": [
-      "Titanium",
-      "Gold+"
      ]
     }
    ],
