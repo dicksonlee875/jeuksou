@@ -65,7 +65,7 @@ def add_simplified(data):
         if s.get("note_zh"):
             s["note_sc"] = t2s(s["note_zh"])
     for c in data.get("perks", {}).get("cards", []):
-        for o in [c, *c["perks"]]:
+        for o in [c, *c["perks"], *c.get("scope_by", {}).values()]:
             for f in ("scope", "title", "what"):
                 if o.get(f + "_zh"):
                     o[f + "_sc"] = t2s(o[f + "_zh"])
