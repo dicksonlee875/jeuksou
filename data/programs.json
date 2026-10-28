@@ -1,5 +1,5 @@
 {
- "_help": "Hotel and airline programmes for the Perks tab. Each has tiers (name, what it takes, perks) and links: kind status (something gives you status), match (status match) or move (move points), with the url where you do it. Fill English and 繁體 (_zh); build.py makes 简体. rows: the tier comparison table, one value per tier ('y' = yes, '-' = no, else text; vals_zh for 繁體 text). Move links carry rate [points, miles] and bonus (extra miles per 60,000 points).",
+ "_help": "Hotel and airline programmes for the Perks tab. Each has tiers (name, what it takes, perks) and links: kind status (something gives you status), match (status match) or move (move points), with the url where you do it. Fill English and 繁體 (_zh); build.py makes 简体. rows: the tier comparison table, one value per tier ('y' = yes, '-' = no, else text; vals_zh for 繁體 text). Move links carry rate [points, miles] and bonus (extra miles per 60,000 points). Alliances (alliance: true) have no need/perks text; map lists each airline's tier for each alliance tier ('+' = that tier and above).",
  "checked": "2026-10-27",
  "programs": [
   {
@@ -1047,11 +1047,448 @@
      ]
     }
    ],
-   "tile": "Asia Miles"
+   "tile": "Asia Miles",
+   "seg": "Cathay"
+  },
+  {
+   "key": "star",
+   "type": "airline",
+   "alliance": true,
+   "seg": "Star",
+   "name": "Star Alliance",
+   "color": [
+    "#1a1a1a",
+    "#000000"
+   ],
+   "url": "https://www.staralliance.com/en/benefits-and-privileges",
+   "tiers": [
+    {
+     "name": "Star Silver",
+     "short": "Silver",
+     "color": "#a7a9ac",
+     "need": "",
+     "perks": ""
+    },
+    {
+     "name": "Star Gold",
+     "short": "Gold",
+     "color": "#c19a49",
+     "need": "",
+     "perks": ""
+    }
+   ],
+   "rows": [
+    {
+     "label": "Lounge",
+     "label_zh": "貴賓室",
+     "vals": [
+      "-",
+      "y"
+     ]
+    },
+    {
+     "label": "Priority check-in",
+     "label_zh": "優先登記",
+     "vals": [
+      "-",
+      "y"
+     ]
+    },
+    {
+     "label": "Priority boarding",
+     "label_zh": "優先登機",
+     "vals": [
+      "-",
+      "y"
+     ]
+    },
+    {
+     "label": "Extra bag",
+     "label_zh": "額外行李",
+     "vals": [
+      "-",
+      "+20 kg"
+     ],
+     "vals_zh": [
+      "-",
+      "+20 公斤"
+     ]
+    },
+    {
+     "label": "Fast track",
+     "label_zh": "快速通道",
+     "vals": [
+      "-",
+      "Some airports"
+     ],
+     "vals_zh": [
+      "-",
+      "部分機場"
+     ]
+    },
+    {
+     "label": "Waitlist priority",
+     "label_zh": "候補優先",
+     "vals": [
+      "y",
+      "y"
+     ]
+    }
+   ],
+   "map": [
+    {
+     "label": "KrisFlyer",
+     "label_zh": "新加坡航空 KrisFlyer",
+     "vals": [
+      "Elite Silver",
+      "Elite Gold"
+     ]
+    },
+    {
+     "label": "United",
+     "label_zh": "聯合航空",
+     "vals": [
+      "Premier Silver",
+      "Premier Gold+"
+     ]
+    },
+    {
+     "label": "ANA",
+     "label_zh": "全日空",
+     "vals": [
+      "Bronze",
+      "Platinum+"
+     ]
+    },
+    {
+     "label": "EVA Air",
+     "label_zh": "長榮航空",
+     "vals": [
+      "Silver",
+      "Gold+"
+     ]
+    },
+    {
+     "label": "Air China",
+     "label_zh": "中國國航",
+     "vals": [
+      "Silver",
+      "Gold+"
+     ]
+    },
+    {
+     "label": "Miles & More",
+     "label_zh": "漢莎 Miles & More",
+     "vals": [
+      "Frequent Traveller",
+      "Senator+"
+     ]
+    }
+   ],
+   "links": []
+  },
+  {
+   "key": "oneworld",
+   "type": "airline",
+   "alliance": true,
+   "seg": "oneworld",
+   "name": "oneworld",
+   "color": [
+    "#3c2a7a",
+    "#22174a"
+   ],
+   "url": "https://www.oneworld.com/ffp/sapphire-privileges",
+   "tiers": [
+    {
+     "name": "Ruby",
+     "short": "Ruby",
+     "short_zh": "紅寶石",
+     "color": "#9b1b30",
+     "need": "",
+     "perks": ""
+    },
+    {
+     "name": "Sapphire",
+     "short": "Sapphire",
+     "short_zh": "藍寶石",
+     "color": "#1f5fa8",
+     "need": "",
+     "perks": ""
+    },
+    {
+     "name": "Emerald",
+     "short": "Emerald",
+     "short_zh": "綠寶石",
+     "color": "#00785a",
+     "need": "",
+     "perks": ""
+    }
+   ],
+   "rows": [
+    {
+     "label": "Lounge",
+     "label_zh": "貴賓室",
+     "vals": [
+      "-",
+      "Business",
+      "First"
+     ],
+     "vals_zh": [
+      "-",
+      "商務",
+      "頭等"
+     ]
+    },
+    {
+     "label": "Priority check-in",
+     "label_zh": "優先登記",
+     "vals": [
+      "Business",
+      "Business",
+      "First"
+     ],
+     "vals_zh": [
+      "商務",
+      "商務",
+      "頭等"
+     ]
+    },
+    {
+     "label": "Priority boarding",
+     "label_zh": "優先登機",
+     "vals": [
+      "-",
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Extra bag",
+     "label_zh": "額外行李",
+     "vals": [
+      "-",
+      "+15 kg",
+      "+20 kg"
+     ],
+     "vals_zh": [
+      "-",
+      "+15 公斤",
+      "+20 公斤"
+     ]
+    },
+    {
+     "label": "Fast track",
+     "label_zh": "快速通道",
+     "vals": [
+      "-",
+      "-",
+      "y"
+     ]
+    },
+    {
+     "label": "Waitlist priority",
+     "label_zh": "候補優先",
+     "vals": [
+      "y",
+      "y",
+      "y"
+     ]
+    }
+   ],
+   "map": [
+    {
+     "label": "Cathay",
+     "label_zh": "國泰",
+     "vals": [
+      "Silver",
+      "Gold",
+      "Diamond"
+     ]
+    },
+    {
+     "label": "British Airways",
+     "label_zh": "英國航空",
+     "vals": [
+      "Bronze",
+      "Silver",
+      "Gold"
+     ]
+    },
+    {
+     "label": "Qantas",
+     "label_zh": "澳洲航空",
+     "vals": [
+      "Silver",
+      "Gold",
+      "Platinum"
+     ]
+    },
+    {
+     "label": "JAL",
+     "label_zh": "日本航空",
+     "vals": [
+      "Crystal",
+      "Sapphire",
+      "Diamond"
+     ]
+    },
+    {
+     "label": "Qatar Airways",
+     "label_zh": "卡塔爾航空",
+     "vals": [
+      "Silver",
+      "Gold",
+      "Platinum"
+     ]
+    },
+    {
+     "label": "American",
+     "label_zh": "美國航空",
+     "vals": [
+      "Gold",
+      "Platinum",
+      "Plat Pro+"
+     ]
+    }
+   ],
+   "links": []
+  },
+  {
+   "key": "skyteam",
+   "type": "airline",
+   "alliance": true,
+   "seg": "SkyTeam",
+   "name": "SkyTeam",
+   "color": [
+    "#0b3a7d",
+    "#06224a"
+   ],
+   "url": "https://www.skyteam.com/en/frequent-flyers",
+   "tiers": [
+    {
+     "name": "Elite",
+     "short": "Elite",
+     "color": "#8a9bb5",
+     "need": "",
+     "perks": ""
+    },
+    {
+     "name": "Elite Plus",
+     "short": "Elite Plus",
+     "color": "#0b3a7d",
+     "need": "",
+     "perks": ""
+    }
+   ],
+   "rows": [
+    {
+     "label": "Lounge",
+     "label_zh": "貴賓室",
+     "vals": [
+      "-",
+      "y"
+     ]
+    },
+    {
+     "label": "Priority check-in",
+     "label_zh": "優先登記",
+     "vals": [
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Priority boarding",
+     "label_zh": "優先登機",
+     "vals": [
+      "y",
+      "y"
+     ]
+    },
+    {
+     "label": "Extra bag",
+     "label_zh": "額外行李",
+     "vals": [
+      "+1",
+      "+1"
+     ]
+    },
+    {
+     "label": "Fast track",
+     "label_zh": "快速通道",
+     "vals": [
+      "-",
+      "Some airports"
+     ],
+     "vals_zh": [
+      "-",
+      "部分機場"
+     ]
+    },
+    {
+     "label": "Waitlist priority",
+     "label_zh": "候補優先",
+     "vals": [
+      "y",
+      "y"
+     ]
+    }
+   ],
+   "map": [
+    {
+     "label": "Flying Blue",
+     "label_zh": "法荷航 Flying Blue",
+     "vals": [
+      "Silver",
+      "Gold+"
+     ]
+    },
+    {
+     "label": "Delta",
+     "label_zh": "達美航空",
+     "vals": [
+      "Silver",
+      "Gold+"
+     ]
+    },
+    {
+     "label": "Korean Air",
+     "label_zh": "大韓航空",
+     "vals": [
+      "Morning Calm",
+      "Premium+"
+     ]
+    },
+    {
+     "label": "China Airlines",
+     "label_zh": "中華航空",
+     "vals": [
+      "Gold",
+      "Emerald+"
+     ]
+    },
+    {
+     "label": "Virgin Atlantic",
+     "label_zh": "維珍航空",
+     "vals": [
+      "Silver",
+      "Gold"
+     ]
+    },
+    {
+     "label": "Vietnam Airlines",
+     "label_zh": "越南航空",
+     "vals": [
+      "Titanium",
+      "Gold+"
+     ]
+    }
+   ],
+   "links": []
   },
   {
    "key": "krisflyer",
-   "type": "airline",
+   "type": "partner",
    "name": "KrisFlyer",
    "color": [
     "#1d3c78",
@@ -1228,7 +1665,7 @@
   },
   {
    "key": "baclub",
-   "type": "airline",
+   "type": "partner",
    "name": "British Airways Club",
    "color": [
     "#2a4a8c",

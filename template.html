@@ -229,6 +229,8 @@ button.row { cursor: pointer; }
 .cmp th, .cmp td { padding: 11px 5px; text-align: center; font-size: 13px; font-weight: 800; min-width: 60px; border-top: 1px solid var(--line); }
 .cmp thead th { border-top: 0; font-size: 12.5px; color: var(--ink-2); padding-block: 14px 10px; vertical-align: bottom; }
 .cmp thead th .sw { display: block; width: 38px; height: 24px; margin: 0 auto 6px; border-radius: 5px; box-shadow: inset 0 0 0 1px rgba(127,127,127,.25); }
+.cmp thead th .sw.sm { width: 24px; height: 14px; border-radius: 4px; }
+.cmp td.v.t { font-weight: 700; color: var(--ink-2); }
 .cmp th[scope="row"], .cmp thead th:first-child { position: sticky; left: 0; z-index: 1; background: var(--panel); text-align: left; padding-left: 14px; min-width: 92px; max-width: 108px; font-size: 12.5px; line-height: 1.25; color: var(--ink); box-shadow: 1px 0 0 var(--line); }
 .cmp td.y { color: var(--ok); font-size: 15px; }
 .cmp td.n { color: var(--line); }
@@ -434,8 +436,8 @@ const T = {
     regionL: "Region", regionPick: "Choose a region", regGroups: ["Asia", "Europe & Americas"], nSites: n => `${n} sites`,
     best: "Best right now", ends: d => `Ends ${d}`,
     perks: "Perks", goPerk: "Go to offer", perksP: "Pick the card in your wallet to see what it gets you.", segCards: "Cards", segHotels: "Hotels", segAirlines: "Airlines",
-    progP: { hotel: "Pick a hotel programme to compare every tier side by side, and see how it links with cards and airlines.", airline: "Pick a frequent flyer programme to compare every tier side by side, and see which hotel points move in." },
-    tierGets: n => `${n} gets you`, linksH: "Links with", linkKind: { status: "Get status", move: "Move points", match: "Status match" }, nTiers: n => `${n} tiers`, visit: n => `Visit ${n}`, tierCol: "Tier", yes: "Yes", no: "No", getStatus: "Get status", moveOut: "Move points to", moveIn: "Move points in from", toCol: "Partner", fromCol: "From", rateCol: "Rate · 60,000 points", bothWays: "BOTH WAYS", nPerks: n => `${n} ${n === 1 ? "perk" : "perks"}`,
+    progP: { hotel: "Pick a hotel programme to compare every tier side by side, and see how it links with cards and airlines.", airline: "See what Cathay and each airline alliance give you at every tier, and which airline status gets you there." },
+    tierGets: n => `${n} gets you`, linksH: "Links with", linkKind: { status: "Get status", move: "Move points", match: "Status match" }, nTiers: n => `${n} tiers`, visit: n => `Visit ${n}`, tierCol: "Tier", yes: "Yes", no: "No", getStatus: "Get status", moveOut: "Move points to", moveIn: "Move points in from", toCol: "Partner", fromCol: "From", rateCol: "Rate · 60,000 points", bothWays: "BOTH WAYS", mapH: "Which airline tier gets you there", airlineCol: "Airline", mapNote: "\u201c+\u201d means that tier or higher. Each airline sets its own rules, so check its site before you fly.", nPerks: n => `${n} ${n === 1 ? "perk" : "perks"}`,
     perkCats: { "Hotels": "Hotels", "Car rental": "Car rental", "Lounges": "Airport lounges", "Dining": "Dining", "Shopping": "Shopping", "Other": "Other perks" },
     progNote: d => `Tiers, ratios and partners change often. Check the programme's own page before you move points. Last checked ${d}.`,
     perksNote: d => `Perks depend on the bank that issued your card and can change. Check with your bank before you book. Last checked ${d}.`,
@@ -479,8 +481,8 @@ const T = {
     regionL: "地區", regionPick: "選擇地區", regGroups: ["亞洲", "歐美"], nSites: n => `${n} 個網站`,
     best: "現時最抵", ends: d => `${d} 結束`,
     perks: "禮遇", goPerk: "前往優惠", perksP: "揀選你銀包裡的信用卡，看看有甚麼禮遇。", segCards: "信用卡", segHotels: "酒店", segAirlines: "航空",
-    progP: { hotel: "揀選酒店會籍，並排比較每個級別的禮遇，以及與信用卡和航空公司的連繫。", airline: "揀選飛行常客計劃，並排比較每個級別，以及哪些酒店積分可轉入。" },
-    tierGets: n => `${n} 的禮遇`, linksH: "連繫", linkKind: { status: "取得會籍", move: "轉換積分", match: "會籍配對" }, nTiers: n => `${n} 個級別`, visit: n => `前往 ${n}`, tierCol: "級別", yes: "有", no: "沒有", getStatus: "取得會籍", moveOut: "積分可轉至", moveIn: "可轉入的積分", toCol: "夥伴", fromCol: "來自", rateCol: "比率 · 60,000 積分", bothWays: "可雙向", nPerks: n => `${n} 項禮遇`,
+    progP: { hotel: "揀選酒店會籍，並排比較每個級別的禮遇，以及與信用卡和航空公司的連繫。", airline: "並排比較國泰及各航空聯盟每個級別的禮遇，以及哪個航空公司級別可以獲得。" },
+    tierGets: n => `${n} 的禮遇`, linksH: "連繫", linkKind: { status: "取得會籍", move: "轉換積分", match: "會籍配對" }, nTiers: n => `${n} 個級別`, visit: n => `前往 ${n}`, tierCol: "級別", yes: "有", no: "沒有", getStatus: "取得會籍", moveOut: "積分可轉至", moveIn: "可轉入的積分", toCol: "夥伴", fromCol: "來自", rateCol: "比率 · 60,000 積分", bothWays: "可雙向", mapH: "哪個航空公司級別可獲得", airlineCol: "航空公司", mapNote: "「+」代表該級別或以上。各航空公司規則不同，出發前請查看其網站。", nPerks: n => `${n} 項禮遇`,
     perkCats: { "Hotels": "酒店", "Car rental": "租車", "Lounges": "機場貴賓室", "Dining": "餐飲", "Shopping": "購物", "Other": "其他禮遇" },
     progNote: d => `級別、兌換比率及夥伴經常更改，轉換積分前請先查看計劃官方網頁。最後檢查：${d}。`,
     perksNote: d => `禮遇視乎發卡銀行而定，並可能更改。預訂前請先向銀行確認。最後檢查：${d}。`,
@@ -791,12 +793,11 @@ function renderProgram() {
   const vals = r => lang === "en" ? r.vals : (lang === "hans" && r.vals_sc) || r.vals_zh || r.vals;
   const cell = v => v === "y" ? `<td class="y" aria-label="${esc(t.yes)}">✓</td>` : v === "-" ? `<td class="n" aria-label="${esc(t.no)}">—</td>` : `<td class="v">${esc(v)}</td>`;
   const shade = i => `color-mix(in srgb, ${g.color[0]} ${25 + Math.round(75 * i / Math.max(1, g.tiers.length - 1))}%, var(--well))`;
-  const [need, ...rest] = g.rows;
   const head = `<div class="phead"><h3>${esc(g.name)}</h3><a href="${esc(g.url)}" target="_blank" rel="noopener">${esc(host(g.url))} ↗</a></div>`;
-  const table = head + `<div class="cmp"><div class="cmp-scroll"><table>
-    <thead><tr><th scope="col">${esc(t.tierCol)}</th>${g.tiers.map((x, i) => `<th scope="col"><span class="sw" style="background:${x.color || shade(i)}"></span>${esc(x.short)}</th>`).join("")}</tr></thead>
-    <tbody>${[need, ...rest].map((r, k) => `<tr${k === 0 ? ` class="need"` : ""}><th scope="row">${esc(tx(r, "label"))}</th>${vals(r).map(cell).join("")}</tr>`).join("")}</tbody>
-    </table></div></div>`;
+  const thead = (first, sm) => `<thead><tr><th scope="col">${esc(first)}</th>${g.tiers.map((x, i) => `<th scope="col"><span class="sw${sm ? " sm" : ""}" style="background:${x.color || shade(i)}"></span>${esc(lang !== "en" && x.short_zh || x.short)}</th>`).join("")}</tr></thead>`;
+  const body = (rows, kind) => rows.map((r, k) => `<tr${k === 0 && kind === "need" ? ` class="need"` : ""}><th scope="row">${esc(tx(r, "label"))}</th>${vals(r).map(v => kind === "map" ? `<td class="v t">${esc(v)}</td>` : cell(v)).join("")}</tr>`).join("");
+  const table = head + `<div class="cmp"><div class="cmp-scroll"><table>${thead(t.tierCol)}<tbody>${body(g.rows, g.alliance ? "" : "need")}</tbody></table></div></div>`
+    + (g.map ? `<div class="section-h">${esc(t.mapH)}</div><div class="cmp"><div class="cmp-scroll"><table class="map">${thead(t.airlineCol, true)}<tbody>${body(g.map, "map")}</tbody></table></div></div><p class="pnote">${esc(t.mapNote)}</p>` : "");
   const moves = g.links.filter(l => l.kind === "move"), stat = g.links.filter(l => l.kind !== "move");
   const moveRow = l => { const other = ty === "hotel" ? l.to : l.from, pts = 60000, miles = pts * l.rate[1] / l.rate[0] + (l.bonus || 0);
     return `<a class="lrow" href="${esc(l.url)}" target="_blank" rel="noopener"><span class="ln">${esc(progName(other))}${l.both ? `<span class="tag">${esc(t.bothWays)}</span>` : ""}</span>

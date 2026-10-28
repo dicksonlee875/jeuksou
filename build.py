@@ -70,7 +70,7 @@ def add_simplified(data):
                 if o.get(f + "_zh"):
                     o[f + "_sc"] = t2s(o[f + "_zh"])
     for g in data.get("programs", {}).get("programs", []):
-        for r in g.get("rows", []):
+        for r in [*g.get("rows", []), *g.get("map", [])]:
             if r.get("label_zh"):
                 r["label_sc"] = t2s(r["label_zh"])
             if r.get("vals_zh"):
