@@ -1,5 +1,5 @@
 {
- "_help": "Card perks shown in the Perks tab. Each perk has a category (Hotels, Car rental, Lounges, Dining, Shopping, Other), English and 繁體 (_zh) text, and url: the page where a cardholder signs up for or uses that perk. Optional links: [{name, url}] for a perk with several sign-up pages. build.py makes 简体. Check each url still works when you edit. where: the places the perk applies to (hk, sg); scope_by gives a card's scope text per place.",
+ "_help": "Card perks shown in the Perks tab. Each perk has a category (Hotels, Car rental, Lounges, Dining, Shopping, Other), English and 繁體 (_zh) text, and url: the page where a cardholder signs up for or uses that perk. Optional links: [{name, url}] for a perk with several sign-up pages. build.py makes 简体. Check each url still works when you edit. where: the places the perk applies to (hk, sg, uk, us); scope_by gives a card's scope text per place.",
  "checked": "2026-10-27",
  "cards": [
   {
@@ -155,6 +155,83 @@
      "where": [
       "hk"
      ]
+    },
+    {
+     "cat": "Other",
+     "title": "Trip cancellation cover",
+     "title_zh": "行程取消保障",
+     "what": "Get back non-refundable fares if a trip is cancelled or cut short.",
+     "what_zh": "行程取消或中斷時，可取回不可退款的車船機票費用。",
+     "url": "https://usa.visa.com/content/dam/VCOM/reimagine/personal/documents/infinite-trip-cancellation-and-interruption-terms.pdf",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Other",
+     "title": "Trip delay cover",
+     "title_zh": "航班延誤保障",
+     "what": "Up to US$500 when a flight is delayed over 6 hours.",
+     "what_zh": "航班延誤超過 6 小時，最高賠償 500 美元。",
+     "url": "https://usa.visa.com/content/dam/VCOM/regional/na/us/pay-with-visa/documents/trip-delay-infinite.pdf",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Other",
+     "title": "Lost luggage cover",
+     "title_zh": "行李遺失保障",
+     "what": "Pays for bags lost by the airline when you paid with the card.",
+     "what_zh": "以此卡付款的行程，航空公司遺失行李可獲賠償。",
+     "url": "https://usa.visa.com/content/dam/VCOM/regional/na/us/pay-with-visa/documents/lost-luggage-reimbursement-infinite.pdf",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Car rental",
+     "title": "Rental car damage cover",
+     "title_zh": "租車損毀保障",
+     "what": "Covers damage and theft when you rent a car with the card.",
+     "what_zh": "以此卡租車，車輛損毀或被盜可獲保障。",
+     "url": "https://usa.visa.com/content/dam/VCOM/regional/na/us/pay-with-visa/documents/auto-rental-infinite.pdf",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Shopping",
+     "title": "Purchase security",
+     "title_zh": "購物保障",
+     "what": "Repairs or replaces items stolen or damaged within 90 days.",
+     "what_zh": "購物後 90 日內被盜或損壞可獲維修或更換。",
+     "url": "https://usa.visa.com/content/dam/VCOM/regional/na/us/pay-with-visa/documents/purchase-security-infinite.pdf",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Shopping",
+     "title": "Return protection",
+     "title_zh": "退貨保障",
+     "what": "Helps when a shop won't take a return within 90 days.",
+     "what_zh": "商店不接受退貨時，90 日內可獲協助。",
+     "url": "https://usa.visa.com/content/dam/VCOM/regional/na/us/pay-with-visa/documents/return-protection-infinite.pdf",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Shopping",
+     "title": "Extended warranty",
+     "title_zh": "延長保養",
+     "what": "Adds extra time to US manufacturer warranties.",
+     "what_zh": "延長美國製造商保養期。",
+     "url": "https://usa.visa.com/content/dam/VCOM/regional/na/us/pay-with-visa/documents/extended-warranty-infinite.pdf",
+     "where": [
+      "us"
+     ]
     }
    ],
    "scope_by": {
@@ -165,6 +242,10 @@
     "sg": {
      "scope": "Visa Singapore's Infinite perks. Your bank adds its own (lounges, insurance, rewards).",
      "scope_zh": "Visa 新加坡的 Infinite 禮遇。發卡銀行另有其他禮遇（貴賓室、保險、獎賞）。"
+    },
+    "us": {
+     "scope": "Visa's US Infinite cover. Your bank may add more.",
+     "scope_zh": "Visa 美國 Infinite 保障。發卡銀行或另有禮遇。"
     }
    }
   },
@@ -380,8 +461,129 @@
       "hk",
       "sg"
      ]
+    },
+    {
+     "cat": "Other",
+     "title": "Lyft credit",
+     "title_zh": "Lyft 乘車額",
+     "what": "US$5 credit after 3 rides in a month, plus 10% off airport rides.",
+     "what_zh": "每月乘搭 3 次可獲 5 美元乘車額，機場行程另享九折。",
+     "url": "https://www.lyft.com/mastercard",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Shopping",
+     "title": "Instacart",
+     "title_zh": "Instacart",
+     "what": "US$10 off your second order each month, plus 3 free months of Instacart+.",
+     "what_zh": "每月第二張訂單減 10 美元，另送 3 個月 Instacart+。",
+     "url": "https://www.instacart.com/p/mastercard-offer",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Other",
+     "title": "Peacock",
+     "title_zh": "Peacock",
+     "what": "US$3 off Peacock Premium every month.",
+     "what_zh": "Peacock Premium 每月減 3 美元。",
+     "url": "https://peacocktv.com/mastercard",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Other",
+     "title": "Transit credit",
+     "title_zh": "交通回贈",
+     "what": "US$2.50 back when you spend US$10 a month on participating transit.",
+     "what_zh": "每月於指定公共交通消費滿 10 美元，回贈 2.5 美元。",
+     "url": "https://www.mastercard.com/us/en/personal/experience-mastercard/transitbenefit.html",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Lounges",
+     "title": "Airport fast track",
+     "title_zh": "機場快速通道",
+     "what": "Discounted fast-track security lanes at airports in 30+ countries.",
+     "what_zh": "30 多個國家機場的快速安檢通道折扣。",
+     "url": "https://mastercardtravelpass.dragonpass.com",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Dining",
+     "title": "Mastercard Collection dining",
+     "title_zh": "Mastercard Collection 餐飲",
+     "what": "Priority tables at hard-to-book restaurants.",
+     "what_zh": "難訂餐廳優先訂座。",
+     "url": "https://www.priceless.com/the-mastercard-collection-dining?ac=mastercardcollection",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Other",
+     "title": "World Elite Concierge",
+     "title_zh": "World Elite 禮賓服務",
+     "what": "A free 24/7 concierge for bookings, travel and events.",
+     "what_zh": "免費 24 小時禮賓服務，代訂餐廳、旅程及活動。",
+     "url": "https://concierge.mastercard.com/en/",
+     "where": [
+      "us",
+      "uk"
+     ]
+    },
+    {
+     "cat": "Other",
+     "title": "European Privileges",
+     "title_zh": "歐洲禮遇計劃",
+     "what": "Mastercard's offers at shops, hotels and restaurants across Europe.",
+     "what_zh": "Mastercard 在歐洲各地商店、酒店及餐廳的優惠。",
+     "url": "https://www.priceless.com/European-Privileges-Program?ac=epp",
+     "where": [
+      "uk"
+     ]
+    },
+    {
+     "cat": "Other",
+     "title": "Priceless Experiences",
+     "title_zh": "Priceless 體驗",
+     "what": "Culture, dining, sport and music events in 45+ cities.",
+     "what_zh": "45 多個城市的文化、餐飲、體育及音樂活動。",
+     "url": "https://www.priceless.com/",
+     "where": [
+      "uk"
+     ]
+    },
+    {
+     "cat": "Hotels",
+     "title": "Mastercard Travel",
+     "title_zh": "Mastercard Travel",
+     "what": "Hotel and trip perks booked through Mastercard Travel.",
+     "what_zh": "經 Mastercard Travel 預訂酒店及行程的禮遇。",
+     "url": "https://travel.mastercard.com/product/mastercard/homepage?v=2",
+     "where": [
+      "uk"
+     ]
     }
-   ]
+   ],
+   "scope_by": {
+    "us": {
+     "scope": "Mastercard's US World Elite perks. Your bank adds its own.",
+     "scope_zh": "Mastercard 美國 World Elite 禮遇。發卡銀行另有其他禮遇。"
+    },
+    "uk": {
+     "scope": "Mastercard's UK World Elite perks. Lounge and travel cover depend on your bank.",
+     "scope_zh": "Mastercard 英國 World Elite 禮遇。貴賓室及旅遊保障視乎發卡銀行。"
+    }
+   }
   },
   {
    "key": "worldmc",
@@ -647,6 +849,160 @@
      "where": [
       "sg"
      ]
+    },
+    {
+     "cat": "Lounges",
+     "title": "Global Lounge Collection",
+     "title_zh": "Global Lounge Collection",
+     "what": "Centurion Lounges, 10 Delta Sky Club visits a year and Priority Pass.",
+     "what_zh": "Centurion 貴賓室、每年 10 次 Delta Sky Club 及 Priority Pass。",
+     "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Hotels",
+     "title": "US$600 hotel credit",
+     "title_zh": "600 美元酒店額",
+     "what": "Up to US$300 twice a year on Fine Hotels + Resorts or The Hotel Collection.",
+     "what_zh": "Fine Hotels + Resorts 或 The Hotel Collection 每半年最高 300 美元。",
+     "url": "https://global.americanexpress.com/card-benefits/detail/hotel-credit/platinum",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Hotels",
+     "title": "Fine Hotels + Resorts",
+     "title_zh": "Fine Hotels + Resorts",
+     "what": "Daily breakfast for two, 4pm check-out and a US$100 property credit.",
+     "what_zh": "每日兩人早餐、下午 4 時退房及 100 美元酒店消費額。",
+     "url": "https://www.americanexpress.com/en-us/travel/fine-hotels-and-resorts/",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Dining",
+     "title": "US$400 Resy credit",
+     "title_zh": "400 美元 Resy 餐飲額",
+     "what": "Up to US$100 a quarter at Resy restaurants in the US.",
+     "what_zh": "美國 Resy 餐廳每季最高 100 美元。",
+     "url": "https://global.americanexpress.com/card-benefits/detail/400-resy-credit/platinum",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Other",
+     "title": "US$200 Uber Cash",
+     "title_zh": "200 美元 Uber Cash",
+     "what": "US$15 a month in Uber Cash, plus US$20 extra in December.",
+     "what_zh": "每月 15 美元 Uber Cash，12 月額外 20 美元。",
+     "url": "https://global.americanexpress.com/card-benefits/detail/uber-rides-with-platinum/platinum",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Other",
+     "title": "US$200 airline fee credit",
+     "title_zh": "200 美元航空雜費額",
+     "what": "Covers fees like checked bags on one airline you choose.",
+     "what_zh": "可用於所選一間航空公司的行李等雜費。",
+     "url": "https://global.americanexpress.com/card-benefits/detail/airline-fee-credit/platinum",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Other",
+     "title": "US$300 entertainment credit",
+     "title_zh": "300 美元娛樂額",
+     "what": "Up to US$25 a month on listed streaming and news services.",
+     "what_zh": "指定串流及新聞服務每月最高 25 美元。",
+     "url": "https://global.americanexpress.com/card-benefits/detail/digital-entertainment/platinum",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Other",
+     "title": "CLEAR+ credit",
+     "title_zh": "CLEAR+ 回贈",
+     "what": "Pays for a CLEAR+ airport security membership each year.",
+     "what_zh": "每年回贈 CLEAR+ 機場安檢會籍費用。",
+     "url": "https://global.americanexpress.com/card-benefits/detail/clear-credit/platinum",
+     "where": [
+      "us"
+     ]
+    },
+    {
+     "cat": "Dining",
+     "title": "Global Dining Credit",
+     "title_zh": "環球餐飲額",
+     "what": "Up to £200 at UK restaurants and £200 abroad each year.",
+     "what_zh": "每年英國餐廳最高 200 英鎊，海外另 200 英鎊。",
+     "url": "https://www.americanexpress.com/en-gb/benefits/dining/the-platinum-card/",
+     "where": [
+      "uk"
+     ]
+    },
+    {
+     "cat": "Hotels",
+     "title": "Fine Hotels + Resorts",
+     "title_zh": "Fine Hotels + Resorts",
+     "what": "Daily breakfast for two and 4pm check-out at 1,900+ hotels.",
+     "what_zh": "逾 1,900 間酒店每日兩人早餐及下午 4 時退房。",
+     "url": "https://www.americanexpress.com/en-gb/benefits/travel/hotels/the-platinum-card/fine-hotels-and-resorts/",
+     "where": [
+      "uk"
+     ]
+    },
+    {
+     "cat": "Hotels",
+     "title": "The Hotel Collection",
+     "title_zh": "The Hotel Collection",
+     "what": "Early check-in, late check-out and up to US$100 credit on 2+ night stays.",
+     "what_zh": "入住兩晚或以上可提早入住、延遲退房及最高 100 美元消費額。",
+     "url": "https://www.americanexpress.com/en-gb/benefits/travel/hotels/the-platinum-card/the-hotel-collection/",
+     "where": [
+      "uk"
+     ]
+    },
+    {
+     "cat": "Lounges",
+     "title": "Global Lounge Collection",
+     "title_zh": "Global Lounge Collection",
+     "what": "Over 1,550 airport lounges in 140+ countries.",
+     "what_zh": "140 多個國家逾 1,550 間機場貴賓室。",
+     "url": "https://global.americanexpress.com/lounge-access/the-platinum-card",
+     "where": [
+      "uk"
+     ]
+    },
+    {
+     "cat": "Other",
+     "title": "Travel insurance",
+     "title_zh": "旅遊保險",
+     "what": "Worldwide cover for you, your partner and children.",
+     "what_zh": "你、伴侶及子女的全球旅遊保障。",
+     "url": "https://www.americanexpress.com/en-gb/benefits/insurance-and-protection/the-platinum-card/travel-insurance/",
+     "where": [
+      "uk"
+     ]
+    },
+    {
+     "cat": "Other",
+     "title": "Platinum Events",
+     "title_zh": "Platinum 活動",
+     "what": "Book music, dining and art events in the Amex Experiences app.",
+     "what_zh": "於 Amex Experiences app 預訂音樂、餐飲及藝術活動。",
+     "url": "https://www.americanexpress.com/en-gb/benefits/events-and-entertainment/the-platinum-card/platinum-events/",
+     "where": [
+      "uk"
+     ]
     }
    ],
    "scope_by": {
@@ -657,6 +1013,14 @@
     "sg": {
      "scope": "The Singapore Platinum Card (charge card), S$1,744 a year.",
      "scope_zh": "新加坡 Platinum Card（簽賬卡），年費 S$1,744。"
+    },
+    "us": {
+     "scope": "The US Platinum Card.",
+     "scope_zh": "美國 Platinum Card。"
+    },
+    "uk": {
+     "scope": "The UK Platinum Card.",
+     "scope_zh": "英國 Platinum Card。"
     }
    }
   }
